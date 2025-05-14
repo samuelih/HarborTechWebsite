@@ -1,0 +1,14 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- People silhouettes in a group -->
+  <circle cx="20" cy="10" r="5" stroke="#039BFF" stroke-width="2"/>
+  <path d="M20 15C15.0294 15 11 19.0294 11 24V32H29V24C29 19.0294 24.9706 15 20 15Z" stroke="#039BFF" stroke-width="2"/>
+  <!-- Small person silhouette (left) -->
+  <circle cx="10" cy="12" r="3" stroke="#023055" stroke-width="2"/>
+  <path d="M10 15C7.23858 15 5 17.2386 5 20V24H15V20C15 17.2386 12.7614 15 10 15Z" stroke="#023055" stroke-width="2"/>
+  <!-- Small person silhouette (right) -->
+  <circle cx="30" cy="12" r="3" stroke="#023055" stroke-width="2"/>
+  <path d="M30 15C27.2386 15 25 17.2386 25 20V24H35V20C35 17.2386 32.7614 15 30 15Z" stroke="#023055" stroke-width="2"/>
+  <!-- Growth/skill advancement arrow -->
+  <path d="M20 24V32" stroke="#039BFF" stroke-width="2" stroke-linecap="round"/>
+  <path d="M16 28L20 24L24 28" stroke="#039BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg> 

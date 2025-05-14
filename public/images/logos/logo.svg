@@ -1,0 +1,15 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Ocean waves -->
+  <path d="M0 26C6.66667 24 13.3333 23 20 23C26.6667 23 33.3333 24 40 26V40H0V26Z" fill="#D6F1FF"/>
+  <path d="M0 30C6.66667 28 13.3333 27 20 27C26.6667 27 33.3333 28 40 30V40H0V30Z" fill="#6CC8FF" fill-opacity="0.6"/>
+  <path d="M0 34C6.66667 32 13.3333 31 20 31C26.6667 31 33.3333 32 40 34V40H0V34Z" fill="#039BFF" fill-opacity="0.4"/>
+  
+  <!-- Sailboat -->
+  <path d="M20 5L20 28" stroke="#023055" stroke-width="2" stroke-linecap="round"/> <!-- Mast -->
+  <path d="M20 5L8 28" stroke="#023055" stroke-width="2" stroke-linecap="round"/> <!-- Left support -->
+  <path d="M8 28L32 28" stroke="#023055" stroke-width="2" stroke-linecap="round"/> <!-- Base -->
+  <path d="M20 5L32 18" fill="#023055"/> <!-- Right sail fill -->
+  <path d="M20 5L32 18" stroke="#023055" stroke-width="2" stroke-linecap="round"/> <!-- Right sail outline -->
+  <path d="M20 12L10 28" fill="#039BFF"/> <!-- Left sail fill -->
+  <path d="M20 12L10 28" stroke="#023055" stroke-width="2" stroke-linecap="round"/> <!-- Left sail outline -->
+</svg> 
