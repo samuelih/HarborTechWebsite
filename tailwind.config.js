@@ -19,29 +19,29 @@ module.exports = {
       colors: {
         // Neutral Background Colors (60%)
         neutral: {
-          mist: "#E6F4FF", // Main page background, large cards, hero sections
-          gull: "#F5F7FA", // Alt rows, subtle separators, form fields
+          mist: "#E6F4FF", // Light blue background
+          gull: "#F5F7FA", // Even lighter accents
         },
         // Brand Colors (30%)
         primary: {
-          blue: "#2B6CB0", // Primary buttons, links, focus rings
-          sky: "#4A90E2", // Secondary buttons, hovers, small badges
-          navy: "#1F314F", // Headlines, nav bar text, body copy on light BG
+          navy: "#0E2A47", // Deep navy blue - darkest shade
+          blue: "#1E5086", // Mid-tone blue - main brand color
+          sky: "#4682B4", // Steel blue - lighter accent
         },
         // Accent Colors (10%)
         accent: {
-          sand: "#F7F1E3", // Banner scrolls, highlight boxes, cards behind illustrations
-          gold: "#FFB55A", // Call-to-action icons, success states, subtle gradients
-          seafoam: "#3FB8C4", // Info chips, hover accents, secondary icons
+          sand: "#F8EFD4", // Soft cream/sand
+          gold: "#F0B254", // Warm golden accent
+          seafoam: "#3CAEA3", // Teal accent
         },
         // Legacy colors for backward compatibility
         nautical: {
-          deepBlue: "#1F314F", // Using primary navy
-          azure: "#4A90E2", // Using primary sky
-          seafoam: "#3FB8C4", // Using accent seafoam
-          sand: "#F7F1E3", // Using accent sand
-          sunset: "#FFB55A", // Using accent gold
-          rope: "#FFB55A", // Using accent gold
+          deepBlue: "#0E2A47", // Using primary navy
+          azure: "#4682B4", // Using primary sky
+          seafoam: "#3CAEA3", // Using accent seafoam
+          sand: "#F8EFD4", // Using accent sand
+          sunset: "#F0B254", // Using accent gold
+          rope: "#F0B254", // Using accent gold
         },
         // System colors
         border: "hsl(var(--border))",
@@ -51,9 +51,9 @@ module.exports = {
         foreground: "hsl(var(--foreground))",
       },
       backgroundImage: {
-        'hero-gradient': 'linear-gradient(135deg, #E6F4FF 0%, #2B6CB0 100%)',
-        'nautical-gradient': 'linear-gradient(135deg, #1F314F 0%, #4A90E2 100%)',
-        'sunset-gradient': 'linear-gradient(135deg, #FFB55A 0%, #3FB8C4 100%)',
+        'hero-gradient': 'linear-gradient(135deg, #0E2A47 0%, #1E5086 50%, #4682B4 100%)',
+        'nautical-gradient': 'linear-gradient(135deg, #0E2A47 0%, #1E5086 100%)',
+        'sunset-gradient': 'linear-gradient(135deg, #F0B254 0%, #3CAEA3 100%)',
       },
       borderRadius: {
         lg: "var(--radius)",

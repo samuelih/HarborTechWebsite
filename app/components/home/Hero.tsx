@@ -31,8 +31,8 @@ const Hero = () => {
 
   return (
     <section className="relative h-screen flex items-center overflow-hidden bg-gradient-to-b from-primary-navy via-primary-blue to-primary-sky">
-      {/* Dark blue gradient background */}
-      <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-primary-navy/90 via-primary-blue/80 to-primary-sky/70"></div>
+      {/* Gradient background */}
+      <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-primary-navy/95 via-primary-blue/90 to-primary-sky/80"></div>
 
       {/* Static starry background */}
       <div className="absolute inset-0 w-full h-full z-0 bg-stars"></div>
@@ -62,8 +62,8 @@ const Hero = () => {
           <defs>
             {/* Using new color scheme */}
             <linearGradient id="waveGradient" x1="0" y1="0" x2="0" y2="320" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stopColor="#1F314F" />
-              <stop offset="100%" stopColor="#4A90E2" />
+              <stop offset="0%" stopColor="#0E2A47" />
+              <stop offset="100%" stopColor="#4682B4" />
             </linearGradient>
 
             {/* Single wave crest – duplicated & shifted for infinite scroll. */}

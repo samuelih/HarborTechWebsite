@@ -33,6 +33,9 @@ const ServiceCard = ({
   className = ''
 }: ServiceCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
+  
+  // Determine if this is a dark card to adjust text colors accordingly
+  const isDarkCard = ['bg-primary-navy', 'bg-primary-blue'].includes(color);
 
   return (
     <div 
@@ -85,7 +88,7 @@ const ServiceCard = ({
               style={{ transform: isHovered ? 'translateX(4px)' : 'translateX(0)', transitionDelay: `${index * 50}ms` }}
             >
               <div className="flex-shrink-0 w-5 h-5 rounded-full bg-white/20 flex items-center justify-center mr-3">
-                <svg className="w-3 h-3 text-accent-gold" viewBox="0 0 24 24" fill="currentColor">
+                <svg className={`w-3 h-3 ${isDarkCard ? 'text-accent-gold' : 'text-accent-seafoam'}`} viewBox="0 0 24 24" fill="currentColor">
                   <path d="M9,16.17L4.83,12l-1.42,1.41L9,19L21,7l-1.41-1.41L9,16.17z" />
                 </svg>
               </div>
@@ -96,7 +99,7 @@ const ServiceCard = ({
         
         <Link 
           href={link}
-          className="inline-flex items-center text-accent-gold font-semibold transition-all duration-300 relative"
+          className={`inline-flex items-center ${isDarkCard ? 'text-accent-gold' : 'text-primary-blue'} font-semibold transition-all duration-300 relative`}
           style={{ 
             transform: isHovered ? 'translateX(8px)' : 'translateX(0)',
           }}
@@ -110,7 +113,7 @@ const ServiceCard = ({
           >
             <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
           </svg>
-          <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-accent-gold/40 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
+          <span className={`absolute -bottom-1 left-0 w-full h-0.5 ${isDarkCard ? 'bg-accent-gold/40' : 'bg-primary-blue/40'} transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300`}></span>
         </Link>
       </div>
     </div>

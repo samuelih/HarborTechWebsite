@@ -5,10 +5,10 @@
 @layer base {
   :root {
     --background: 210 100% 98%; /* Mist */
-    --foreground: 220 30% 22%; /* Deep Navy */
+    --foreground: 212 68% 17%; /* Deep Navy */
     --border: 210 100% 97%; /* Gull Grey */
     --input: 210 100% 97%; /* Gull Grey */
-    --ring: 220 60% 41%; /* Primary Blue */
+    --ring: 210 62% 33%; /* Primary Blue */
     --radius: 0.5rem;
     
     /* Wave animation variables */
@@ -17,20 +17,20 @@
     --wave-animation-easing: cubic-bezier(0.36, 0.45, 0.63, 0.53);
     
     /* Nautical theme colors */
-    --deep-sea: 220 30% 22%; /* Deep Navy */
-    --ocean-surface: 220 60% 41%; /* Primary Blue */
-    --seafoam: 187 50% 54%; /* Seafoam */
-    --beach-sand: 40 80% 92%; /* Parchment Sand */
-    --sunset-orange: 35 100% 67%; /* Golden Port-Light */
-    --nautical-rope: 35 100% 67%; /* Golden Port-Light */
+    --deep-sea: 212 68% 17%; /* Deep Navy */
+    --ocean-surface: 210 62% 33%; /* Primary Blue */
+    --seafoam: 174 48% 46%; /* Seafoam */
+    --beach-sand: 47 67% 90%; /* Parchment Sand */
+    --sunset-orange: 36 83% 63%; /* Golden Port-Light */
+    --nautical-rope: 36 83% 63%; /* Golden Port-Light */
   }
  
   .dark {
-    --background: 220 30% 22%; /* Deep Navy */
+    --background: 212 68% 17%; /* Deep Navy */
     --foreground: 210 100% 98%; /* Mist */
-    --border: 220 30% 30%;
-    --input: 220 30% 30%;
-    --ring: 220 60% 41%; /* Primary Blue */
+    --border: 212 68% 25%;
+    --input: 212 68% 25%;
+    --ring: 210 62% 33%; /* Primary Blue */
   }
 }
 
@@ -80,7 +80,7 @@
 /* Custom utility classes */
 @layer components {
   .btn-primary {
-    @apply bg-gradient-to-r from-primary-blue to-primary-sky text-white font-semibold py-3 px-6 rounded-lg 
+    @apply bg-gradient-to-r from-primary-navy to-primary-blue text-white font-semibold py-3 px-6 rounded-lg 
            hover:translate-y-[-2px] hover:shadow-md transition-all duration-300
            focus:outline-none focus:ring-2 focus:ring-primary-blue focus:ring-offset-2
            text-lg;
@@ -290,6 +290,24 @@
     }
     100% {
       transform: translateY(-400px) scale(0.5);
+      opacity: 0;
+    }
+  }
+  
+  /* Simplified bubble float animation for CTA section */
+  @keyframes bubble-float {
+    0% {
+      transform: translateY(0);
+      opacity: 0.1;
+    }
+    10% {
+      opacity: 0.3;
+    }
+    80% {
+      opacity: 0.2;
+    }
+    100% {
+      transform: translateY(-100vh);
       opacity: 0;
     }
   }

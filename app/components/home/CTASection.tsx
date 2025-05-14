@@ -9,7 +9,6 @@ import { useState, useEffect, useRef } from 'react';
 const CTASection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [rotation, setRotation] = useState(0);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const compassRef = useRef<HTMLDivElement>(null);
@@ -42,18 +41,29 @@ const CTASection = () => {
     const animate = () => {
       // Smoothly interpolate towards target rotation
       const diff = targetRotation - currentRotation;
-      currentRotation += diff * 0.1;
       
-      if (Math.abs(diff) > 0.01) {
-        setRotation(currentRotation);
-        animationId = requestAnimationFrame(animate);
+      // Handle the shortest path for rotation to avoid 360° flips
+      if (diff > 180) {
+        currentRotation += (diff - 360) * 0.08;
+      } else if (diff < -180) {
+        currentRotation += (diff + 360) * 0.08;
+      } else {
+        currentRotation += diff * 0.08;
       }
+      
+      // Keep rotation within 0-360 range
+      if (currentRotation >= 360) {
+        currentRotation -= 360;
+      } else if (currentRotation < 0) {
+        currentRotation += 360;
+      }
+      
+      setRotation(currentRotation);
+      animationId = requestAnimationFrame(animate);
     };
 
-    // Start with slow spin
-    const interval = setInterval(() => {
-      targetRotation += 0.5;
-    }, 50);
+    // Start animation loop
+    animationId = requestAnimationFrame(animate);
 
     // When mouse moves over the section, make compass point to mouse
     const handleMouseMove = (e: MouseEvent) => {
@@ -68,67 +78,59 @@ const CTASection = () => {
       const dy = e.clientY - centerY;
       const angle = Math.atan2(dy, dx) * (180 / Math.PI) + 90;
       
-      targetRotation = angle;
-      
-      // Update mouse position for parallax effects
-      setMousePosition({
-        x: (e.clientX - centerX) / 50,
-        y: (e.clientY - centerY) / 50
-      });
+      // Normalize angle to 0-360 range
+      targetRotation = angle < 0 ? angle + 360 : angle;
     };
 
     // Add event listeners
     if (sectionRef.current) {
       sectionRef.current.addEventListener('mousemove', handleMouseMove);
     }
-    
-    // Start animation loop
-    animationId = requestAnimationFrame(animate);
 
     return () => {
       if (sectionRef.current) {
         sectionRef.current.removeEventListener('mousemove', handleMouseMove);
       }
-      clearInterval(interval);
       cancelAnimationFrame(animationId);
     };
-  }, [rotation]);
+  }, []);
 
-  // Generate wave bubbles for the background
-  const bubbles = Array(12).fill(0).map((_, i) => ({
-    size: Math.random() * 60 + 20,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    animationDelay: `${Math.random() * 10}s`,
-    animationDuration: `${Math.random() * 10 + 15}s`,
-    opacity: Math.random() * 0.2 + 0.1
-  }));
+  // Simple bubbles that float from bottom to top
+  const bubbles = [
+    { id: 1, size: 15, x: '15%', delay: '0s', duration: '8s' },
+    { id: 2, size: 20, x: '30%', delay: '1s', duration: '10s' },
+    { id: 3, size: 12, x: '45%', delay: '3s', duration: '12s' },
+    { id: 4, size: 25, x: '65%', delay: '2s', duration: '15s' },
+    { id: 5, size: 18, x: '80%', delay: '4s', duration: '9s' },
+    { id: 6, size: 22, x: '25%', delay: '6s', duration: '14s' },
+    { id: 7, size: 16, x: '55%', delay: '7s', duration: '11s' },
+    { id: 8, size: 14, x: '75%', delay: '5s', duration: '13s' }
+  ];
 
   return (
     <section 
       id="cta" 
       ref={sectionRef}
-      className="py-24 bg-gradient-to-b from-primary-navy to-primary-blue relative overflow-hidden"
+      className="py-24 bg-gradient-to-b from-primary-navy to-primary-navy/90 relative overflow-hidden"
     >
       {/* Enhanced animated background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[url('/images/backgrounds/compass-pattern.svg')] opacity-10 bg-repeat"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-navy/50 to-primary-blue/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-primary-navy/90 to-primary-navy/80"></div>
         
-        {/* Ocean depth background with bubbles */}
-        <div className="absolute inset-0 overflow-hidden">
-          {bubbles.map((bubble, i) => (
+        {/* Simplified bubble animation */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {bubbles.map(bubble => (
             <div 
-              key={i} 
-              className="absolute rounded-full bg-white/10 animate-float-up"
+              key={bubble.id}
+              className="absolute rounded-full bg-white/10"
               style={{
                 width: `${bubble.size}px`,
                 height: `${bubble.size}px`,
-                left: `${bubble.x}%`,
+                left: bubble.x,
                 bottom: '-50px',
-                animationDelay: bubble.animationDelay,
-                animationDuration: bubble.animationDuration,
-                opacity: bubble.opacity,
+                opacity: 0.15,
+                animation: `bubble-float ${bubble.duration} ease-out infinite ${bubble.delay}`
               }}
             ></div>
           ))}
@@ -141,69 +143,94 @@ const CTASection = () => {
         </div>
       </div>
 
-      {/* Enhanced interactive compass */}
+      {/* Fixed position compass with only needle rotation */}
       <div 
         ref={compassRef}
-        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 transition-all duration-700"
+        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 transition-opacity duration-700"
         style={{
-          transform: `translate(calc(-50% + ${mousePosition.x}px), calc(-50% + ${mousePosition.y}px))`,
           opacity: isVisible ? 0.8 : 0
         }}
       >
-        {/* Outer ring with glow effect */}
-        <div className="absolute inset-0 rounded-full border-8 border-accent-gold/40 backdrop-blur-sm shadow-[0_0_30px_rgba(255,211,106,0.3)]"></div>
+        {/* Outer ring with enhanced glow effect */}
+        <div className="absolute inset-0 rounded-full border-8 border-accent-gold/40 backdrop-blur-sm shadow-[0_0_50px_rgba(240,178,84,0.2)]"></div>
+        <div className="absolute inset-0 rounded-full border-2 border-accent-gold/20 backdrop-blur-sm" style={{
+          transform: 'scale(1.05)'
+        }}></div>
         
-        {/* Compass directional labels with enhanced styling */}
+        {/* Compass rose pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <svg className="w-full h-full" viewBox="0 0 200 200">
+            <path d="M100,20 L100,180 M20,100 L180,100 M35,35 L165,165 M35,165 L165,35" 
+                 stroke="#F0B254" strokeWidth="2" opacity="0.7" />
+          </svg>
+        </div>
+        
+        {/* Compass directional labels - simplified to just N/S/E/W */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="absolute inset-0">
-            <div className="absolute top-4 left-1/2 transform -translate-x-1/2 text-accent-gold/80 font-bold text-xl">N</div>
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-accent-gold/80 font-bold text-xl">S</div>
-            <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-accent-gold/80 font-bold text-xl">W</div>
-            <div className="absolute right-4 top-1/2 transform -translate-y-1/2 text-accent-gold/80 font-bold text-xl">E</div>
-            <div className="absolute top-[15%] right-[15%] text-accent-gold/60 font-bold">NE</div>
-            <div className="absolute top-[15%] left-[15%] text-accent-gold/60 font-bold">NW</div>
-            <div className="absolute bottom-[15%] right-[15%] text-accent-gold/60 font-bold">SE</div>
-            <div className="absolute bottom-[15%] left-[15%] text-accent-gold/60 font-bold">SW</div>
+            <div className="absolute top-4 left-1/2 transform -translate-x-1/2 text-accent-gold font-bold text-xl drop-shadow-md">N</div>
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-accent-gold font-bold text-xl drop-shadow-md">S</div>
+            <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-accent-gold font-bold text-xl drop-shadow-md">W</div>
+            <div className="absolute right-4 top-1/2 transform -translate-y-1/2 text-accent-gold font-bold text-xl drop-shadow-md">E</div>
           </div>
         </div>
 
-        {/* Enhanced rotating needle with animation */}
+        {/* Improved compass needle */}
         <div 
-          className="absolute inset-0 flex items-center justify-center transition-transform"
+          className="absolute inset-0 flex items-center justify-center"
           style={{ transform: `rotate(${rotation}deg)` }}
         >
-          {/* Enhanced compass needle with better styling */}
           <svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-40 h-40">
-            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur stdDeviation="4" result="blur" />
-              <feComposite in="SourceGraphic" in2="blur" operator="over" />
-            </filter>
-            <polygon points="110,30 125,110 110,190 95,110" fill="#FFD36A" fillOpacity="0.7" filter="url(#glow)" />
-            <polygon points="110,30 125,110 110,190 95,110" stroke="#FFD36A" strokeWidth="1.5" strokeOpacity="0.8" />
-            <circle cx="110" cy="110" r="12" fill="#FFD36A" fillOpacity="0.8" />
-            <circle cx="110" cy="110" r="8" fill="#FFB55A" fillOpacity="0.9" />
+            <defs>
+              <filter id="needle-glow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+              </filter>
+              <linearGradient id="northGradient" x1="110" y1="30" x2="110" y2="110" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#F0B254" />
+                <stop offset="100%" stopColor="#E09830" />
+              </linearGradient>
+              <linearGradient id="southGradient" x1="110" y1="110" x2="110" y2="190" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#4682B4" />
+                <stop offset="100%" stopColor="#1E5086" />
+              </linearGradient>
+            </defs>
+            
+            {/* South needle */}
+            <polygon points="110,110 125,110 110,190 95,110" fill="url(#southGradient)" fillOpacity="0.9" filter="url(#needle-glow)" />
+            <polygon points="110,110 125,110 110,190 95,110" stroke="#4682B4" strokeWidth="1" strokeOpacity="0.9" />
+            
+            {/* North needle */}
+            <polygon points="110,30 125,110 110,110 95,110" fill="url(#northGradient)" fillOpacity="0.9" filter="url(#needle-glow)" />
+            <polygon points="110,30 125,110 110,110 95,110" stroke="#F0B254" strokeWidth="1" strokeOpacity="0.9" />
+            
+            {/* Center joint */}
+            <circle cx="110" cy="110" r="12" fill="#F0B254" fillOpacity="0.8" />
+            <circle cx="110" cy="110" r="8" fill="#E09830" fillOpacity="1" />
           </svg>
         </div>
 
-        {/* Center point with enhanced detail */}
+        {/* Center point */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-16 h-16 rounded-full bg-accent-gold/30 backdrop-blur-md shadow-lg flex items-center justify-center">
-            <div className="w-8 h-8 rounded-full bg-accent-gold/60 flex items-center justify-center">
-              <div className="w-4 h-4 rounded-full bg-accent-gold/90"></div>
+          <div className="w-16 h-16 rounded-full bg-accent-gold/20 backdrop-blur-md shadow-lg flex items-center justify-center">
+            <div className="w-8 h-8 rounded-full bg-accent-gold/40 flex items-center justify-center">
+              <div className="w-4 h-4 rounded-full bg-accent-gold/70 flex items-center justify-center">
+                <div className="w-2 h-2 rounded-full bg-accent-gold animate-pulse"></div>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Enhanced degree markers */}
+        {/* Degree markers */}
         <div className="absolute inset-0">
-          {[...Array(24)].map((_, i) => (
+          {[...Array(36)].map((_, i) => (
             <div
               key={i}
-              className={`absolute bg-accent-gold/40 ${i % 2 === 0 ? 'w-1.5 h-6' : 'w-1 h-4'}`}
+              className={`absolute ${i % 3 === 0 ? 'bg-accent-gold/50 w-1.5 h-6' : 'bg-accent-gold/30 w-1 h-4'}`}
               style={{
                 left: '50%',
                 top: '50%',
-                transform: `translate(-50%, -50%) rotate(${i * 15}deg) translateY(-156px)`
+                transform: `translate(-50%, -50%) rotate(${i * 10}deg) translateY(-156px)`
               }}
             />
           ))}
@@ -241,28 +268,28 @@ const CTASection = () => {
             <div 
               className="absolute inset-0 rounded-lg transition-opacity duration-500 blur-xl"
               style={{ 
-                background: 'radial-gradient(circle, rgba(255,211,106,0.6) 0%, rgba(255,211,106,0) 70%)',
+                background: 'radial-gradient(circle, rgba(240,178,84,0.6) 0%, rgba(240,178,84,0) 70%)',
                 opacity: isHovered ? 0.9 : 0.4
               }}
             ></div>
             
-            <Button 
-              href="/contact" 
-              className="relative bg-gradient-to-r from-accent-gold to-accent-sand text-primary-navy hover:shadow-[0_5px_30px_rgba(255,211,106,0.5)] transition-all duration-500 flex items-center justify-center mx-auto shadow-lg group z-10"
-            >
-              <svg 
+          <Button 
+            href="/contact" 
+              className="relative bg-gradient-to-r from-accent-gold to-accent-sand text-primary-navy hover:shadow-[0_5px_30px_rgba(240,178,84,0.5)] transition-all duration-500 flex items-center justify-center mx-auto shadow-lg group z-10"
+          >
+            <svg 
                 className="w-5 h-5 mr-2 transition-all duration-500 text-primary-navy" 
-                viewBox="0 0 24 24" 
-                fill="currentColor"
+              viewBox="0 0 24 24" 
+              fill="currentColor"
                 style={{ 
                   transform: isHovered ? 'rotate(180deg)' : 'rotate(0deg)',
                   opacity: 0.9
                 }}
-              >
-                <path d="M12,2L4.5,20.29l0.71,0.71L12,18l6.79,3 0.71-0.71L12,2z" />
-              </svg>
-              Book Your Free Harbor Check
-            </Button>
+            >
+              <path d="M12,2L4.5,20.29l0.71,0.71L12,18l6.79,3 0.71-0.71L12,2z" />
+            </svg>
+            Book Your Free Harbor Check
+          </Button>
           </div>
           
           {/* Trust indicators */}
