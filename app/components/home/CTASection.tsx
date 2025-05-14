@@ -44,7 +44,7 @@ const CTASection = () => {
       </div>
 
       {/* Animated compass */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96">
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72">
         {/* Outer ring */}
         <div className="absolute inset-0 rounded-full border-8 border-accent-gold/30 shadow-lg"></div>
         
@@ -63,8 +63,11 @@ const CTASection = () => {
           className="absolute inset-0 flex items-center justify-center"
           style={{ transform: `rotate(${rotation}deg)` }}
         >
-          <div className="w-1 h-48 bg-gradient-to-b from-accent-gold/80 to-transparent transform -translate-y-24"></div>
-          <div className="w-48 h-1 bg-gradient-to-r from-accent-gold/80 to-transparent transform -translate-x-24"></div>
+          {/* Classic double-sided compass needle SVG with accent-gold/40 color */}
+          <svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-32 h-32">
+            <polygon points="90,25 105,90 90,155 75,90" fill="#FFD36A" fillOpacity="0.4" />
+            <circle cx="90" cy="90" r="10" fill="#FFD36A" fillOpacity="0.4" />
+          </svg>
         </div>
 
         {/* Center point */}
@@ -92,13 +95,6 @@ const CTASection = () => {
 
       <Container className="relative z-10">
         <div className={`text-center ${isVisible ? 'animate-fade-up' : 'opacity-0'}`}>
-          <div className="flex justify-center mb-6">
-            <div className="w-16 h-16 text-accent-gold/40">
-              <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full animate-slow-spin">
-                <path d="M12,2L4.5,20.29l0.71,0.71L12,18l6.79,3 0.71-0.71L12,2z" />
-              </svg>
-            </div>
-          </div>
           <h2 className="text-white font-display font-bold text-3xl md:text-4xl mb-6 drop-shadow-lg">Ready to raise the sails?</h2>
           <p className="text-white text-lg mb-8 max-w-2xl mx-auto drop-shadow-md">
             Claim your free Harbor Check consultation and chart a course for retail technology success.
