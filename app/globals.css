@@ -106,6 +106,10 @@
     @apply backdrop-blur-md bg-neutral-mist/80 backdrop-filter border-b border-neutral-gull/50;
   }
   
+  .glass-nav-scrolled {
+    @apply backdrop-blur-xl bg-neutral-mist/90 backdrop-filter border-b border-neutral-gull/60 shadow-sm;
+  }
+  
   /* Trust indicators */
   .trust-badge {
     @apply inline-flex items-center px-3 py-1 rounded-full text-base font-medium
@@ -259,6 +263,10 @@
   .animate-slow-spin {
     animation: slow-spin 25s linear infinite;
   }
+  
+  .animate-float-up {
+    animation: float-up 8s ease-out infinite;
+  }
 
   @keyframes fadeUp {
     from {
@@ -268,6 +276,21 @@
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+  
+  /* Float up animation for bubbles */
+  @keyframes float-up {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(-400px) scale(0.5);
+      opacity: 0;
     }
   }
   

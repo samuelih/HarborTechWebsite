@@ -4,27 +4,30 @@ import Image from 'next/image';
 import ServiceCard from '../cards/ServiceCard';
 import SectionHeading from '../common/SectionHeading';
 import Container from '../common/Container';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const ServicesSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
+          observer.disconnect();
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.2, rootMargin: '0px 0px -100px 0px' }
     );
 
-    const element = document.getElementById('services');
-    if (element) observer.observe(element);
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
 
     return () => {
-      if (element) observer.unobserve(element);
+      observer.disconnect();
     };
   }, []);
 
@@ -80,46 +83,101 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-gradient-to-b from-primary-navy to-primary-blue relative overflow-hidden">
-      {/* Animated ocean background */}
+    <section 
+      id="services" 
+      ref={sectionRef}
+      className="py-20 bg-gradient-to-b from-primary-navy to-primary-blue relative overflow-hidden"
+    >
+      {/* Enhanced animated ocean background with subtle waves */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[url('/images/backgrounds/ocean-pattern.svg')] opacity-10"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-navy/50 to-primary-blue/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-primary-navy/60 to-primary-blue/60"></div>
+        
+        {/* Animated wave patterns */}
+        <div className="absolute bottom-0 left-0 w-full h-40 opacity-20">
+          <div className="wave-line" style={{ animationDuration: '15s' }}></div>
+          <div className="wave-line" style={{ animationDuration: '20s', animationDelay: '-5s', top: '30%' }}></div>
+          <div className="wave-line" style={{ animationDuration: '25s', animationDelay: '-15s', top: '60%' }}></div>
+        </div>
       </div>
 
-      {/* Animated sailing boat */}
-      <div 
-        className="absolute top-1/4 right-10 w-32 h-32 transition-transform duration-300"
-        style={{ transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)` }}
-      >
-        <Image
-          src="/images/user/sailboat.svg"
-          alt=""
-          width={128}
-          height={128}
-          className="object-contain animate-gentle-float"
-        />
-      </div>
+      {/* Animated floating elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Animated sailing boat */}
+        <div 
+          className="absolute top-1/4 right-10 md:right-20 w-20 h-20 md:w-32 md:h-32 transition-transform duration-700 ease-out"
+          style={{ transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)` }}
+        >
+          <Image
+            src="/images/user/sailboat.svg"
+            alt=""
+            width={128}
+            height={128}
+            className="object-contain animate-gentle-float"
+          />
+        </div>
 
-      {/* Animated clouds */}
-      <div className="absolute top-0 left-0 w-full overflow-hidden">
-        <div className="animate-gentle-float" style={{ animationDelay: '0s' }}>
-          <div className="w-32 h-16 bg-white/10 rounded-full"></div>
-        </div>
-        <div className="animate-gentle-float" style={{ animationDelay: '2s' }}>
-          <div className="w-24 h-12 bg-white/10 rounded-full"></div>
-        </div>
+        {/* Animated clouds */}
+        {[...Array(3)].map((_, i) => (
+          <div 
+            key={i}
+            className="absolute opacity-30"
+            style={{
+              top: `${15 + i * 20}%`,
+              left: `${5 + i * 30}%`,
+              width: `${80 + i * 20}px`,
+              height: `${40 + i * 10}px`,
+              animationDelay: `${i * 2}s`,
+              animationDuration: `${15 + i * 5}s`,
+            }}
+          >
+            <div 
+              className="w-full h-full bg-white/20 rounded-full animate-gentle-float"
+              style={{ animationDelay: `${i}s` }}
+            ></div>
+          </div>
+        ))}
+
+        {/* Small floating bubbles */}
+        {[...Array(12)].map((_, i) => (
+          <div 
+            key={`bubble-${i}`}
+            className="absolute rounded-full bg-white/30 animate-float-up"
+            style={{
+              width: `${Math.random() * 8 + 4}px`,
+              height: `${Math.random() * 8 + 4}px`,
+              left: `${Math.random() * 100}%`,
+              bottom: '-10px',
+              animationDuration: `${Math.random() * 8 + 8}s`,
+              animationDelay: `${Math.random() * 5}s`,
+              opacity: Math.random() * 0.5 + 0.2
+            }}
+          ></div>
+        ))}
       </div>
       
       <Container className="relative z-10">
-        <SectionHeading title="Core Services" centered className="text-white drop-shadow-lg" />
+        <SectionHeading 
+          title="Core Services" 
+          centered 
+          className="text-white drop-shadow-lg mb-10 animate-fade-up"
+          style={{ 
+            opacity: isVisible ? 1 : 0, 
+            transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+            transition: 'opacity 0.6s ease-out, transform 0.6s ease-out' 
+          }}
+        />
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {services.map((service, index) => (
             <div
               key={index}
-              className={`flex h-full ${isVisible ? 'animate-fade-up' : 'opacity-0'}`}
-              style={{ animationDelay: `${index * 0.2}s` }}
+              className="flex h-full"
+              style={{ 
+                opacity: isVisible ? 1 : 0, 
+                transform: isVisible ? 'translateY(0)' : 'translateY(40px)',
+                transition: `opacity 0.7s ease-out ${index * 0.1}s, transform 0.7s ease-out ${index * 0.1}s` 
+              }}
             >
               <ServiceCard
                 icon={service.icon as 'pos' | 'cloud' | 'training' | 'data'}
@@ -135,6 +193,37 @@ const ServicesSection = () => {
           ))}
         </div>
       </Container>
+
+      <style jsx>{`
+        @keyframes float-up {
+          0% {
+            transform: translateY(0) scale(1);
+            opacity: 0.5;
+          }
+          100% {
+            transform: translateY(-400px) scale(0.5);
+            opacity: 0;
+          }
+        }
+
+        .wave-line {
+          position: absolute;
+          height: 2px;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+          width: 200%;
+          top: 0;
+          animation: wave-move linear infinite;
+        }
+
+        @keyframes wave-move {
+          0% {
+            transform: translateX(-50%);
+          }
+          100% {
+            transform: translateX(0%);
+          }
+        }
+      `}</style>
     </section>
   );
 };
