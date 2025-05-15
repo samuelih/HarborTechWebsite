@@ -21,7 +21,7 @@ const Footer = () => {
   return (
     <footer className="relative overflow-hidden">
       {/* Wave divider */}
-      <div className="absolute top-0 left-0 right-0 h-16 overflow-hidden">
+      <div className="absolute top-0 left-0 right-0 h-10 sm:h-16 overflow-hidden">
         <svg
           className="absolute bottom-0 w-full"
           xmlns="http://www.w3.org/2000/svg"
@@ -36,17 +36,17 @@ const Footer = () => {
         </svg>
       </div>
 
-      <div className="pt-24 pb-12 bg-gradient-to-b from-primary-100 to-neutral-mist relative z-10">
+      <div className="pt-16 sm:pt-24 pb-8 sm:pb-12 bg-gradient-to-b from-primary-100 to-neutral-mist relative z-10">
         {/* Upper footer with quick links */}
-        <div className="container mx-auto px-4 pb-12">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
+        <div className="container mx-auto px-4 pb-8 sm:pb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
             {/* Company Links */}
             <div className="group">
-              <h3 className="font-display font-bold text-xl mb-5 text-primary-navy relative inline-block">
+              <h3 className="font-display font-bold text-lg sm:text-xl mb-4 sm:mb-5 text-primary-navy relative inline-block">
                 Company
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-blue transition-all duration-300 group-hover:w-full"></span>
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-2 sm:space-y-3">
                 <li>
                   <Link href="/about" className="text-secondary-navy hover:text-primary-700 transition-colors flex items-center group/link">
                     <span className="w-1.5 h-1.5 rounded-full bg-accent-gold mr-2 transition-all duration-300 group-hover/link:w-2.5"></span>
@@ -76,11 +76,11 @@ const Footer = () => {
 
             {/* Solutions Links */}
             <div className="group">
-              <h3 className="font-display font-bold text-xl mb-5 text-primary-navy relative inline-block">
+              <h3 className="font-display font-bold text-lg sm:text-xl mb-4 sm:mb-5 text-primary-navy relative inline-block">
                 Solutions
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-sky transition-all duration-300 group-hover:w-full"></span>
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-2 sm:space-y-3">
                 <li>
                   <Link href="/solutions/retail-pos" className="text-secondary-navy hover:text-primary-700 transition-colors flex items-center group/link">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary-sky mr-2 transition-all duration-300 group-hover/link:w-2.5"></span>
@@ -110,11 +110,11 @@ const Footer = () => {
 
             {/* Resources Links */}
             <div className="group">
-              <h3 className="font-display font-bold text-xl mb-5 text-primary-navy relative inline-block">
+              <h3 className="font-display font-bold text-lg sm:text-xl mb-4 sm:mb-5 text-primary-navy relative inline-block">
                 Resources
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-seafoam transition-all duration-300 group-hover:w-full"></span>
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-2 sm:space-y-3">
                 <li>
                   <Link href="/resources/blog" className="text-secondary-navy hover:text-primary-700 transition-colors flex items-center group/link">
                     <span className="w-1.5 h-1.5 rounded-full bg-accent-seafoam mr-2 transition-all duration-300 group-hover/link:w-2.5"></span>
@@ -143,9 +143,9 @@ const Footer = () => {
             </div>
 
             {/* Newsletter Signup */}
-            <div className="md:pl-4 relative before:absolute before:left-0 before:top-0 before:h-0 md:before:h-full before:w-px before:bg-primary-sky/20 before:hidden md:before:block">
-              <div className="flex items-center mb-5">
-                <div className="relative w-8 h-8 mr-3 flex-shrink-0">
+            <div className="lg:pl-4 relative before:absolute before:left-0 before:top-0 before:h-0 lg:before:h-full before:w-px before:bg-primary-sky/20 before:hidden lg:before:block">
+              <div className="flex items-center mb-4 sm:mb-5">
+                <div className="relative w-7 h-7 sm:w-8 sm:h-8 mr-3 flex-shrink-0">
                   <Image 
                     src="/images/ui-elements/buoy-icon.svg" 
                     alt="Newsletter" 
@@ -153,14 +153,14 @@ const Footer = () => {
                     height={32}
                     className="animate-pulse-slow"
                   />
-                  <span className="absolute -top-1 -right-1 w-3 h-3 bg-accent-gold rounded-full"></span>
+                  <span className="absolute -top-1 -right-1 w-2 h-2 sm:w-3 sm:h-3 bg-accent-gold rounded-full"></span>
                 </div>
-                <h3 className="font-display font-bold text-xl text-primary-navy">Stay Updated</h3>
+                <h3 className="font-display font-bold text-lg sm:text-xl text-primary-navy">Stay Updated</h3>
               </div>
-              <p className="text-sm mb-5 text-secondary-navy/80">Get monthly tech tips for your retail business</p>
+              <p className="text-sm mb-4 sm:mb-5 text-secondary-navy/80">Get monthly tech tips for your retail business</p>
               
               {subscribed ? (
-                <div className="bg-gradient-to-r from-success-seafoam/20 to-accent-seafoam/10 p-5 rounded-lg border border-accent-seafoam/30">
+                <div className="bg-gradient-to-r from-success-seafoam/20 to-accent-seafoam/10 p-4 sm:p-5 rounded-lg border border-accent-seafoam/30">
                   <div className="flex items-center">
                     <svg className="w-5 h-5 text-accent-seafoam mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -180,7 +180,7 @@ const Footer = () => {
                       onFocus={() => setInputFocused(true)}
                       onBlur={() => setInputFocused(false)}
                       required
-                      className={`w-full pl-4 pr-10 py-3 bg-white rounded-lg border transition-all duration-300 
+                      className={`w-full pl-4 pr-10 py-2 sm:py-3 bg-white rounded-lg border transition-all duration-300 
                         ${inputFocused ? 'border-primary-sky ring-2 ring-primary-sky/20' : 'border-primary-sky/30'}
                         focus:outline-none focus:border-primary-sky`}
                     />
@@ -192,7 +192,7 @@ const Footer = () => {
                   </div>
                   <button 
                     type="submit" 
-                    className="w-full btn-primary flex justify-center items-center transition-all duration-300 group"
+                    className="w-full btn-primary flex justify-center items-center transition-all duration-300 group py-2 sm:py-3"
                   >
                     <span className="mr-2">Subscribe</span>
                     <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none">
@@ -207,20 +207,20 @@ const Footer = () => {
 
         {/* Lower footer with logo and copyright */}
         <div className="border-t border-primary-blue/10">
-          <div className="container mx-auto px-4 py-6">
-            <div className="flex flex-col md:flex-row justify-between items-center">
-              <div className="flex items-center mb-4 md:mb-0">
+          <div className="container mx-auto px-4 py-4 sm:py-6">
+            <div className="flex flex-col sm:flex-row justify-between items-center">
+              <div className="flex items-center mb-4 sm:mb-0">
                 <div className="relative group">
                   <Image 
                     src="/images/logos/logo-white.svg" 
                     alt="Harbor Technology Consulting" 
-                    width={32} 
-                    height={32} 
+                    width={28} 
+                    height={28} 
                     className="mr-2 transition-transform duration-300 group-hover:scale-110"
                   />
                   <span className="absolute -top-1 -right-1 w-2 h-2 bg-accent-gold rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
                 </div>
-                <span className="text-secondary-navy text-sm">© {currentYear} Harbor Technology Consulting</span>
+                <span className="text-secondary-navy text-xs sm:text-sm">© {currentYear} Harbor Technology Consulting</span>
               </div>
               
               <div className="flex space-x-6">
@@ -303,6 +303,13 @@ const Footer = () => {
         .social-link:hover::after {
           transform: scaleX(1);
           transform-origin: left;
+        }
+        
+        /* Mobile-specific styles */
+        @media (max-width: 640px) {
+          .social-link {
+            padding: 8px;
+          }
         }
       `}</style>
     </footer>

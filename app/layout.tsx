@@ -30,6 +30,7 @@ export const metadata: Metadata = {
   icons: {
     icon: '/images/logos/blackandwhite.jpg',
   },
+  viewport: 'width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes',
 }
 
 export default function RootLayout({
@@ -39,9 +40,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${montserrat.variable} ${jetbrainsMono.variable}`}>
-      <body>
+      <body className="overflow-x-hidden max-w-[100vw]">
         <Header />
-        <main>{children}</main>
+        <main className="min-h-screen">{children}</main>
         <Footer />
       </body>
     </html>

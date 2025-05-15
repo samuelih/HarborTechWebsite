@@ -28,6 +28,23 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
+
+  // Close mobile menu when window is resized to desktop view
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setIsMenuOpen(false);
+      }
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   // Check if a link is active
   const isActive = (path: string) => {
     // Handle nested routes by checking if pathname starts with path
@@ -36,7 +53,7 @@ const Header = () => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 h-16 transition-all duration-300 ease-in-out ${scrolled ? 'glass-nav-scrolled shadow-md' : 'glass-nav'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 h-16 sm:h-20 transition-all duration-300 ease-in-out ${scrolled ? 'glass-nav-scrolled shadow-md' : 'glass-nav'}`}>
       <div className="container mx-auto flex justify-between items-center h-full px-4 md:px-6">
         {/* Logo with animation */}
         <Link href="/" className="flex items-center group">
@@ -44,18 +61,18 @@ const Header = () => {
             <Image 
               src="/images/logos/blackandwhite.svg" 
               alt="Harbor Technology Consulting" 
-              width={40} 
-              height={40}
+              width={36} 
+              height={36}
               className="transition-transform duration-300"
             />
           </div>
-          <span className="text-secondary-navy font-display font-bold text-xl hidden md:inline-block group-hover:text-primary-700 transition-colors duration-300">
-            Harbor Technology Consulting
+          <span className="text-secondary-navy font-display font-bold text-base xs:text-lg md:text-xl hidden xs:inline-block group-hover:text-primary-700 transition-colors duration-300">
+            Harbor Technology
           </span>
         </Link>
 
         {/* Desktop Navigation with enhanced hover effects */}
-        <nav className="hidden md:flex space-x-8 items-center">
+        <nav className="hidden md:flex space-x-4 lg:space-x-8 items-center">
           <Link 
             href="/services" 
             className={`nav-link group ${isActive('/services') ? 'active-nav-link' : ''}`}
@@ -98,12 +115,12 @@ const Header = () => {
           </Link>
           <Link 
             href="/contact" 
-            className="btn-primary flex items-center group transition-all duration-300 hover:translate-y-[-2px] hover:shadow-lg"
+            className="btn-primary flex items-center group transition-all duration-300 hover:translate-y-[-2px] hover:shadow-lg py-2 px-4 lg:py-3 lg:px-6"
           >
             <svg className="w-4 h-4 mr-1.5 text-white transition-transform duration-300 group-hover:rotate-12" viewBox="0 0 800 800" fill="currentColor">
               <path d="M400 150L250 400H400V150ZM400 150L550 400H400V150ZM180 450L180 500H620L620 450L180 450ZM400 500L250 700H550L400 500Z"/>
             </svg>
-            <span className="relative z-10">Book a Harbor Check</span>
+            <span className="relative z-10">Book a Check</span>
           </Link>
         </nav>
 
@@ -123,7 +140,10 @@ const Header = () => {
       </div>
 
       {/* Mobile menu with improved animation */}
-      <div className={`md:hidden bg-white absolute top-16 inset-x-0 shadow-lg z-20 transition-all duration-300 ease-in-out ${isMenuOpen ? 'opacity-100 max-h-[500px]' : 'opacity-0 max-h-0 pointer-events-none'}`}>
+      <div 
+        className={`md:hidden bg-white absolute top-16 inset-x-0 shadow-lg z-20 transition-all duration-300 ease-in-out ${isMenuOpen ? 'opacity-100 max-h-[500px]' : 'opacity-0 max-h-0 pointer-events-none'}`}
+        style={{ overflowY: isMenuOpen ? 'auto' : 'hidden' }}
+      >
         <div className="flex flex-col py-4 px-4 space-y-2">
           <Link 
             href="/services" 
@@ -167,7 +187,7 @@ const Header = () => {
           </Link>
           <Link 
             href="/contact" 
-            className="btn-primary text-center flex items-center justify-center mt-4"
+            className="btn-primary text-center flex items-center justify-center mt-4 py-3"
             onClick={() => setIsMenuOpen(false)}
           >
             <svg className="w-5 h-5 mr-2 text-white" viewBox="0 0 800 800" fill="currentColor">
@@ -187,6 +207,13 @@ const Header = () => {
           color: var(--foreground);
           padding: 0.5rem 0;
           transition: all 0.3s ease;
+          font-size: 0.95rem;
+        }
+        
+        @media (min-width: 1024px) {
+          .nav-link {
+            font-size: 1rem;
+          }
         }
         
         .nav-link span:first-of-type {
@@ -229,6 +256,14 @@ const Header = () => {
           backdrop-filter: blur(12px);
           background-color: rgba(230, 244, 255, 0.9);
           border-bottom: 1px solid rgba(245, 247, 250, 0.5);
+        }
+        
+        /* Mobile-specific styles */
+        @media (max-width: 767px) {
+          .btn-primary, .btn-secondary {
+            padding: 0.5rem 1rem;
+            font-size: 0.95rem;
+          }
         }
       `}</style>
     </header>

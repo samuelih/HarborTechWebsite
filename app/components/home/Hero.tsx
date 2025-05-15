@@ -30,7 +30,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative h-screen flex items-center overflow-hidden bg-gradient-to-b from-primary-navy via-primary-blue to-primary-sky">
+    <section className="relative min-h-[100vh] flex items-center overflow-hidden bg-gradient-to-b from-primary-navy via-primary-blue to-primary-sky">
       {/* Gradient background */}
       <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-primary-navy/95 via-primary-blue/90 to-primary-sky/80"></div>
 
@@ -40,11 +40,11 @@ const Hero = () => {
       {/* Night sky with moon */}
       <div className="absolute inset-0 w-full h-full">
         {/* Moon */}
-        <div className="absolute top-[15%] right-[15%] w-16 h-16 rounded-full bg-neutral-mist/90 shadow-[0_0_15px_5px_rgba(255,255,255,0.4)]" style={{ transform: `translate3d(${mousePosition.x * -10}px, ${mousePosition.y * -10}px, 0)` }}>
+        <div className="absolute top-[15%] right-[15%] w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-neutral-mist/90 shadow-[0_0_15px_5px_rgba(255,255,255,0.4)]" style={{ transform: `translate3d(${mousePosition.x * -10}px, ${mousePosition.y * -10}px, 0)` }}>
           {/* Moon crater details */}
-          <div className="absolute top-[20%] left-[30%] w-3 h-3 rounded-full bg-neutral-mist/40"></div>
-          <div className="absolute top-[50%] left-[60%] w-2 h-2 rounded-full bg-neutral-mist/30"></div>
-          <div className="absolute top-[70%] left-[40%] w-4 h-4 rounded-full bg-neutral-mist/20"></div>
+          <div className="absolute top-[20%] left-[30%] w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-neutral-mist/40"></div>
+          <div className="absolute top-[50%] left-[60%] w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-neutral-mist/30"></div>
+          <div className="absolute top-[70%] left-[40%] w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-neutral-mist/20"></div>
         </div>
       </div>
 
@@ -90,22 +90,22 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 relative z-10">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-black text-white mb-6 leading-tight drop-shadow-lg">
+      <div className="container mx-auto px-4 py-20 md:py-0 relative z-10">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-black text-white mb-4 sm:mb-6 leading-tight drop-shadow-lg">
           <span className="block">Navigate Your Tech Journey.</span>
           <span className="text-neutral-mist">Sail Ahead of Competition.</span>
         </h1>
-        <p className="text-lg md:text-xl text-white opacity-90 mb-10 drop-shadow-md max-w-2xl">
+        <p className="text-base sm:text-lg md:text-xl text-white opacity-90 mb-6 sm:mb-10 drop-shadow-md max-w-2xl">
           Fixed-cost technology solutions designed to propel your business forward with the 
           stability and reliability of a well-crafted vessel.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4">
+        <div className="flex flex-col xs:flex-row gap-3 sm:gap-4">
           <Link 
             href="/contact" 
-            className="btn-primary relative overflow-hidden group"
+            className="btn-primary relative overflow-hidden group text-center py-2.5 sm:py-3"
           >
-            <span className="relative z-10 flex items-center">
-              <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
+            <span className="relative z-10 flex items-center justify-center">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
               </svg>
               Chart Your Course
@@ -114,9 +114,9 @@ const Hero = () => {
           </Link>
           <Link 
             href="#packages" 
-            className="btn-secondary bg-white/20 border-white text-white hover:bg-white/30 flex items-center justify-center"
+            className="btn-secondary bg-white/20 border-white text-white hover:bg-white/30 flex items-center justify-center text-center py-2.5 sm:py-3"
           >
-            <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
+            <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z" />
             </svg>
             View Fleet Options
@@ -161,6 +161,13 @@ const Hero = () => {
         @keyframes waveMove {
           0%   { transform: translateX(0); }
           100% { transform: translateX(-1440px); }
+        }
+        
+        /* Mobile adjustments */
+        @media (max-width: 640px) {
+          .harbor-waves {
+            height: 200px;
+          }
         }
       `}</style>
     </section>

@@ -10,8 +10,18 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: {
+        DEFAULT: "1rem",
+        sm: "1.5rem",
+        md: "2rem",
+        lg: "2.5rem"
+      },
       screens: {
+        xs: "100%",
+        sm: "640px",
+        md: "768px", 
+        lg: "1024px",
+        xl: "1280px",
         "2xl": "1400px",
       },
     },
@@ -107,6 +117,14 @@ module.exports = {
       },
       backdropFilter: {
         'glass': 'blur(12px)',
+      },
+      screens: {
+        'xs': '400px',
+      },
+      spacing: {
+        'mobile-section': '3rem',
+        'tablet-section': '4rem',
+        'desktop-section': '5rem',
       },
     },
   },

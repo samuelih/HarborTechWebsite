@@ -45,61 +45,86 @@
     line-height: 1.6;
   }
   h1 {
-    @apply font-display font-bold tracking-wide text-primary-navy text-4xl md:text-5xl lg:text-6xl;
+    @apply font-display font-bold tracking-wide text-primary-navy text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
     letter-spacing: -0.02em;
     line-height: 1.2;
   }
   h2 {
-    @apply font-display font-bold tracking-wide text-primary-navy text-3xl md:text-4xl;
+    @apply font-display font-bold tracking-wide text-primary-navy text-2xl sm:text-3xl md:text-4xl;
     letter-spacing: -0.02em;
     line-height: 1.3;
   }
   h3 {
-    @apply font-display font-bold tracking-wide text-primary-navy text-2xl md:text-3xl;
+    @apply font-display font-bold tracking-wide text-primary-navy text-xl sm:text-2xl md:text-3xl;
     letter-spacing: -0.02em;
     line-height: 1.4;
   }
   p {
-    @apply font-sans text-primary-navy text-lg;
+    @apply font-sans text-primary-navy text-base sm:text-lg;
     line-height: 1.7;
   }
-  .text-sm {
-    @apply text-base;
+  
+  /* Responsive text sizes */
+  @media (max-width: 640px) {
+    .text-sm {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+    }
+    .text-base {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+    .text-lg {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+    }
+    .text-xl {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
   }
-  .text-base {
-    @apply text-lg;
-  }
-  .text-lg {
-    @apply text-xl;
-  }
-  .text-xl {
-    @apply text-2xl;
+  
+  @media (min-width: 641px) {
+    .text-sm {
+      @apply text-base;
+    }
+    .text-base {
+      @apply text-lg;
+    }
+    .text-lg {
+      @apply text-xl;
+    }
+    .text-xl {
+      @apply text-2xl;
+    }
   }
 }
 
 /* Custom utility classes */
 @layer components {
   .btn-primary {
-    @apply bg-gradient-to-r from-primary-navy to-primary-blue text-white font-semibold py-3 px-6 rounded-lg 
+    @apply bg-gradient-to-r from-primary-navy to-primary-blue text-white font-semibold 
+           py-2.5 px-4 sm:py-3 sm:px-6 rounded-lg 
            hover:translate-y-[-2px] hover:shadow-md transition-all duration-300
            focus:outline-none focus:ring-2 focus:ring-primary-blue focus:ring-offset-2
-           text-lg;
+           text-sm sm:text-base;
   }
 
   .btn-secondary {
-    @apply border-2 border-primary-blue text-primary-navy font-semibold py-3 px-6 rounded-lg 
+    @apply border-2 border-primary-blue text-primary-navy font-semibold 
+           py-2.5 px-4 sm:py-3 sm:px-6 rounded-lg
            hover:bg-neutral-gull transition-all duration-300
            focus:outline-none focus:ring-2 focus:ring-primary-blue focus:ring-offset-2
-           text-lg;
+           text-sm sm:text-base;
   }
 
   .card {
-    @apply bg-neutral-mist rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 
+    @apply bg-neutral-mist rounded-2xl p-4 sm:p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-300 
            hover:translate-y-[-4px] border border-neutral-gull;
   }
 
   .section-heading {
-    @apply uppercase tracking-wider font-bold text-primary-navy flex items-center text-xl;
+    @apply uppercase tracking-wider font-bold text-primary-navy flex items-center text-lg sm:text-xl;
   }
 
   .glass-nav {
@@ -112,17 +137,17 @@
   
   /* Trust indicators */
   .trust-badge {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-base font-medium
+    @apply inline-flex items-center px-2 py-1 sm:px-3 sm:py-1 rounded-full text-sm sm:text-base font-medium
            bg-neutral-mist text-primary-navy border border-primary-blue;
   }
   
   .trust-badge svg {
-    @apply w-5 h-5 mr-1.5;
+    @apply w-4 h-4 sm:w-5 sm:h-5 mr-1.5;
   }
   
   /* Enhanced ocean wave animation for the homepage */
   .ocean {
-    @apply h-56 w-full absolute overflow-hidden;
+    @apply h-32 sm:h-56 w-full absolute overflow-hidden;
     transform: translateZ(0);
     will-change: transform;
     backface-visibility: hidden;
@@ -156,7 +181,7 @@
   }
   
   .wave {
-    @apply bg-center bg-repeat-x absolute w-[200%] h-56;
+    @apply bg-center bg-repeat-x absolute w-[200%] h-32 sm:h-56;
     background-image: url('/images/backgrounds/wave-divider.svg');
     background-size: 50% 100%;
     bottom: 0;
@@ -169,27 +194,28 @@
   /* Different wave classes for more varied appearance */
   .wave-primary {
     opacity: 0.95;
-    height: 56px;
+    height: 36px;
+    @apply h-[36px] sm:h-[56px];
     animation-duration: calc(var(--wave-animation-duration) * 0.7);
     filter: drop-shadow(0 -1px 2px rgba(255, 255, 255, 0.1));
   }
   
   .wave-secondary {
-    height: 48px;
+    @apply h-[32px] sm:h-[48px];
     animation-duration: calc(var(--wave-animation-duration) * 1.1);
     transform: scaleX(1.1);
     filter: drop-shadow(0 -1px 2px rgba(255, 255, 255, 0.08));
   }
   
   .wave-tertiary {
-    height: 42px;
+    @apply h-[28px] sm:h-[42px];
     animation-duration: calc(var(--wave-animation-duration) * 0.9);
     transform: scaleX(0.9);
     filter: drop-shadow(0 -1px 2px rgba(255, 255, 255, 0.06));
   }
   
   .wave-quaternary {
-    height: 36px;
+    @apply h-[24px] sm:h-[36px];
     animation-duration: calc(var(--wave-animation-duration) * 1.3);
     transform: scaleX(1.2);
     filter: drop-shadow(0 -1px 2px rgba(255, 255, 255, 0.04));
@@ -209,7 +235,7 @@
   
   /* Sea foam bubbles container */
   .sea-foam-container {
-    @apply absolute w-full h-40 bottom-0 left-0 pointer-events-none overflow-hidden;
+    @apply absolute w-full h-24 sm:h-40 bottom-0 left-0 pointer-events-none overflow-hidden;
   }
   
   .sea-foam-bubble {
@@ -219,6 +245,58 @@
     animation: bubble-rise 3s ease-in-out infinite;
     filter: blur(1px);
     box-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+  }
+  
+  /* Container padding for consistent mobile spacing */
+  .container-padding {
+    @apply px-4 sm:px-6 md:px-8;
+  }
+  
+  /* Section padding for consistent mobile spacing */
+  .section-padding {
+    @apply py-12 sm:py-16 md:py-20 lg:py-24;
+  }
+  
+  /* Consistent spacing for mobile */
+  .mobile-y-spacing {
+    @apply my-6 sm:my-8 md:my-10 lg:my-12;
+  }
+  
+  .mobile-y-spacing-sm {
+    @apply my-3 sm:my-4 md:my-5 lg:my-6;
+  }
+
+  /* Text contrast utilities */
+  .text-on-dark {
+    @apply text-white font-medium;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.7);
+  }
+  
+  .text-backdrop {
+    @apply bg-black/40 backdrop-blur-sm py-3 px-4 rounded-lg;
+  }
+
+  .mission-statement {
+    @apply bg-black/50 backdrop-blur-sm rounded-lg p-4 sm:p-6 text-white shadow-lg;
+  }
+  
+  .mission-quote {
+    @apply bg-primary-navy/90 backdrop-blur-sm rounded-lg p-4 sm:p-6 shadow-md;
+  }
+
+  /* Responsive grid for cards and team members */
+  .responsive-grid {
+    @apply grid gap-6 sm:gap-8;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  }
+
+  /* Additional responsive utilities */
+  .mobile-center {
+    @apply text-center sm:text-left;
+  }
+
+  .mobile-full-width {
+    @apply w-full sm:w-auto;
   }
 }
 
