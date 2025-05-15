@@ -78,27 +78,10 @@ const AboutSection = () => {
       </div>
 
       {/* LEFT: Logo + Mission */}
-      <div className="flex flex-col gap-8 md:items-center justify-center w-full md:w-1/2 z-20 px-8" style={{ marginLeft: '390px' }}>
+      <div className="flex flex-col gap-8 md:items-center justify-center w-full md:w-1/2 z-20 px-8">
         <div className="flex flex-col md:flex-row w-full max-w-4xl relative gap-6 items-center">
           <div 
-            className={`relative h-[400px] w-[400px] mb-6 md:mb-0 flex-shrink-0 ${isVisible ? 'animate-fade-up' : 'opacity-0'}`}
-            style={{
-              filter: isBeamActive ? 'drop-shadow(0 0 15px rgba(240, 178, 84, 0.8))' : 'none',
-              transition: 'filter 0.7s ease-in-out'
-            }}
-          >
-            <Image 
-              src="/images/logos/semicolor.svg" 
-              alt="Harbor Technology Consulting Logo" 
-              fill
-              sizes="400px"
-              className="object-contain object-center filter brightness-0 invert"
-              loading="lazy"
-            />
-          </div>
-          
-          <div 
-            className={`relative bg-opacity-80 backdrop-blur-sm p-8 rounded-lg shadow-lg w-full md:flex-1 ${isVisible ? 'animate-fade-up' : 'opacity-0'} transition-all duration-700`} 
+            className={`relative bg-opacity-80 backdrop-blur-sm p-8 rounded-lg shadow-lg w-full ${isVisible ? 'animate-fade-up' : 'opacity-0'} transition-all duration-700`} 
             style={{ 
               animationDelay: '0.2s',
               background: isBeamActive ? 'rgba(14, 42, 71, 0.75)' : 'rgba(10, 32, 53, 0.8)',
@@ -127,7 +110,7 @@ const AboutSection = () => {
           
           {/* Light cone illumination effect on the text */}
           <div 
-            className={`absolute -right-[400px] top-1/2 w-[500px] h-[600px] transition-opacity duration-700 ${isBeamActive ? 'opacity-30' : 'opacity-0'}`} 
+            className={`absolute -right-[200px] top-1/2 w-[500px] h-[600px] transition-opacity duration-700 ${isBeamActive ? 'opacity-30' : 'opacity-0'}`} 
             style={{
               background: 'conic-gradient(from -30deg at 0% 50%, rgba(240, 178, 84, 0.8) 0deg, transparent 40deg)',
               filter: 'blur(30px)',
@@ -152,7 +135,7 @@ const AboutSection = () => {
               width: "0",
               height: "100px",
               borderTop: "180px solid transparent",
-              borderLeft: "600px solid rgba(240, 178, 84, 0.6)",
+              borderLeft: "500px solid rgba(240, 178, 84, 0.6)",
               borderBottom: "180px solid transparent",
               filter: isBeamActive ? 'blur(15px) drop-shadow(0 0 40px rgba(240, 178, 84, 0.9))' : 'none',
               transform: "rotate(-10deg)",
@@ -170,7 +153,7 @@ const AboutSection = () => {
               width: "0",
               height: "100px",
               borderTop: "220px solid transparent",
-              borderLeft: "700px solid rgba(240, 178, 84, 0.3)",
+              borderLeft: "600px solid rgba(240, 178, 84, 0.3)",
               borderBottom: "220px solid transparent",
               filter: isBeamActive ? 'blur(20px)' : 'none',
               transform: "rotate(-10deg)",

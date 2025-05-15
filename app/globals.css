@@ -23,6 +23,10 @@
     --beach-sand: 47 67% 90%; /* Parchment Sand */
     --sunset-orange: 36 83% 63%; /* Golden Port-Light */
     --nautical-rope: 36 83% 63%; /* Golden Port-Light */
+
+    /* Enhanced contrast colors */
+    --text-on-light: 212 72% 25%; /* Darker version of primary navy for better contrast on light backgrounds */
+    --text-on-white: 212 72% 27%; /* For text on white background */
   }
  
   .dark {
@@ -31,6 +35,9 @@
     --border: 212 68% 25%;
     --input: 212 68% 25%;
     --ring: 210 62% 33%; /* Primary Blue */
+    
+    /* Enhanced contrast for dark mode */
+    --text-on-dark: 210 30% 95%;
   }
 }
 
@@ -39,7 +46,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-neutral-mist text-primary-navy;
+    @apply bg-neutral-mist text-[#22548c];  /* Darker text for better contrast */
     font-feature-settings: "rlig" 1, "calt" 1;
     letter-spacing: -0.011em;
     line-height: 1.6;
@@ -60,8 +67,13 @@
     line-height: 1.4;
   }
   p {
-    @apply font-sans text-primary-navy text-base sm:text-lg;
+    @apply font-sans text-[#22548c] text-base sm:text-lg;  /* Darker text for better contrast */
     line-height: 1.7;
+  }
+  
+  /* Improved focus styles for accessibility */
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+    @apply outline-none ring-2 ring-primary-blue ring-offset-2;
   }
   
   /* Responsive text sizes */

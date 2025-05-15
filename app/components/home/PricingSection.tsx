@@ -149,9 +149,9 @@ const PricingSection = () => {
           <SectionHeading 
             title="Choose Your Perfect Package" 
             centered 
-            className="mb-4 text-primary-navy drop-shadow-sm"
+            className="mb-4 text-white drop-shadow-sm"
           />
-          <p className="text-center max-w-2xl mx-auto mb-6 text-primary-navy/90 drop-shadow-sm">
+          <p className="text-center max-w-2xl mx-auto mb-6 text-white drop-shadow-sm">
           Transparent, fixed-cost technology packages to fit any retail operation size.
         </p>
         

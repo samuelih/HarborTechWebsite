@@ -85,7 +85,7 @@ const PricingCard = ({ title, subtitle, price, isPopular = false, features, icon
             className="relative inline-block transition-transform duration-300"
             style={{ transform: isHovered ? 'scale(1.05)' : 'scale(1)' }}
           >
-            <div className="text-4xl font-display font-black bg-gradient-to-r from-primary-navy to-primary-700 bg-clip-text text-transparent">
+            <div className="text-4xl font-display font-black text-primary-navy">
               {price}
               <span className="text-base font-normal text-secondary-navy/70 ml-1">flat fee</span>
             </div>

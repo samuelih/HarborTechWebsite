@@ -48,8 +48,8 @@ const ServicesSection = () => {
       icon: 'pos',
       nauticalIcon: '/images/user/lighthouse.svg',
       title: 'Smart POS',
-      description: 'Modern cloud POS that syncs inventory instantly',
-      features: ['Auto inventory sync', 'Daily dashboards'],
+      description: 'Cloud POS with real-time inventory and sales tracking',
+      features: ['Automatic sales reports at close', 'Invoice from anywhere'],
       link: '/services/pos',
       color: 'bg-primary-blue'
     },
@@ -57,17 +57,17 @@ const ServicesSection = () => {
       icon: 'cloud',
       nauticalIcon: '/images/user/bird.svg',
       title: 'Cloud Storage',
-      description: 'Secure, searchable document vault',
-      features: ['Encrypted storage', 'Ransomware backup'],
+      description: 'Secure, searchable document system for receipts & invoices',
+      features: ['One-click document retrieval', 'Daily auto-backup'],
       link: '/services/cloud',
       color: 'bg-primary-sky'
     },
     {
       icon: 'data',
       nauticalIcon: '/images/user/knot.svg',
-      title: 'Data Platform',
-      description: 'Unified dashboard for all your data',
-      features: ['KPI email digest', 'Data workshop'],
+      title: 'Data Dashboard',
+      description: 'One simple screen showing today\'s sales, inventory, and cash flow',
+      features: ['Morning email with yesterday\'s totals', 'Weekly trend reports'],
       link: '/services/data',
       color: 'bg-primary-navy'
     },
@@ -75,8 +75,8 @@ const ServicesSection = () => {
       icon: 'training',
       nauticalIcon: '/images/user/sailboat.svg',
       title: 'Tech Training',
-      description: 'Hands-on workshops for your team',
-      features: ['90-min comfort class', 'Device refresh'],
+      description: 'We tune up and clean your computers so they run like new',
+      features: ['90-min staff comfort class', 'We wipe and tune up to 5 devices'],
       link: '/services/devices',
       color: 'bg-accent-seafoam'
     }

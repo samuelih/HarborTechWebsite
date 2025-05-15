@@ -58,6 +58,7 @@ const Hero = () => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           className="harbor-waves"
+          aria-hidden="true"
         >
           <defs>
             {/* Using new color scheme */}
@@ -105,7 +106,7 @@ const Hero = () => {
             className="btn-primary relative overflow-hidden group text-center py-2.5 sm:py-3"
           >
             <span className="relative z-10 flex items-center justify-center">
-              <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
               </svg>
               Chart Your Course
@@ -116,7 +117,7 @@ const Hero = () => {
             href="#packages" 
             className="btn-secondary bg-white/20 border-white text-white hover:bg-white/30 flex items-center justify-center text-center py-2.5 sm:py-3"
           >
-            <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
+            <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z" />
             </svg>
             View Fleet Options
@@ -153,20 +154,23 @@ const Hero = () => {
           opacity: 0.5;
         }
 
-        /* Wave animation styles */
-        .harbor-waves .layer1 { animation: waveMove 10s linear infinite; }
-        .harbor-waves .layer2 { animation: waveMove 15s linear infinite; }
-        .harbor-waves .layer3 { animation: waveMove 20s linear infinite; }
-
-        @keyframes waveMove {
-          0%   { transform: translateX(0); }
-          100% { transform: translateX(-1440px); }
+        /* Wave animation styles - optimized for performance */
+        @media (prefers-reduced-motion: no-preference) {
+          .harbor-waves .layer1 { animation: waveMove 10s linear infinite; }
+          .harbor-waves .layer2 { animation: waveMove 15s linear infinite; }
+          .harbor-waves .layer3 { animation: waveMove 20s linear infinite; }
+          
+          @keyframes waveMove {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-1440px); }
+          }
         }
         
         /* Mobile adjustments */
         @media (max-width: 640px) {
           .harbor-waves {
             height: 200px;
+            will-change: transform;
           }
         }
       `}</style>

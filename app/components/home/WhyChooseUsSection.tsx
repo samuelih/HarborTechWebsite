@@ -43,30 +43,23 @@ const WhyChooseUsSection = () => {
     {
       icon: '/images/user/lighthouse.svg',
       title: 'No Surprises',
-      description: 'One flat fee, no hidden costs',
+      description: 'One flat monthly fee, no hidden costs, no hourly charges, ever',
       color: 'from-accent-seafoam to-accent-seafoam/80',
       iconBg: 'bg-accent-seafoam/30'
     },
     {
       icon: '/images/user/anchor.svg',
       title: 'Local Experts',
-      description: 'Harbor Springs born & raised',
+      description: 'Harbor Springs born & raised, we understand seasonal businesses',
       color: 'from-primary-blue to-primary-blue/80',
       iconBg: 'bg-primary-blue/30'
     },
     {
       icon: '/images/user/sailboat.svg',
-      title: 'Try Before You Buy',
-      description: '30-day free trial',
+      title: 'No Risk Trial',
+      description: '30-day free trial with full refund guarantee if not satisfied',
       color: 'from-primary-navy to-primary-navy/80',
       iconBg: 'bg-primary-navy/30'
-    },
-    {
-      icon: '/images/user/wheel.svg',
-      title: 'Your Data, Your Way',
-      description: 'No lock-in, full transparency',
-      color: 'from-accent-gold to-accent-gold/80',
-      iconBg: 'bg-accent-gold/30'
     }
   ];
 
@@ -121,6 +114,7 @@ const WhyChooseUsSection = () => {
           xmlns="http://www.w3.org/2000/svg" 
           viewBox="0 0 1440 48" 
           preserveAspectRatio="none"
+          aria-hidden="true"
         >
           <path 
             fill="#0E2A47" 
@@ -142,7 +136,7 @@ const WhyChooseUsSection = () => {
           }}
         />
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {benefits.map((benefit, index) => (
             <div 
               key={index} 
