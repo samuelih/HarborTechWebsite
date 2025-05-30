@@ -95,7 +95,7 @@ const WhyChooseUsSection = () => {
             }}
           >
             <div className="animate-gentle-float" style={{ animationDelay: `${i * 1.5}s`, animationDuration: `${6 + i * 2}s` }}>
-              <Image src="/images/user/bird.svg" alt="" width={28} height={28} />
+              <Image src="/images/user/bird.svg" alt="Decorative seagull" width={28} height={28} />
             </div>
         </div>
         ))}

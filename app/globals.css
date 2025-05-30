@@ -27,6 +27,16 @@
     /* Enhanced contrast colors */
     --text-on-light: 212 72% 25%; /* Darker version of primary navy for better contrast on light backgrounds */
     --text-on-white: 212 72% 27%; /* For text on white background */
+
+    /* Primary Colors */
+    --primary-navy: #0E2A47;     /* Brand primary - deep navy blue */
+    --primary-blue: #1E5086;     /* Brand secondary - medium blue */
+    --primary-sky: #CDE5FF;      /* Light sky blue - Updated for WCAG AA compliance */
+    
+    /* Accent Colors */
+    --accent-gold: #F0B254;      /* Warm gold for CTAs and highlights */
+    --accent-sand: #F8EFD4;      /* Soft sand color for backgrounds */
+    --accent-seafoam: #B8E2DC;   /* Light seafoam green for accents */
   }
  
   .dark {

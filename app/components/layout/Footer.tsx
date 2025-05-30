@@ -55,18 +55,6 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/team" className="text-[#22548c] hover:text-primary-700 transition-colors flex items-center group/link">
-                    <span className="w-1.5 h-1.5 rounded-full bg-accent-gold mr-2 transition-all duration-300 group-hover/link:w-2.5"></span>
-                    Our Team
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/careers" className="text-[#22548c] hover:text-primary-700 transition-colors flex items-center group/link">
-                    <span className="w-1.5 h-1.5 rounded-full bg-accent-gold mr-2 transition-all duration-300 group-hover/link:w-2.5"></span>
-                    Careers
-                  </Link>
-                </li>
-                <li>
                   <Link href="/contact" className="text-[#22548c] hover:text-primary-700 transition-colors flex items-center group/link">
                     <span className="w-1.5 h-1.5 rounded-full bg-accent-gold mr-2 transition-all duration-300 group-hover/link:w-2.5"></span>
                     Contact
@@ -75,35 +63,29 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Solutions Links */}
+            {/* Services Links */}
             <div className="group">
               <h3 className="font-display font-bold text-lg sm:text-xl mb-4 sm:mb-5 text-[#22548c] relative inline-block">
-                Solutions
+                Services
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-sky transition-all duration-300 group-hover:w-full"></span>
               </h3>
               <ul className="space-y-2 sm:space-y-3">
                 <li>
-                  <Link href="/solutions/retail-pos" className="text-[#22548c] hover:text-primary-700 transition-colors flex items-center group/link">
+                  <Link href="/services" className="text-[#22548c] hover:text-primary-700 transition-colors flex items-center group/link">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary-sky mr-2 transition-all duration-300 group-hover/link:w-2.5"></span>
-                    All-in-One POS
+                    All Services
                   </Link>
                 </li>
                 <li>
-                  <Link href="/solutions/cloud-migration" className="text-[#22548c] hover:text-primary-700 transition-colors flex items-center group/link">
+                  <Link href="/pricing" className="text-[#22548c] hover:text-primary-700 transition-colors flex items-center group/link">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary-sky mr-2 transition-all duration-300 group-hover/link:w-2.5"></span>
-                    Cloud Migration
+                    Pricing
                   </Link>
                 </li>
                 <li>
-                  <Link href="/solutions/staff-training" className="text-[#22548c] hover:text-primary-700 transition-colors flex items-center group/link">
+                  <Link href="/support" className="text-[#22548c] hover:text-primary-700 transition-colors flex items-center group/link">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary-sky mr-2 transition-all duration-300 group-hover/link:w-2.5"></span>
-                    Staff Upskilling
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/solutions/custom" className="text-[#22548c] hover:text-primary-700 transition-colors flex items-center group/link">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary-sky mr-2 transition-all duration-300 group-hover/link:w-2.5"></span>
-                    Custom Solutions
+                    Support Plans
                   </Link>
                 </li>
               </ul>
@@ -112,32 +94,26 @@ const Footer = () => {
             {/* Resources Links */}
             <div className="group">
               <h3 className="font-display font-bold text-lg sm:text-xl mb-4 sm:mb-5 text-[#22548c] relative inline-block">
-                Resources
+                Get Started
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-seafoam transition-all duration-300 group-hover:w-full"></span>
               </h3>
               <ul className="space-y-2 sm:space-y-3">
                 <li>
-                  <Link href="/resources/blog" className="text-[#22548c] hover:text-primary-700 transition-colors flex items-center group/link">
+                  <Link href="/contact" className="text-[#22548c] hover:text-primary-700 transition-colors flex items-center group/link">
                     <span className="w-1.5 h-1.5 rounded-full bg-accent-seafoam mr-2 transition-all duration-300 group-hover/link:w-2.5"></span>
-                    Blog
+                    Book Harbor Check
                   </Link>
                 </li>
                 <li>
-                  <Link href="/resources/case-studies" className="text-[#22548c] hover:text-primary-700 transition-colors flex items-center group/link">
+                  <Link href="/pricing" className="text-[#22548c] hover:text-primary-700 transition-colors flex items-center group/link">
                     <span className="w-1.5 h-1.5 rounded-full bg-accent-seafoam mr-2 transition-all duration-300 group-hover/link:w-2.5"></span>
-                    Case Studies
+                    View Pricing
                   </Link>
                 </li>
                 <li>
-                  <Link href="/resources/guides" className="text-[#22548c] hover:text-primary-700 transition-colors flex items-center group/link">
+                  <Link href="/support" className="text-[#22548c] hover:text-primary-700 transition-colors flex items-center group/link">
                     <span className="w-1.5 h-1.5 rounded-full bg-accent-seafoam mr-2 transition-all duration-300 group-hover/link:w-2.5"></span>
-                    Tech Guides
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/resources/faq" className="text-[#22548c] hover:text-primary-700 transition-colors flex items-center group/link">
-                    <span className="w-1.5 h-1.5 rounded-full bg-accent-seafoam mr-2 transition-all duration-300 group-hover/link:w-2.5"></span>
-                    FAQ
+                    Knowledge Base
                   </Link>
                 </li>
               </ul>

@@ -111,15 +111,15 @@ const Header = () => {
             <span className="nav-indicator"></span>
           </Link>
           <Link 
-            href="/solutions" 
-            className={`nav-link group ${isActive('/solutions') ? 'active-nav-link' : ''}`}
+            href="/pricing" 
+            className={`nav-link group ${isActive('/pricing') ? 'active-nav-link' : ''}`}
           >
             <Globe 
               className="w-4 h-4 mr-1.5 text-nautical-deepBlue group-hover:text-primary-700 transition-all duration-300 group-hover:scale-110" 
               strokeWidth={2} 
               aria-hidden="true" 
             />
-            <span>Solutions</span>
+            <span>Pricing</span>
             <span className="nav-indicator"></span>
           </Link>
           <Link 
@@ -155,7 +155,7 @@ const Header = () => {
               strokeWidth={2.5}
               aria-hidden="true" 
             />
-            <span className="relative z-10">Book a Check</span>
+            <span className="relative z-10">Get My Fixed-Cost Quote</span>
           </Link>
         </nav>
 
@@ -197,8 +197,8 @@ const Header = () => {
             Services
           </Link>
           <Link 
-            href="/solutions" 
-            className={`text-[#22548c] hover:text-primary-700 transition-colors p-3 flex items-center rounded-lg ${isActive('/solutions') ? 'bg-primary-100' : 'hover:bg-neutral-gull/50'}`}
+            href="/pricing" 
+            className={`text-[#22548c] hover:text-primary-700 transition-colors p-3 flex items-center rounded-lg ${isActive('/pricing') ? 'bg-primary-100' : 'hover:bg-neutral-gull/50'}`}
             onClick={() => setIsMenuOpen(false)}
           >
             <Globe 
@@ -206,7 +206,7 @@ const Header = () => {
               strokeWidth={2} 
               aria-hidden="true" 
             />
-            Solutions
+            Pricing
           </Link>
           <Link 
             href="/support" 
@@ -242,7 +242,7 @@ const Header = () => {
               strokeWidth={2.5}
               aria-hidden="true" 
             />
-            Book a Harbor Check
+            Get My Fixed-Cost Quote
           </Link>
         </div>
       </div>

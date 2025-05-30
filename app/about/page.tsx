@@ -70,7 +70,7 @@ const AboutPage = () => {
               <div className="inline-block bg-accent-sand px-4 py-2 rounded-lg text-primary-navy font-medium mb-6">Our North Star</div>
               <h2 className="font-display text-2xl sm:text-3xl font-bold mb-6">Guiding Harbor Springs Retailers Through Digital Waters</h2>
               <p className="text-lg mb-6">
-                Like a lighthouse guiding ships safely to shore, Harbor Tech illuminates the path to digital transformation for local businesses. Our mission is to make modern technology accessible, affordable, and advantageous for the unique retail community of Harbor Springs.
+                Like a lighthouse guiding ships safely to shore, Harbor Tech illuminates the path to modern technology for local businesses. Our mission is to make modern technology accessible, affordable, and advantageous for the unique retail community of Harbor Springs.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                 <div className="flex items-start">
@@ -133,7 +133,7 @@ const AboutPage = () => {
                 </div>
               </div>
               <div className="p-4 sm:p-6 flex-grow">
-                <p className="mb-4">Former Silicon Valley engineer who returned to his Harbor Springs roots to help local businesses navigate digital transformation.</p>
+                <p className="text-primary-navy mb-4">Former marketing director with deep retail roots to help local businesses navigate technology upgrades.</p>
                 <div className="flex flex-wrap gap-2">
                   <span className="bg-nautical-azure/20 text-nautical-deepBlue text-sm py-1 px-3 rounded-full">Cloud Architecture</span>
                   <span className="bg-nautical-azure/20 text-nautical-deepBlue text-sm py-1 px-3 rounded-full">Retail POS</span>

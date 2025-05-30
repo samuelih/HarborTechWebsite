@@ -256,7 +256,7 @@ const CTASection = () => {
           </h2>
           
           <p className="text-white/90 text-lg md:text-xl mb-10 max-w-2xl mx-auto drop-shadow-md">
-            Get your free Harbor Check consultation and discover your fixed-cost upgrade path.
+            Choose only what you need. Pay once. Get results that last.
           </p>
           
           <div
@@ -288,7 +288,7 @@ const CTASection = () => {
             >
               <path d="M12,2L4.5,20.29l0.71,0.71L12,18l6.79,3 0.71-0.71L12,2z" />
             </svg>
-            Book Your Free Harbor Check
+            Get My Fixed-Cost Quote
           </Button>
           </div>
           

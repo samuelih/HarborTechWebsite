@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import PricingCard from '../cards/PricingCard';
 import SectionHeading from '../common/SectionHeading';
 import Container from '../common/Container';
 import { useState, useEffect, useRef } from 'react';
@@ -31,46 +30,14 @@ const PricingSection = () => {
     };
   }, []);
 
-  const packages = [
-    {
-      icon: '/images/user/sailboat.svg',
-      title: 'Starter "Skiff"',
-      subtitle: 'Perfect for one-register shops & galleries',
-      price: '$4,800',
-      features: [
-        'POS install (1 register)',
-        'Basic inventory sync',
-        'Cloud doc vault (10 GB)',
-        '2-hr training'
-      ]
-    },
-    {
-      icon: '/images/user/lighthouse.svg',
-      title: 'Voyager "Cutter"',
-      subtitle: 'Growing boutiques with online + in-store stock',
-      price: '$9,800',
-      isPopular: true,
-      features: [
-        'Everything in Skiff, plus',
-        'POS for 3 registers',
-        'Advanced analytics',
-        'Device refresh (up to 5 PCs/tablets)',
-        '1-day staff workshop'
-      ]
-    },
-    {
-      icon: '/images/user/wheel.svg',
-      title: 'Flagship "Clipper"',
-      subtitle: 'Multi-location or high-volume retailers',
-      price: '$18,500',
-      features: [
-        'Everything in Cutter, plus',
-        'POS unlimited',
-        'Custom AI chatbot for customer FAQs',
-        'Central data warehouse',
-        'Dedicated success manager'
-      ]
-    }
+  const features = [
+    { name: 'Smart POS Install', price: '$1,950' },
+    { name: 'Online Store + Inventory Sync', price: '$2,450' },
+    { name: 'Secure Wi-Fi Mesh', price: '$900' },
+    { name: 'Cloud Backup & Doc Vault', price: '$650' },
+    { name: 'AI Chatbot for Customer FAQs', price: '$1,850' },
+    { name: 'Data Dashboard', price: '$1,200' },
+    { name: 'Device Tune-up & Staff Training', price: '$600' }
   ];
 
   return (
@@ -120,7 +87,7 @@ const PricingSection = () => {
         <div className="absolute top-20 right-10 opacity-20">
           <Image
             src="/images/user/anchor.svg"
-            alt=""
+            alt="Nautical anchor decoration"
             width={80}
             height={80}
             className="rotate-12"
@@ -129,7 +96,7 @@ const PricingSection = () => {
         <div className="absolute bottom-20 left-10 opacity-20">
           <Image
             src="/images/user/wheel.svg"
-            alt=""
+            alt="Ship wheel decoration"
             width={60}
             height={60}
             className="-rotate-12"
@@ -146,13 +113,13 @@ const PricingSection = () => {
           }}
         >
           <SectionHeading 
-            title="Choose Your Perfect Package" 
+            title="Build Your Own Upgrade" 
             centered 
             className="mb-4 text-white drop-shadow-sm"
           />
           <p className="text-center max-w-2xl mx-auto mb-6 text-white drop-shadow-sm">
-          Transparent, fixed-cost technology packages to fit any retail operation size.
-        </p>
+            Mix and match only the features you need. Pay one clean price per feature. Never owe ongoing fees unless you later want support.
+          </p>
         
           {/* Trust badges above pricing cards */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -172,41 +139,53 @@ const PricingSection = () => {
               <svg className="w-4 h-4 text-primary-blue mr-2" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M13,9H11V7H13V9M13,17H11V11H13V17M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
               </svg>
-              <span className="text-sm text-primary-navy font-medium">Transparent pricing</span>
+              <span className="text-sm text-primary-navy font-medium">Fixed-cost pricing</span>
             </div>
           </div>
         </div>
         
         <div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 relative z-10 mb-12"
+          className="max-w-4xl mx-auto relative z-10 mb-12"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(40px)',
             transition: 'opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s'
           }}
         >
-          {packages.map((pkg, index) => (
-            <div 
-              key={index} 
-              className="relative"
-              style={{
-                transform: pkg.isPopular ? 'translateY(-10px)' : 'translateY(0)'
-              }}
-            >
-              {/* Add a glow effect behind the cards for better visibility */}
-              <div className="absolute inset-0 rounded-xl bg-white/30 blur-xl -m-2"></div>
-              <div className="relative">
-                <PricingCard
-                  title={pkg.title}
-                  subtitle={pkg.subtitle}
-                  price={pkg.price}
-                  isPopular={pkg.isPopular}
-                  features={pkg.features}
-                  icon={pkg.icon}
-                />
-              </div>
+          {/* Add a glow effect behind the pricing table */}
+          <div className="absolute inset-0 rounded-xl bg-white/30 blur-xl -m-2"></div>
+          <div className="relative bg-white/90 backdrop-blur-sm rounded-xl p-8 border border-white/70 shadow-lg">
+            <h3 className="text-2xl font-display font-bold text-center mb-6 text-primary-navy">
+              Feature Menu & Fixed Prices
+            </h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {features.map((feature, index) => (
+                <div 
+                  key={index}
+                  className="flex justify-between items-center p-4 bg-white/60 rounded-lg border border-primary-sky/20 hover:bg-white/80 transition-colors duration-300"
+                >
+                  <span className="font-medium text-primary-navy">{feature.name}</span>
+                  <span className="font-bold text-primary-blue text-lg">{feature.price}</span>
+                </div>
+              ))}
             </div>
-          ))}
+            
+            <div className="mt-6 pt-6 border-t border-primary-sky/20 text-center">
+              <p className="text-primary-navy/80 text-sm mb-4">
+                All prices are one-time fees. No monthly charges. Mix and match any features you need.
+              </p>
+              <Link 
+                href="/contact" 
+                className="inline-flex items-center bg-gradient-to-r from-primary-blue to-primary-sky text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 group"
+              >
+                <svg className="w-5 h-5 mr-2 transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z" />
+                </svg>
+                Get My Fixed-Cost Quote
+              </Link>
+            </div>
+          </div>
         </div>
         
         <div 
@@ -221,16 +200,16 @@ const PricingSection = () => {
             <svg className="w-5 h-5 text-primary-blue mr-2" viewBox="0 0 24 24" fill="currentColor">
               <path d="M21,11C21,16.55 17.16,21.74 12,23C6.84,21.74 3,16.55 3,11V5L12,1L21,5V11M12,21C15.75,20 19,15.54 19,11.22V6.3L12,3.18L5,6.3V11.22C5,15.54 8.25,20 12,21Z" />
             </svg>
-            <h3 className="font-display font-bold text-lg text-primary-navy">Need a custom solution?</h3>
+            <h3 className="font-display font-bold text-lg text-primary-navy">Need something custom?</h3>
           </div>
           <p className="text-secondary-navy/90 mb-3 text-sm">
-            We'll work with you to build a custom package tailored to your specific retail needs.
+            We'll work with you to build a custom solution tailored to your specific retail needs.
           </p>
           <Link 
             href="/contact" 
             className="text-primary-blue hover:text-primary-sky font-semibold inline-flex items-center group transition-colors duration-300"
           >
-            <span>Build Your Own Custom Voyage</span>
+            <span>Build Your Custom Solution</span>
             <svg 
               className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" 
               fill="none" 

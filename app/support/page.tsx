@@ -23,11 +23,10 @@ export default function SupportPortal() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center">
             <h1 className="text-white font-display mb-6">
-              <span className="block text-lg font-medium mb-2 text-accent-seafoam">CUSTOMER SUPPORT</span>
-              Your Harbor Tech Support Portal
+              Customer Support (Optional Add-On)
             </h1>
             <p className="text-white/90 max-w-3xl mx-auto mb-10 text-lg">
-              Everything you need to navigate your technology solutions. Access manuals, tutorials, and live support to keep your business running smoothly.
+              All Harbor Tech projects include a 30-day workmanship warranty. If you need help after that, choose from our flexible support options.
             </p>
           </div>
         </div>
@@ -39,47 +38,122 @@ export default function SupportPortal() {
         }}></div>
       </section>
 
-      {/* Live Chat Support Section */}
+      {/* Support Options Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="flex flex-col md:flex-row items-center gap-8 mb-12">
-              <div className="flex-1">
-                <div className="inline-block bg-accent-seafoam/20 text-primary-navy font-medium px-4 py-1.5 rounded-full mb-3">24/7 Assistance</div>
-                <SectionHeading 
-                  title="Live Support Chatbot" 
-                  className="text-primary-navy" 
-                />
-                <p className="text-[#22548c] mb-6">
-                  Our AI-powered support assistant is available around the clock to help with your technology questions. Trained on all our manuals and documentation, it can guide you through troubleshooting, explain features, and provide step-by-step instructions.
-                </p>
-                <button 
-                  className="btn-primary bg-primary-navy hover:bg-primary-sky"
-                  onClick={() => {
-                    // This would trigger the chatbot in a production environment
-                    // For now we'll use the floating button
-                    const chatButton = document.querySelector('.fixed.bottom-24 button') as HTMLButtonElement;
-                    if (chatButton) chatButton.click();
-                  }}
-                >
-                  Start Chat
-                </button>
-              </div>
-              <div className="flex-1 relative">
-                <div className="bg-accent-sand rounded-xl p-8 shadow-md border border-primary-sky/20 relative">
-                  <div className="bg-primary-navy/10 rounded-full p-3 inline-block mb-4">
-                    <svg className="w-6 h-6 text-primary-blue" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12,2C6.47,2 2,6.47 2,12C2,17.53 6.47,22 12,22A10,10 0 0,0 22,12C22,6.47 17.53,2 12,2M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M13,9.94L14.06,11L15.12,9.94L16.18,11L17.24,9.94L15.12,7.82L13,9.94M8.88,9.94L9.94,11L11,9.94L8.88,7.82L6.76,9.94L7.82,11L8.88,9.94M12,17.5C14.33,17.5 16.31,16.04 17.11,14H6.89C7.69,16.04 9.67,17.5 12,17.5Z" />
+            <div className="text-center mb-12">
+              <SectionHeading 
+                title="Support Options & Pricing" 
+                centered={true}
+                className="text-primary-navy" 
+              />
+              <p className="text-[#22548c] max-w-2xl mx-auto">
+                Choose the support level that works best for your business. No contracts required.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Option 1 */}
+              <div className="bg-neutral-mist rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-primary-sky/20">
+                <div className="text-center mb-6">
+                  <div className="inline-block bg-primary-navy/10 rounded-full p-3 mb-4">
+                    <svg className="w-8 h-8 text-primary-blue" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z" />
                     </svg>
                   </div>
-                  <h3 className="font-display font-bold text-xl mb-2">AI Support Assistant</h3>
-                  <p className="text-primary-navy mb-4">Our chatbot is ready to help with any questions about your Harbor Tech solutions.</p>
-                  <div className="bg-white rounded-lg p-4 border border-neutral-gull mb-4">
-                    <p className="text-sm text-primary-navy/80 italic">
-                      "How do I configure my POS system to track seasonal inventory?"
-                    </p>
-                  </div>
+                  <h3 className="font-display font-bold text-xl mb-2">Remote Help</h3>
+                  <p className="text-3xl font-bold text-primary-navy mb-1">$95/hr</p>
+                  <p className="text-sm text-[#22548c]">(15-min blocks)</p>
                 </div>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-primary-blue mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+                    </svg>
+                    <span className="text-[#22548c]">Phone & screen share</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-primary-blue mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+                    </svg>
+                    <span className="text-[#22548c]">Pay only when needed</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-primary-blue mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+                    </svg>
+                    <span className="text-[#22548c]">Quick fixes & guidance</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Option 2 */}
+              <div className="bg-neutral-mist rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-primary-sky/20">
+                <div className="text-center mb-6">
+                  <div className="inline-block bg-primary-navy/10 rounded-full p-3 mb-4">
+                    <svg className="w-8 h-8 text-primary-blue" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M19,2H5A2,2 0 0,0 3,4V18A2,2 0 0,0 5,20H9L12,23L15,20H19A2,2 0 0,0 21,18V4A2,2 0 0,0 19,2M5,4H19V18H14.17L12,20.17L9.83,18H5V4M12,5.5A1.5,1.5 0 0,0 10.5,7A1.5,1.5 0 0,0 12,8.5A1.5,1.5 0 0,0 13.5,7A1.5,1.5 0 0,0 12,5.5M12,10C9.79,10 8,11.79 8,14H10C10,12.9 10.9,12 12,12C13.1,12 14,12.9 14,14C14,14.72 13.37,15.26 12.74,15.79C12.09,16.34 11.44,17 11.44,18H12.56C12.56,17.42 13.05,17.02 13.6,16.56C14.25,16 15,15.38 15,14C15,11.79 13.21,10 12,10Z" />
+                    </svg>
+                  </div>
+                  <h3 className="font-display font-bold text-xl mb-2">Onsite Dispatch</h3>
+                  <p className="text-3xl font-bold text-primary-navy mb-1">$125 + $95/hr</p>
+                  <p className="text-sm text-[#22548c]">Service call + hourly</p>
+                </div>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-primary-blue mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+                    </svg>
+                    <span className="text-[#22548c]">In-person assistance</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-primary-blue mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+                    </svg>
+                    <span className="text-[#22548c]">Hardware repairs</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-primary-blue mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+                    </svg>
+                    <span className="text-[#22548c]">Complex troubleshooting</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Option 3 */}
+              <div className="bg-neutral-mist rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-primary-sky/20">
+                <div className="text-center mb-6">
+                  <div className="inline-block bg-primary-navy/10 rounded-full p-3 mb-4">
+                    <svg className="w-8 h-8 text-primary-blue" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z" />
+                    </svg>
+                  </div>
+                  <h3 className="font-display font-bold text-xl mb-2">Mini-Retainer</h3>
+                  <p className="text-3xl font-bold text-primary-navy mb-1">$650/mo</p>
+                  <p className="text-sm text-[#22548c]">10 hrs (rolls over 30 days)</p>
+                </div>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-primary-blue mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+                    </svg>
+                    <span className="text-[#22548c]">Priority response</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-primary-blue mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+                    </svg>
+                    <span className="text-[#22548c]">Hours roll over</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-primary-blue mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+                    </svg>
+                    <span className="text-[#22548c]">Cancel anytime</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -158,101 +232,25 @@ export default function SupportPortal() {
         </div>
       </section>
 
-      {/* Video Tutorials Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <div className="inline-block bg-accent-seafoam/20 text-primary-navy font-medium px-4 py-1.5 rounded-full mb-3">
-              Visual Learning
-            </div>
-            <SectionHeading 
-              title="Video Tutorials" 
-              centered={true}
-              className="text-primary-navy" 
-            />
-            <p className="text-[#22548c] max-w-2xl mx-auto">
-              Watch step-by-step video guides to help you master your technology solutions.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* Video 1 */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-primary-sky/20">
-              <div className="aspect-video bg-primary-navy/10 relative">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="bg-primary-navy/80 rounded-full p-3">
-                    <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M8,5.14V19.14L19,12.14L8,5.14Z" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="font-display font-bold text-xl mb-2">Getting Started with Your POS</h3>
-                <p className="text-primary-navy">Learn the basics of setting up and using your point-of-sale system.</p>
-                <div className="mt-4 flex items-center">
-                  <span className="text-xs text-primary-navy/60">12:45</span>
-                  <span className="inline-block bg-primary-sky/20 text-primary-blue font-medium px-3 py-1 rounded-full text-xs ml-auto">
-                    Coming Soon
-                  </span>
-                </div>
-              </div>
-            </div>
-            
-            {/* Video 2 */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-primary-sky/20">
-              <div className="aspect-video bg-primary-navy/10 relative">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="bg-primary-navy/80 rounded-full p-3">
-                    <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M8,5.14V19.14L19,12.14L8,5.14Z" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="font-display font-bold text-xl mb-2">Advanced Inventory Management</h3>
-                <p className="text-primary-navy">Master inventory tracking, reporting, and optimization techniques.</p>
-                <div className="mt-4 flex items-center">
-                  <span className="text-xs text-primary-navy/60">18:30</span>
-                  <span className="inline-block bg-primary-sky/20 text-primary-blue font-medium px-3 py-1 rounded-full text-xs ml-auto">
-                    Coming Soon
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="text-center mt-10">
-            <Link href="/support/videos" className="btn-primary bg-primary-navy hover:bg-primary-sky inline-flex items-center">
-              View All Videos
-              <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* Contact Support Section */}
       <section className="py-16 bg-accent-sand">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto bg-white rounded-xl p-8 shadow-md border border-primary-sky/20">
             <div className="text-center mb-8">
               <div className="inline-block bg-accent-seafoam/20 text-primary-navy font-medium px-4 py-1.5 rounded-full mb-3">
-                Direct Assistance
+                Get Support
               </div>
               <SectionHeading 
-                title="Need More Help?" 
+                title="Contact Information" 
                 centered={true}
                 className="text-primary-navy" 
               />
               <p className="text-[#22548c] max-w-2xl mx-auto">
-                Our support team is ready to assist you with any questions or issues you may have.
+                Available during warranty period or with active support plan.
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 max-w-2xl mx-auto">
               {/* Support Option 1 */}
               <div className="text-center p-4">
                 <div className="inline-block bg-primary-navy/10 rounded-full p-3 mb-4">
@@ -262,8 +260,8 @@ export default function SupportPortal() {
                 </div>
                 <h3 className="font-display font-bold text-xl mb-2">Email Support</h3>
                 <p className="text-primary-navy mb-4">Send us an email and we'll respond within 24 hours.</p>
-                <a href="mailto:support@harbortechconsulting.com" className="text-primary-sky font-medium hover:underline">
-                  support@harbortechconsulting.com
+                <a href="mailto:help@harbortechconsulting.com" className="text-primary-sky font-medium hover:underline">
+                  help@harbortechconsulting.com
                 </a>
               </div>
               
@@ -275,30 +273,10 @@ export default function SupportPortal() {
                   </svg>
                 </div>
                 <h3 className="font-display font-bold text-xl mb-2">Phone Support</h3>
-                <p className="text-primary-navy mb-4">Call us directly during business hours (9am-5pm ET).</p>
-                <a href="tel:+12315551234" className="text-primary-sky font-medium hover:underline">
-                  (231) 555-1234
+                <p className="text-primary-navy mb-4">Call us during business hours (9am-5pm ET).</p>
+                <a href="tel:+12318651234" className="text-primary-sky font-medium hover:underline">
+                  (231) 865-1234
                 </a>
-              </div>
-              
-              {/* Support Option 3 */}
-              <div className="text-center p-4">
-                <div className="inline-block bg-primary-navy/10 rounded-full p-3 mb-4">
-                  <svg className="w-6 h-6 text-primary-blue" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M17,12V3A1,1 0 0,0 16,2H3A1,1 0 0,0 2,3V17L6,13H16A1,1 0 0,0 17,12M21,6H19V15H6V17A1,1 0 0,0 7,18H18L22,22V7A1,1 0 0,0 21,6Z" />
-                  </svg>
-                </div>
-                <h3 className="font-display font-bold text-xl mb-2">Live Chat</h3>
-                <p className="text-primary-navy mb-4">Chat with a support representative in real-time.</p>
-                <button 
-                  className="text-primary-sky font-medium hover:underline"
-                  onClick={() => {
-                    const chatButton = document.querySelector('.fixed.bottom-24 button') as HTMLButtonElement;
-                    if (chatButton) chatButton.click();
-                  }}
-                >
-                  Start Chat
-                </button>
               </div>
             </div>
           </div>

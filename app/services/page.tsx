@@ -22,11 +22,10 @@ const ServicesPage = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center">
             <h1 className="text-white font-display mb-6">
-              <span className="block text-lg font-medium mb-2 text-accent-seafoam">HARBOR TECH CONSULTING</span>
-              Our Services Fleet
+              Our Core Services – Pick Any Combination
             </h1>
             <p className="text-white/90 max-w-3xl mx-auto mb-10 text-lg">
-              Our local team makes modern tech easy—so you can focus on customers, come rain or shine.
+              Choose only what you need. Each service has one fixed price. No contracts or monthly fees.
             </p>
           </div>
         </div>
@@ -51,36 +50,37 @@ const ServicesPage = () => {
               </div>
               
               <div className="service-card-content">
-                <h3 className="font-display text-xl sm:text-2xl mb-4 font-bold">Smart POS Systems</h3>
-                <p className="text-neutral-700 mb-6">
-                  Our flagship POS service provides smooth sailing for your retail operations with real-time inventory tracking and sales analytics.
+                <h3 className="font-display text-xl sm:text-2xl mb-4 font-bold">Smart POS System</h3>
+                <p className="text-neutral-700 mb-4">
+                  Modern point-of-sale that syncs with your inventory and provides real-time sales analytics.
                 </p>
+                <p className="text-primary-blue font-bold text-lg mb-6">Starting at $1,950</p>
                 
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start">
                     <svg className="w-5 h-5 text-nautical-azure mr-2 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
                     </svg>
-                    <span>Streamlined sales processing</span>
+                    <span>Cloud-based system</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="w-5 h-5 text-nautical-azure mr-2 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
                     </svg>
-                    <span>Real-time inventory management</span>
+                    <span>Real-time inventory sync</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="w-5 h-5 text-nautical-azure mr-2 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
                     </svg>
-                    <span>Custom reporting dashboard</span>
+                    <span>Staff training included</span>
                   </li>
                 </ul>
               </div>
               
               <div className="service-card-footer">
-                <Link href="/services/pos" className="btn-primary w-full text-center">
-                  Explore POS Solutions
+                <Link href="/pricing#pos" className="btn-primary w-full text-center">
+                  View POS Details
                 </Link>
               </div>
             </div>
@@ -94,36 +94,37 @@ const ServicesPage = () => {
               </div>
               
               <div className="service-card-content">
-                <h3 className="font-display text-xl sm:text-2xl mb-4 font-bold">Cloud Solutions</h3>
-                <p className="text-neutral-700 mb-6">
-                  Secure your business data in our cloud vault, ensuring your critical information stays protected, even during the busy summer rush.
+                <h3 className="font-display text-xl sm:text-2xl mb-4 font-bold">Online Store Setup</h3>
+                <p className="text-neutral-700 mb-4">
+                  Professional e-commerce site with inventory sync, secure checkout, and mobile optimization.
                 </p>
+                <p className="text-primary-blue font-bold text-lg mb-6">Starting at $2,450</p>
                 
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start">
                     <svg className="w-5 h-5 text-nautical-deepBlue mr-2 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
                     </svg>
-                    <span>Secure document storage</span>
+                    <span>Mobile-friendly design</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="w-5 h-5 text-nautical-deepBlue mr-2 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
                     </svg>
-                    <span>Automated backup systems</span>
+                    <span>Secure payment processing</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="w-5 h-5 text-nautical-deepBlue mr-2 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
                     </svg>
-                    <span>Multi-device accessibility</span>
+                    <span>SEO optimized</span>
                   </li>
                 </ul>
               </div>
               
               <div className="service-card-footer">
-                <Link href="/services/cloud" className="btn-primary w-full text-center">
-                  Discover Cloud Solutions
+                <Link href="/pricing#store" className="btn-primary w-full text-center">
+                  View Store Details
                 </Link>
               </div>
             </div>
@@ -137,36 +138,37 @@ const ServicesPage = () => {
               </div>
               
               <div className="service-card-content">
-                <h3 className="font-display text-xl sm:text-2xl mb-4 font-bold">Data Analytics</h3>
-                <p className="text-neutral-700 mb-6">
-                  Chart your business course with precision using our data analytics platform, providing clear visibility into your retail horizon.
+                <h3 className="font-display text-xl sm:text-2xl mb-4 font-bold">Data Dashboard</h3>
+                <p className="text-neutral-700 mb-4">
+                  Custom analytics dashboard showing sales trends, inventory levels, and customer insights.
                 </p>
+                <p className="text-primary-blue font-bold text-lg mb-6">Starting at $1,200</p>
                 
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start">
                     <svg className="w-5 h-5 text-nautical-seafoam mr-2 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
                     </svg>
-                    <span>Custom KPI dashboards</span>
+                    <span>Real-time reporting</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="w-5 h-5 text-nautical-seafoam mr-2 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
                     </svg>
-                    <span>Sales trend forecasting</span>
+                    <span>Mobile access</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="w-5 h-5 text-nautical-seafoam mr-2 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
                     </svg>
-                    <span>Competitor analysis</span>
+                    <span>Customizable KPIs</span>
                   </li>
                 </ul>
               </div>
               
               <div className="service-card-footer">
-                <Link href="/services/data" className="btn-primary w-full text-center">
-                  Navigate Data Services
+                <Link href="/pricing#dashboard" className="btn-primary w-full text-center">
+                  View Dashboard Details
                 </Link>
               </div>
             </div>
@@ -177,13 +179,13 @@ const ServicesPage = () => {
       {/* Service Process */}
       <section className="py-8 sm:py-12 md:py-16 bg-nautical-sand">
         <div className="container mx-auto px-4">
-          <h2 className="section-heading text-center mb-8 sm:mb-16">Our Service Voyage</h2>
+          <h2 className="section-heading text-center mb-8 sm:mb-16">Your Technology Journey</h2>
           
           <div className="relative">
             {/* Connection line */}
             <div className="absolute top-1/4 left-0 w-full h-0.5 bg-nautical-rope hidden md:block"></div>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
               {/* Step 1 */}
               <div className="flex flex-col items-center text-center relative">
                 <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mb-4 shadow-md relative z-10 border-2 border-nautical-rope">
@@ -191,8 +193,8 @@ const ServicesPage = () => {
                     <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z" />
                   </svg>
                 </div>
-                <h3 className="font-display font-bold text-xl mb-2">Harbor Check</h3>
-                <p className="text-neutral-700">We assess your current tech setup and chart the best course forward</p>
+                <h3 className="font-display font-bold text-lg mb-2">Harbor Check</h3>
+                <p className="text-neutral-700 text-sm">Free consultation to assess your needs</p>
               </div>
               
               {/* Step 2 */}
@@ -202,8 +204,8 @@ const ServicesPage = () => {
                     <path d="M18,4L20,8H17L15,4H13L15,8H12L10,4H8L10,8H7L5,4H4A2,2 0 0,0 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V4H18Z" />
                   </svg>
                 </div>
-                <h3 className="font-display font-bold text-xl mb-2">Voyage Planning</h3>
-                <p className="text-neutral-700">We design a custom technology roadmap tailored to your business needs</p>
+                <h3 className="font-display font-bold text-lg mb-2">Quote</h3>
+                <p className="text-neutral-700 text-sm">Fixed-cost proposal with no surprises</p>
               </div>
               
               {/* Step 3 */}
@@ -213,19 +215,30 @@ const ServicesPage = () => {
                     <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
                   </svg>
                 </div>
-                <h3 className="font-display font-bold text-xl mb-2">Setting Sail</h3>
-                <p className="text-neutral-700">Smooth implementation with minimal disruption to your business operations</p>
+                <h3 className="font-display font-bold text-lg mb-2">Install</h3>
+                <p className="text-neutral-700 text-sm">Professional setup with minimal disruption</p>
               </div>
               
               {/* Step 4 */}
               <div className="flex flex-col items-center text-center relative">
                 <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mb-4 shadow-md relative z-10 border-2 border-nautical-rope">
                   <svg className="w-8 h-8 text-nautical-deepBlue" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1Z" />
+                  </svg>
+                </div>
+                <h3 className="font-display font-bold text-lg mb-2">30-Day Warranty</h3>
+                <p className="text-neutral-700 text-sm">Workmanship guarantee with money-back option</p>
+              </div>
+              
+              {/* Step 5 */}
+              <div className="flex flex-col items-center text-center relative">
+                <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mb-4 shadow-md relative z-10 border-2 border-nautical-rope">
+                  <svg className="w-8 h-8 text-nautical-deepBlue" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
                   </svg>
                 </div>
-                <h3 className="font-display font-bold text-xl mb-2">Ongoing Support</h3>
-                <p className="text-neutral-700">Continuous maintenance and crew training to keep your systems shipshape</p>
+                <h3 className="font-display font-bold text-lg mb-2">On-Demand Support</h3>
+                <p className="text-neutral-700 text-sm">Optional help when you need it</p>
               </div>
             </div>
           </div>
@@ -235,12 +248,12 @@ const ServicesPage = () => {
       {/* Call to Action */}
       <section className="py-12 sm:py-16 bg-nautical-gradient text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="font-display font-bold text-2xl sm:text-3xl mb-6">Ready to Set Sail?</h2>
+          <h2 className="font-display font-bold text-2xl sm:text-3xl mb-6">Ready to Get Started?</h2>
           <p className="max-w-2xl mx-auto mb-8 text-white/90">
-            Chart a course for retail success with our expert technology solutions and support.
+            Choose the services you need. Pay once. Get results that last.
           </p>
           <Link href="/contact" className="btn-primary bg-white text-primary-navy hover:bg-accent-sand">
-            Book Your Harbor Check
+            Get My Fixed-Cost Quote
           </Link>
         </div>
       </section>
