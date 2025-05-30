@@ -97,7 +97,7 @@ const AboutSection = () => {
             </p>
             <p className="mt-4 leading-relaxed text-white/90 opacity-0 transition-opacity duration-700" style={{ opacity: isBeamActive ? 1 : 0, transitionDelay: '200ms' }}>
               We serve the 60-plus retailers of Harbor Springs with affordable, done-for-you 
-              upgrades that pay for themselves in weeks—not years.
+              upgrades that pay for themselves in weeks—not years—so small businesses see ROI in weeks without getting locked into ongoing bills.
             </p>
             <Button 
               href="/about" 

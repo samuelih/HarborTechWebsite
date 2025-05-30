@@ -26,7 +26,7 @@ const ServicesPage = () => {
               Our Services Fleet
             </h1>
             <p className="text-white/90 max-w-3xl mx-auto mb-10 text-lg">
-              Navigate the digital seas with confidence. Our fleet of services is designed to help you chart a course to success, weather any storm, and sail ahead of the competition.
+              Our local team makes modern tech easy—so you can focus on customers, come rain or shine.
             </p>
           </div>
         </div>
@@ -96,7 +96,7 @@ const ServicesPage = () => {
               <div className="service-card-content">
                 <h3 className="font-display text-xl sm:text-2xl mb-4 font-bold">Cloud Solutions</h3>
                 <p className="text-neutral-700 mb-6">
-                  Secure your business data in our cloud vault, ensuring your critical information stays above water, even in the roughest seas.
+                  Secure your business data in our cloud vault, ensuring your critical information stays protected, even during the busy summer rush.
                 </p>
                 
                 <ul className="space-y-3 mb-8">

@@ -99,7 +99,7 @@ const SolutionsPage = () => {
               </ul>
               
               <Link href="/contact" className="btn-secondary border-primary-navy text-primary-navy hover:bg-primary-navy/10 w-full text-center block">
-                Set Sail with Skiff
+                Choose Skiff
               </Link>
             </div>
             
@@ -144,7 +144,7 @@ const SolutionsPage = () => {
                   <svg className="w-5 h-5 text-primary-navy mr-2 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
                   </svg>
-                  <span>Advanced navigation analytics</span>
+                  <span>Clear, easy-to-read sales insights</span>
                 </li>
                 <li className="flex items-start">
                   <svg className="w-5 h-5 text-primary-navy mr-2 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
@@ -161,7 +161,7 @@ const SolutionsPage = () => {
               </ul>
               
               <Link href="/contact" className="btn-primary bg-primary-sky hover:bg-primary-navy w-full text-center block">
-                Embark with Cutter
+                Choose Cutter
               </Link>
             </div>
             
@@ -212,12 +212,12 @@ const SolutionsPage = () => {
                   <svg className="w-5 h-5 text-primary-navy mr-2 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
                   </svg>
-                  <span>Dedicated navigation officer</span>
+                  <span>Friendly local point-of-contact</span>
                 </li>
               </ul>
               
               <Link href="/contact" className="btn-primary bg-primary-sky hover:bg-primary-navy w-full text-center block">
-                Command the Clipper
+                Choose Clipper
               </Link>
             </div>
           </div>

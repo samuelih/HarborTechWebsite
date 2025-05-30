@@ -43,8 +43,8 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-bold text-primary-navy mb-1">Limited Resources</h4>
-                    <p className="text-[#22548c]">Local retailers face budget constraints and seasonal staff turnover that big-box stores don't.</p>
+                    <h4 className="font-bold text-primary-navy mb-1">Tight Budgets</h4>
+                    <p className="text-[#22548c]">Small family shops can't afford big-box tech budgets or ongoing monthly fees.</p>
                   </div>
                 </div>
                 
@@ -55,8 +55,8 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-bold text-primary-navy mb-1">Complex Systems</h4>
-                    <p className="text-[#22548c]">Outdated point-of-sale systems and data scattered across multiple platforms.</p>
+                    <h4 className="font-bold text-primary-navy mb-1">Outdated Systems</h4>
+                    <p className="text-[#22548c]">Old cash registers and scattered data across multiple platforms.</p>
                   </div>
                 </div>
               </div>
@@ -69,8 +69,8 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-bold text-primary-navy mb-1">Technical Hurdles</h4>
-                    <p className="text-[#22548c]">Staff uncomfortable with new technology and reluctant to change workflows.</p>
+                    <h4 className="font-bold text-primary-navy mb-1">Staff Challenges</h4>
+                    <p className="text-[#22548c]">Seasonal workers need simple systems they can learn quickly.</p>
                   </div>
                 </div>
                 
@@ -81,8 +81,8 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-bold text-primary-navy mb-1">Global Competition</h4>
-                    <p className="text-[#22548c]">The need to compete with e-commerce giants with minimal IT infrastructure.</p>
+                    <h4 className="font-bold text-primary-navy mb-1">Online Competition</h4>
+                    <p className="text-[#22548c]">Need to compete online without big-box store resources.</p>
                   </div>
                 </div>
               </div>
@@ -90,7 +90,7 @@ export default function Home() {
             
             <div className="mt-6 pt-6 border-t border-primary-sky/20">
               <p className="text-center font-medium text-primary-blue">
-                That's why we created fixed-cost technology solutions specifically for Harbor Springs retailers.
+                That's why we created transparent, fixed-cost solutions for Harbor Springs retailers.
               </p>
             </div>
           </div>

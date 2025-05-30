@@ -27,7 +27,7 @@ export default function SupportPortal() {
               Your Harbor Tech Support Portal
             </h1>
             <p className="text-white/90 max-w-3xl mx-auto mb-10 text-lg">
-              Everything you need to navigate your technology solutions. Access manuals, tutorials, and live support to keep your business sailing smoothly.
+              Everything you need to navigate your technology solutions. Access manuals, tutorials, and live support to keep your business running smoothly.
             </p>
           </div>
         </div>

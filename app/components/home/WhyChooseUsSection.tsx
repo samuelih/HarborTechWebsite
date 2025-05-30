@@ -43,7 +43,7 @@ const WhyChooseUsSection = () => {
     {
       icon: '/images/user/lighthouse.svg',
       title: 'No Surprises',
-      description: 'One flat monthly fee, no hidden costs, no hourly charges, ever',
+      description: 'One flat one-time fee – no hidden costs, no subscriptions.',
       color: 'from-accent-seafoam to-accent-seafoam/80',
       iconBg: 'bg-accent-seafoam/30'
     },
@@ -56,8 +56,8 @@ const WhyChooseUsSection = () => {
     },
     {
       icon: '/images/user/sailboat.svg',
-      title: 'No Risk Trial',
-      description: '30-day free trial with full refund guarantee if not satisfied',
+      title: 'Guaranteed Work',
+      description: '30-day workmanship warranty with money-back guarantee',
       color: 'from-primary-navy to-primary-navy/80',
       iconBg: 'bg-primary-navy/30'
     }

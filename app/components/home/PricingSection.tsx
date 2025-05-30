@@ -41,8 +41,7 @@ const PricingSection = () => {
         'POS install (1 register)',
         'Basic inventory sync',
         'Cloud doc vault (10 GB)',
-        '2-hr training',
-        '$0 first month'
+        '2-hr training'
       ]
     },
     {

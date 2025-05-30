@@ -93,12 +93,11 @@ const Hero = () => {
       {/* Content */}
       <div className="container mx-auto px-4 py-20 md:py-0 relative z-10">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-black text-white mb-4 sm:mb-6 leading-tight drop-shadow-lg">
-          <span className="block">Navigate Your Tech Journey.</span>
-          <span className="text-neutral-mist">Sail Ahead of Competition.</span>
+          <span className="block">Fixed-cost tech upgrades for Harbor Springs retailers</span>
+          <span className="text-neutral-mist">— no monthly fees, just results.</span>
         </h1>
         <p className="text-base sm:text-lg md:text-xl text-white opacity-90 mb-6 sm:mb-10 drop-shadow-md max-w-2xl">
-          Fixed-cost technology solutions designed to propel your business forward with the 
-          stability and reliability of a well-crafted vessel.
+          We modernize your POS, website, and data in weeks, then step aside until you need help.
         </p>
         <div className="flex flex-col xs:flex-row gap-3 sm:gap-4">
           <Link 
@@ -109,7 +108,7 @@ const Hero = () => {
               <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
               </svg>
-              Chart Your Course
+              Book Your Free Harbor Check
             </span>
             <div className="absolute inset-0 w-full h-full bg-white/10 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
           </Link>
@@ -120,7 +119,7 @@ const Hero = () => {
             <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z" />
             </svg>
-            View Fleet Options
+            Get My Fixed-Cost Quote
           </Link>
         </div>
       </div>

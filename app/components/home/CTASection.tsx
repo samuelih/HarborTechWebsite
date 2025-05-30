@@ -256,7 +256,7 @@ const CTASection = () => {
           </h2>
           
           <p className="text-white/90 text-lg md:text-xl mb-10 max-w-2xl mx-auto drop-shadow-md">
-            Claim your free Harbor Check consultation and set sail toward retail technology success.
+            Get your free Harbor Check consultation and discover your fixed-cost upgrade path.
           </p>
           
           <div
