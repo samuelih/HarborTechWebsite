@@ -5,28 +5,25 @@ import Link from 'next/link';
 
 const AboutPage = () => {
   return (
-    <div className="pt-16">
+    <div>
       {/* Hero Section */}
-      <section className="relative py-12 sm:py-20 bg-nautical-gradient overflow-hidden">
+      <section className="relative min-h-[70vh] flex items-center bg-nautical-gradient overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23ffffff" fill-opacity="0.3" fill-rule="evenodd"%3E%3Ccircle cx="3" cy="3" r="1"/%3E%3C/g%3E%3C/svg%3E")', backgroundSize: '24px 24px' }}></div>
         </div>
         
-        {/* Anchor decoration */}
-        <div className="absolute -top-8 -left-8 w-24 h-24 sm:w-32 sm:h-32 md:w-64 md:h-64 text-white/10">
-          <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
-            <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8M12,9.5A2.5,2.5 0 0,0 9.5,12A2.5,2.5 0 0,0 12,14.5A2.5,2.5 0 0,0 14.5,12A2.5,2.5 0 0,0 12,9.5Z" />
-          </svg>
-        </div>
-        
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center bg-primary-navy/30 backdrop-blur-sm py-6 px-4 rounded-lg">
-            <h1 className="text-white font-display mb-6">
-              <span className="block text-lg font-medium mb-2 text-accent-seafoam">OUR STORY</span>
-              Meet The Crew Behind Harbor Tech
+          <div className="text-center">
+            <h1 className="text-white font-display font-bold text-4xl sm:text-5xl md:text-6xl mb-6">
+              <span className="relative inline-block">
+                Your local tech
+                <span className="absolute -bottom-2 left-0 w-full h-1 bg-accent-gold/70"></span>
+              </span>
+              {" "}
+              <span className="text-accent-gold">partner</span>
             </h1>
-            <p className="text-white/90 max-w-3xl mx-auto mb-10 text-lg">
-              Founded by local tech enthusiasts with deep roots in Harbor Springs, we're a team of seasoned navigators committed to guiding retailers through digital waters.
+            <p className="text-white/90 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+              Dedicated to helping Harbor Springs businesses thrive through technology. Local expertise, global solutions.
             </p>
           </div>
         </div>
@@ -325,6 +322,33 @@ const AboutPage = () => {
               Meet Our Team
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Main Content */}
+      <section className="py-16 bg-white relative overflow-hidden">
+        {/* Decorative illustrations */}
+        <div className="absolute top-20 left-5 w-32 h-32 opacity-10">
+          <Image 
+            src="/images/illustrations/houseonwater.svg" 
+            alt="" 
+            width={128}
+            height={128}
+            className="object-contain"
+          />
+        </div>
+        <div className="absolute bottom-20 right-5 w-24 h-24 opacity-10">
+          <Image 
+            src="/images/illustrations/seagull.svg" 
+            alt="" 
+            width={96}
+            height={96}
+            className="object-contain"
+          />
+        </div>
+        
+        <div className="container mx-auto px-4">
+          {/* Existing content */}
         </div>
       </section>
     </div>

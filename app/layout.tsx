@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter, Playfair_Display } from 'next/font/google'
+import { Cinzel, Cinzel_Decorative } from 'next/font/google'
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 
@@ -15,6 +16,17 @@ const playfairDisplay = Playfair_Display({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-playfair',
+})
+
+const cinzel = Cinzel({
+  subsets: ['latin'],
+  variable: '--font-cinzel',
+})
+
+const cinzelDecorative = Cinzel_Decorative({
+  weight: ['400', '700', '900'],
+  subsets: ['latin'],
+  variable: '--font-cinzel-decorative',
 })
 
 export const metadata = {
@@ -51,7 +63,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfairDisplay.variable}`} style={{ fontSize: '18px' }}>
+    <html lang="en" className={`${inter.variable} ${playfairDisplay.variable} ${cinzel.variable} ${cinzelDecorative.variable}`} style={{ fontSize: '18px' }}>
       <head>
         {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLACEHOLDER"></script>

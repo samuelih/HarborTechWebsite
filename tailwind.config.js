@@ -60,8 +60,9 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Playfair Display', 'Georgia', 'serif'],
+        sans: ['var(--font-inter)'],
+        display: ['var(--font-cinzel-decorative)'],
+        cinzel: ['var(--font-cinzel)'],
         mono: ['JetBrains Mono', 'monospace'],
       },
       fontSize: {

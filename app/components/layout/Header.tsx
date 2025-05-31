@@ -75,47 +75,46 @@ const Header = () => {
           : 'bg-transparent backdrop-blur-sm'
       }`}
     >
-      <div className="max-w-7xl mx-auto flex justify-between items-center h-16 px-6 lg:px-8">
-        {/* Logo */}
+      <div className="max-w-7xl mx-auto flex justify-between items-center h-32 px-6 lg:px-8">
+        {/* Logo - 4x larger, transparent, no text */}
         <Link href="/" className="flex items-center group" aria-label="Harbor Technology Consulting - Home">
-          <div className="relative overflow-hidden transition-transform duration-300 mr-3 group-hover:scale-110">
+          <div className="relative overflow-hidden transition-transform duration-300 group-hover:scale-110">
             <Image 
-              src="/images/logos/logo_baw.svg" 
+              src="/images/logos/logo_transparent.svg" 
               alt="Harbor Technology Consulting Logo" 
-              width={40} 
-              height={40}
+              width={240} 
+              height={240}
               className="transition-transform duration-300"
               priority
+              quality={100}
+              loading="eager"
             />
           </div>
-          <span className="text-primary-navy font-display font-bold text-lg hidden sm:inline-block group-hover:text-primary-blue transition-colors duration-300">
-            Harbor Technology
-          </span>
         </Link>
 
         {/* Desktop Navigation */}
         <nav role="navigation" aria-label="Main navigation" className="hidden md:flex space-x-8 items-center">
           <Link 
             href="/solutions" 
-            className={`text-primary-navy hover:text-primary-blue transition-colors duration-300 font-medium ${isActive('/solutions') ? 'text-primary-blue' : ''}`}
+            className={`text-2xl text-primary-navy hover:text-primary-blue transition-colors duration-300 font-cinzel ${isActive('/solutions') ? 'text-primary-blue' : ''}`}
           >
             Solutions
           </Link>
           <Link 
             href="/support" 
-            className={`text-primary-navy hover:text-primary-blue transition-colors duration-300 font-medium ${isActive('/support') ? 'text-primary-blue' : ''}`}
+            className={`text-2xl text-primary-navy hover:text-primary-blue transition-colors duration-300 font-cinzel ${isActive('/support') ? 'text-primary-blue' : ''}`}
           >
             Support
           </Link>
           <Link 
             href="/about" 
-            className={`text-primary-navy hover:text-primary-blue transition-colors duration-300 font-medium ${isActive('/about') ? 'text-primary-blue' : ''}`}
+            className={`text-2xl text-primary-navy hover:text-primary-blue transition-colors duration-300 font-cinzel ${isActive('/about') ? 'text-primary-blue' : ''}`}
           >
             About
           </Link>
           <Link 
             href="/contact" 
-            className="bg-primary-blue hover:bg-primary-sky text-white font-semibold px-6 py-2 rounded-lg transition-all duration-300 transform hover:scale-105"
+            className="bg-primary-blue hover:bg-primary-sky text-white px-6 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-2xl font-cinzel"
           >
             Let's Talk
           </Link>
@@ -137,12 +136,12 @@ const Header = () => {
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu - adjusted top position */}
       <div 
         id="mobile-menu"
         role="region"
         aria-label="Mobile navigation"
-        className={`md:hidden bg-white absolute top-16 inset-x-0 shadow-lg z-20 transition-all duration-300 ${isMenuOpen ? 'opacity-100 max-h-[400px]' : 'opacity-0 max-h-0 pointer-events-none'}`}
+        className={`md:hidden bg-white absolute top-24 inset-x-0 shadow-lg z-20 transition-all duration-300 ${isMenuOpen ? 'opacity-100 max-h-[400px]' : 'opacity-0 max-h-0 pointer-events-none'}`}
         style={{ overflow: isMenuOpen ? 'visible' : 'hidden' }}
       >
         <div className="flex flex-col py-4 px-6 space-y-2">

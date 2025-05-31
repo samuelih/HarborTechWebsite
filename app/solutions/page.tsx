@@ -5,27 +5,25 @@ import Image from 'next/image';
 
 const ServicesPage = () => {
   return (
-    <div className="pt-16">
+    <div>
       {/* Hero Section */}
-      <section className="relative py-12 sm:py-20 bg-nautical-gradient overflow-hidden">
+      <section className="relative min-h-[70vh] flex items-center bg-nautical-gradient overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23ffffff" fill-opacity="0.3" fill-rule="evenodd"%3E%3Ccircle cx="3" cy="3" r="1"/%3E%3C/g%3E%3C/svg%3E")', backgroundSize: '24px 24px' }}></div>
         </div>
         
-        {/* Helm decoration */}
-        <div className="absolute -top-8 -right-8 w-24 h-24 sm:w-32 sm:h-32 md:w-64 md:h-64 text-white/10">
-          <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
-            <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12C4,14.09 4.8,16 6.11,17.41L9.88,9.88L17.41,6.11C16,4.8 14.09,4 12,4M12,20A8,8 0 0,0 20,12C20,9.91 19.2,8 17.89,6.59L14.12,14.12L6.59,17.89C8,19.2 9.91,20 12,20M12,12L11.23,11.23L9.7,14.3L12.77,12.77L12,12M12,17.5C10.62,17.5 9.5,16.38 9.5,15C9.5,13.62 10.62,12.5 12,12.5C13.38,12.5 14.5,13.62 14.5,15C14.5,16.38 13.38,17.5 12,17.5M12,7.5C13.38,7.5 14.5,8.62 14.5,10C14.5,11.38 13.38,12.5 12,12.5C10.62,12.5 9.5,11.38 9.5,10C9.5,8.62 10.62,7.5 12,7.5Z" />
-          </svg>
-        </div>
-        
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center">
-            <h1 className="text-white font-display mb-6">
-              Our Core Services – Pick Any Combination
+            <h1 className="text-white font-display font-bold text-4xl sm:text-5xl md:text-6xl mb-6">
+              <span className="relative inline-block">
+                Navigate your
+                <span className="absolute -bottom-2 left-0 w-full h-1 bg-accent-gold/70"></span>
+              </span>
+              {" "}
+              <span className="text-accent-gold">digital journey</span>
             </h1>
-            <p className="text-white/90 max-w-3xl mx-auto mb-10 text-lg">
-              Choose only what you need. Each service has one fixed price. No contracts or monthly fees.
+            <p className="text-white/90 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+              Fixed-cost technology solutions for Harbor Springs retailers. No monthly fees, just results.
             </p>
           </div>
         </div>
@@ -38,7 +36,27 @@ const ServicesPage = () => {
       </section>
 
       {/* Main Services */}
-      <section className="py-8 sm:py-12 md:py-16 bg-white">
+      <section className="py-8 sm:py-12 md:py-16 bg-white relative overflow-hidden">
+        {/* Decorative illustrations */}
+        <div className="absolute top-20 left-5 w-32 h-32 opacity-10">
+          <Image 
+            src="/images/illustrations/sextant.svg" 
+            alt="" 
+            width={128}
+            height={128}
+            className="object-contain"
+          />
+        </div>
+        <div className="absolute bottom-20 right-5 w-24 h-24 opacity-10">
+          <Image 
+            src="/images/illustrations/rowboat1.svg" 
+            alt="" 
+            width={96}
+            height={96}
+            className="object-contain"
+          />
+        </div>
+        
         <div className="container mx-auto px-4">
           <div className="responsive-grid">
             {/* Service Card 1 */}

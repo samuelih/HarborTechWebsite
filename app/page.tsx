@@ -32,9 +32,6 @@ export default function Home() {
       {/* Our Mission */}
       <AboutSection />
 
-      {/* Section Divider */}
-      <div className="border-t border-neutral-gull/60"></div>
-
       {/* Ready to Chart Your Course? */}
       <CTASection />
     </>
