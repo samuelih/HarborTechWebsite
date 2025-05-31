@@ -8,37 +8,21 @@ export default function NotFound() {
         <div className="mb-8">
           <h1 className="text-6xl font-display font-bold text-white mb-4">404</h1>
           <h2 className="text-2xl font-display text-white mb-4">Page Not Found</h2>
-          <p className="text-white/80 mb-8 max-w-md mx-auto">
-            Looks like you've sailed into uncharted waters. Let's get you back on course.
+          <p className="text-white/80 text-base sm:text-lg mb-8 drop-shadow-lg max-w-md mx-auto">
+            Don't worry! Let's navigate you back to safe waters. Check out our services or head back home.
           </p>
         </div>
         
-        <div className="space-y-4">
-          <Link 
-            href="/" 
-            className="btn-primary bg-white text-primary-navy hover:bg-accent-sand inline-flex items-center"
-          >
+        <div className="space-y-3 max-w-xs mx-auto">
+          <Link href="/" className="flex items-center justify-center btn-primary w-full">
             <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
               <path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" />
             </svg>
-            Return Home
+            Back to Home Port
           </Link>
-          
-          <div className="text-white/60 text-sm">
-            Or try these popular pages:
-          </div>
-          
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/services" className="text-white hover:text-accent-sand underline">
-              Services
-            </Link>
-            <Link href="/pricing" className="text-white hover:text-accent-sand underline">
-              Pricing
-            </Link>
-            <Link href="/contact" className="text-white hover:text-accent-sand underline">
-              Contact
-            </Link>
-          </div>
+          <Link href="/contact" className="text-white hover:text-accent-sand underline">
+            Or explore our solutions →
+          </Link>
         </div>
       </div>
     </div>

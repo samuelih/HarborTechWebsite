@@ -1,0 +1,15 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main POS Terminal -->
+  <rect x="5" y="8" width="30" height="22" rx="2" stroke="#039BFF" stroke-width="2"/>
+  <!-- Screen -->
+  <rect x="8" y="11" width="24" height="12" rx="1" stroke="#023055" stroke-width="2"/>
+  <!-- Receipt Paper -->
+  <path d="M15 30V36C15 36 17 34 20 36C23 38 25 36 25 36V30H15Z" stroke="#039BFF" stroke-width="2"/>
+  <!-- Buttons -->
+  <circle cx="12" cy="27" r="1.5" fill="#039BFF"/>
+  <circle cx="17" cy="27" r="1.5" fill="#039BFF"/>
+  <circle cx="22" cy="27" r="1.5" fill="#039BFF"/>
+  <circle cx="27" cy="27" r="1.5" fill="#039BFF"/>
+  <!-- Card Swipe -->
+  <rect x="25" y="4" width="10" height="4" rx="1" stroke="#023055" stroke-width="2"/>
+</svg> 

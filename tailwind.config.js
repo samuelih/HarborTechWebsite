@@ -27,31 +27,20 @@ module.exports = {
     },
     extend: {
       colors: {
-        // Neutral Background Colors (60%)
+        // New Color Scheme (60/30/10 rule)
         neutral: {
-          mist: "#E6F4FF", // Light blue background
-          gull: "#F5F7FA", // Even lighter accents
+          mist:  '#E6F4FF', // 60% - default page backgrounds
+          gull:  '#F5F7FA', // subtle section & hover backgrounds
         },
-        // Brand Colors (30%)
         primary: {
-          navy: "#0E2A47", // Deep navy blue - darkest shade
-          blue: "#1E5086", // Mid-tone blue - main brand color
-          sky: "#4682B4", // Steel blue - lighter accent
+          navy:  '#0E2A47', // headings, nav links, high-contrast text
+          blue:  '#1E5086', // buttons, key icons
+          sky:   '#4682B4', // hovers, secondary accents
         },
-        // Accent Colors (10%)
         accent: {
-          sand: "#F8EFD4", // Soft cream/sand
-          gold: "#F0B254", // Warm golden accent
-          seafoam: "#3CAEA3", // Teal accent
-        },
-        // Legacy colors for backward compatibility
-        nautical: {
-          deepBlue: "#0E2A47", // Using primary navy
-          azure: "#4682B4", // Using primary sky
-          seafoam: "#3CAEA3", // Using accent seafoam
-          sand: "#F8EFD4", // Using accent sand
-          sunset: "#F0B254", // Using accent gold
-          rope: "#F0B254", // Using accent gold
+          sand:   '#F8EFD4', // call-out backgrounds
+          gold:   '#F0B254', // highlights / badges
+          sea:    '#3CAEA3', // success states
         },
         // System colors
         border: "hsl(var(--border))",
@@ -71,9 +60,18 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ['Inter var', 'Inter', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
         display: ['Playfair Display', 'Georgia', 'serif'],
         mono: ['JetBrains Mono', 'monospace'],
+      },
+      fontSize: {
+        'html': '18px',
+        'h1': '3rem',
+        'h2': '2rem', 
+        'h3': '1.5rem',
+      },
+      maxWidth: {
+        'content': '1280px', // max-w-7xl equivalent
       },
       keyframes: {
         "accordion-down": {
@@ -84,36 +82,15 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
-        "wave": {
-          '0%': { transform: 'translateX(-100%)' },
-          '100%': { transform: 'translateX(100%)' },
-        },
-        "gentle-float": {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-15px)' },
-        },
-        "slow-spin": {
-          '0%': { transform: 'rotate(0deg)' },
-          '100%': { transform: 'rotate(360deg)' },
-        },
-        "shimmer": {
-          '0%, 100%': { opacity: 0.5 },
-          '50%': { opacity: 0.9 },
-        },
-        "bubble-rise": {
-          '0%': { transform: 'translateY(0) scale(1)', opacity: 0.6 },
-          '50%': { opacity: 0.8 },
-          '100%': { transform: 'translateY(-40px) scale(0.5)', opacity: 0 },
+        "fade-up": {
+          '0%': { opacity: 0, transform: 'translateY(20px)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "wave": "wave 4s linear infinite",
-        "gentle-float": "gentle-float 6s ease-in-out infinite",
-        "slow-spin": "slow-spin 20s linear infinite",
-        "shimmer": "shimmer 8s ease-in-out infinite",
-        "bubble-rise": "bubble-rise 3s ease-in-out infinite",
+        "fade-up": "fade-up 0.6s ease-out",
       },
       backdropFilter: {
         'glass': 'blur(12px)',
@@ -125,8 +102,12 @@ module.exports = {
         'mobile-section': '3rem',
         'tablet-section': '4rem',
         'desktop-section': '5rem',
+        '20': '5rem', // scroll-mt-20 utility
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require("@tailwindcss/typography")
+  ],
 } 

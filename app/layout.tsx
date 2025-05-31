@@ -1,6 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter, Montserrat, JetBrains_Mono } from 'next/font/google'
+import { Inter, Playfair_Display } from 'next/font/google'
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 
@@ -11,50 +11,38 @@ const inter = Inter({
   variable: '--font-inter',
 })
 
-const montserrat = Montserrat({
+const playfairDisplay = Playfair_Display({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-montserrat',
+  variable: '--font-playfair',
 })
 
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-jetbrains-mono',
-})
-
-export const metadata: Metadata = {
-  title: 'Harbor Technology Consulting | Fixed-Cost Tech Upgrades for Harbor Springs Retailers',
-  description: 'One-time tech upgrades for Harbor Springs shops. Smart POS, online stores, secure Wi-Fi—no monthly fees. Get your fixed-cost quote today.',
-  keywords: 'technology consulting, IT services, retail technology, Harbor Springs, POS systems, cloud migration, staff upskilling',
-  icons: {
-    icon: '/images/logos/blackandwhite.jpg',
-  },
-  viewport: 'width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes',
+export const metadata = {
+  title: 'Harbor Technology Consulting | Local Tech Partner for Harbor Springs Retailers',
+  description: 'Your local tech partner for Harbor Springs shops. Smart POS, online stores, secure Wi-Fi—simple solutions from neighbors who understand your business.',
+  metadataBase: new URL('https://harbortechconsulting.com'),
   openGraph: {
-    title: 'Harbor Technology Consulting | Fixed-Cost Retail Tech',
-    description: 'One-time tech upgrades for Harbor Springs retailers. No monthly fees, just results.',
-    url: 'https://harbor-tech-website.vercel.app',
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://harbortechconsulting.com',
+    title: 'Harbor Technology Consulting | Local Tech Partner for Harbor Springs',
+    description: 'Your local tech partner for Harbor Springs shops. Smart POS, online stores, secure Wi-Fi—simple solutions from neighbors who understand your business.',
     siteName: 'Harbor Technology Consulting',
     images: [
       {
-        url: 'https://harbor-tech-website.vercel.app/images/harbor-tech-og.jpg',
+        url: '/images/harbor-tech-og.jpg',
         width: 1200,
         height: 630,
+        alt: 'Harbor Technology Consulting'
       }
-    ],
-    locale: 'en_US',
-    type: 'website',
+    ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Harbor Technology Consulting | Fixed-Cost Retail Tech',
-    description: 'One-time tech upgrades for Harbor Springs retailers. No monthly fees, just results.',
-    images: ['https://harbor-tech-website.vercel.app/images/harbor-tech-og.jpg'],
-  },
-  alternates: {
-    canonical: 'https://harbor-tech-website.vercel.app',
-  },
+    title: 'Harbor Technology Consulting | Local Tech Partner for Harbor Springs',
+    description: 'Your local tech partner for Harbor Springs shops. Smart POS, online stores, secure Wi-Fi—simple solutions from neighbors who understand your business.',
+    images: ['/images/harbor-tech-og.jpg']
+  }
 }
 
 export default function RootLayout({
@@ -63,7 +51,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${montserrat.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${playfairDisplay.variable}`} style={{ fontSize: '18px' }}>
       <head>
         {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLACEHOLDER"></script>
@@ -77,17 +65,9 @@ export default function RootLayout({
             `,
           }}
         />
-        {/* Preload critical font */}
-        <link
-          rel="preload"
-          href="/fonts/montserrat-v25-latin-700.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
       </head>
-      <body className="overflow-x-hidden max-w-[100vw]">
-        <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary-700 focus:text-white focus:rounded-md">Skip to content</a>
+      <body className="overflow-x-hidden max-w-[100vw] bg-neutral-mist">
+        <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary-blue focus:text-white focus:rounded-md">Skip to content</a>
         <Header />
         <main id="main" className="min-h-screen">{children}</main>
         <Footer />

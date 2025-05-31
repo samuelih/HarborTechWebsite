@@ -84,15 +84,15 @@ const AboutPage = () => {
                     <p className="text-neutral-700">Born and raised in Harbor Springs with intimate knowledge of local business needs</p>
                   </div>
                 </div>
-                <div className="flex items-start">
-                  <div className="bg-accent-seafoam/20 rounded-full p-1 mr-3 mt-1">
-                    <svg className="w-5 h-5 text-primary-navy" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M3,6H21V18H3V6M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9M7,8A2,2 0 0,1 5,10V14A2,2 0 0,1 7,16H17A2,2 0 0,1 19,14V10A2,2 0 0,1 17,8H7Z" />
+                <div className="flex items-start mb-6">
+                  <div className="bg-primary-navy/10 rounded-full p-2 mr-3 mt-1">
+                    <svg className="w-5 h-5 text-primary-blue" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,17V16H9V14H13V13H10A1,1 0 0,1 9,12V9A1,1 0 0,1 10,8H11V7H13V8H15V10H11V11H14A1,1 0 0,1 15,12V15A1,1 0 0,1 14,16H13V17H11Z" />
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-bold mb-1">Fixed Pricing</h4>
-                    <p className="text-neutral-700">Transparent costs with no hidden fees or surprise expenses</p>
+                    <h4 className="font-bold mb-1">Clear Communication</h4>
+                    <p className="text-[#0D2545]">We explain everything in plain English, no tech jargon.</p>
                   </div>
                 </div>
               </div>

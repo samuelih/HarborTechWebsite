@@ -4,7 +4,7 @@ import Link from 'next/link';
 import SectionHeading from '../components/common/SectionHeading';
 import SupportChatbot from '../components/common/SupportChatbot';
 
-export default function SupportPortal() {
+const SupportPage = () => {
   return (
     <>
       {/* Hero Section */}
@@ -303,4 +303,6 @@ export default function SupportPortal() {
       </div>
     </>
   );
-} 
+}
+
+export default SupportPage; 

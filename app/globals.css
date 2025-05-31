@@ -4,6 +4,11 @@
 
 @layer base {
   :root {
+    /* Updated friendly color scheme */
+    --primary: #0D2545;     /* Deep navy for text/icons */
+    --accent:  #205d96;     /* Softer blue for buttons/links hover */
+    --bg:      #F6F9FC;     /* Light wash background */
+    
     --background: 210 100% 98%; /* Mist */
     --foreground: 212 68% 17%; /* Deep Navy */
     --border: 210 100% 97%; /* Gull Grey */
@@ -29,13 +34,13 @@
     --text-on-white: 212 72% 27%; /* For text on white background */
 
     /* Primary Colors */
-    --primary-navy: #0E2A47;     /* Brand primary - deep navy blue */
-    --primary-blue: #1E5086;     /* Brand secondary - medium blue */
-    --primary-sky: #CDE5FF;      /* Light sky blue - Updated for WCAG AA compliance */
+    --primary-navy: #0D2545;     /* Updated to match requested value */
+    --primary-blue: #205d96;     /* Updated to softer accent */
+    --primary-sky: #E8F4FF;      /* Updated wash color */
     
     /* Accent Colors */
     --accent-gold: #F0B254;      /* Warm gold for CTAs and highlights */
-    --accent-sand: #F8EFD4;      /* Soft sand color for backgrounds */
+    --accent-sand: #F6E9CF;      /* Updated parchment color */
     --accent-seafoam: #B8E2DC;   /* Light seafoam green for accents */
   }
  
@@ -51,15 +56,21 @@
   }
 }
 
+/* Add smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
 @layer base {
   * {
     @apply border-border;
   }
   body {
-    @apply bg-neutral-mist text-[#22548c];  /* Darker text for better contrast */
+    @apply bg-[#F6F9FC] text-[#0D2545];
     font-feature-settings: "rlig" 1, "calt" 1;
     letter-spacing: -0.011em;
     line-height: 1.6;
+    font-size: 18px; /* Base font size */
   }
   h1 {
     @apply font-display font-bold tracking-wide text-primary-navy text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
@@ -77,13 +88,14 @@
     line-height: 1.4;
   }
   p {
-    @apply font-sans text-[#22548c] text-base sm:text-lg;  /* Darker text for better contrast */
-    line-height: 1.7;
+    @apply font-sans text-[#0D2545] text-base sm:text-lg;
+    line-height: 1.6;
+    max-width: 68ch; /* Limit paragraph width for readability */
   }
   
   /* Improved focus styles for accessibility */
   a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
-    @apply outline-none ring-2 ring-primary-blue ring-offset-2;
+    @apply outline-none ring-2 ring-[#205d96] ring-offset-2;
   }
   
   /* Responsive text sizes */
@@ -125,19 +137,21 @@
 /* Custom utility classes */
 @layer components {
   .btn-primary {
-    @apply bg-gradient-to-r from-primary-navy to-primary-blue text-white font-semibold 
+    @apply bg-gradient-to-r from-[#0D2545] to-[#205d96] text-white font-semibold 
            py-2.5 px-4 sm:py-3 sm:px-6 rounded-lg 
            hover:translate-y-[-2px] hover:shadow-md transition-all duration-300
-           focus:outline-none focus:ring-2 focus:ring-primary-blue focus:ring-offset-2
+           focus:outline-none focus:ring-2 focus:ring-[#205d96] focus:ring-offset-2
            text-sm sm:text-base;
+    text-transform: none; /* Remove ALL-CAPS */
   }
 
   .btn-secondary {
-    @apply border-2 border-primary-blue text-primary-navy font-semibold 
+    @apply border-2 border-[#205d96] text-[#0D2545] font-semibold 
            py-2.5 px-4 sm:py-3 sm:px-6 rounded-lg
            hover:bg-neutral-gull transition-all duration-300
-           focus:outline-none focus:ring-2 focus:ring-primary-blue focus:ring-offset-2
+           focus:outline-none focus:ring-2 focus:ring-[#205d96] focus:ring-offset-2
            text-sm sm:text-base;
+    text-transform: none; /* Remove ALL-CAPS */
   }
 
   .card {
