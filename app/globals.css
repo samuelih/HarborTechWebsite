@@ -406,6 +406,124 @@ html {
   .mobile-full-width {
     @apply w-full sm:w-auto;
   }
+
+  /* Solution Cards */
+  .card-grid {
+    @apply grid gap-6 sm:gap-8 md:gap-10;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  }
+
+  @media (min-width: 768px) {
+    .card-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .card-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .solution-card {
+    @apply relative w-full h-[300px] cursor-pointer;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transition: transform 0.2s ease;
+  }
+
+  .solution-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .solution-card-inner {
+    @apply relative w-full h-full transition-transform duration-500;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border-radius: 1rem;
+  }
+
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .solution-card:hover .solution-card-inner {
+      transform: rotateY(180deg);
+    }
+  }
+
+  .solution-card-front,
+  .solution-card-back {
+    @apply absolute inset-0 w-full h-full rounded-2xl p-6 bg-white;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .solution-card-front {
+    @apply flex flex-col items-center justify-center text-center gap-4;
+    background: linear-gradient(to bottom right, #ffffff, #f8fafc);
+  }
+
+  .solution-card-back {
+    @apply overflow-y-auto p-8;
+    transform: rotateY(180deg);
+    background: linear-gradient(to bottom right, #f8fafc, #f1f5f9);
+  }
+
+  .solution-card-icon {
+    @apply w-16 h-16 mb-2 text-primary-blue;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+  }
+
+  .solution-card-title {
+    @apply font-display text-xl font-bold mb-2 text-primary-navy;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  }
+
+  .solution-card-tagline {
+    @apply text-neutral-700 text-lg font-medium;
+  }
+
+  .solution-card-offerings {
+    @apply space-y-3;
+  }
+
+  .solution-card-offerings li {
+    @apply flex items-start gap-3 text-neutral-700 text-lg;
+  }
+
+  .solution-card-offerings li::before {
+    content: "→";
+    @apply text-primary-blue flex-shrink-0 font-medium;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .solution-card {
+      @apply transition-none;
+    }
+    
+    .solution-card:hover {
+      transform: none;
+    }
+    
+    .solution-card-inner {
+      @apply transition-none;
+    }
+    
+    .solution-card:hover .solution-card-inner {
+      transform: none;
+    }
+    
+    .solution-card-back {
+      @apply hidden;
+    }
+    
+    .solution-card:hover .solution-card-back {
+      @apply block;
+    }
+    
+    .solution-card:hover .solution-card-front {
+      @apply hidden;
+    }
+  }
 }
 
 /* Animations */

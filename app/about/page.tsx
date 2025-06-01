@@ -46,21 +46,16 @@ const AboutPage = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-            <div className="relative aspect-square w-full max-w-md mx-auto md:max-w-full rounded-xl overflow-hidden border-8 border-white shadow-xl">
+            {/* Galley Illustration - replace card and compass */}
+            <div className="flex justify-center">
               <Image 
-                src="/images/about-harbor.svg" 
-                alt="Harbor Technology Consulting Team" 
-                fill
-                className="object-cover"
+                src="/images/illustrations/galley.svg" 
+                alt="Galley Ship Illustration" 
+                width={550}
+                height={550}
+                className="object-contain"
                 priority
               />
-              
-              {/* Compass overlay */}
-              <div className="absolute bottom-4 right-4 bg-white/80 backdrop-blur-sm rounded-full p-2 w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center">
-                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-nautical-deepBlue" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,10.5A1.5,1.5 0 0,1 13.5,12A1.5,1.5 0 0,1 12,13.5A1.5,1.5 0 0,1 10.5,12A1.5,1.5 0 0,1 12,10.5M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M7,10L12,8L17,10L12,12L7,10Z" />
-                </svg>
-              </div>
             </div>
             
             <div className="mission-content">
@@ -107,12 +102,12 @@ const AboutPage = () => {
       {/* Our Crew */}
       <section className="py-8 sm:py-12 md:py-16 bg-nautical-sand">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-8 sm:mb-12 bg-white/70 backdrop-blur-sm py-4 px-6 rounded-lg inline-block mx-auto">
+          <div className="text-center mb-8 sm:mb-12">
             <h2 className="section-heading justify-center mb-4">Meet Our Crew</h2>
             <p className="max-w-3xl mx-auto">Our team combines decades of technology expertise with deep local knowledge to provide the perfect balance of innovation and practicality.</p>
           </div>
           
-          <div className="responsive-grid">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {/* Team Member 1 */}
             <div className="bg-white rounded-xl overflow-hidden shadow-md h-full flex flex-col">
               <div className="relative h-48 sm:h-56 md:h-64">
@@ -250,63 +245,6 @@ const AboutPage = () => {
               <p className="text-neutral-700">Born and raised in Harbor Springs, we're invested in our community's long-term prosperity.</p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Lighthouse Section - Completely Redesigned */}
-      <section className="bg-primary-navy text-white py-12 sm:py-16 relative overflow-hidden">
-        <div className="absolute inset-0" style={{ 
-          backgroundImage: 'linear-gradient(to bottom, rgba(0,20,40,0.95) 0%, rgba(0,20,40,0.8) 100%)', 
-          backgroundSize: 'cover' 
-        }}></div>
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="bg-black/40 backdrop-blur-sm rounded-lg p-6 sm:p-8 md:p-10 max-w-3xl mx-auto text-center">
-            <h3 className="text-accent-seafoam font-display text-xl sm:text-2xl mb-6 uppercase tracking-widest">Our Mission</h3>
-            
-            <div className="mb-6">
-              <div className="w-20 h-20 mx-auto bg-accent-seafoam/10 rounded-full p-4 flex items-center justify-center">
-                <svg className="w-12 h-12 text-accent-sand" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12.5,2C9,2 6,5 6,8.5C6,13.1 12.5,22 12.5,22C12.5,22 19,13.1 19,8.5C19,5 16,2 12.5,2M12.5,9A1.5,1.5 0 0,1 11,7.5A1.5,1.5 0 0,1 12.5,6A1.5,1.5 0 0,1 14,7.5A1.5,1.5 0 0,1 12.5,9Z" />
-                </svg>
-              </div>
-            </div>
-            
-            <blockquote className="text-xl sm:text-2xl md:text-3xl font-medium mb-6">
-              "Make modern tech as approachable as a friendly dockhand."
-            </blockquote>
-            
-            <p className="text-white/80 md:text-lg">
-              We serve the 50-plus retailers of Harbor Springs with simple, done-for-you upgrades 
-              that pay for themselves in months, not years.
-            </p>
-          </div>
-        </div>
-
-        {/* Star background */}
-        <div className="absolute inset-0 z-0">
-          {Array.from({ length: 30 }).map((_, i) => (
-            <div 
-              key={i}
-              className="absolute animate-twinkle bg-white rounded-full"
-              style={{
-                width: `${Math.random() * 3 + 1}px`,
-                height: `${Math.random() * 3 + 1}px`,
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`
-              }}
-            />
-          ))}
-        </div>
-        
-        {/* Wave decoration at bottom */}
-        <div className="absolute bottom-0 left-0 w-full h-6 opacity-25">
-          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-full">
-            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" className="fill-current text-white"></path>
-            <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" className="fill-current text-white"></path>
-            <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" className="fill-current text-white"></path>
-          </svg>
         </div>
       </section>
 
