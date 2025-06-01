@@ -16,11 +16,11 @@ const AboutPage = () => {
           <div className="text-center">
             <h1 className="text-white font-display font-bold text-4xl sm:text-5xl md:text-6xl mb-6">
               <span className="relative inline-block">
-                Your local tech
-                <span className="absolute -bottom-2 left-0 w-full h-1 bg-accent-gold/70"></span>
+                Chart your course
+                <span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-gold/70"></span>
               </span>
               {" "}
-              <span className="text-accent-gold">partner</span>
+              <span className="text-accent-gold">with trusted guides</span>
             </h1>
             <p className="text-white/90 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
               Dedicated to helping Harbor Springs businesses thrive through technology. Local expertise, global solutions.
@@ -318,7 +318,7 @@ const AboutPage = () => {
             <p className="max-w-2xl mx-auto mb-8 text-white/90">
               Let our crew help chart a technology course that's right for your retail business.
             </p>
-            <Link href="/contact" className="btn-primary bg-white text-primary-navy hover:bg-accent-sand">
+            <Link href="/contact" className="btn-white">
               Meet Our Team
             </Link>
           </div>

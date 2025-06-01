@@ -209,7 +209,7 @@ const CTASection = () => {
           <h2 className="text-white font-display font-bold text-3xl md:text-5xl mb-6 drop-shadow-lg">
             <span className="relative inline-block">
               Ready to chart 
-              <span className="absolute -bottom-2 left-0 w-full h-1 bg-accent-gold/70"></span>
+              <span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-gold/70"></span>
             </span>
             {" "}
             <span className="text-accent-gold">your course?</span>
@@ -235,7 +235,7 @@ const CTASection = () => {
             
           <Button 
             href="/contact" 
-              className="relative bg-gradient-to-r from-accent-gold to-accent-sand text-primary-navy hover:shadow-[0_5px_30px_rgba(240,178,84,0.5)] transition-all duration-500 flex items-center justify-center mx-auto shadow-lg group z-10"
+              className="btn-accent btn-large flex items-center justify-center mx-auto"
           >
             <svg 
                 className="w-5 h-5 mr-2 transition-all duration-500 text-primary-navy" 

@@ -60,9 +60,16 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ['var(--font-inter)'],
-        display: ['var(--font-cinzel-decorative)'],
-        cinzel: ['var(--font-cinzel)'],
+        display: [
+          'var(--font-cinzel)',
+          'Cinzel',
+          'serif',
+        ],
+        sans: [
+          'Times New Roman',
+          'Times',
+          'serif',
+        ],
         mono: ['JetBrains Mono', 'monospace'],
       },
       fontSize: {

@@ -114,7 +114,7 @@ const Header = () => {
           </Link>
           <Link 
             href="/contact" 
-            className="bg-primary-blue hover:bg-primary-sky text-white px-6 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-2xl font-cinzel"
+            className="btn-primary text-2xl font-cinzel"
           >
             Let's Talk
           </Link>
@@ -141,7 +141,7 @@ const Header = () => {
         id="mobile-menu"
         role="region"
         aria-label="Mobile navigation"
-        className={`md:hidden bg-white absolute top-24 inset-x-0 shadow-lg z-20 transition-all duration-300 ${isMenuOpen ? 'opacity-100 max-h-[400px]' : 'opacity-0 max-h-0 pointer-events-none'}`}
+        className={`md:hidden bg-white absolute top-32 inset-x-0 shadow-lg z-20 transition-all duration-300 ${isMenuOpen ? 'opacity-100 max-h-[400px]' : 'opacity-0 max-h-0 pointer-events-none'}`}
         style={{ overflow: isMenuOpen ? 'visible' : 'hidden' }}
       >
         <div className="flex flex-col py-4 px-6 space-y-2">
@@ -168,7 +168,7 @@ const Header = () => {
           </Link>
           <Link 
             href="/contact" 
-            className="bg-primary-blue hover:bg-primary-sky text-white font-semibold text-center py-3 px-6 rounded-lg transition-all duration-300 mt-4"
+            className="btn-primary btn-full text-2xl font-cinzel"
             onClick={() => setIsMenuOpen(false)}
           >
             Let's Talk

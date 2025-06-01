@@ -18,7 +18,7 @@ export default function SupportPageClient() {
             <h1 className="text-white font-display font-bold text-4xl sm:text-5xl md:text-6xl mb-6">
               <span className="relative inline-block">
                 Expert support
-                <span className="absolute -bottom-2 left-0 w-full h-1 bg-accent-gold/70"></span>
+                <span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-gold/70"></span>
               </span>
               {" "}
               <span className="text-accent-gold">when you need it</span>

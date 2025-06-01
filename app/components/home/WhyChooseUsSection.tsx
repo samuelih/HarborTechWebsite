@@ -1,7 +1,8 @@
 "use client";
 
+import React from 'react';
 import Image from 'next/image';
-import { Check } from 'lucide-react';
+import { Check, X, Anchor, HelpCircle } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 const WhyChooseUsSection = () => {
@@ -17,80 +18,110 @@ const WhyChooseUsSection = () => {
       { threshold: 0.1 }
     );
 
-    const element = document.getElementById('why-choose-us');
+    const element = document.getElementById('comparison-section');
     if (element) observer.observe(element);
 
     return () => observer.disconnect();
   }, []);
 
-  const differentiators = [
-    "Local Harbor Springs experts who understand seasonal businesses",
-    "No contracts or hidden fees - transparent, fair pricing",
-    "In-person support when you need it most",
-    "Solutions designed specifically for small retail shops",
-    "Quick response times during peak tourist season",
-    "Neighbors helping neighbors succeed"
+  const comparisonData = [
+    {
+      feature: "Pricing Model",
+      htc: "Flat project quote—know the exact cost up-front",
+      rival: "Hourly billing ($150 – $200 /hr)",
+      tooltip: "No surprise bills or scope creep—you know exactly what you'll pay before we start"
+    },
+    {
+      feature: "Local Expertise", 
+      htc: "Runs 60+ Harbor Springs storefront audits each year",
+      rival: "Regional/general focus, little Main-Street insight",
+      tooltip: "We understand the unique challenges of seasonal tourism businesses"
+    },
+    {
+      feature: "Project Timeline",
+      htc: "2–4 weeks from kickoff to launch", 
+      rival: "6–12 weeks average",
+      tooltip: "Fast turnaround means you're selling online before peak season"
+    },
+    {
+      feature: "Support Style",
+      htc: "Same-day visits within Emmet Co.",
+      rival: "Remote call-center, travel fees", 
+      tooltip: "Real person, real help, right when you need it most"
+    },
+    {
+      feature: "Community Investment", 
+      htc: "Sponsors Harbor Springs robotics & youth sailing",
+      rival: "No local investment",
+      tooltip: "We're neighbors first, vendors second—invested in our community's success"
+    }
   ];
 
   return (
-    <section id="why-choose-us" className="py-20 bg-accent-sand">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left: Bulleted List */}
-          <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <h2 className="text-h2 font-display font-bold text-primary-navy mb-6">
-              Why Choose Us?
-            </h2>
-            <p className="text-xl text-primary-sky mb-8">
-              We're not just another tech company. We're your neighbors, and we understand what makes Harbor Springs businesses unique.
-            </p>
-            
-            <ul className="space-y-4">
-              {differentiators.map((item, index) => (
-                <li 
-                  key={index} 
-                  className={`flex items-start transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}
-                  style={{ transitionDelay: `${index * 100}ms` }}
-                >
-                  <div className="flex-shrink-0 mr-4 mt-1">
-                    <div className="w-6 h-6 bg-accent-sea rounded-full flex items-center justify-center">
-                      <Check className="w-4 h-4 text-white" strokeWidth={3} />
-                    </div>
-                  </div>
-                  <span className="text-primary-navy text-lg leading-relaxed">
-                    {item}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
+    <section id="comparison-section" className="comparison-section py-20 px-4 md:px-0">
+      {/* Enhanced Section Header */}
+      <div className="section-header">
+        <h2 className="section-title">Why Local Shops Pick Us</h2>
+        <p className="section-promise">Compare at a glance—decide in 30 seconds</p>
+      </div>
 
-          {/* Right: Harbor Springs Storefront Photo */}
-          <div className={`transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <div className="relative">
-              <div className="rounded-xl overflow-hidden shadow-xl">
-                <Image 
-                  src="/images/illustrations/houseonwater.svg" 
-                  alt="Harbor Springs waterfront businesses - the community we serve" 
-                  width={600} 
-                  height={400}
-                  className="w-full h-auto object-cover"
-                  loading="lazy"
-                />
+      {/* Comparison Table with Enhanced Styling */}
+      <div className={`comparison-table-wrapper ${isVisible ? 'animate-fade-in' : ''}`}>
+        <div className="comparison-table" role="table" aria-label="Harbor Technology Consulting advantages">
+          
+          {/* Header Row */}
+          <div className="header-row" role="row">
+            <div className="header-cell htc-header" role="columnheader">
+              <div className="header-content">
+                <Anchor className="header-icon" size={28} />
+                <span>Harbor Technology Consulting</span>
               </div>
-              
-              {/* Decorative elements */}
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-primary-blue/20 rounded-full blur-sm"></div>
-              <div className="absolute -top-4 -left-4 w-16 h-16 bg-accent-gold/20 rounded-full blur-sm"></div>
-              
-              {/* Caption */}
-              <div className="mt-4 text-center">
-                <p className="text-primary-navy/70 text-sm italic">
-                  Supporting Harbor Springs businesses since 2020
-                </p>
+            </div>
+            <div className="header-cell rival-header" role="columnheader">
+              <div className="header-content">
+                <HelpCircle className="header-icon" size={28} />
+                <span>Typical IT Vendor</span>
               </div>
             </div>
           </div>
+
+          {/* Data Rows */}
+          {comparisonData.map((item, index) => (
+            <div key={index} className="data-row group" role="row">
+              <div className="data-cell htc-cell" role="cell">
+                <div className="cell-content">
+                  <Check className="cell-icon htc-icon" size={20} aria-hidden="true" />
+                  <div className="cell-text">
+                    <span className="feature-highlight">{item.feature}:</span>
+                    <span className="feature-detail"> {item.htc}</span>
+                  </div>
+                  {/* Better Ribbon for Mobile */}
+                  <div className="better-ribbon">✓ Better</div>
+                </div>
+                {/* Tooltip */}
+                <div className="tooltip">{item.tooltip}</div>
+              </div>
+              <div className="data-cell rival-cell" role="cell">
+                <div className="cell-content">
+                  <X className="cell-icon rival-icon" size={20} aria-hidden="true" />
+                  <div className="cell-text">
+                    <span className="feature-detail">{item.rival}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Call-to-Action Banner */}
+      <div className="cta-banner">
+        <div className="cta-content">
+          <h3 className="cta-headline">Ready to skip the hourly guessing game?</h3>
+          <p className="cta-subtext">Let's map out your project in one free 20-min call.</p>
+          <button className="btn-accent btn-large">
+            Schedule My Call
+          </button>
         </div>
       </div>
     </section>

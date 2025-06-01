@@ -12,7 +12,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[70vh] flex items-center bg-neutral-mist overflow-hidden pt-24">
+    <section className="relative min-h-[80vh] flex items-center bg-neutral-mist overflow-hidden pt-36 sm:pt-32 md:pt-24">
       {/* Content Container */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -24,13 +24,13 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link 
                 href="/contact" 
-                className="inline-flex items-center justify-center px-8 py-4 bg-primary-blue hover:bg-primary-sky text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                className="btn-primary btn-large inline-flex items-center justify-center"
               >
                 Schedule a free consultation
               </Link>
               <Link 
                 href="#services" 
-                className="inline-flex items-center justify-center px-8 py-4 border-2 border-accent-gold text-accent-gold hover:bg-accent-gold hover:text-primary-navy font-semibold rounded-lg transition-all duration-300"
+                className="btn-secondary btn-large inline-flex items-center justify-center"
               >
                 View Services
               </Link>

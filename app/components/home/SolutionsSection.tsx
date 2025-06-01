@@ -178,7 +178,7 @@ const SolutionsSection = () => {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-6">
               <span className="relative inline-block">
                 Everything you need
-                <span className="absolute -bottom-2 left-0 w-full h-1 bg-accent-gold/70"></span>
+                <span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-gold/70"></span>
               </span>
               {" "}
               <span className="text-accent-gold">to run your business</span>
@@ -212,7 +212,7 @@ const SolutionsSection = () => {
           </p>
           <Link 
             href="/contact" 
-            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-accent-gold to-accent-sand text-primary-navy hover:from-accent-gold/90 hover:to-accent-sand/90 font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+            className="btn-accent btn-large inline-flex items-center justify-center"
           >
             Let's Talk About Your Needs
           </Link>

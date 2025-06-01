@@ -16,11 +16,11 @@ const ServicesPage = () => {
           <div className="text-center">
             <h1 className="text-white font-display font-bold text-4xl sm:text-5xl md:text-6xl mb-6">
               <span className="relative inline-block">
-                Navigate your
-                <span className="absolute -bottom-2 left-0 w-full h-1 bg-accent-gold/70"></span>
+                Future-proof
+                <span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-gold/70"></span>
               </span>
               {" "}
-              <span className="text-accent-gold">digital journey</span>
+              <span className="text-accent-gold">your vessel</span>
             </h1>
             <p className="text-white/90 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
               Fixed-cost technology solutions for Harbor Springs retailers. No monthly fees, just results.
@@ -97,7 +97,7 @@ const ServicesPage = () => {
               </div>
               
               <div className="service-card-footer">
-                <Link href="/pricing#pos" className="btn-primary w-full text-center">
+                <Link href="/pricing#pos" className="btn-primary btn-full">
                   View POS Details
                 </Link>
               </div>
@@ -141,7 +141,7 @@ const ServicesPage = () => {
               </div>
               
               <div className="service-card-footer">
-                <Link href="/pricing#store" className="btn-primary w-full text-center">
+                <Link href="/pricing#store" className="btn-primary btn-full">
                   View Store Details
                 </Link>
               </div>
@@ -185,7 +185,7 @@ const ServicesPage = () => {
               </div>
               
               <div className="service-card-footer">
-                <Link href="/pricing#dashboard" className="btn-primary w-full text-center">
+                <Link href="/pricing#dashboard" className="btn-primary btn-full">
                   View Dashboard Details
                 </Link>
               </div>
@@ -239,7 +239,7 @@ const ServicesPage = () => {
           <p className="max-w-2xl mx-auto mb-8 text-white/90">
             Choose the services you need. Pay once. Get results that last.
           </p>
-          <Link href="/contact" className="btn-primary bg-white text-primary-navy hover:bg-accent-sand">
+          <Link href="/contact" className="btn-white">
             Get My Fixed-Cost Quote
           </Link>
         </div>
