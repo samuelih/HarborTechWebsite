@@ -19,8 +19,15 @@ const Hero = () => {
           {/* Left Column: Content */}
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h1 className="text-h1 font-display font-bold text-primary-navy mb-6 leading-tight">
-              Navigate technology with a trusted Harbor partner
+              Personalized, <span className="text-accent-gold">No-Bullshit</span>, fixed-cost,{' '}
+              <span className="relative inline-block text-accent-gold">
+                tech upgrades
+                <span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-gold/70"></span>
+              </span>
             </h1>
+            <p className="text-xl text-primary-navy/80 mb-8">
+              We help Harbor Springs businesses modernize their tech stack with transparent pricing and local expertise. No hourly billing, no surprise fees—just clear solutions that work.
+            </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link 
                 href="/contact" 
@@ -30,7 +37,7 @@ const Hero = () => {
               </Link>
               <Link 
                 href="#services" 
-                className="btn-secondary btn-large inline-flex items-center justify-center"
+                className="btn-secondary btn-large inline-flex items-center justify-center hover:bg-gradient-to-r hover:from-[#F0B254] hover:to-[#D97706] hover:text-white hover:border-transparent"
               >
                 View Services
               </Link>

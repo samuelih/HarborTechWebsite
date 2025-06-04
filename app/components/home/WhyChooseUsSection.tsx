@@ -73,13 +73,11 @@ const WhyChooseUsSection = () => {
           <div className="header-row" role="row">
             <div className="header-cell htc-header" role="columnheader">
               <div className="header-content">
-                <Anchor className="header-icon" size={28} />
                 <span>Harbor Technology Consulting</span>
               </div>
             </div>
             <div className="header-cell rival-header" role="columnheader">
               <div className="header-content">
-                <HelpCircle className="header-icon" size={28} />
                 <span>Typical IT Vendor</span>
               </div>
             </div>
@@ -95,8 +93,6 @@ const WhyChooseUsSection = () => {
                     <span className="feature-highlight">{item.feature}:</span>
                     <span className="feature-detail"> {item.htc}</span>
                   </div>
-                  {/* Better Ribbon for Mobile */}
-                  <div className="better-ribbon">✓ Better</div>
                 </div>
                 {/* Tooltip */}
                 <div className="tooltip">{item.tooltip}</div>
@@ -111,17 +107,6 @@ const WhyChooseUsSection = () => {
               </div>
             </div>
           ))}
-        </div>
-      </div>
-
-      {/* Call-to-Action Banner */}
-      <div className="cta-banner">
-        <div className="cta-content">
-          <h3 className="cta-headline">Ready to skip the hourly guessing game?</h3>
-          <p className="cta-subtext">Let's map out your project in one free 20-min call.</p>
-          <button className="btn-accent btn-large">
-            Schedule My Call
-          </button>
         </div>
       </div>
     </section>

@@ -123,45 +123,24 @@ const SolutionsSection = () => {
 
   const solutions = [
     {
-      title: 'Point of Sale Systems',
-      description: 'Modern POS systems that make checkout a breeze for staff and customers.',
+      title: 'Retail Shops',
+      description: 'Boutiques, gift shops, and specialty stores that want seamless inventory and sales tracking.',
       icon: <Store className="w-7 h-7" />,
-      link: '/solutions/pos',
+      link: '/solutions#work-section',
       accentColor: 'accent-gold'
     },
     {
-      title: 'Online Store Setup',
-      description: 'Simple e-commerce solutions that integrate seamlessly with your POS.',
+      title: 'Restaurants & Cafes',
+      description: 'Local dining spots that need efficient ordering, payment processing, and customer management.',
       icon: <ShoppingBag className="w-7 h-7" />,
-      link: '/solutions/ecommerce',
+      link: '/solutions#work-section',
       accentColor: 'accent-sea'
     },
     {
-      title: 'Business Analytics',
-      description: 'Clear dashboards to understand your sales, inventory, and customers.',
+      title: 'Service Businesses',
+      description: 'Salons, repair shops, and local services that want to streamline appointments and billing.',
       icon: <BarChart3 className="w-7 h-7" />,
-      link: '/solutions/analytics',
-      accentColor: 'primary-blue'
-    },
-    {
-      title: 'Device Management',
-      description: 'Keep your tablets, printers, and devices running smoothly.',
-      icon: <Laptop className="w-7 h-7" />,
-      link: '/solutions/devices',
-      accentColor: 'accent-gold'
-    },
-    {
-      title: 'Secure Wi-Fi',
-      description: 'Guest and staff networks that are fast, secure, and reliable.',
-      icon: <Wifi className="w-7 h-7" />,
-      link: '/solutions/networking',
-      accentColor: 'accent-sea'
-    },
-    {
-      title: 'Local Support',
-      description: 'In-person help when you need it, from neighbors who care.',
-      icon: <HeadphonesIcon className="w-7 h-7" />,
-      link: '/support',
+      link: '/solutions#work-section',
       accentColor: 'primary-blue'
     }
   ];

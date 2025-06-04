@@ -1,123 +1,69 @@
 "use client";
 
-import { useState } from 'react';
 import Link from 'next/link';
-
-// Solution data with small-town friendly language
-const solutions = [
-  {
-    title: "Quick Checkout",
-    tagline: "Take any payment in seconds.",
-    iconClass: "checkout",
-    offerings: [
-      "Tap, chip, or swipe cards",
-      "Apple Pay & Google Pay",
-      "Split bills and tips",
-      "Keeps working if Wi-Fi drops"
-    ]
-  },
-  {
-    title: "Track Your Stock",
-    tagline: "Know what's on the shelf.",
-    iconClass: "inventory",
-    offerings: [
-      "Automatic stock counts",
-      "Low-stock text alerts",
-      "Print barcode labels",
-      "One-click reorder list"
-    ]
-  },
-  {
-    title: "Keep Customers Coming Back",
-    tagline: "Simple rewards they'll love.",
-    iconClass: "loyalty",
-    offerings: [
-      "Loyalty points program",
-      "Digital gift cards",
-      "Easy coupons & sales",
-      "Birthday offers"
-    ]
-  },
-  {
-    title: "Sell Online & Pick-Up",
-    tagline: "Reach shoppers everywhere.",
-    iconClass: "omnichannel",
-    offerings: [
-      "Sync with your website",
-      "Curb-side or in-store pickup",
-      "Local delivery labels",
-      "Hassle-free returns"
-    ]
-  },
-  {
-    title: "Clear Reports",
-    tagline: "See today's numbers tonight.",
-    iconClass: "reports",
-    offerings: [
-      "Daily sales email",
-      "Best-seller list",
-      "Easy CSV exports"
-    ]
-  },
-  {
-    title: "Team & Support",
-    tagline: "Run the shop—stress-free.",
-    iconClass: "operations",
-    offerings: [
-      "Staff clock-in/out",
-      "Simple permission levels",
-      "Automatic software updates",
-      "Friendly help chat"
-    ]
-  }
-];
-
-// Simple, friendly icons
-const IconComponents = {
-  'checkout': () => (
-    <svg className="solution-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <path d="M4 4h2l2 11h12l2-7H8" strokeLinecap="round" strokeLinejoin="round" />
-      <circle cx="10" cy="20" r="1" />
-      <circle cx="18" cy="20" r="1" />
-    </svg>
-  ),
-  'inventory': () => (
-    <svg className="solution-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <path d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM9 17H7m4-4H7m4-4H7m8 0h-2m2 4h-2m2 4h-2" />
-    </svg>
-  ),
-  'loyalty': () => (
-    <svg className="solution-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-    </svg>
-  ),
-  'omnichannel': () => (
-    <svg className="solution-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-    </svg>
-  ),
-  'reports': () => (
-    <svg className="solution-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <path d="M21 21H3V3m4 12l4-8 4 4 4-8" />
-    </svg>
-  ),
-  'operations': () => (
-    <svg className="solution-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-4-4 4 4 0 0 1 4-4 10 10 0 0 0-10-2" />
-    </svg>
-  )
-};
+import Image from 'next/image';
+import BusinessTypeSwitcher from '../components/BusinessTypeSwitcher';
+import { useEffect, useState } from 'react';
 
 const SolutionsPage = () => {
-  const [touchedCard, setTouchedCard] = useState<number | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [heroVisible, setHeroVisible] = useState(false);
+  const [workSectionVisible, setWorkSectionVisible] = useState(false);
+  const [solutionsSectionVisible, setSolutionsSectionVisible] = useState(false);
+  const [ctaSectionVisible, setCtaSectionVisible] = useState(false);
 
-  const handleTouchStart = (index: number) => {
-    setTouchedCard(index);
-  };
+  useEffect(() => {
+    // Hero animation triggers immediately
+    setHeroVisible(true);
+    
+    // Create intersection observers for other sections
+    const observerOptions = { threshold: 0.1 };
+    
+    // Observer for work section
+    const workObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setWorkSectionVisible(true);
+        }
+      },
+      observerOptions
+    );
 
-  const handleTouchEnd = () => {
-    setTouchedCard(null);
-  };
+    // Observer for solutions section
+    const solutionsObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setSolutionsSectionVisible(true);
+        }
+      },
+      observerOptions
+    );
+
+    // Observer for CTA section
+    const ctaObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setCtaSectionVisible(true);
+        }
+      },
+      observerOptions
+    );
+
+    // Observe sections
+    const workSection = document.getElementById('work-section');
+    const solutionsSection = document.getElementById('solutions');
+    const ctaSection = document.getElementById('cta-section');
+
+    if (workSection) workObserver.observe(workSection);
+    if (solutionsSection) solutionsObserver.observe(solutionsSection);
+    if (ctaSection) ctaObserver.observe(ctaSection);
+
+    return () => {
+      workObserver.disconnect();
+      solutionsObserver.disconnect();
+      ctaObserver.disconnect();
+    };
+  }, []);
 
   return (
     <div>
@@ -128,7 +74,7 @@ const SolutionsPage = () => {
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center">
+          <div className={`text-center transition-all duration-1000 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h1 className="text-white font-display font-bold text-4xl sm:text-5xl md:text-6xl mb-6">
               <span className="relative inline-block">
                 How We Can Help Your Shop
@@ -148,69 +94,180 @@ const SolutionsPage = () => {
         }}></div>
       </section>
 
-      {/* Solutions Grid */}
+      {/* How We Work Section */}
+      <section id="work-section" className="py-16 sm:py-20 md:py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className={`text-center mb-12 transition-all duration-1000 ${workSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-6">
+              Here's how we work
+            </h2>
+          </div>
+          
+          {/* Flowchart */}
+          <div className="max-w-6xl mx-auto">
+            <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 md:gap-8 transition-all duration-1000 delay-300 ${workSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              
+              {/* Step 1: We talk */}
+              <div className="relative">
+                <div className="bg-neutral-mist rounded-lg p-6 h-full border-2 border-transparent hover:border-accent-gold transition-colors">
+                  <div className="flex items-center justify-center w-12 h-12 bg-nautical-navy rounded-full mb-4 mx-auto">
+                    <span className="text-white font-bold text-lg">1</span>
+                  </div>
+                  <h3 className="text-xl font-display font-bold text-center mb-3 text-nautical-navy">
+                    We talk.
+                  </h3>
+                  <p className="text-neutral-600 text-center text-sm leading-relaxed">
+                    We take time to get to know you and understand how you operate your business. We look for pain points and where we can save you time.
+                  </p>
+                </div>
+                {/* Arrow for larger screens */}
+                <div className="hidden xl:block absolute top-1/2 -right-4 transform -translate-y-1/2">
+                  <svg className="w-8 h-8 text-accent-gold" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* Step 2: The Tech Audit */}
+              <div className="relative">
+                <div className="bg-neutral-mist rounded-lg p-6 h-full border-2 border-transparent hover:border-accent-gold transition-colors">
+                  <div className="flex items-center justify-center w-12 h-12 bg-nautical-navy rounded-full mb-4 mx-auto">
+                    <span className="text-white font-bold text-lg">2</span>
+                  </div>
+                  <h3 className="text-xl font-display font-bold text-center mb-3 text-nautical-navy">
+                    The Tech Audit.
+                  </h3>
+                  <p className="text-neutral-600 text-center text-sm leading-relaxed">
+                    We personally come into your shop and ask questions to understand 8 business related areas. After, we give you a{' '}
+                    <span className="text-accent-gold font-bold text-base bg-accent-gold/10 px-2 py-1 rounded">
+                      no bullshit, personalized, fixed quote
+                    </span>
+                    . We account for install, training, support and manufacturer fees all in one affordable price.
+                  </p>
+                </div>
+                {/* Arrow for larger screens */}
+                <div className="hidden xl:block absolute top-1/2 -right-4 transform -translate-y-1/2">
+                  <svg className="w-8 h-8 text-accent-gold" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* Step 3: Post Audit Proposal */}
+              <div className="relative">
+                <div className="bg-neutral-mist rounded-lg p-6 h-full border-2 border-transparent hover:border-accent-gold transition-colors">
+                  <div className="flex items-center justify-center w-12 h-12 bg-nautical-navy rounded-full mb-4 mx-auto">
+                    <span className="text-white font-bold text-lg">3</span>
+                  </div>
+                  <h3 className="text-xl font-display font-bold text-center mb-3 text-nautical-navy">
+                    Post Audit Proposal
+                  </h3>
+                  <p className="text-neutral-600 text-center text-sm leading-relaxed">
+                    You will receive a Post Audit Proposal that briefs: what we heard, recommended solutions, timeline, our scope and assumptions, and estimated flat rate-price (amount of hours to install typically varies)
+                  </p>
+                </div>
+                {/* Arrow for larger screens */}
+                <div className="hidden xl:block absolute top-1/2 -right-4 transform -translate-y-1/2">
+                  <svg className="w-8 h-8 text-accent-gold" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* Step 4: We install at your convenience */}
+              <div className="relative">
+                <div className="bg-neutral-mist rounded-lg p-6 h-full border-2 border-transparent hover:border-accent-gold transition-colors">
+                  <div className="flex items-center justify-center w-12 h-12 bg-nautical-navy rounded-full mb-4 mx-auto">
+                    <span className="text-white font-bold text-lg">4</span>
+                  </div>
+                  <h3 className="text-xl font-display font-bold text-center mb-3 text-nautical-navy">
+                    We install at your convenience
+                  </h3>
+                  <p className="text-neutral-600 text-center text-sm leading-relaxed">
+                    We will work whenever works best for you. We ensure your systems stay fully operational until employees are trained, everything is fully set-up, and we are confident your business is ready.
+                  </p>
+                </div>
+                {/* Arrow for larger screens */}
+                <div className="hidden xl:block absolute top-1/2 -right-4 transform -translate-y-1/2">
+                  <svg className="w-8 h-8 text-accent-gold" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* Step 5: Payment */}
+              <div className="relative">
+                <div className="bg-neutral-mist rounded-lg p-6 h-full border-2 border-transparent hover:border-accent-gold transition-colors">
+                  <div className="flex items-center justify-center w-12 h-12 bg-nautical-navy rounded-full mb-4 mx-auto">
+                    <span className="text-white font-bold text-lg">5</span>
+                  </div>
+                  <h3 className="text-xl font-display font-bold text-center mb-3 text-nautical-navy">
+                    Payment
+                  </h3>
+                  <p className="text-neutral-600 text-center text-sm leading-relaxed">
+                    Pay upfront or in monthly installs for up to 2 years; OUR PRICE DOESN'T CHANGE. We will work out what is best for you.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Business Type Switcher */}
       <section id="solutions" className="py-16 sm:py-20 md:py-24 bg-neutral-mist">
         <div className="container mx-auto px-4">
-          <div className="card-grid">
-            {solutions.map((solution, index) => {
-              const Icon = IconComponents[solution.iconClass as keyof typeof IconComponents];
-              return (
-                <article 
-                  key={solution.title}
-                  className="solution-card"
-                  onTouchStart={() => handleTouchStart(index)}
-                  onTouchEnd={handleTouchEnd}
-                >
-                  <div className={`solution-card-inner ${touchedCard === index ? 'transform-gpu rotate-y-180' : ''}`}>
-                    <div className="solution-card-front">
-                      <Icon />
-                      <h3 className="solution-card-title">{solution.title}</h3>
-                      <p className="solution-card-tagline">{solution.tagline}</p>
-                    </div>
-                    <div className="solution-card-back">
-                      <h3 className="solution-card-title mb-6">{solution.title}</h3>
-                      <ul className="solution-card-offerings">
-                        {solution.offerings.map((offering, i) => (
-                          <li key={i}>{offering}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </article>
-              );
-            })}
+          <div className={`transition-all duration-1000 ${solutionsSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <BusinessTypeSwitcher />
           </div>
         </div>
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 sm:py-20 bg-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl sm:text-4xl font-display font-bold mb-6">
-            Anything catch your eye?
-          </h2>
-          <p className="text-lg sm:text-xl text-neutral-700 mb-8 max-w-2xl mx-auto">
-            Let's chat about how we can help your shop grow—no tech jargon, just straight talk.
-          </p>
-          <Link 
-            href="/lets-talk" 
-            className="btn-primary inline-flex items-center gap-2"
-          >
-            Let's Talk
-            <svg 
-              className="w-5 h-5" 
-              viewBox="0 0 20 20" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2"
-            >
-              <path 
-                d="M4 10h12m0 0l-4-4m4 4l-4 4" 
-                strokeLinecap="round" 
-                strokeLinejoin="round"
+      <section id="cta-section" className="py-16 sm:py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 items-center transition-all duration-1000 ${ctaSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            {/* Seagull illustration */}
+            <div className={`flex justify-center items-center transition-all duration-1000 delay-300 ${ctaSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              <Image 
+                src="/images/illustrations/seagull.svg" 
+                alt="Seagull illustration" 
+                width={400}
+                height={400}
+                className="object-contain"
               />
-            </svg>
-          </Link>
+            </div>
+            
+            {/* Text and button */}
+            <div className={`text-center md:text-left transition-all duration-1000 delay-500 ${ctaSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              <h2 className="text-3xl sm:text-4xl font-display font-bold mb-6">
+                Anything catch your eye?
+              </h2>
+              <p className="text-lg sm:text-xl text-neutral-700 mb-8 max-w-xl">
+                Let's chat about how we can help your shop grow—no tech jargon, just straight talk.
+              </p>
+              <Link 
+                href="/contact" 
+                className="btn-primary inline-flex items-center gap-2"
+              >
+                Let's Talk
+                <svg 
+                  className="w-5 h-5" 
+                  viewBox="0 0 20 20" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2"
+                >
+                  <path 
+                    d="M4 10h12m0 0l-4-4m4 4l-4 4" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </div>

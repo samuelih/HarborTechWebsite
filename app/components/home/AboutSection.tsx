@@ -10,6 +10,8 @@ import { useState, useEffect, useRef } from 'react';
 const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isBeamActive, setIsBeamActive] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isButtonHovered, setIsButtonHovered] = useState(false);
   const fogRef = useRef<HTMLDivElement>(null);
   
   // Create stars data
@@ -100,13 +102,43 @@ const AboutSection = () => {
               We serve the 60-plus retailers of Harbor Springs with affordable, done-for-you 
               upgrades that pay for themselves in weeks—not years—so small businesses see ROI in weeks without getting locked into ongoing bills.
             </p>
-            <Button 
-              href="/about" 
-              variant="primary" 
-              className={`mt-6 bg-primary-sky text-white hover:bg-primary-blue transition-opacity duration-700 ${isBeamActive ? 'opacity-100 delay-300' : 'opacity-0'}`}
-            >
-              <span>Meet Our Crew</span>
-            </Button>
+            <div className={`transition-opacity duration-700 ${isBeamActive ? 'opacity-100' : 'opacity-0'}`} style={{ transitionDelay: '300ms' }}>
+              <div
+                className="relative inline-block mt-6 z-30"
+                onMouseEnter={() => setIsButtonHovered(true)}
+                onMouseLeave={() => setIsButtonHovered(false)}
+              >
+                {/* Glowing background effect */}
+                <div 
+                  className="absolute inset-0 rounded-lg transition-all duration-500 blur-lg z-30"
+                  style={{ 
+                    background: 'radial-gradient(circle, rgba(32,93,150,0.4) 0%, rgba(13,37,69,0.6) 70%)',
+                    opacity: isButtonHovered ? 0.8 : 0.3,
+                    transform: isButtonHovered ? 'scale(1.1)' : 'scale(1)',
+                  }}
+                ></div>
+                
+                <Button 
+                  href="/about" 
+                  className="btn-primary relative z-40"
+                >
+                  <span className="flex items-center">
+                    Meet Our Crew
+                    <svg 
+                      className="w-4 h-4 ml-2 transition-all duration-300" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                      style={{ 
+                        transform: isButtonHovered ? 'translateX(4px) scale(1.1)' : 'translateX(0) scale(1)',
+                      }}
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </span>
+                </Button>
+              </div>
+            </div>
           </div>
           
           {/* Light cone illumination effect on the text */}
@@ -429,7 +461,7 @@ const AboutSection = () => {
         ref={fogRef}
         onMouseEnter={handleFogMouseEnter}
         onMouseLeave={handleFogMouseLeave}
-        className="absolute inset-0 transition-opacity duration-1000 z-20 pointer-events-auto"
+        className="absolute inset-0 transition-opacity duration-1000 z-20 pointer-events-none"
         style={{
           backdropFilter: 'blur(2px)',
           backgroundImage: 'linear-gradient(180deg, rgba(14, 42, 71, 0.8) 0%, rgba(30, 80, 134, 0.7) 100%)',

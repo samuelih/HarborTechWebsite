@@ -2,8 +2,81 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 const AboutPage = () => {
+  const [heroVisible, setHeroVisible] = useState(false);
+  const [missionVisible, setMissionVisible] = useState(false);
+  const [crewVisible, setCrewVisible] = useState(false);
+  const [valuesVisible, setValuesVisible] = useState(false);
+  const [ctaVisible, setCtaVisible] = useState(false);
+
+  useEffect(() => {
+    // Hero animation triggers immediately
+    setHeroVisible(true);
+    
+    // Create intersection observers for other sections
+    const observerOptions = { threshold: 0.1 };
+    
+    // Observer for mission section
+    const missionObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setMissionVisible(true);
+        }
+      },
+      observerOptions
+    );
+
+    // Observer for crew section
+    const crewObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setCrewVisible(true);
+        }
+      },
+      observerOptions
+    );
+
+    // Observer for values section
+    const valuesObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setValuesVisible(true);
+        }
+      },
+      observerOptions
+    );
+
+    // Observer for CTA section
+    const ctaObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setCtaVisible(true);
+        }
+      },
+      observerOptions
+    );
+
+    // Observe sections
+    const missionSection = document.getElementById('mission-section');
+    const crewSection = document.getElementById('crew-section');
+    const valuesSection = document.getElementById('values-section');
+    const ctaSection = document.getElementById('cta-section');
+
+    if (missionSection) missionObserver.observe(missionSection);
+    if (crewSection) crewObserver.observe(crewSection);
+    if (valuesSection) valuesObserver.observe(valuesSection);
+    if (ctaSection) ctaObserver.observe(ctaSection);
+
+    return () => {
+      missionObserver.disconnect();
+      crewObserver.disconnect();
+      valuesObserver.disconnect();
+      ctaObserver.disconnect();
+    };
+  }, []);
+
   return (
     <div>
       {/* Hero Section */}
@@ -13,7 +86,7 @@ const AboutPage = () => {
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center">
+          <div className={`text-center transition-all duration-1000 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h1 className="text-white font-display font-bold text-4xl sm:text-5xl md:text-6xl mb-6">
               <span className="relative inline-block">
                 Chart your course
@@ -36,16 +109,16 @@ const AboutPage = () => {
       </section>
 
       {/* Mission Statement */}
-      <section className="py-8 sm:py-12 md:py-16 bg-white">
+      <section id="mission-section" className="py-8 sm:py-12 md:py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
+          <div className={`text-center mb-8 transition-all duration-1000 ${missionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h2 className="section-heading justify-center mb-4">OUR MISSION</h2>
             <p className="max-w-3xl mx-auto text-lg">
               Make modern tech as approachable as a friendly dockhand.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center transition-all duration-1000 delay-300 ${missionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             {/* Galley Illustration - replace card and compass */}
             <div className="flex justify-center">
               <Image 
@@ -100,14 +173,14 @@ const AboutPage = () => {
       </section>
 
       {/* Our Crew */}
-      <section className="py-8 sm:py-12 md:py-16 bg-nautical-sand">
+      <section id="crew-section" className="py-8 sm:py-12 md:py-16 bg-nautical-sand">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-8 sm:mb-12">
+          <div className={`text-center mb-8 sm:mb-12 transition-all duration-1000 ${crewVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h2 className="section-heading justify-center mb-4">Meet Our Crew</h2>
             <p className="max-w-3xl mx-auto">Our team combines decades of technology expertise with deep local knowledge to provide the perfect balance of innovation and practicality.</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto transition-all duration-1000 delay-300 ${crewVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             {/* Team Member 1 */}
             <div className="bg-white rounded-xl overflow-hidden shadow-md h-full flex flex-col">
               <div className="relative h-48 sm:h-56 md:h-64">
@@ -184,7 +257,7 @@ const AboutPage = () => {
             </div>
           </div>
           
-          <div className="text-center mt-8 sm:mt-12">
+          <div className={`text-center mt-8 sm:mt-12 transition-all duration-1000 delay-500 ${crewVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <Link href="/contact" className="btn-primary inline-block">
               Join Our Journey
             </Link>
@@ -193,14 +266,14 @@ const AboutPage = () => {
       </section>
 
       {/* Our Values */}
-      <section className="py-8 sm:py-12 md:py-16 bg-white">
+      <section id="values-section" className="py-8 sm:py-12 md:py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-8 sm:mb-12">
+          <div className={`text-center mb-8 sm:mb-12 transition-all duration-1000 ${valuesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h2 className="section-heading justify-center mb-4">Our Guiding Principles</h2>
             <p className="max-w-3xl mx-auto">The values that steer our ship through every client engagement and technology solution.</p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+          <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 transition-all duration-1000 delay-300 ${valuesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             {/* Value 1 */}
             <div className="bg-accent-sand p-4 sm:p-6 rounded-xl h-full">
               <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-4 shadow-sm">
@@ -249,9 +322,9 @@ const AboutPage = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-12 sm:py-16 bg-nautical-gradient text-white">
+      <section id="cta-section" className="py-12 sm:py-16 bg-nautical-gradient text-white">
         <div className="container mx-auto px-4 text-center">
-          <div className="bg-primary-navy/50 backdrop-blur-sm rounded-lg py-8 px-4 sm:px-8 mx-auto max-w-3xl">
+          <div className={`bg-primary-navy/50 backdrop-blur-sm rounded-lg py-8 px-4 sm:px-8 mx-auto max-w-3xl transition-all duration-1000 ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h2 className="font-display font-bold text-2xl sm:text-3xl mb-6">Ready to Navigate Together?</h2>
             <p className="max-w-2xl mx-auto mb-8 text-white/90">
               Let our crew help chart a technology course that's right for your retail business.
@@ -266,7 +339,7 @@ const AboutPage = () => {
       {/* Main Content */}
       <section className="py-16 bg-white relative overflow-hidden">
         {/* Decorative illustrations */}
-        <div className="absolute top-20 left-5 w-32 h-32 opacity-10">
+        <div className={`absolute top-20 left-5 w-32 h-32 opacity-10 transition-all duration-1000 delay-300 ${ctaVisible ? 'opacity-10 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <Image 
             src="/images/illustrations/houseonwater.svg" 
             alt="" 
@@ -275,7 +348,7 @@ const AboutPage = () => {
             className="object-contain"
           />
         </div>
-        <div className="absolute bottom-20 right-5 w-24 h-24 opacity-10">
+        <div className={`absolute bottom-20 right-5 w-24 h-24 opacity-10 transition-all duration-1000 delay-500 ${ctaVisible ? 'opacity-10 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <Image 
             src="/images/illustrations/seagull.svg" 
             alt="" 

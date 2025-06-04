@@ -10,6 +10,8 @@ interface ButtonProps {
   className?: string;
   onClick?: () => void;
   type?: 'button' | 'submit' | 'reset';
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 }
 
 const Button = ({ 
@@ -18,7 +20,9 @@ const Button = ({
   variant = 'primary', 
   className = '',
   onClick,
-  type = 'button'
+  type = 'button',
+  onMouseEnter,
+  onMouseLeave
 }: ButtonProps) => {
   const baseStyles = 'inline-flex items-center justify-center rounded-lg font-semibold py-3 px-6 transition-all';
   
@@ -32,7 +36,12 @@ const Button = ({
   
   if (href) {
     return (
-      <Link href={href} className={buttonClasses}>
+      <Link 
+        href={href} 
+        className={buttonClasses}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+      >
         {children}
       </Link>
     );
@@ -43,6 +52,8 @@ const Button = ({
       type={type} 
       className={buttonClasses}
       onClick={onClick}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
       {children}
     </button>
