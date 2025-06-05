@@ -209,7 +209,7 @@ const Header = () => {
                   Knowledge Base
                 </Link>
                 <a
-                  href="https://harborai.example.com"
+                  href="https://harbor-ai-website.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 px-4 py-3 text-primary-navy hover:bg-neutral-mist hover:text-primary-blue transition-colors"
