@@ -112,9 +112,9 @@ const AboutPage = () => {
       <section id="mission-section" className="py-8 sm:py-12 md:py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className={`text-center mb-8 transition-all duration-1000 ${missionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <h2 className="section-heading justify-center mb-4">OUR MISSION</h2>
+            <h2 className="section-heading justify-center mb-4">ABOUT US</h2>
             <p className="max-w-3xl mx-auto text-lg">
-              Make modern tech as approachable as a friendly dockhand.
+              We were born and raised in Harbor Springs, graduated together from Harbor Springs High School, and now split our time between Ann Arbor classrooms at the University of Michigan and the docks and storefronts we've known since childhood.
             </p>
           </div>
           
@@ -132,10 +132,13 @@ const AboutPage = () => {
             </div>
             
             <div className="mission-content">
-              <div className="inline-block bg-accent-sand px-4 py-2 rounded-lg text-primary-navy font-medium mb-6">Our North Star</div>
-              <h2 className="font-display text-2xl sm:text-3xl font-bold mb-6">Guiding Harbor Springs Retailers Through Digital Waters</h2>
+              <div className="inline-block bg-accent-sand px-4 py-2 rounded-lg text-primary-navy font-medium mb-6">Our Story</div>
+              <h2 className="font-display text-2xl sm:text-3xl font-bold mb-6">From Harbor Springs to Harbor Tech</h2>
               <p className="text-lg mb-6">
-                Like a lighthouse guiding ships safely to shore, Harbor Tech illuminates the path to modern technology for local businesses. Our mission is to make modern technology accessible, affordable, and advantageous for the unique retail community of Harbor Springs.
+                Every summer job and after-school shift scooping ice cream on Main Street, caddying at the club, delivering groceries from the IGA, showed us how much local businesses mean to this town and how quickly technology can make or break them. When we heard that an outside tech firm was upselling complicated systems and locking neighbors into contracts designed to fail, we decided Harbor Springs deserved better.
+              </p>
+              <p className="text-lg mb-6">
+                That frustration became Harbor Tech Consulting. Our goal is simple: make modern technology as approachable as a friendly deckhand. We translate tech jargon into plain English, recommend only what a shop truly needs, and stand behind transparent, no-surprise pricing.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                 <div className="flex items-start">
@@ -145,8 +148,8 @@ const AboutPage = () => {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-bold mb-1">Local Expertise</h4>
-                    <p className="text-neutral-700">Born and raised in Harbor Springs with intimate knowledge of local business needs</p>
+                    <h4 className="font-bold mb-1">Technical Depth</h4>
+                    <p className="text-neutral-700">Studying robotics, business, data analytics, and policy at Michigan</p>
                   </div>
                 </div>
                 <div className="flex items-start mb-6">
@@ -156,15 +159,15 @@ const AboutPage = () => {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-bold mb-1">Clear Communication</h4>
-                    <p className="text-[#0D2545]">We explain everything in plain English, no tech jargon.</p>
+                    <h4 className="font-bold mb-1">Local Insight</h4>
+                    <p className="text-[#0D2545]">Harbor Springs natives with intimate knowledge of local business needs</p>
                   </div>
                 </div>
               </div>
               
               <div className="mission-quote">
                 <p className="text-lg font-medium text-on-dark">
-                  We serve the 50-plus retailers of Harbor Springs with simple, done-for-you upgrades that pay for themselves in months, not years.
+                  Because we're studying robotics, business, data analytics, and policy at Michigan, we have the technical depth to install rock-solid networks, secure point-of-sale systems, and future-proof cloud backups. Because we're Harbor Springs natives, we have the local insight to tailor those tools to a clothing store on East Main just as readily as to a Restaurant on State street.
                 </p>
               </div>
             </div>
@@ -177,81 +180,58 @@ const AboutPage = () => {
         <div className="container mx-auto px-4">
           <div className={`text-center mb-8 sm:mb-12 transition-all duration-1000 ${crewVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h2 className="section-heading justify-center mb-4">Meet Our Crew</h2>
-            <p className="max-w-3xl mx-auto">Our team combines decades of technology expertise with deep local knowledge to provide the perfect balance of innovation and practicality.</p>
+            <p className="max-w-3xl mx-auto">Two Harbor Springs natives combining University of Michigan education with deep local knowledge to serve our community.</p>
           </div>
           
-          <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto transition-all duration-1000 delay-300 ${crewVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            {/* Team Member 1 */}
+          <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto transition-all duration-1000 delay-300 ${crewVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            {/* Max Bassett */}
             <div className="bg-white rounded-xl overflow-hidden shadow-md h-full flex flex-col">
               <div className="relative h-48 sm:h-56 md:h-64">
                 <Image 
                   src="/images/about-harbor.svg" 
-                  alt="Captain Alex" 
+                  alt="Basset" 
                   fill
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
                   <div className="p-4 text-white">
-                    <h3 className="font-display font-bold text-xl">Captain Alex</h3>
-                    <p className="text-white/90">Founder & Technology Navigator</p>
+                    <h3 className="font-display font-bold text-xl">Max Bassett</h3>
+                    <p className="text-white/90">Co-Founder & Technology Specialist</p>
                   </div>
                 </div>
               </div>
               <div className="p-4 sm:p-6 flex-grow">
-                <p className="text-primary-navy mb-4">Former marketing director with deep retail roots to help local businesses navigate technology upgrades.</p>
+                <p className="text-primary-navy mb-4">University of Michigan student studying robotics and business, bringing technical expertise and innovative solutions to Harbor Springs businesses.</p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="bg-nautical-azure/20 text-nautical-deepBlue text-sm py-1 px-3 rounded-full">Cloud Architecture</span>
-                  <span className="bg-nautical-azure/20 text-nautical-deepBlue text-sm py-1 px-3 rounded-full">Retail POS</span>
+                  <span className="bg-nautical-azure/20 text-nautical-deepBlue text-sm py-1 px-3 rounded-full">Robotics</span>
+                  <span className="bg-nautical-azure/20 text-nautical-deepBlue text-sm py-1 px-3 rounded-full">Business</span>
+                  <span className="bg-nautical-azure/20 text-nautical-deepBlue text-sm py-1 px-3 rounded-full">Network Security</span>
                 </div>
               </div>
             </div>
             
-            {/* Team Member 2 */}
+            {/* Sam Harrell */}
             <div className="bg-white rounded-xl overflow-hidden shadow-md h-full flex flex-col">
               <div className="relative h-48 sm:h-56 md:h-64">
                 <Image 
                   src="/images/about-harbor.svg" 
-                  alt="First Mate Sam" 
+                  alt="Sam Harrell" 
                   fill
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
                   <div className="p-4 text-white">
-                    <h3 className="font-display font-bold text-xl">First Mate Sam</h3>
-                    <p className="text-white/90">Client Success Director</p>
+                    <h3 className="font-display font-bold text-xl">Sam Harrell</h3>
+                    <p className="text-white/90">Co-Founder & Data Analytics Specialist</p>
                   </div>
                 </div>
               </div>
               <div className="p-4 sm:p-6 flex-grow">
-                <p className="mb-4">Spent 15 years managing retail operations before joining Harbor Tech to help retailers implement practical tech solutions.</p>
+                <p className="mb-4">University of Michigan student focusing on data analytics and policy, translating complex data into actionable business insights for local retailers.</p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="bg-nautical-azure/20 text-nautical-deepBlue text-sm py-1 px-3 rounded-full">Inventory Systems</span>
-                  <span className="bg-nautical-azure/20 text-nautical-deepBlue text-sm py-1 px-3 rounded-full">Staff Training</span>
-                </div>
-              </div>
-            </div>
-            
-            {/* Team Member 3 */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-md h-full flex flex-col">
-              <div className="relative h-48 sm:h-56 md:h-64">
-                <Image 
-                  src="/images/about-harbor.svg" 
-                  alt="Navigator Taylor" 
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
-                  <div className="p-4 text-white">
-                    <h3 className="font-display font-bold text-xl">Navigator Taylor</h3>
-                    <p className="text-white/90">Data & Analytics Specialist</p>
-                  </div>
-                </div>
-              </div>
-              <div className="p-4 sm:p-6 flex-grow">
-                <p className="mb-4">Data scientist who translates complex analytics into actionable business insights for Harbor Springs retailers.</p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="bg-nautical-azure/20 text-nautical-deepBlue text-sm py-1 px-3 rounded-full">Retail Analytics</span>
-                  <span className="bg-nautical-azure/20 text-nautical-deepBlue text-sm py-1 px-3 rounded-full">Custom Dashboards</span>
+                  <span className="bg-nautical-azure/20 text-nautical-deepBlue text-sm py-1 px-3 rounded-full">Data Analytics</span>
+                  <span className="bg-nautical-azure/20 text-nautical-deepBlue text-sm py-1 px-3 rounded-full">Policy</span>
+                  <span className="bg-nautical-azure/20 text-nautical-deepBlue text-sm py-1 px-3 rounded-full">Cloud Solutions</span>
                 </div>
               </div>
             </div>
@@ -269,11 +249,11 @@ const AboutPage = () => {
       <section id="values-section" className="py-8 sm:py-12 md:py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className={`text-center mb-8 sm:mb-12 transition-all duration-1000 ${valuesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <h2 className="section-heading justify-center mb-4">Our Guiding Principles</h2>
-            <p className="max-w-3xl mx-auto">The values that steer our ship through every client engagement and technology solution.</p>
+            <h2 className="section-heading justify-center mb-4">Our Three Promises</h2>
+            <p className="max-w-3xl mx-auto">Everything we do is guided by these three core principles that keep us true to our mission and our community.</p>
           </div>
           
-          <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 transition-all duration-1000 delay-300 ${valuesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 transition-all duration-1000 delay-300 ${valuesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             {/* Value 1 */}
             <div className="bg-accent-sand p-4 sm:p-6 rounded-xl h-full">
               <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-4 shadow-sm">
@@ -281,8 +261,8 @@ const AboutPage = () => {
                   <path d="M12,2L1,21H23M12,6L19.53,19H4.47M11,10V14H13V10M11,16V18H13V16" />
                 </svg>
               </div>
-              <h3 className="font-display font-bold text-xl mb-2">Steady Navigation</h3>
-              <p className="text-neutral-700">We provide stable, reliable technology that creates a solid foundation for your business growth.</p>
+              <h3 className="font-display font-bold text-xl mb-2">Hometown Loyalty</h3>
+              <p className="text-neutral-700">We measure success by the longevity of local businesses, not by the size of a one-time invoice.</p>
             </div>
             
             {/* Value 2 */}
@@ -293,7 +273,7 @@ const AboutPage = () => {
                 </svg>
               </div>
               <h3 className="font-display font-bold text-xl mb-2">Clear Communication</h3>
-              <p className="text-neutral-700">We translate complex tech jargon into plain language that makes sense for your business needs.</p>
+              <p className="text-neutral-700">Whether you're upgrading Wi-Fi, adding inventory software, or tightening cybersecurity, you'll know exactly what's happening and why.</p>
             </div>
             
             {/* Value 3 */}
@@ -303,19 +283,8 @@ const AboutPage = () => {
                   <path d="M21,11C21,16.55 17.16,21.74 12,23C6.84,21.74 3,16.55 3,11V5L12,1L21,5V11M12,21C15.75,20 19,15.54 19,11.22V6.3L12,3.18L5,6.3V11.22C5,15.54 8.25,20 12,21M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9" />
                 </svg>
               </div>
-              <h3 className="font-display font-bold text-xl mb-2">Iron-Clad Security</h3>
-              <p className="text-neutral-700">We protect your business data with the same vigilance as a captain guards their vessel.</p>
-            </div>
-            
-            {/* Value 4 */}
-            <div className="bg-accent-sand p-4 sm:p-6 rounded-xl h-full">
-              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-4 shadow-sm">
-                <svg className="w-6 h-6 text-primary-navy" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M16,10V7L19,12L16,17V14H13V10H16M8,14V17L5,12L8,7V10H11V14H8Z" />
-                </svg>
-              </div>
-              <h3 className="font-display font-bold text-xl mb-2">Local Commitment</h3>
-              <p className="text-neutral-700">Born and raised in Harbor Springs, we're invested in our community's long-term prosperity.</p>
+              <h3 className="font-display font-bold text-xl mb-2">Iron-Clad Ethics</h3>
+              <p className="text-neutral-700">We recommend only solutions we'd buy for our own families, and we reinvest our time and profits into community projects whenever we can.</p>
             </div>
           </div>
         </div>
@@ -325,12 +294,12 @@ const AboutPage = () => {
       <section id="cta-section" className="py-12 sm:py-16 bg-nautical-gradient text-white">
         <div className="container mx-auto px-4 text-center">
           <div className={`bg-primary-navy/50 backdrop-blur-sm rounded-lg py-8 px-4 sm:px-8 mx-auto max-w-3xl transition-all duration-1000 ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <h2 className="font-display font-bold text-2xl sm:text-3xl mb-6">Ready to Navigate Together?</h2>
+            <h2 className="font-display font-bold text-2xl sm:text-3xl mb-6">Ready to Set Sail Together?</h2>
             <p className="max-w-2xl mx-auto mb-8 text-white/90">
-              Let our crew help chart a technology course that's right for your retail business.
+              Harbor Springs has always relied on steady navigation through changing weather. Our mission is to keep every retailer, restaurant, and service shop afloat, so they can spend less time worrying about Wi-Fi dead zones or credit-card glitches and more time doing what makes this town special.
             </p>
             <Link href="/contact" className="btn-white">
-              Meet Our Team
+              Get Started Today
             </Link>
           </div>
         </div>

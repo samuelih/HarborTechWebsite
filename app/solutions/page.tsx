@@ -111,7 +111,7 @@ const SolutionsPage = () => {
               <div className="relative">
                 <div className="bg-neutral-mist rounded-lg p-6 h-full border-2 border-transparent hover:border-accent-gold transition-colors">
                   <div className="flex items-center justify-center w-12 h-12 bg-nautical-navy rounded-full mb-4 mx-auto">
-                    <span className="text-white font-bold text-lg">1</span>
+                    <span className="text-black font-bold text-lg">1</span>
                   </div>
                   <h3 className="text-xl font-display font-bold text-center mb-3 text-nautical-navy">
                     We talk.
@@ -132,7 +132,7 @@ const SolutionsPage = () => {
               <div className="relative">
                 <div className="bg-neutral-mist rounded-lg p-6 h-full border-2 border-transparent hover:border-accent-gold transition-colors">
                   <div className="flex items-center justify-center w-12 h-12 bg-nautical-navy rounded-full mb-4 mx-auto">
-                    <span className="text-white font-bold text-lg">2</span>
+                    <span className="text-black font-bold text-lg">2</span>
                   </div>
                   <h3 className="text-xl font-display font-bold text-center mb-3 text-nautical-navy">
                     The Tech Audit.
@@ -157,7 +157,7 @@ const SolutionsPage = () => {
               <div className="relative">
                 <div className="bg-neutral-mist rounded-lg p-6 h-full border-2 border-transparent hover:border-accent-gold transition-colors">
                   <div className="flex items-center justify-center w-12 h-12 bg-nautical-navy rounded-full mb-4 mx-auto">
-                    <span className="text-white font-bold text-lg">3</span>
+                    <span className="text-black font-bold text-lg">3</span>
                   </div>
                   <h3 className="text-xl font-display font-bold text-center mb-3 text-nautical-navy">
                     Post Audit Proposal
@@ -178,7 +178,7 @@ const SolutionsPage = () => {
               <div className="relative">
                 <div className="bg-neutral-mist rounded-lg p-6 h-full border-2 border-transparent hover:border-accent-gold transition-colors">
                   <div className="flex items-center justify-center w-12 h-12 bg-nautical-navy rounded-full mb-4 mx-auto">
-                    <span className="text-white font-bold text-lg">4</span>
+                    <span className="text-black font-bold text-lg">4</span>
                   </div>
                   <h3 className="text-xl font-display font-bold text-center mb-3 text-nautical-navy">
                     We install at your convenience
@@ -199,7 +199,7 @@ const SolutionsPage = () => {
               <div className="relative">
                 <div className="bg-neutral-mist rounded-lg p-6 h-full border-2 border-transparent hover:border-accent-gold transition-colors">
                   <div className="flex items-center justify-center w-12 h-12 bg-nautical-navy rounded-full mb-4 mx-auto">
-                    <span className="text-white font-bold text-lg">5</span>
+                    <span className="text-black font-bold text-lg">5</span>
                   </div>
                   <h3 className="text-xl font-display font-bold text-center mb-3 text-nautical-navy">
                     Payment
@@ -216,12 +216,31 @@ const SolutionsPage = () => {
       </section>
 
       {/* Business Type Switcher */}
-      <section id="solutions" className="py-16 sm:py-20 md:py-24 bg-neutral-mist">
-        <div className="container mx-auto px-4">
+      <section id="solutions" className="relative py-16 sm:py-20 md:py-24 bg-gradient-to-br from-neutral-mist via-white to-neutral-mist overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-32 h-32 bg-accent-gold rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-48 h-48 bg-nautical-navy rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-seafoam rounded-full blur-2xl"></div>
+        </div>
+        
+        {/* Nautical rope pattern */}
+        <div className="absolute top-0 left-0 w-full h-2 bg-repeat-x opacity-30" style={{ 
+          backgroundImage: 'url("data:image/svg+xml,%3Csvg width="80" height="8" viewBox="0 0 80 8" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M0 4C10 4 10 8 20 8C30 8 30 0 40 0C50 0 50 8 60 8C70 8 70 4 80 4" stroke="%23EBBC60" stroke-width="2"/%3E%3C/svg%3E")',
+          backgroundSize: '80px 8px'
+        }}></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className={`transition-all duration-1000 ${solutionsSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <BusinessTypeSwitcher />
           </div>
         </div>
+        
+        {/* Bottom nautical rope pattern */}
+        <div className="absolute bottom-0 left-0 w-full h-2 bg-repeat-x opacity-30" style={{ 
+          backgroundImage: 'url("data:image/svg+xml,%3Csvg width="80" height="8" viewBox="0 0 80 8" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M0 4C10 4 10 8 20 8C30 8 30 0 40 0C50 0 50 8 60 8C70 8 70 4 80 4" stroke="%23EBBC60" stroke-width="2"/%3E%3C/svg%3E")',
+          backgroundSize: '80px 8px'
+        }}></div>
       </section>
 
       {/* Call to Action */}
