@@ -1,7 +1,7 @@
 "use client";
 
 import Link from 'next/link';
-import { Store, ShoppingBag, BarChart3, Laptop, Wifi, HeadphonesIcon } from 'lucide-react';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 interface SolutionCardProps {
@@ -125,21 +125,21 @@ const SolutionsSection = () => {
     {
       title: 'Retail Shops',
       description: 'Boutiques, gift shops, and specialty stores that want seamless inventory and sales tracking.',
-      icon: <Store className="w-7 h-7" />,
+      icon: <Image src="/images/icons/general/shopping-cart.svg" alt="Shopping Cart" width={28} height={28} />,
       link: '/solutions#work-section',
       accentColor: 'accent-gold'
     },
     {
       title: 'Restaurants & Cafes',
       description: 'Local dining spots that need efficient ordering, payment processing, and customer management.',
-      icon: <ShoppingBag className="w-7 h-7" />,
+      icon: <Image src="/images/icons/general/chef-hat.svg" alt="Chef Hat" width={28} height={28} />,
       link: '/solutions#work-section',
       accentColor: 'accent-sea'
     },
     {
       title: 'Service Businesses',
       description: 'Salons, repair shops, and local services that want to streamline appointments and billing.',
-      icon: <BarChart3 className="w-7 h-7" />,
+      icon: <Image src="/images/icons/general/hands-stars.svg" alt="Hands with Stars" width={28} height={28} />,
       link: '/solutions#work-section',
       accentColor: 'primary-blue'
     }

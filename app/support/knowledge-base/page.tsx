@@ -7,8 +7,7 @@ import { BookOpen, Download, Video, HelpCircle, Search } from 'lucide-react';
 
 const KnowledgeBasePage = () => {
   const [heroVisible, setHeroVisible] = useState(false);
-  const [knowledgeBaseVisible, setKnowledgeBaseVisible] = useState(false);
-  const [ctaSectionVisible, setCtaSectionVisible] = useState(false);
+  const [wipSectionVisible, setWipSectionVisible] = useState(false);
 
   useEffect(() => {
     // Hero animation triggers immediately
@@ -17,36 +16,23 @@ const KnowledgeBasePage = () => {
     // Create intersection observers for other sections
     const observerOptions = { threshold: 0.1 };
     
-    // Observer for knowledge base section
-    const knowledgeBaseObserver = new IntersectionObserver(
+    // Observer for work in progress section
+    const wipObserver = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setKnowledgeBaseVisible(true);
-        }
-      },
-      observerOptions
-    );
-
-    // Observer for CTA section
-    const ctaObserver = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setCtaSectionVisible(true);
+          setWipSectionVisible(true);
         }
       },
       observerOptions
     );
 
     // Observe sections
-    const knowledgeBaseSection = document.getElementById('knowledge-base-section');
-    const ctaSection = document.getElementById('cta-section');
+    const wipSection = document.getElementById('wip-section');
 
-    if (knowledgeBaseSection) knowledgeBaseObserver.observe(knowledgeBaseSection);
-    if (ctaSection) ctaObserver.observe(ctaSection);
+    if (wipSection) wipObserver.observe(wipSection);
 
     return () => {
-      knowledgeBaseObserver.disconnect();
-      ctaObserver.disconnect();
+      wipObserver.disconnect();
     };
   }, []);
 
@@ -81,305 +67,60 @@ const KnowledgeBasePage = () => {
         }}></div>
       </section>
 
-      {/* Knowledge Base Section */}
-      <section id="knowledge-base-section" className="py-16 sm:py-20 md:py-24 bg-white relative overflow-hidden">
-        {/* Decorative illustrations */}
-        <div className={`absolute top-20 right-5 w-32 h-32 opacity-10 transition-all duration-1000 delay-300 ${knowledgeBaseVisible ? 'opacity-10 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <Image 
-            src="/images/illustrations/galley.svg" 
-            alt="" 
-            width={128}
-            height={128}
-            className="object-contain"
-          />
-        </div>
-        <div className={`absolute bottom-20 left-5 w-24 h-24 opacity-10 transition-all duration-1000 delay-500 ${knowledgeBaseVisible ? 'opacity-10 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <Image 
-            src="/images/illustrations/rowboat2.svg" 
-            alt="" 
-            width={96}
-            height={96}
-            className="object-contain"
-          />
-        </div>
-        
+      {/* Work In Progress Section */}
+      <section id="wip-section" className="py-16 sm:py-20 md:py-24 bg-white relative overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className={`text-center mb-12 transition-all duration-1000 ${knowledgeBaseVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-6">
-                Get the Answers You Need
-              </h2>
-              <p className="text-lg md:text-xl text-neutral-700 max-w-3xl mx-auto">
-                Access tutorials, manuals, troubleshooting guides, and more to get the most out of your technology.
-              </p>
-            </div>
-
-            {/* Resource Categories */}
-            <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 transition-all duration-1000 delay-300 ${knowledgeBaseVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              
-              {/* Software Guides */}
-              <div className="bg-neutral-mist rounded-lg p-8 h-full border-2 border-transparent hover:border-accent-gold transition-colors">
-                <div className="text-center mb-6">
-                  <div className="flex items-center justify-center w-16 h-16 bg-nautical-navy rounded-full mb-6 mx-auto">
-                    <BookOpen className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-display font-bold text-center mb-3 text-nautical-navy">
-                    Software Guides
-                  </h3>
-                </div>
-                <ul className="space-y-4 mb-8">
-                  <li className="flex items-start">
-                    <div className="bg-accent-gold/20 rounded-full p-1 mr-3 mt-1">
-                      <svg className="w-4 h-4 text-accent-gold" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
-                      </svg>
-                    </div>
-                    <span className="text-neutral-700">Point of Sale Setup</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="bg-accent-gold/20 rounded-full p-1 mr-3 mt-1">
-                      <svg className="w-4 h-4 text-accent-gold" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
-                      </svg>
-                    </div>
-                    <span className="text-neutral-700">Inventory Management</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="bg-accent-gold/20 rounded-full p-1 mr-3 mt-1">
-                      <svg className="w-4 h-4 text-accent-gold" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
-                      </svg>
-                    </div>
-                    <span className="text-neutral-700">Customer Management</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="bg-accent-gold/20 rounded-full p-1 mr-3 mt-1">
-                      <svg className="w-4 h-4 text-accent-gold" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
-                      </svg>
-                    </div>
-                    <span className="text-neutral-700">Reporting & Analytics</span>
-                  </li>
-                </ul>
-                <div className="text-center space-y-3">
-                  <Link href="/support/manuals" className="btn-secondary block">
-                    <BookOpen className="w-5 h-5 mr-2" />
-                    View Guides
-                  </Link>
-                </div>
-              </div>
-
-              {/* Video Tutorials */}
-              <div className="bg-neutral-mist rounded-lg p-8 h-full border-2 border-transparent hover:border-accent-gold transition-colors">
-                <div className="text-center mb-6">
-                  <div className="flex items-center justify-center w-16 h-16 bg-nautical-navy rounded-full mb-6 mx-auto">
-                    <Video className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-display font-bold text-center mb-3 text-nautical-navy">
-                    Video Tutorials
-                  </h3>
-                </div>
-                <ul className="space-y-4 mb-8">
-                  <li className="flex items-start">
-                    <div className="bg-accent-gold/20 rounded-full p-1 mr-3 mt-1">
-                      <svg className="w-4 h-4 text-accent-gold" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
-                      </svg>
-                    </div>
-                    <span className="text-neutral-700">Getting Started Videos</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="bg-accent-gold/20 rounded-full p-1 mr-3 mt-1">
-                      <svg className="w-4 h-4 text-accent-gold" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
-                      </svg>
-                    </div>
-                    <span className="text-neutral-700">Feature Walkthroughs</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="bg-accent-gold/20 rounded-full p-1 mr-3 mt-1">
-                      <svg className="w-4 h-4 text-accent-gold" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
-                      </svg>
-                    </div>
-                    <span className="text-neutral-700">Best Practices</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="bg-accent-gold/20 rounded-full p-1 mr-3 mt-1">
-                      <svg className="w-4 h-4 text-accent-gold" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
-                      </svg>
-                    </div>
-                    <span className="text-neutral-700">Troubleshooting Tips</span>
-                  </li>
-                </ul>
-                <div className="text-center">
-                  <Link href="/support/videos" className="btn-secondary block">
-                    <Video className="w-5 h-5 mr-2" />
-                    Watch Videos
-                  </Link>
-                </div>
-              </div>
-
-              {/* Hardware Resources */}
-              <div className="bg-neutral-mist rounded-lg p-8 h-full border-2 border-transparent hover:border-accent-gold transition-colors">
-                <div className="text-center mb-6">
-                  <div className="flex items-center justify-center w-16 h-16 bg-nautical-navy rounded-full mb-6 mx-auto">
-                    <Download className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-display font-bold text-center mb-3 text-nautical-navy">
-                    Hardware Resources
-                  </h3>
-                </div>
-                <ul className="space-y-4 mb-8">
-                  <li className="flex items-start">
-                    <div className="bg-accent-gold/20 rounded-full p-1 mr-3 mt-1">
-                      <svg className="w-4 h-4 text-accent-gold" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
-                      </svg>
-                    </div>
-                    <span className="text-neutral-700">Equipment Manuals</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="bg-accent-gold/20 rounded-full p-1 mr-3 mt-1">
-                      <svg className="w-4 h-4 text-accent-gold" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
-                      </svg>
-                    </div>
-                    <span className="text-neutral-700">Installation Guides</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="bg-accent-gold/20 rounded-full p-1 mr-3 mt-1">
-                      <svg className="w-4 h-4 text-accent-gold" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
-                      </svg>
-                    </div>
-                    <span className="text-neutral-700">Driver Downloads</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="bg-accent-gold/20 rounded-full p-1 mr-3 mt-1">
-                      <svg className="w-4 h-4 text-accent-gold" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
-                      </svg>
-                    </div>
-                    <span className="text-neutral-700">Warranty Information</span>
-                  </li>
-                </ul>
-                <div className="text-center">
-                  <Link href="/support/downloads" className="btn-secondary block">
-                    <Download className="w-5 h-5 mr-2" />
-                    View Resources
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* FAQ Section */}
-            <div className={`bg-accent-gold/10 rounded-lg p-8 mb-16 border-2 border-accent-gold/20 transition-all duration-1000 delay-500 ${knowledgeBaseVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <div className="text-center mb-8">
-                <div className="flex items-center justify-center w-16 h-16 bg-nautical-navy rounded-full mb-6 mx-auto">
-                  <HelpCircle className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-3xl font-display font-bold text-center mb-3 text-nautical-navy">
-                  Frequently Asked Questions
-                </h3>
-                <p className="text-neutral-700">
-                  Get quick answers to the most common questions about our services and solutions.
-                </p>
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-white rounded-lg p-6">
-                  <h4 className="font-bold text-nautical-navy mb-3">How long does installation take?</h4>
-                  <p className="text-neutral-700">Most installations are completed within 1-2 business days, depending on the complexity of your setup.</p>
-                </div>
-                <div className="bg-white rounded-lg p-6">
-                  <h4 className="font-bold text-nautical-navy mb-3">Do you provide training?</h4>
-                  <p className="text-neutral-700">Yes! We provide comprehensive training for your staff to ensure everyone is comfortable with the new systems.</p>
-                </div>
-                <div className="bg-white rounded-lg p-6">
-                  <h4 className="font-bold text-nautical-navy mb-3">What if something breaks?</h4>
-                  <p className="text-neutral-700">We offer multiple support options including remote help, onsite repairs, and retainer packages for ongoing peace of mind.</p>
-                </div>
-                <div className="bg-white rounded-lg p-6">
-                  <h4 className="font-bold text-nautical-navy mb-3">Can you help with existing systems?</h4>
-                  <p className="text-neutral-700">Absolutely! We can assess and improve your current setup, or help you transition to new solutions.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Search Section */}
-            <div className={`text-center transition-all duration-1000 delay-700 ${knowledgeBaseVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <h3 className="text-2xl font-display font-bold text-center mb-6 text-nautical-navy">
-                Can't find what you're looking for?
-              </h3>
-              <div className="max-w-lg mx-auto mb-8">
-                <div className="relative">
-                  <input 
-                    type="text" 
-                    placeholder="Search knowledge base..." 
-                    className="w-full px-4 py-3 pr-12 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-accent-gold focus:border-accent-gold"
-                  />
-                  <Search className="absolute right-4 top-1/2 transform -translate-y-1/2 text-neutral-400 w-5 h-5" />
-                </div>
-              </div>
-              <p className="text-neutral-600 mb-6">
-                Still need help? Our team is always ready to assist you.
-              </p>
-              <Link href="/contact" className="btn-primary inline-block">
-                Contact Support
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section id="cta-section" className="py-16 sm:py-20 bg-neutral-mist">
-        <div className="container mx-auto px-4">
-          <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 items-center transition-all duration-1000 ${ctaSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            {/* Seagull illustration */}
-            <div className={`flex justify-center items-center transition-all duration-1000 delay-300 ${ctaSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <Image 
-                src="/images/illustrations/seagull.svg" 
-                alt="Seagull illustration" 
-                width={400}
-                height={400}
-                className="object-contain"
-              />
-            </div>
-            
-            {/* Text and button */}
-            <div className={`text-center md:text-left transition-all duration-1000 delay-500 ${ctaSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <h2 className="text-3xl sm:text-4xl font-display font-bold mb-6">
-                Ready to set sail?
-              </h2>
-              <p className="text-lg sm:text-xl text-neutral-700 mb-8 max-w-xl">
-                Let us help you navigate your technology needs and find the perfect solution for your marine business.
-              </p>
-              <Link 
-                href="/contact" 
-                className="btn-primary inline-flex items-center gap-2"
-              >
-                Get Started Today
-                <svg 
-                  className="w-5 h-5" 
-                  viewBox="0 0 20 20" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  strokeWidth="2"
-                >
-                  <path 
-                    d="M4 10h12m0 0l-4-4m4 4l-4 4" 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round"
-                  />
+          <div className="max-w-4xl mx-auto text-center">
+            <div className={`transition-all duration-1000 ${wipSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              {/* Work in Progress Icon */}
+              <div className="flex items-center justify-center w-24 h-24 bg-accent-gold/20 rounded-full mb-8 mx-auto">
+                <svg className="w-12 h-12 text-accent-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
                 </svg>
-              </Link>
+              </div>
+              
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-6 text-nautical-navy">
+                Work in Progress
+              </h2>
+              
+              <div className="bg-accent-gold/10 rounded-lg p-8 border-2 border-accent-gold/20 max-w-2xl mx-auto">
+                <h3 className="text-xl font-display font-bold text-nautical-navy mb-4">
+                  Coming Soon Features:
+                </h3>
+                <ul className="space-y-3 text-neutral-700">
+                  <li className="flex items-center justify-center">
+                    <svg className="w-5 h-5 text-accent-gold mr-3" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+                    </svg>
+                    Hardware manuals and documentation
+                  </li>
+                  <li className="flex items-center justify-center">
+                    <svg className="w-5 h-5 text-accent-gold mr-3" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+                    </svg>
+                    Step-by-step video tutorials
+                  </li>
+                  <li className="flex items-center justify-center">
+                    <svg className="w-5 h-5 text-accent-gold mr-3" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+                    </svg>
+                    Comprehensive software guides
+                  </li>
+                  <li className="flex items-center justify-center">
+                    <svg className="w-5 h-5 text-accent-gold mr-3" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+                    </svg>
+                    Troubleshooting resources
+                  </li>
+                </ul>
+              </div>
+              
+
             </div>
           </div>
         </div>
       </section>
+
     </div>
   );
 };

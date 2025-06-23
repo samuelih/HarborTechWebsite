@@ -654,7 +654,24 @@ html {
   bottom: -0.5rem;
   left: 50%;
   transform: translateX(-50%);
-  width: 100px;
+  width: 520px;
+  height: 4px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='4' viewBox='0 0 20 4'%3E%3Cpath d='M0,2 Q5,0 10,2 T20,2' stroke='%23205d96' stroke-width='2' fill='none'/%3E%3C/svg%3E") repeat-x;
+  background-size: 20px 4px;
+}
+
+/* Business Type Title Wave Border */
+.business-type-title {
+  position: relative;
+}
+
+.business-type-title::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
   height: 4px;
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='4' viewBox='0 0 20 4'%3E%3Cpath d='M0,2 Q5,0 10,2 T20,2' stroke='%23205d96' stroke-width='2' fill='none'/%3E%3C/svg%3E") repeat-x;
   background-size: 20px 4px;

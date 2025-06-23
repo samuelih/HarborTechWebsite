@@ -10,7 +10,7 @@ const SolutionsPage = () => {
   const [heroVisible, setHeroVisible] = useState(false);
   const [workSectionVisible, setWorkSectionVisible] = useState(false);
   const [solutionsSectionVisible, setSolutionsSectionVisible] = useState(false);
-  const [ctaSectionVisible, setCtaSectionVisible] = useState(false);
+
 
   useEffect(() => {
     // Hero animation triggers immediately
@@ -39,29 +39,18 @@ const SolutionsPage = () => {
       observerOptions
     );
 
-    // Observer for CTA section
-    const ctaObserver = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setCtaSectionVisible(true);
-        }
-      },
-      observerOptions
-    );
+
 
     // Observe sections
     const workSection = document.getElementById('work-section');
     const solutionsSection = document.getElementById('solutions');
-    const ctaSection = document.getElementById('cta-section');
 
     if (workSection) workObserver.observe(workSection);
     if (solutionsSection) solutionsObserver.observe(solutionsSection);
-    if (ctaSection) ctaObserver.observe(ctaSection);
 
     return () => {
       workObserver.disconnect();
       solutionsObserver.disconnect();
-      ctaObserver.disconnect();
     };
   }, []);
 
@@ -110,8 +99,8 @@ const SolutionsPage = () => {
               {/* Step 1: We talk */}
               <div className="relative">
                 <div className="bg-neutral-mist rounded-lg p-6 h-full border-2 border-transparent hover:border-accent-gold transition-colors">
-                  <div className="flex items-center justify-center w-12 h-12 bg-nautical-navy rounded-full mb-4 mx-auto">
-                    <span className="text-black font-bold text-lg">1</span>
+                  <div className="flex items-center justify-center w-12 h-12 bg-white rounded-full mb-4 mx-auto shadow-md border-2 border-nautical-navy">
+                    <span className="text-nautical-navy font-bold text-lg">1</span>
                   </div>
                   <h3 className="text-xl font-display font-bold text-center mb-3 text-nautical-navy">
                     We talk.
@@ -131,8 +120,8 @@ const SolutionsPage = () => {
               {/* Step 2: The Tech Audit */}
               <div className="relative">
                 <div className="bg-neutral-mist rounded-lg p-6 h-full border-2 border-transparent hover:border-accent-gold transition-colors">
-                  <div className="flex items-center justify-center w-12 h-12 bg-nautical-navy rounded-full mb-4 mx-auto">
-                    <span className="text-black font-bold text-lg">2</span>
+                  <div className="flex items-center justify-center w-12 h-12 bg-white rounded-full mb-4 mx-auto shadow-md border-2 border-nautical-navy">
+                    <span className="text-nautical-navy font-bold text-lg">2</span>
                   </div>
                   <h3 className="text-xl font-display font-bold text-center mb-3 text-nautical-navy">
                     The Tech Audit.
@@ -156,8 +145,8 @@ const SolutionsPage = () => {
               {/* Step 3: Post Audit Proposal */}
               <div className="relative">
                 <div className="bg-neutral-mist rounded-lg p-6 h-full border-2 border-transparent hover:border-accent-gold transition-colors">
-                  <div className="flex items-center justify-center w-12 h-12 bg-nautical-navy rounded-full mb-4 mx-auto">
-                    <span className="text-black font-bold text-lg">3</span>
+                  <div className="flex items-center justify-center w-12 h-12 bg-white rounded-full mb-4 mx-auto shadow-md border-2 border-nautical-navy">
+                    <span className="text-nautical-navy font-bold text-lg">3</span>
                   </div>
                   <h3 className="text-xl font-display font-bold text-center mb-3 text-nautical-navy">
                     Post Audit Proposal
@@ -177,8 +166,8 @@ const SolutionsPage = () => {
               {/* Step 4: We install at your convenience */}
               <div className="relative">
                 <div className="bg-neutral-mist rounded-lg p-6 h-full border-2 border-transparent hover:border-accent-gold transition-colors">
-                  <div className="flex items-center justify-center w-12 h-12 bg-nautical-navy rounded-full mb-4 mx-auto">
-                    <span className="text-black font-bold text-lg">4</span>
+                  <div className="flex items-center justify-center w-12 h-12 bg-white rounded-full mb-4 mx-auto shadow-md border-2 border-nautical-navy">
+                    <span className="text-nautical-navy font-bold text-lg">4</span>
                   </div>
                   <h3 className="text-xl font-display font-bold text-center mb-3 text-nautical-navy">
                     We install at your convenience
@@ -198,8 +187,8 @@ const SolutionsPage = () => {
               {/* Step 5: Payment */}
               <div className="relative">
                 <div className="bg-neutral-mist rounded-lg p-6 h-full border-2 border-transparent hover:border-accent-gold transition-colors">
-                  <div className="flex items-center justify-center w-12 h-12 bg-nautical-navy rounded-full mb-4 mx-auto">
-                    <span className="text-black font-bold text-lg">5</span>
+                  <div className="flex items-center justify-center w-12 h-12 bg-white rounded-full mb-4 mx-auto shadow-md border-2 border-nautical-navy">
+                    <span className="text-nautical-navy font-bold text-lg">5</span>
                   </div>
                   <h3 className="text-xl font-display font-bold text-center mb-3 text-nautical-navy">
                     Payment
@@ -243,52 +232,7 @@ const SolutionsPage = () => {
         }}></div>
       </section>
 
-      {/* Call to Action */}
-      <section id="cta-section" className="py-16 sm:py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 items-center transition-all duration-1000 ${ctaSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            {/* Seagull illustration */}
-            <div className={`flex justify-center items-center transition-all duration-1000 delay-300 ${ctaSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <Image 
-                src="/images/illustrations/seagull.svg" 
-                alt="Seagull illustration" 
-                width={400}
-                height={400}
-                className="object-contain"
-              />
-            </div>
-            
-            {/* Text and button */}
-            <div className={`text-center md:text-left transition-all duration-1000 delay-500 ${ctaSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <h2 className="text-3xl sm:text-4xl font-display font-bold mb-6">
-                Anything catch your eye?
-              </h2>
-              <p className="text-lg sm:text-xl text-neutral-700 mb-8 max-w-xl">
-                Let's chat about how we can help your shop grow—no tech jargon, just straight talk.
-              </p>
-              <Link 
-                href="/contact" 
-                className="btn-primary inline-flex items-center gap-2"
-              >
-                Let's Talk
-                <svg 
-                  className="w-5 h-5" 
-                  viewBox="0 0 20 20" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  strokeWidth="2"
-                >
-                  <path 
-                    d="M4 10h12m0 0l-4-4m4 4l-4 4" 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+
     </div>
   );
 };

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -69,163 +70,146 @@ const ContactPage = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/70 backdrop-blur-lg border-2 border-accent-gold rounded-2xl p-8 md:p-12 shadow-xl relative overflow-hidden z-10">
-              {/* Compass rose background decoration */}
-              <div className="absolute -bottom-16 -right-16 w-64 h-64 text-accent-gold/10">
-                <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
-                  <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6.5A5.5,5.5 0 0,0 6.5,12A5.5,5.5 0 0,0 12,17.5A5.5,5.5 0 0,0 17.5,12A5.5,5.5 0 0,0 12,6.5M12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5M12,10.5A1.5,1.5 0 0,0 10.5,12A1.5,1.5 0 0,0 12,13.5A1.5,1.5 0 0,0 13.5,12A1.5,1.5 0 0,0 12,10.5Z" />
-                </svg>
-              </div>
-              
               <div className="relative z-10">
-                {isSubmitted ? (
-                  <div className="text-center py-12">
-                    <div className="inline-block bg-accent-seafoam/20 rounded-full p-3 mb-6">
-                      <svg className="w-12 h-12 text-primary-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
+                  {isSubmitted ? (
+                    <div className="text-center py-12">
+                      <div className="inline-block bg-accent-seafoam/20 rounded-full p-3 mb-6">
+                        <svg className="w-12 h-12 text-primary-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <h2 className="font-display text-2xl font-bold mb-4">Message Successfully Sent!</h2>
+                      <p className="mb-6 text-lg">Thank you for reaching out! Our crew will respond to your message within 24 hours.</p>
+                      <Link href="/" className="btn-primary inline-block">
+                        Return to Ship's Deck
+                      </Link>
                     </div>
-                    <h2 className="font-display text-2xl font-bold mb-4">Message Successfully Sent!</h2>
-                    <p className="mb-6 text-lg">Thank you for reaching out! Our crew will respond to your message within 24 hours.</p>
-                    <Link href="/" className="btn-primary inline-block">
-                      Return to Ship's Deck
-                    </Link>
-                  </div>
-                ) : (
-                  <>
-                    <h2 className="font-display text-3xl md:text-4xl font-bold mb-8 text-center text-primary-navy">Let's Talk – Request Your Free Harbor Check</h2>
-                    
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {/* Name Field */}
-                        <div>
-                          <label htmlFor="name" className="block text-sm font-medium text-primary-navy mb-1">
-                            Captain's Name*
-                          </label>
-                          <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            required
-                            value={formData.name}
-                            onChange={handleChange}
-                            className="w-full px-4 py-3 rounded-lg border border-neutral-gull focus:ring-2 focus:ring-primary-sky focus:border-transparent"
-                            placeholder="Your name"
-                          />
+                  ) : (
+                    <>
+                      <h2 className="font-display text-3xl md:text-4xl font-bold mb-8 text-center text-primary-navy">Let's Talk – Request Your Free Harbor Check</h2>
+                      
+                      <form onSubmit={handleSubmit} className="space-y-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          {/* Name Field */}
+                          <div>
+                            <label htmlFor="name" className="block text-sm font-medium text-primary-navy mb-1">
+                              Captain's Name*
+                            </label>
+                            <input
+                              type="text"
+                              id="name"
+                              name="name"
+                              required
+                              value={formData.name}
+                              onChange={handleChange}
+                              className="w-full px-4 py-3 rounded-lg border border-neutral-gull focus:ring-2 focus:ring-primary-sky focus:border-transparent"
+                              placeholder="Your name"
+                            />
+                          </div>
+                          
+                          {/* Email Field */}
+                          <div>
+                            <label htmlFor="email" className="block text-sm font-medium text-primary-navy mb-1">
+                              Communication Coordinates*
+                            </label>
+                            <input
+                              type="email"
+                              id="email"
+                              name="email"
+                              required
+                              value={formData.email}
+                              onChange={handleChange}
+                              className="w-full px-4 py-3 rounded-lg border border-neutral-gull focus:ring-2 focus:ring-primary-sky focus:border-transparent"
+                              placeholder="Your email"
+                            />
+                          </div>
+                          
+                          {/* Phone Field */}
+                          <div>
+                            <label htmlFor="phone" className="block text-sm font-medium text-primary-navy mb-1">
+                              Signal Flag Number
+                            </label>
+                            <input
+                              type="tel"
+                              id="phone"
+                              name="phone"
+                              value={formData.phone}
+                              onChange={handleChange}
+                              className="w-full px-4 py-3 rounded-lg border border-neutral-gull focus:ring-2 focus:ring-primary-sky focus:border-transparent"
+                              placeholder="Your phone number"
+                            />
+                          </div>
+                          
+                          {/* Business Name Field */}
+                          <div>
+                            <label htmlFor="business" className="block text-sm font-medium text-primary-navy mb-1">
+                              Vessel Name*
+                            </label>
+                            <input
+                              type="text"
+                              id="business"
+                              name="business"
+                              required
+                              value={formData.business}
+                              onChange={handleChange}
+                              className="w-full px-4 py-3 rounded-lg border border-neutral-gull focus:ring-2 focus:ring-primary-sky focus:border-transparent"
+                              placeholder="Your business name"
+                            />
+                          </div>
                         </div>
                         
-                        {/* Email Field */}
+                        {/* Service Interest */}
                         <div>
-                          <label htmlFor="email" className="block text-sm font-medium text-primary-navy mb-1">
-                            Communication Coordinates*
+                          <label htmlFor="service" className="block text-sm font-medium text-primary-navy mb-1">
+                            Which Voyage Are You Interested In?*
                           </label>
-                          <input
-                            type="email"
-                            id="email"
-                            name="email"
+                          <select
+                            id="service"
+                            name="service"
                             required
-                            value={formData.email}
+                            value={formData.service}
                             onChange={handleChange}
                             className="w-full px-4 py-3 rounded-lg border border-neutral-gull focus:ring-2 focus:ring-primary-sky focus:border-transparent"
-                            placeholder="Your email"
-                          />
+                          >
+                            <option value="harbor-check">Free Harbor Check Consultation</option>
+                            <option value="skiff">Starter "Skiff" Package</option>
+                            <option value="cutter">Voyager "Cutter" Package</option>
+                            <option value="clipper">Flagship "Clipper" Package</option>
+                            <option value="custom">Custom Solution</option>
+                          </select>
                         </div>
                         
-                        {/* Phone Field */}
+                        {/* Message Field */}
                         <div>
-                          <label htmlFor="phone" className="block text-sm font-medium text-primary-navy mb-1">
-                            Signal Flag Number
+                          <label htmlFor="message" className="block text-sm font-medium text-primary-navy mb-1">
+                            Your Message
                           </label>
-                          <input
-                            type="tel"
-                            id="phone"
-                            name="phone"
-                            value={formData.phone}
+                          <textarea
+                            id="message"
+                            name="message"
+                            rows={4}
+                            value={formData.message}
                             onChange={handleChange}
                             className="w-full px-4 py-3 rounded-lg border border-neutral-gull focus:ring-2 focus:ring-primary-sky focus:border-transparent"
-                            placeholder="Your phone number"
-                          />
+                            placeholder="Tell us about your business and current technology needs..."
+                          ></textarea>
                         </div>
                         
-                        {/* Business Name Field */}
-                        <div>
-                          <label htmlFor="business" className="block text-sm font-medium text-primary-navy mb-1">
-                            Vessel Name*
-                          </label>
-                          <input
-                            type="text"
-                            id="business"
-                            name="business"
-                            required
-                            value={formData.business}
-                            onChange={handleChange}
-                            className="w-full px-4 py-3 rounded-lg border border-neutral-gull focus:ring-2 focus:ring-primary-sky focus:border-transparent"
-                            placeholder="Your business name"
-                          />
-                        </div>
-                      </div>
-                      
-                      {/* Service Interest */}
-                      <div>
-                        <label htmlFor="service" className="block text-sm font-medium text-primary-navy mb-1">
-                          Which Voyage Are You Interested In?*
-                        </label>
-                        <select
-                          id="service"
-                          name="service"
-                          required
-                          value={formData.service}
-                          onChange={handleChange}
-                          className="w-full px-4 py-3 rounded-lg border border-neutral-gull focus:ring-2 focus:ring-primary-sky focus:border-transparent"
-                        >
-                          <option value="harbor-check">Free Harbor Check Consultation</option>
-                          <option value="skiff">Starter "Skiff" Package</option>
-                          <option value="cutter">Voyager "Cutter" Package</option>
-                          <option value="clipper">Flagship "Clipper" Package</option>
-                          <option value="custom">Custom Solution</option>
-                        </select>
-                      </div>
-                      
-                      {/* Message Field */}
-                      <div>
-                        <label htmlFor="message" className="block text-sm font-medium text-primary-navy mb-1">
-                          Your Message
-                        </label>
-                        <textarea
-                          id="message"
-                          name="message"
-                          rows={4}
-                          value={formData.message}
-                          onChange={handleChange}
-                          className="w-full px-4 py-3 rounded-lg border border-neutral-gull focus:ring-2 focus:ring-primary-sky focus:border-transparent"
-                          placeholder="Tell us about your business and current technology needs..."
-                        ></textarea>
-                      </div>
-                      
-                      <div className="text-center pt-4">
-                        <button 
-                          type="submit" 
-                          className="btn-accent btn-large"
-                        >
-                          <span className="inline-flex items-center gap-2">
-                            <svg className="w-5 h-5 text-accent-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M12,2L4.5,20.29l0.71,0.71L12,18l6.79,3 0.71-0.71L12,2z" /></svg>
+                        <div className="text-center pt-4">
+                          <button 
+                            type="submit" 
+                            className="btn-accent btn-large"
+                          >
                             Send Message
-                          </span>
-                        </button>
-                      </div>
-                    </form>
-                    {/* Trust badge/testimonial */}
-                    <div className="mt-10 text-center">
-                      <div className="inline-flex items-center gap-3 bg-white/80 px-6 py-3 rounded-full shadow border border-accent-gold/40">
-                        <svg className="w-6 h-6 text-accent-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M10,17V16H9V14H13V13H10A1,1 0 0,1 9,12V9A1,1 0 0,1 10,8H11V7H13V8H15V10H11V11H14A1,1 0 0,1 15,12V15A1,1 0 0,1 14,16H13V17H11Z" /></svg>
-                        <span className="text-primary-navy font-semibold">Trusted by 60+ Harbor Springs retailers</span>
-                      </div>
-                    </div>
-                  </>
-                )}
+                          </button>
+                        </div>
+                      </form>
+                    </>
+                  )}
+                </div>
               </div>
             </div>
           </div>
-        </div>
       </section>
 
       {/* Contact Info */}
@@ -278,18 +262,6 @@ const ContactPage = () => {
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-16 bg-nautical-gradient text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="font-display font-bold text-3xl mb-6">Need Immediate Assistance?</h2>
-          <p className="max-w-2xl mx-auto mb-8 text-white/90">
-            For urgent technical support, our lighthouse is always on. Call our direct line.
-          </p>
-          <a href="tel:2315559876" className="btn-white">
-            Call Our Support Crew
-          </a>
-        </div>
-      </section>
     </div>
   );
 };

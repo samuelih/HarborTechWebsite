@@ -9,7 +9,6 @@ const AboutPage = () => {
   const [missionVisible, setMissionVisible] = useState(false);
   const [crewVisible, setCrewVisible] = useState(false);
   const [valuesVisible, setValuesVisible] = useState(false);
-  const [ctaVisible, setCtaVisible] = useState(false);
 
   useEffect(() => {
     // Hero animation triggers immediately
@@ -48,32 +47,19 @@ const AboutPage = () => {
       observerOptions
     );
 
-    // Observer for CTA section
-    const ctaObserver = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setCtaVisible(true);
-        }
-      },
-      observerOptions
-    );
-
     // Observe sections
     const missionSection = document.getElementById('mission-section');
     const crewSection = document.getElementById('crew-section');
     const valuesSection = document.getElementById('values-section');
-    const ctaSection = document.getElementById('cta-section');
 
     if (missionSection) missionObserver.observe(missionSection);
     if (crewSection) crewObserver.observe(crewSection);
     if (valuesSection) valuesObserver.observe(valuesSection);
-    if (ctaSection) ctaObserver.observe(ctaSection);
 
     return () => {
       missionObserver.disconnect();
       crewObserver.disconnect();
       valuesObserver.disconnect();
-      ctaObserver.disconnect();
     };
   }, []);
 
@@ -188,10 +174,11 @@ const AboutPage = () => {
             <div className="bg-white rounded-xl overflow-hidden shadow-md h-full flex flex-col">
               <div className="relative h-48 sm:h-56 md:h-64">
                 <Image 
-                  src="/images/about-harbor.svg" 
-                  alt="Basset" 
+                  src="/images/headshots/Max.jpg" 
+                  alt="Max Bassett" 
                   fill
                   className="object-cover"
+                  style={{ objectPosition: '50% 25%' }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
                   <div className="p-4 text-white">
@@ -214,10 +201,11 @@ const AboutPage = () => {
             <div className="bg-white rounded-xl overflow-hidden shadow-md h-full flex flex-col">
               <div className="relative h-48 sm:h-56 md:h-64">
                 <Image 
-                  src="/images/about-harbor.svg" 
+                  src="/images/headshots/Sam.jpg" 
                   alt="Sam Harrell" 
                   fill
                   className="object-cover"
+                  style={{ objectPosition: '50% 25%' }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
                   <div className="p-4 text-white">
@@ -290,47 +278,9 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section id="cta-section" className="py-12 sm:py-16 bg-nautical-gradient text-white">
-        <div className="container mx-auto px-4 text-center">
-          <div className={`bg-primary-navy/50 backdrop-blur-sm rounded-lg py-8 px-4 sm:px-8 mx-auto max-w-3xl transition-all duration-1000 ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <h2 className="font-display font-bold text-2xl sm:text-3xl mb-6">Ready to Set Sail Together?</h2>
-            <p className="max-w-2xl mx-auto mb-8 text-white/90">
-              Harbor Springs has always relied on steady navigation through changing weather. Our mission is to keep every retailer, restaurant, and service shop afloat, so they can spend less time worrying about Wi-Fi dead zones or credit-card glitches and more time doing what makes this town special.
-            </p>
-            <Link href="/contact" className="btn-white">
-              Get Started Today
-            </Link>
-          </div>
-        </div>
-      </section>
 
-      {/* Main Content */}
-      <section className="py-16 bg-white relative overflow-hidden">
-        {/* Decorative illustrations */}
-        <div className={`absolute top-20 left-5 w-32 h-32 opacity-10 transition-all duration-1000 delay-300 ${ctaVisible ? 'opacity-10 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <Image 
-            src="/images/illustrations/houseonwater.svg" 
-            alt="" 
-            width={128}
-            height={128}
-            className="object-contain"
-          />
-        </div>
-        <div className={`absolute bottom-20 right-5 w-24 h-24 opacity-10 transition-all duration-1000 delay-500 ${ctaVisible ? 'opacity-10 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <Image 
-            src="/images/illustrations/seagull.svg" 
-            alt="" 
-            width={96}
-            height={96}
-            className="object-contain"
-          />
-        </div>
-        
-        <div className="container mx-auto px-4">
-          {/* Existing content */}
-        </div>
-      </section>
+
+
     </div>
   );
 };

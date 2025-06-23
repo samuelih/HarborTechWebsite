@@ -95,7 +95,9 @@ const Header = () => {
   };
 
   // Check if we're on a page with dark background
-  const isDarkPage = ['/solutions', '/support', '/about', '/contact'].includes(pathname);
+  const isDarkPage = ['/solutions', '/support', '/about', '/contact'].some(path => 
+    pathname === path || pathname.startsWith(path + '/')
+  );
 
   // Determine text color based on page and scroll state
   const getTextColor = () => {

@@ -8,155 +8,136 @@ import Image from 'next/image';
 const businessTypes = {
   retail: {
     label: 'Retail Shops',
-    subtitle: 'clothing, gifts, hardware',
-    icon: '/images/icons/nautical/anchor.svg',
-    gradient: 'from-[#0D2545] via-[#205d96] to-[#2563eb]',
-    accentColor: 'border-[#F0B254]',
+    icon: '/images/icons/general/shopping-cart.svg',
+    gradient: 'from-accent-gold/10 to-accent-gold/5',
+    accentColor: 'accent-gold',
+    hoverGradient: 'from-accent-gold/20 to-accent-gold/10',
+    activeGradient: 'from-accent-gold via-accent-gold/90 to-accent-gold/80',
     services: {
       featured: [
         { 
           name: 'POS Tune Up', 
           description: 'Fix slow check-outs, add tap to pay, tidy product library.',
-          category: 'Sales',
-          icon: '💳'
+          category: 'Sales'
         },
         { 
           name: 'Inventory Clean Up + auto Reorder Sheet', 
           description: 'One click counts, 4 week demand forecast in Google Sheets',
-          category: 'Operations',
-          icon: '📦'
+          category: 'Operations'
         },
         { 
           name: '"Click and Collect" Online Store', 
           description: 'Shopify site tied to instore stock, basic theme, 3 pages',
-          category: 'Digital',
-          icon: '🛒'
+          category: 'Digital'
         },
         { 
           name: 'Sales and Stock Dashboard', 
           description: 'Daily KPIs piped from POS to a shareable Looker Studio',
-          category: 'Analytics',
-          icon: '📊'
+          category: 'Analytics'
         }
       ],
       additional: {
         'Setup & Systems': [
-          { name: 'POS Install', description: 'Choose system, order hardware, set up taxes and receipts', icon: '🖥️' },
-          { name: 'Cyber-Basics and Backup', description: 'Password manager, 2-factor logins, nightly cloud copy', icon: '🔒' },
-          { name: 'In-Store Speaker / Display Systems', description: 'Audio and visual systems for your space', icon: '🔊' }
+          { name: 'POS Install', description: 'Choose system, order hardware, set up taxes and receipts' },
+          { name: 'Cyber-Basics and Backup', description: 'Password manager, 2-factor logins, nightly cloud copy' },
+          { name: 'In-Store Speaker / Display Systems', description: 'Audio and visual systems for your space' }
         ],
         'Marketing & Growth': [
-          { name: 'Google Business Profile and SEO Optimization', description: 'Hours, photos, reviews', icon: '🔍' },
-          { name: 'Website Refresh', description: 'Update copy, new hero image, shop map, etc.', icon: '🌐' },
-          { name: 'Loyalty + email starter pack', description: 'Sign up QR code at till, mailchimp template, first campaign, etc', icon: '💌' }
+          { name: 'Google Business Profile and SEO Optimization', description: 'Hours, photos, reviews' },
+          { name: 'Website Refresh', description: 'Update copy, new hero image, shop map, etc.' },
+          { name: 'Loyalty + email starter pack', description: 'Sign up QR code at till, mailchimp template, first campaign, etc' }
         ],
         'Staff & Operations': [
-          { name: 'Payroll friendly Time Clock', description: 'Staff app, tip-pool reports, auto OT alert', icon: '⏰' },
-          { name: 'FAQ (customer and staff) AI Chatbot', description: 'embed in site/POS, trains on policies', icon: '🤖' },
-          { name: 'Staff Training + Cheat Sheets', description: 'On-site or Zoom, plus printable cheat sheets', icon: '📚' }
+          { name: 'Payroll friendly Time Clock', description: 'Staff app, tip-pool reports, auto OT alert' },
+          { name: 'FAQ (customer and staff) AI Chatbot', description: 'embed in site/POS, trains on policies' },
+          { name: 'Staff Training + Cheat Sheets', description: 'On-site or Zoom, plus printable cheat sheets' }
         ]
       }
     }
   },
   restaurants: {
     label: 'Restaurants',
-    subtitle: 'cafes, bars, food service',
-    icon: '/images/icons/nautical/helm.svg',
-    gradient: 'from-[#059669] via-[#10b981] to-[#34d399]',
-    accentColor: 'border-[#10b981]',
+    icon: '/images/icons/general/chef-hat.svg',
+    gradient: 'from-accent-sea/10 to-accent-sea/5',
+    accentColor: 'accent-sea',
+    hoverGradient: 'from-accent-sea/20 to-accent-sea/10',
+    activeGradient: 'from-accent-sea via-accent-sea/90 to-accent-sea/80',
     services: {
       featured: [
         { 
           name: 'Table-side QR Ordering', 
           description: 'Print codes, configure mobile menu, push to kitchen printer',
-          category: 'Ordering',
-          icon: '📱'
+          category: 'Ordering'
         },
         { 
           name: 'Kitchen Display System (KDS) Install', 
           description: 'Tablets, routing rules, expo screen',
-          category: 'Kitchen',
-          icon: '🍳'
+          category: 'Kitchen'
         },
         { 
           name: 'Online Ordering + Curb-side', 
           description: 'Toast/Shopify Food app, hook to inventory and pickup texts',
-          category: 'Delivery',
-          icon: '🚗'
+          category: 'Delivery'
         },
         { 
           name: 'Reservations Sync', 
           description: 'Integrate OpenTable/ Resy with POS, real-time table status board',
-          category: 'Management',
-          icon: '📋'
+          category: 'Management'
         }
       ],
       additional: {
         'Core Systems': [
-          { name: 'POS Tune Up', description: 'Fix slow check-outs, add tap to pay, tidy product library.', icon: '💳' },
-          { name: 'Menu and Allergen Manager', description: 'Master menu in Google Sheets, pushes to QR, website, DoorDash', icon: '📋' }
+          { name: 'POS Tune Up', description: 'Fix slow check-outs, add tap to pay, tidy product library.' },
+          { name: 'Menu and Allergen Manager', description: 'Master menu in Google Sheets, pushes to QR, website, DoorDash' }
         ],
         'Marketing & Online': [
-          { name: 'Google Business Profile and SEO Optimization', description: 'Hours, photos, reviews', icon: '🔍' },
-          { name: 'Website Refresh', description: 'Update copy, new hero image, shop map, etc.', icon: '🌐' },
-          { name: 'Loyalty + email starter pack', description: 'Sign up QR code at till, mailchimp template, first campaign, etc', icon: '💌' }
+          { name: 'Google Business Profile and SEO Optimization', description: 'Hours, photos, reviews' },
+          { name: 'Website Refresh', description: 'Update copy, new hero image, shop map, etc.' },
+          { name: 'Loyalty + email starter pack', description: 'Sign up QR code at till, mailchimp template, first campaign, etc' }
         ],
         'Staff Management': [
-          { name: 'Payroll friendly Time Clock', description: 'Staff app, tip-pool reports, auto OT alert', icon: '⏰' },
-          { name: 'FAQ (customer and staff) AI Chatbot', description: 'embed in site/POS, trains on policies', icon: '🤖' }
+          { name: 'Payroll friendly Time Clock', description: 'Staff app, tip-pool reports, auto OT alert' },
+          { name: 'FAQ (customer and staff) AI Chatbot', description: 'embed in site/POS, trains on policies' }
         ]
       }
     }
   },
   service: {
     label: 'Services',
-    subtitle: 'contractors, repair, maintenance',
-    icon: '/images/icons/nautical/lighthouse.svg',
-    gradient: 'from-[#F59E0B] via-[#F0B254] to-[#FCD34D]',
-    accentColor: 'border-[#F59E0B]',
+    icon: '/images/icons/general/hands-stars.svg',
+    gradient: 'from-primary-blue/10 to-primary-blue/5',
+    accentColor: 'primary-blue',
+    hoverGradient: 'from-primary-blue/20 to-primary-blue/10',
+    activeGradient: 'from-primary-blue via-primary-blue/90 to-primary-blue/80',
     services: {
       featured: [
         { 
           name: 'Online Booking and Smart Calendar', 
           description: 'Squarespace/ Square Appointments, sync to Google/Outlook, auto-reminders',
-          category: 'Scheduling',
-          icon: '📅'
+          category: 'Scheduling'
         },
         { 
           name: 'Job-Site Photo Uploader', 
           description: 'Simple phone form -> client gets time-stamped pics and notes',
-          category: 'Documentation',
-          icon: '📸'
+          category: 'Documentation'
         },
         { 
           name: 'Quick-Quote Template Pack', 
           description: 'Branded PDF + auto-pricing spreadsheet for fast estimates',
-          category: 'Sales',
-          icon: '📄'
+          category: 'Sales'
         }
       ],
       additional: {
         'Business Operations': [
-          { name: 'Website Refresh', description: 'Update copy, new hero image, shop map, etc.', icon: '🌐' },
-          { name: 'POS Install', description: 'Choose system, order hardware, set up taxes and receipts', icon: '🖥️' },
-          { name: 'Inventory Clean Up + auto Reorder Sheet', description: 'One click counts, 4 week demand forecast in Google Sheets', icon: '📦' }
+          { name: 'Website Refresh', description: 'Update copy, new hero image, shop map, etc.' },
+          { name: 'POS Install', description: 'Choose system, order hardware, set up taxes and receipts' },
+          { name: 'Inventory Clean Up + auto Reorder Sheet', description: 'One click counts, 4 week demand forecast in Google Sheets' }
         ],
         'Customer Engagement': [
-          { name: 'Loyalty + email starter pack', description: 'Sign up QR code at till, mailchimp template, first campaign, etc', icon: '💌' },
-          { name: 'FAQ (customer and staff) AI Chatbot', description: 'embed in site/POS, trains on policies', icon: '🤖' }
+          { name: 'Loyalty + email starter pack', description: 'Sign up QR code at till, mailchimp template, first campaign, etc' },
+          { name: 'FAQ (customer and staff) AI Chatbot', description: 'embed in site/POS, trains on policies' }
         ]
       }
-    }
-  },
-  professional: {
-    label: 'Professional Services',
-    subtitle: 'Insurance, Law Firms, Banks, Healthcare',
-    icon: '/images/icons/nautical/wheel.svg',
-    gradient: 'from-[#7C3AED] via-[#8B5CF6] to-[#A78BFA]',
-    accentColor: 'border-[#8B5CF6]',
-    services: {
-      featured: [],
-      additional: {}
     }
   }
 };
@@ -164,15 +145,15 @@ const businessTypes = {
 type BusinessType = keyof typeof businessTypes;
 
 const BusinessTypeSwitcher = () => {
-  const [activeType, setActiveType] = useState<BusinessType>('retail');
+  const [activeType, setActiveType] = useState<BusinessType | null>(null);
   const [showAllServices, setShowAllServices] = useState(false);
 
   return (
     <div className="space-y-12">
       {/* Section Header */}
       <div className="text-center mb-12">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-6 text-nautical-navy">
-          Choose Your Business Type
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-6 text-nautical-navy business-type-title">
+          What's Your Business Type?
         </h2>
         <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
           Select your business type to see our tailored solutions designed specifically for your industry needs.
@@ -180,7 +161,7 @@ const BusinessTypeSwitcher = () => {
       </div>
 
       {/* Enhanced Business Type Selector */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 max-w-4xl mx-auto">
         {Object.entries(businessTypes).map(([key, business]) => (
           <button
             key={key}
@@ -188,11 +169,26 @@ const BusinessTypeSwitcher = () => {
               setActiveType(key as BusinessType);
               setShowAllServices(false);
             }}
-            className={`group relative overflow-hidden rounded-2xl p-6 text-center transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 ${
+            className={`group relative overflow-hidden rounded-2xl p-6 text-center btn-glimmer transition-all duration-300 transform hover:scale-[1.02] hover:-translate-y-2 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
               activeType === key 
-                ? 'bg-gradient-to-br ' + business.gradient + ' text-white shadow-2xl' 
-                : 'bg-white/90 backdrop-blur-sm text-nautical-navy hover:bg-white border-2 border-white/50 hover:border-accent-gold/50 shadow-lg hover:shadow-xl'
+                ? `bg-gradient-to-br ${business.activeGradient} ${key === 'retail' || key === 'service' ? 'text-white' : `text-${business.accentColor}`} border-2 border-${business.accentColor}/50 shadow-2xl focus:ring-${business.accentColor}` 
+                : 'bg-white/90 backdrop-blur-sm text-nautical-navy hover:bg-white border-2 border-white/50 hover:border-neutral-gull/50 shadow-lg hover:shadow-2xl focus:ring-nautical-navy'
             }`}
+            style={{
+              boxShadow: activeType === key 
+                ? `0 6px 16px rgba(13, 37, 69, 0.3)` 
+                : undefined
+            }}
+            onMouseEnter={(e) => {
+              if (activeType !== key) {
+                e.currentTarget.style.boxShadow = '0 6px 16px rgba(13, 37, 69, 0.2)';
+              }
+            }}
+            onMouseLeave={(e) => {
+              if (activeType !== key) {
+                e.currentTarget.style.boxShadow = '';
+              }
+            }}
             aria-pressed={activeType === key}
           >
             {/* Background pattern */}
@@ -207,8 +203,8 @@ const BusinessTypeSwitcher = () => {
             <div className="relative z-10 mb-4">
               <div className={`w-12 h-12 mx-auto rounded-full flex items-center justify-center transition-all duration-300 ${
                 activeType === key 
-                  ? 'bg-white/20' 
-                  : 'bg-neutral-100 group-hover:bg-accent-gold/20'
+                  ? 'bg-accent-gold/20' 
+                  : 'bg-accent-gold/10 group-hover:bg-accent-gold/20'
               }`}>
                 <Image
                   src={business.icon}
@@ -217,7 +213,7 @@ const BusinessTypeSwitcher = () => {
                   height={24}
                   className={`transition-all duration-300 ${
                     activeType === key 
-                      ? 'filter brightness-0 invert' 
+                      ? `filter ${business.accentColor === 'accent-gold' ? 'brightness-0 saturate-100' : business.accentColor === 'accent-sea' ? 'hue-rotate-180 saturate-150' : 'hue-rotate-180 brightness-75'} contrast-125` 
                       : 'group-hover:scale-110'
                   }`}
                 />
@@ -229,221 +225,194 @@ const BusinessTypeSwitcher = () => {
               <h3 className="font-display font-bold text-lg mb-1">
                 {business.label}
               </h3>
-              {business.subtitle && (
-                <p className={`text-sm ${
-                  activeType === key 
-                    ? 'text-white/80' 
-                    : 'text-neutral-600 group-hover:text-accent-gold'
-                }`}>
-                  {business.subtitle}
-                </p>
-              )}
             </div>
             
             {/* Glow effect for active state */}
             {activeType === key && (
-              <div className="absolute inset-0 rounded-2xl blur-xl opacity-30 bg-gradient-to-br from-white via-transparent to-white"></div>
+              <div className={`absolute inset-0 rounded-2xl blur-xl opacity-30 bg-${business.accentColor}/30`}></div>
             )}
           </button>
         ))}
       </div>
 
       {/* Enhanced Panel Area */}
-      <div className="max-w-7xl mx-auto">
-        <AnimatePresence mode="wait">
-          <motion.section
-            key={activeType}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.4, ease: 'easeInOut' }}
-            className="relative"
-            aria-labelledby={`${activeType}-heading`}
-          >
-            {/* Background with subtle pattern */}
-            <div className="absolute inset-0 bg-white/50 backdrop-blur-sm rounded-3xl"></div>
-            <div className="absolute inset-0 opacity-5" style={{ 
-              backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%230D2545" fill-opacity="1"%3E%3Cpath d="M30 30c0-6.627-5.373-12-12-12s-12 5.373-12 12 5.373 12 12 12 12-5.373 12-12zm12 0c0-6.627-5.373-12-12-12s-12 5.373-12 12 5.373 12 12 12 12-5.373 12-12z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
-              backgroundSize: '60px 60px'
-            }}></div>
-            
-            <div className="relative z-10 p-8 md:p-12">
-              {/* Header with enhanced styling */}
-              <div className="text-center mb-12">
-                <div className="flex items-center justify-center mb-6">
-                  <div className={`p-4 rounded-2xl bg-gradient-to-br ${businessTypes[activeType].gradient} shadow-lg`}>
-                    <Image
-                      src={businessTypes[activeType].icon}
-                      alt={businessTypes[activeType].label}
-                      width={40}
-                      height={40}
-                      className="filter brightness-0 invert"
-                    />
-                  </div>
+      {activeType && (
+        <div className="max-w-7xl mx-auto">
+          <AnimatePresence mode="wait">
+            <motion.section
+              key={activeType}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4, ease: 'easeInOut' }}
+              className="relative"
+              aria-labelledby={`${activeType}-heading`}
+            >
+              {/* Background with subtle pattern */}
+              <div className="absolute inset-0 bg-white/50 backdrop-blur-sm rounded-3xl"></div>
+              <div className="absolute inset-0 opacity-5" style={{ 
+                backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%230D2545" fill-opacity="1"%3E%3Cpath d="M30 30c0-6.627-5.373-12-12-12s-12 5.373-12 12 5.373 12 12 12 12-5.373 12-12zm12 0c0-6.627-5.373-12-12-12s-12 5.373-12 12 5.373 12 12 12 12-5.373 12-12z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
+                backgroundSize: '60px 60px'
+              }}></div>
+              
+              <div className="relative z-10 p-8 md:p-12">
+                {/* Header with enhanced styling */}
+                <div className="mb-12 text-center">
+                  <h3 
+                    id={`${activeType}-heading`}
+                    className="text-3xl md:text-4xl font-display font-bold text-nautical-navy mb-4"
+                  >
+                    <span className="relative inline-block">
+                      {businessTypes[activeType].label} Solutions:
+                      <span className={`absolute -bottom-1 left-0 w-full h-1 ${
+                        businessTypes[activeType].accentColor === 'accent-gold' ? 'bg-accent-gold/70' :
+                        businessTypes[activeType].accentColor === 'accent-sea' ? 'bg-accent-sea/70' :
+                        'bg-primary-blue/70'
+                      }`}></span>
+                    </span>
+                  </h3>
                 </div>
-                <h3 
-                  id={`${activeType}-heading`}
-                  className="text-3xl md:text-4xl font-display font-bold text-nautical-navy mb-4"
-                >
-                  {businessTypes[activeType].label}
-                </h3>
-                {businessTypes[activeType].subtitle && (
-                  <p className="text-xl text-neutral-600 italic">
-                    {businessTypes[activeType].subtitle}
-                  </p>
+
+                {/* Services Content */}
+                {businessTypes[activeType].services.featured.length === 0 ? (
+                  // Work in Progress for Professional Services
+                  <div className="text-center py-16">
+                    <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${businessTypes[activeType].hoverGradient} rounded-full mb-6`}>
+                      <svg className={`w-8 h-8 text-${businessTypes[activeType].accentColor}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
+                      </svg>
+                    </div>
+                    <h4 className="text-2xl font-display font-bold text-nautical-navy mb-3">Work in Progress</h4>
+                    <p className="text-neutral-600 max-w-md mx-auto">
+                      We're crafting specialized solutions for professional services. Contact us to discuss your specific needs.
+                    </p>
+                  </div>
+                ) : (
+                  <>
+                    {/* Featured Services */}
+                    <div className="mb-12">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {businessTypes[activeType].services.featured.map((service, index) => (
+                          <Link 
+                            key={index}
+                            href="/contact" 
+                            className="group block"
+                          >
+                            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 border-2 border-white/50 hover:border-neutral-gull/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 h-full">
+                              <div className="text-center">
+                                
+                                {/* Category badge */}
+                                <div className={`inline-block px-3 py-1 rounded-full text-xs font-bold mb-4 text-white ${
+                                  businessTypes[activeType].accentColor === 'accent-gold' ? 'bg-accent-gold' :
+                                  businessTypes[activeType].accentColor === 'accent-sea' ? 'bg-accent-sea' :
+                                  'bg-primary-blue'
+                                }`}>
+                                  {service.category}
+                                </div>
+                                
+                                {/* Service name */}
+                                <h5 className={`font-display font-bold text-xl text-nautical-navy mb-3 group-hover:text-${businessTypes[activeType].accentColor} transition-colors`}>
+                                  {service.name}
+                                </h5>
+                                
+                                {/* Description */}
+                                <p className="text-neutral-600 leading-relaxed text-sm">
+                                  {service.description}
+                                </p>
+                                
+                                {/* Learn more indicator */}
+                                <div className={`mt-4 text-${businessTypes[activeType].accentColor} text-sm font-semibold group-hover:underline`}>
+                                  Learn More →
+                                </div>
+                              </div>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Additional Services Toggle */}
+                    <div className="text-center mb-8">
+                      <button
+                        onClick={() => setShowAllServices(!showAllServices)}
+                        className="btn-secondary inline-flex items-center gap-2"
+                      >
+                        {showAllServices ? 'Show Less' : 'View All Solutions'}
+                        <svg 
+                          className={`w-4 h-4 transition-transform duration-300 ${showAllServices ? 'rotate-180' : ''}`}
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
+                    </div>
+
+                    {/* Additional Services (Organized by Category) */}
+                    <AnimatePresence>
+                      {showAllServices && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="overflow-hidden"
+                        >
+                          <div className="grid gap-8">
+                            {Object.entries(businessTypes[activeType].services.additional).map(([category, services]) => (
+                              <div key={category} className="bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-white/50">
+                                <h5 className={`font-display font-bold text-lg text-nautical-navy mb-4 pb-2 border-b border-${businessTypes[activeType].accentColor}/20`}>
+                                  {category}
+                                </h5>
+                                <div className="grid gap-3">
+                                  {services.map((service, serviceIndex) => (
+                                    <Link 
+                                      key={serviceIndex}
+                                      href="/contact" 
+                                      className="group flex items-start space-x-4 p-4 rounded-lg hover:bg-white/80 transition-all duration-200"
+                                    >
+                                      <div className={`w-8 h-8 bg-${businessTypes[activeType].accentColor}/20 rounded-full`}></div>
+                                      <div className="flex-1 min-w-0">
+                                        <h6 className={`font-semibold text-nautical-navy group-hover:text-${businessTypes[activeType].accentColor} transition-colors`}>
+                                          {service.name}
+                                        </h6>
+                                        <p className="text-neutral-600 text-sm leading-relaxed">
+                                          {service.description}
+                                        </p>
+                                      </div>
+                                      <svg className={`w-4 h-4 text-neutral-400 group-hover:text-${businessTypes[activeType].accentColor} transition-all duration-300 group-hover:translate-x-1 flex-shrink-0`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                      </svg>
+                                    </Link>
+                                  ))}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </>
                 )}
                 
-                {/* Decorative line */}
-                <div className="flex items-center justify-center mt-6">
-                  <div className="h-px bg-gradient-to-r from-transparent via-accent-gold to-transparent w-32"></div>
-                  <div className="w-2 h-2 bg-accent-gold rounded-full mx-4"></div>
-                  <div className="h-px bg-gradient-to-r from-accent-gold via-transparent to-transparent w-32"></div>
-                </div>
-              </div>
-
-              {/* Services Content */}
-              {businessTypes[activeType].services.featured.length === 0 ? (
-                // Work in Progress for Professional Services
-                <div className="text-center py-16">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-accent-gold to-orange-400 rounded-full mb-6">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
+                {/* Call to Action */}
+                <div className="text-center mt-12 pt-8 border-t border-neutral-gull/20">
+                  <Link 
+                    href="/contact" 
+                    className="btn-primary btn-large inline-flex items-center gap-2"
+                  >
+                    Get Your Free Consultation
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
-                  </div>
-                  <h4 className="text-2xl font-display font-bold text-nautical-navy mb-3">Work in Progress</h4>
-                  <p className="text-neutral-600 max-w-md mx-auto">
-                    We're crafting specialized solutions for professional services. Contact us to discuss your specific needs.
-                  </p>
+                  </Link>
                 </div>
-              ) : (
-                <>
-                  {/* Featured Services */}
-                  <div className="mb-12">
-                    <h4 className="text-2xl font-display font-bold text-nautical-navy mb-8 text-center">
-                      Most Popular Solutions
-                    </h4>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      {businessTypes[activeType].services.featured.map((service, index) => (
-                        <Link 
-                          key={index}
-                          href="/contact" 
-                          className="group block"
-                        >
-                          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 border-2 border-white/50 hover:border-accent-gold/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 h-full">
-                            <div className="text-center">
-                              {/* Large emoji icon */}
-                              <div className="text-4xl mb-4">{service.icon}</div>
-                              
-                              {/* Category badge */}
-                              <div className={`inline-block px-3 py-1 rounded-full text-xs font-bold mb-4 bg-gradient-to-r ${businessTypes[activeType].gradient} text-white`}>
-                                {service.category}
-                              </div>
-                              
-                              {/* Service name */}
-                              <h5 className="font-display font-bold text-xl text-nautical-navy mb-3 group-hover:text-accent-gold transition-colors">
-                                {service.name}
-                              </h5>
-                              
-                              {/* Description */}
-                              <p className="text-neutral-600 leading-relaxed text-sm">
-                                {service.description}
-                              </p>
-                              
-                              {/* Learn more indicator */}
-                              <div className="mt-4 text-accent-gold text-sm font-semibold group-hover:underline">
-                                Learn More →
-                              </div>
-                            </div>
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Additional Services Toggle */}
-                  <div className="text-center mb-8">
-                    <button
-                      onClick={() => setShowAllServices(!showAllServices)}
-                      className="btn-secondary inline-flex items-center gap-2"
-                    >
-                      {showAllServices ? 'Show Less' : 'View All Solutions'}
-                      <svg 
-                        className={`w-4 h-4 transition-transform duration-300 ${showAllServices ? 'rotate-180' : ''}`}
-                        fill="none" 
-                        stroke="currentColor" 
-                        viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </button>
-                  </div>
-
-                  {/* Additional Services (Organized by Category) */}
-                  <AnimatePresence>
-                    {showAllServices && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="overflow-hidden"
-                      >
-                        <div className="grid gap-8">
-                          {Object.entries(businessTypes[activeType].services.additional).map(([category, services]) => (
-                            <div key={category} className="bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-white/50">
-                              <h5 className="font-display font-bold text-lg text-nautical-navy mb-4 pb-2 border-b border-accent-gold/20">
-                                {category}
-                              </h5>
-                              <div className="grid gap-3">
-                                {services.map((service, serviceIndex) => (
-                                  <Link 
-                                    key={serviceIndex}
-                                    href="/contact" 
-                                    className="group flex items-start space-x-4 p-4 rounded-lg hover:bg-white/80 transition-all duration-200"
-                                  >
-                                    <div className="text-2xl">{service.icon}</div>
-                                    <div className="flex-1 min-w-0">
-                                      <h6 className="font-semibold text-nautical-navy group-hover:text-accent-gold transition-colors">
-                                        {service.name}
-                                      </h6>
-                                      <p className="text-neutral-600 text-sm leading-relaxed">
-                                        {service.description}
-                                      </p>
-                                    </div>
-                                    <svg className="w-4 h-4 text-neutral-400 group-hover:text-accent-gold transition-all duration-300 group-hover:translate-x-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                    </svg>
-                                  </Link>
-                                ))}
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </>
-              )}
-              
-              {/* Call to Action */}
-              <div className="text-center mt-12 pt-8 border-t border-accent-gold/20">
-                <p className="text-lg text-neutral-600 mb-6">
-                  Ready to transform your {businessTypes[activeType].label.toLowerCase()}?
-                </p>
-                <Link 
-                  href="/contact" 
-                  className="btn-primary btn-large inline-flex items-center gap-2"
-                >
-                  Get Your Free Consultation
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
               </div>
-            </div>
-          </motion.section>
-        </AnimatePresence>
-      </div>
+            </motion.section>
+          </AnimatePresence>
+        </div>
+      )}
     </div>
   );
 };
