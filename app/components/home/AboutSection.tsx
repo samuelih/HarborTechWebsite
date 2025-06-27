@@ -52,7 +52,7 @@ const AboutSection = () => {
   return (
     <section 
       id="about" 
-      className="relative overflow-hidden py-16 flex flex-col md:flex-row items-center justify-center min-h-[600px]"
+      className="relative overflow-x-hidden overflow-y-visible py-16 flex flex-col md:flex-row items-center justify-center min-h-[600px]"
       style={{
         background: '#0A2035',
       }}
@@ -140,9 +140,9 @@ const AboutSection = () => {
             </div>
           </div>
           
-          {/* Light cone illumination effect on the text */}
+          {/* Light cone illumination effect on the text - hidden on mobile to prevent overflow */}
           <div 
-            className={`absolute -right-[200px] top-1/2 w-[500px] h-[600px] transition-opacity duration-700 ${isBeamActive ? 'opacity-30' : 'opacity-0'}`} 
+            className={`absolute -right-[200px] top-1/2 w-[500px] h-[600px] transition-opacity duration-700 hidden md:block ${isBeamActive ? 'opacity-30' : 'opacity-0'}`} 
             style={{
               background: 'conic-gradient(from -30deg at 0% 50%, rgba(240, 178, 84, 0.8) 0deg, transparent 40deg)',
               filter: 'blur(30px)',
@@ -156,9 +156,9 @@ const AboutSection = () => {
         {/* Lighthouse */}
         <div className="relative flex items-center justify-center md:w-96 h-full ml-8">
           <div className="canvas relative w-40 md:w-44 h-[440px] flex justify-center items-center">
-            {/* Primary Light beam - adjusted direction and intensity */}
+            {/* Primary Light beam - adjusted direction and intensity - hidden on mobile to prevent overflow */}
             <div 
-              className={`absolute z-10 transition-all duration-700 ${isBeamActive ? 'opacity-90' : 'opacity-0'}`}
+              className={`absolute z-10 transition-all duration-700 hidden md:block ${isBeamActive ? 'opacity-90' : 'opacity-0'}`}
               style={{
                 position: "absolute",
                 top: "-96px",
@@ -174,9 +174,9 @@ const AboutSection = () => {
               }}
             />
             
-            {/* Secondary wider beam */}
+            {/* Secondary wider beam - hidden on mobile to prevent overflow */}
             <div 
-              className={`absolute z-9 transition-all duration-700 ${isBeamActive ? 'opacity-60' : 'opacity-0'}`}
+              className={`absolute z-9 transition-all duration-700 hidden md:block ${isBeamActive ? 'opacity-60' : 'opacity-0'}`}
               style={{
                 position: "absolute",
                 top: "-96px",
@@ -192,9 +192,9 @@ const AboutSection = () => {
               }}
             />
             
-            {/* Ambient light glow */}
+            {/* Ambient light glow - hidden on mobile to prevent overflow */}
             <div 
-              className={`absolute rounded-full transition-all duration-700 ${isBeamActive ? 'opacity-80' : 'opacity-0'}`}
+              className={`absolute rounded-full transition-all duration-700 hidden md:block ${isBeamActive ? 'opacity-80' : 'opacity-0'}`}
               style={{
                 width: "400px",
                 height: "400px",

@@ -7,7 +7,7 @@ export default function VideosPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative py-20 bg-nautical-gradient overflow-hidden">
+      <section className="relative py-20 pt-32 bg-nautical-gradient overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23ffffff" fill-opacity="0.3" fill-rule="evenodd"%3E%3Ccircle cx="3" cy="3" r="1"/%3E%3C/g%3E%3C/svg%3E")', backgroundSize: '24px 24px' }}></div>
         </div>

@@ -34,7 +34,7 @@ const ContactPage = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center bg-nautical-gradient overflow-hidden">
+      <section className="relative min-h-[70vh] flex items-center bg-nautical-gradient overflow-hidden pt-32">
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center">
             <h1 className="text-white font-display font-bold text-4xl sm:text-5xl md:text-6xl mb-6">
