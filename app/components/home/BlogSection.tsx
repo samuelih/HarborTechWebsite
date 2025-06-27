@@ -38,20 +38,20 @@ const BlogSection = () => {
   return (
     <section className="py-20 bg-white relative overflow-hidden">
       {/* Decorative nautical elements */}
-      <div className="absolute top-20 left-5 w-32 h-32 opacity-5">
+      <div className="absolute top-20 left-5 w-32 h-32 opacity-5" aria-hidden="true">
         <Image 
           src="/images/user/sailboat.svg" 
-          alt="" 
+          alt="Decorative sailboat illustration" 
           width={128}
           height={128}
           className="object-contain animate-gentle-float"
         />
       </div>
       
-      <div className="absolute bottom-20 right-5 w-24 h-24 opacity-5">
+      <div className="absolute bottom-20 right-5 w-24 h-24 opacity-5" aria-hidden="true">
         <Image 
           src="/images/user/bird.svg" 
-          alt="" 
+          alt="Decorative seabird illustration" 
           width={96}
           height={96}
           className="object-contain"
@@ -61,10 +61,10 @@ const BlogSection = () => {
       <Container className="relative z-10">
         <div className="flex justify-between items-center mb-12">
           <div className="flex items-center">
-            <div className="mr-4 w-8 h-8 relative">
+            <div className="mr-4 w-8 h-8 relative" aria-hidden="true">
               <Image 
                 src="/images/user/wave.svg" 
-                alt="" 
+                alt="Decorative wave icon" 
                 width={32}
                 height={32}
                 className="object-contain"
@@ -74,10 +74,10 @@ const BlogSection = () => {
           </div>
           <Link href="/resources/blog" className="text-primary-700 hover:text-primary-500 font-semibold group flex items-center">
             <span>View all articles</span>
-            <div className="ml-2 w-6 h-6 relative group-hover:translate-x-1 transition-transform">
+            <div className="ml-2 w-6 h-6 relative group-hover:translate-x-1 transition-transform" aria-hidden="true">
               <Image 
                 src="/images/user/bird.svg" 
-                alt="" 
+                alt="Decorative arrow bird icon" 
                 width={24}
                 height={24}
                 className="object-contain"
@@ -101,10 +101,10 @@ const BlogSection = () => {
         </div>
 
         <div className="mt-10 bg-primary-100 rounded-lg p-6 text-center relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-16 h-16 opacity-20">
+          <div className="absolute top-0 right-0 w-16 h-16 opacity-20" aria-hidden="true">
             <Image 
               src="/images/user/anchor.svg" 
-              alt="" 
+              alt="Decorative anchor background" 
               width={64}
               height={64}
               className="object-contain"
@@ -113,10 +113,10 @@ const BlogSection = () => {
           <p className="font-semibold mb-3">Join 212 Harbor retailers reading 'The Weekly Tide.'</p>
           <Button href="/resources/subscribe" className="inline-flex items-center">
             <span>Subscribe to our newsletter</span>
-            <div className="ml-2 w-5 h-5 relative">
+            <div className="ml-2 w-5 h-5 relative" aria-hidden="true">
               <Image 
                 src="/images/user/wave.svg" 
-                alt="" 
+                alt="Decorative wave accent" 
                 width={20}
                 height={20}
                 className="object-contain"

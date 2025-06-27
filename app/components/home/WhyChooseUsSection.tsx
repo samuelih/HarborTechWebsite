@@ -26,34 +26,34 @@ const WhyChooseUsSection = () => {
 
   const comparisonData = [
     {
-      feature: "Pricing Model",
-      htc: "Flat project quote—know the exact cost up-front",
-      rival: "Hourly billing ($150 – $200 /hr)",
-      tooltip: "No surprise bills or scope creep—you know exactly what you'll pay before we start"
+      feature: "Flat-Rate Pricing",
+      htc: "One flat project price.",
+      rival: "Hourly meter ($150–$200/hr) plus \"miscellaneous\" add‑ons that stack up fast.",
+      tooltip: "Transparent billing with no surprises or scope creep—you know exactly what you'll pay before we start"
     },
     {
-      feature: "Local Expertise", 
-      htc: "Runs 60+ Harbor Springs storefront audits each year",
-      rival: "Regional/general focus, little Main-Street insight",
-      tooltip: "We understand the unique challenges of seasonal tourism businesses"
+      feature: "Local Insight", 
+      htc: "Harbor‑Springs born & raised.",
+      rival: "Fly‑in technicians who treat Main Street like any strip mall—zero seasonal nuance.",
+      tooltip: "We design around tourist swings and the neighbor‑helping‑neighbor mindset"
     },
     {
-      feature: "Project Timeline",
-      htc: "2–4 weeks from kickoff to launch", 
-      rival: "6–12 weeks average",
-      tooltip: "Fast turnaround means you're selling online before peak season"
+      feature: "Timeline",
+      htc: "2–4 weeks from kickoff to go‑live.", 
+      rival: "6–12+ weeks.",
+      tooltip: "We will work with you to know when is best to implement"
     },
     {
-      feature: "Support Style",
-      htc: "Same-day visits within Emmet Co.",
-      rival: "Remote call-center, travel fees", 
-      tooltip: "Real person, real help, right when you need it most"
+      feature: "Included Support",
+      htc: "For NO ADDITIONAL COST, we offer training resources, cheatsheets, 1 hour of phone calls per month, chatbots trained on manuals, and more.",
+      rival: "Has entire concerts with their hold‑music, crummy remote call centers, and travel surcharges for on‑site help.", 
+      tooltip: "The paid support package includes remote support, 24/7 response, and unlimited phone calls."
     },
     {
-      feature: "Community Investment", 
-      htc: "Sponsors Harbor Springs robotics & youth sailing",
-      rival: "No local investment",
-      tooltip: "We're neighbors first, vendors second—invested in our community's success"
+      feature: "Community Involvement", 
+      htc: "Plans to sponsor Harbor Springs Robotics, Youth Sailing, and Street Musique.",
+      rival: "No local investment—your dollars leave town the moment you pay.",
+      tooltip: "Profits stay on the bay"
     }
   ];
 
@@ -61,7 +61,7 @@ const WhyChooseUsSection = () => {
     <section id="comparison-section" className="comparison-section py-20 px-4 md:px-0">
       {/* Enhanced Section Header */}
       <div className="section-header">
-        <h2 className="section-title">Why Local Shops Pick Us</h2>
+        <h2 className="section-title">Why Harbor Springs shops choose us</h2>
         <p className="section-promise">Compare at a glance—decide in 30 seconds</p>
       </div>
 
@@ -78,7 +78,7 @@ const WhyChooseUsSection = () => {
             </div>
             <div className="header-cell rival-header" role="columnheader">
               <div className="header-content">
-                <span>Typical IT Vendor</span>
+                <span>"Common" Competitors</span>
               </div>
             </div>
           </div>

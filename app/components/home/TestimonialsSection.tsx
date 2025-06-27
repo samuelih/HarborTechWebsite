@@ -24,20 +24,20 @@ const TestimonialsSection = () => {
   return (
     <section className="py-20 bg-primary-100 relative overflow-hidden">
       {/* Decorative nautical elements */}
-      <div className="absolute top-10 right-10 w-28 h-28 opacity-10">
+      <div className="absolute top-10 right-10 w-28 h-28 opacity-10" aria-hidden="true">
         <Image 
           src="/images/user/lighthouse.svg" 
-          alt="" 
+          alt="Decorative lighthouse illustration" 
           width={112}
           height={112}
           className="object-contain"
         />
       </div>
       
-      <div className="absolute bottom-5 left-5 w-20 h-20 opacity-10">
+      <div className="absolute bottom-5 left-5 w-20 h-20 opacity-10" aria-hidden="true">
         <Image 
           src="/images/user/anchor.svg" 
-          alt="" 
+          alt="Decorative nautical anchor" 
           width={80}
           height={80}
           className="object-contain"
@@ -46,20 +46,20 @@ const TestimonialsSection = () => {
       
       <Container className="relative z-10">
         <div className="flex items-center justify-center mb-8">
-          <div className="w-10 h-10 mr-4">
+          <div className="w-10 h-10 mr-4" aria-hidden="true">
             <Image 
               src="/images/user/wheel.svg" 
-              alt="" 
+              alt="Decorative nautical ship wheel" 
               width={40}
               height={40}
               className="object-contain animate-slow-spin"
             />
           </div>
           <SectionHeading title="What Our Clients Say" centered />
-          <div className="w-10 h-10 ml-4">
+          <div className="w-10 h-10 ml-4" aria-hidden="true">
             <Image 
               src="/images/user/wheel.svg" 
-              alt="" 
+              alt="Decorative nautical ship wheel" 
               width={40}
               height={40}
               className="object-contain animate-slow-spin"
@@ -80,10 +80,10 @@ const TestimonialsSection = () => {
         </div>
         
         {/* Add decorative wave below testimonials */}
-        <div className="mt-16 relative h-12 opacity-20">
+        <div className="mt-16 relative h-12 opacity-20" aria-hidden="true">
           <Image 
             src="/images/user/wave.svg" 
-            alt="" 
+            alt="Decorative wave pattern" 
             fill
             className="object-contain"
           />

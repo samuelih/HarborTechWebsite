@@ -170,33 +170,6 @@ const AboutPage = () => {
           </div>
           
           <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto transition-all duration-1000 delay-300 ${crewVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            {/* Max Bassett */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-md h-full flex flex-col">
-              <div className="relative h-48 sm:h-56 md:h-64">
-                <Image 
-                  src="/images/headshots/Max.jpg" 
-                  alt="Max Bassett" 
-                  fill
-                  className="object-cover"
-                  style={{ objectPosition: '50% 25%' }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
-                  <div className="p-4 text-white">
-                    <h3 className="font-display font-bold text-xl">Max Bassett</h3>
-                    <p className="text-white/90">Co-Founder & Technology Specialist</p>
-                  </div>
-                </div>
-              </div>
-              <div className="p-4 sm:p-6 flex-grow">
-                <p className="text-primary-navy mb-4">University of Michigan student studying robotics and business, bringing technical expertise and innovative solutions to Harbor Springs businesses.</p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="bg-nautical-azure/20 text-nautical-deepBlue text-sm py-1 px-3 rounded-full">Robotics</span>
-                  <span className="bg-nautical-azure/20 text-nautical-deepBlue text-sm py-1 px-3 rounded-full">Business</span>
-                  <span className="bg-nautical-azure/20 text-nautical-deepBlue text-sm py-1 px-3 rounded-full">Network Security</span>
-                </div>
-              </div>
-            </div>
-            
             {/* Sam Harrell */}
             <div className="bg-white rounded-xl overflow-hidden shadow-md h-full flex flex-col">
               <div className="relative h-48 sm:h-56 md:h-64">
@@ -210,6 +183,33 @@ const AboutPage = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
                   <div className="p-4 text-white">
                     <h3 className="font-display font-bold text-xl">Sam Harrell</h3>
+                    <p className="text-white/90">Co-Founder & Technology Specialist</p>
+                  </div>
+                </div>
+              </div>
+              <div className="p-4 sm:p-6 flex-grow">
+                <p className="text-primary-navy mb-4">University of Michigan student studying robotics, bringing technical expertise and innovative solutions to Harbor Springs businesses.</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="bg-nautical-azure/20 text-nautical-deepBlue text-sm py-1 px-3 rounded-full">Robotics</span>
+                  <span className="bg-nautical-azure/20 text-nautical-deepBlue text-sm py-1 px-3 rounded-full">Business</span>
+                  <span className="bg-nautical-azure/20 text-nautical-deepBlue text-sm py-1 px-3 rounded-full">Network Security</span>
+                </div>
+              </div>
+            </div>
+            
+            {/* Max Bassett */}
+            <div className="bg-white rounded-xl overflow-hidden shadow-md h-full flex flex-col">
+              <div className="relative h-48 sm:h-56 md:h-64">
+                <Image 
+                  src="/images/headshots/Max.jpg" 
+                  alt="Max Bassett" 
+                  fill
+                  className="object-cover"
+                  style={{ objectPosition: '50% 25%' }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
+                  <div className="p-4 text-white">
+                    <h3 className="font-display font-bold text-xl">Max Bassett</h3>
                     <p className="text-white/90">Co-Founder & Data Analytics Specialist</p>
                   </div>
                 </div>

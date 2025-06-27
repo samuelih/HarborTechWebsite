@@ -96,11 +96,10 @@ const AboutSection = () => {
           >
             <h2 className="text-xl font-extrabold tracking-wide mb-4 text-white opacity-0 transition-opacity duration-700" style={{ opacity: isBeamActive ? 1 : 0 }}>OUR MISSION</h2>
             <p className="text-lg font-semibold italic text-white mb-4 opacity-0 transition-opacity duration-700" style={{ opacity: isBeamActive ? 1 : 0, transitionDelay: '100ms' }}>
-              "Make modern tech as approachable as a friendly dockhand."
+              "Make modern tech affordable and instantly valuable."
             </p>
             <p className="mt-4 leading-relaxed text-white/90 opacity-0 transition-opacity duration-700" style={{ opacity: isBeamActive ? 1 : 0, transitionDelay: '200ms' }}>
-              We serve the 60-plus retailers of Harbor Springs with affordable, done-for-you 
-              upgrades that pay for themselves in weeks—not years—so small businesses see ROI in weeks without getting locked into ongoing bills.
+            Existing Consultancies charge insanely high prices that keep small businesses stuck in the past. Harbor Springs deserves better. We’re hometown pros committed to helping our neighbors gracefully transition into modern tools so you can save time, make more money, and spend those extra hours out on the water.
             </p>
             <div className={`transition-opacity duration-700 ${isBeamActive ? 'opacity-100' : 'opacity-0'}`} style={{ transitionDelay: '300ms' }}>
               <div

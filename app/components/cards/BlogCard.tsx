@@ -18,10 +18,10 @@ const BlogCard = ({ title, description, date, imageUrl, slug, icon }: BlogCardPr
       <div className="card overflow-hidden h-full flex flex-col relative">
         {/* Background decorative icon */}
         {icon && (
-          <div className="absolute top-0 right-0 opacity-5 w-20 h-20">
+          <div className="absolute top-0 right-0 opacity-5 w-20 h-20" aria-hidden="true">
             <Image 
               src={icon}
-              alt=""
+              alt="Decorative nautical icon"
               width={80}
               height={80}
               className="object-contain"
@@ -39,10 +39,10 @@ const BlogCard = ({ title, description, date, imageUrl, slug, icon }: BlogCardPr
           
           {/* Small icon overlay */}
           {icon && (
-            <div className="absolute bottom-2 right-2 bg-white rounded-full h-8 w-8 flex items-center justify-center shadow-sm">
+            <div className="absolute bottom-2 right-2 bg-white rounded-full h-8 w-8 flex items-center justify-center shadow-sm" aria-hidden="true">
               <Image 
                 src={icon}
-                alt=""
+                alt="Category icon badge"
                 width={20}
                 height={20}
                 className="object-contain"
@@ -54,10 +54,10 @@ const BlogCard = ({ title, description, date, imageUrl, slug, icon }: BlogCardPr
         <div className="flex flex-col flex-grow">
           <div className="text-sm text-primary-700 mb-2 flex items-center">
             {icon && (
-              <div className="mr-2 w-4 h-4">
+              <div className="mr-2 w-4 h-4" aria-hidden="true">
                 <Image 
                   src={icon}
-                  alt=""
+                  alt="Article category icon"
                   width={16}
                   height={16}
                   className="object-contain"

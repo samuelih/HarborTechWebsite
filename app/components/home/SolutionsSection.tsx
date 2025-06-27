@@ -156,11 +156,11 @@ const SolutionsSection = () => {
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-6">
               <span className="relative inline-block">
-                Everything you need
+                Tech tools that help
                 <span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-gold/70"></span>
               </span>
               {" "}
-              <span className="text-accent-gold">to run your business</span>
+              <span className="text-accent-gold">run your business.</span>
             </h2>
             <p className="text-xl font-cinzel text-primary-navy max-w-2xl mx-auto leading-relaxed mb-2">
               Local expertise. Modern solutions. All the essentials for smooth sailing—right here in Harbor Springs.
@@ -186,9 +186,6 @@ const SolutionsSection = () => {
         
         {/* Bottom CTA */}
         <div className={`flex flex-col items-center mt-16 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <p className="text-primary-sky mb-6 text-center max-w-xl">
-            Need something custom? We're always happy to chat about your unique needs.
-          </p>
           <Link 
             href="/contact" 
             className="btn-accent btn-large inline-flex items-center justify-center"

@@ -252,34 +252,7 @@ const CTASection = () => {
           </Button>
           </div>
           
-          {/* Trust indicators */}
-          <div 
-            className="flex flex-wrap justify-center items-center gap-4 mt-10"
-            style={{
-              opacity: isVisible ? 1 : 0,
-              transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-              transition: 'opacity 1s ease-out 0.3s, transform 1s ease-out 0.3s'
-            }}
-          >
-            <div className="flex items-center bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full">
-              <svg className="w-4 h-4 text-accent-gold mr-2" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,17V16H9V14H13V13H10A1,1 0 0,1 9,12V9A1,1 0 0,1 10,8H11V7H13V8H15V10H11V11H14A1,1 0 0,1 15,12V15A1,1 0 0,1 14,16H13V17H11Z" />
-              </svg>
-              <span className="text-white text-sm">No obligation</span>
-            </div>
-            <div className="flex items-center bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full">
-              <svg className="w-4 h-4 text-accent-gold mr-2" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z" />
-              </svg>
-              <span className="text-white text-sm">Quick chat</span>
-            </div>
-            <div className="flex items-center bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full">
-              <svg className="w-4 h-4 text-accent-gold mr-2" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-              </svg>
-              <span className="text-white text-sm">Local expertise</span>
-            </div>
-          </div>
+
         </div>
       </Container>
     </section>

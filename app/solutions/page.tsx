@@ -66,7 +66,7 @@ const SolutionsPage = () => {
           <div className={`text-center transition-all duration-1000 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h1 className="text-white font-display font-bold text-4xl sm:text-5xl md:text-6xl mb-6">
               <span className="relative inline-block">
-                How We Can Help Your Shop
+                Fully refundable and personalized solutions.
                 <span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-gold/70"></span>
               </span>
             </h1>
@@ -103,10 +103,10 @@ const SolutionsPage = () => {
                     <span className="text-nautical-navy font-bold text-lg">1</span>
                   </div>
                   <h3 className="text-xl font-display font-bold text-center mb-3 text-nautical-navy">
-                    We talk.
+                    Let's Talk Shop
                   </h3>
                   <p className="text-neutral-600 text-center text-sm leading-relaxed">
-                    We take time to get to know you and understand how you operate your business. We look for pain points and where we can save you time.
+                    Over coffee at Johan's or right on your sales floor…
                   </p>
                 </div>
                 {/* Arrow for larger screens */}
@@ -124,14 +124,10 @@ const SolutionsPage = () => {
                     <span className="text-nautical-navy font-bold text-lg">2</span>
                   </div>
                   <h3 className="text-xl font-display font-bold text-center mb-3 text-nautical-navy">
-                    The Tech Audit.
+                    Shop Walk-through
                   </h3>
                   <p className="text-neutral-600 text-center text-sm leading-relaxed">
-                    We personally come into your shop and ask questions to understand 8 business related areas. After, we give you a{' '}
-                    <span className="text-accent-gold font-bold text-base bg-accent-gold/10 px-2 py-1 rounded">
-                      no bullshit, personalized, fixed quote
-                    </span>
-                    . We account for install, training, support and manufacturer fees all in one affordable price.
+                    We swing by in person and cover eight key areas—POS, inventory, customer data, and more…
                   </p>
                 </div>
                 {/* Arrow for larger screens */}
@@ -149,10 +145,10 @@ const SolutionsPage = () => {
                     <span className="text-nautical-navy font-bold text-lg">3</span>
                   </div>
                   <h3 className="text-xl font-display font-bold text-center mb-3 text-nautical-navy">
-                    Post Audit Proposal
+                    Your Harbor Plan
                   </h3>
                   <p className="text-neutral-600 text-center text-sm leading-relaxed">
-                    You will receive a Post Audit Proposal that briefs: what we heard, recommended solutions, timeline, our scope and assumptions, and estimated flat rate-price (amount of hours to install typically varies)
+                    You get a clear one-pager: what we heard, the upgrades and workflows we recommend…
                   </p>
                 </div>
                 {/* Arrow for larger screens */}
@@ -170,10 +166,10 @@ const SolutionsPage = () => {
                     <span className="text-nautical-navy font-bold text-lg">4</span>
                   </div>
                   <h3 className="text-xl font-display font-bold text-center mb-3 text-nautical-navy">
-                    We install at your convenience
+                    Install & Training
                   </h3>
                   <p className="text-neutral-600 text-center text-sm leading-relaxed">
-                    We will work whenever works best for you. We ensure your systems stay fully operational until employees are trained, everything is fully set-up, and we are confident your business is ready.
+                    We work around your hours—before open, after close, whenever. Keep your systems running while we train your crew and get your upgrade fully implemented.
                   </p>
                 </div>
                 {/* Arrow for larger screens */}
@@ -194,7 +190,7 @@ const SolutionsPage = () => {
                     Payment
                   </h3>
                   <p className="text-neutral-600 text-center text-sm leading-relaxed">
-                    Pay upfront or in monthly installs for up to 2 years; OUR PRICE DOESN'T CHANGE. We will work out what is best for you.
+                    Pay all at once or spread it over 24 months; either way, the number we quote is the number you pay. No surprise add-ons, ever.
                   </p>
                 </div>
               </div>
@@ -222,6 +218,36 @@ const SolutionsPage = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className={`transition-all duration-1000 ${solutionsSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <BusinessTypeSwitcher />
+          </div>
+          
+          {/* FAQ Section */}
+          <div className={`transition-all duration-1000 delay-300 ${solutionsSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <div className="max-w-4xl mx-auto mt-16">
+              <h3 className="text-2xl sm:text-3xl font-display font-bold text-center mb-8 text-nautical-navy">
+                Frequently Asked Questions
+              </h3>
+              
+              <div className="bg-white rounded-2xl shadow-lg p-8 border border-neutral-gull/30">
+                <div className="space-y-6">
+                  {/* First FAQ */}
+                  <div className="border-b border-neutral-gull/30 pb-6">
+                    <h4 className="text-lg font-bold text-nautical-navy mb-3">
+                      What's the refund policy?
+                    </h4>
+                    <p className="text-neutral-600 leading-relaxed">
+                      Every project is 100% refundable until installation begins—no risk, no fine print.
+                    </p>
+                  </div>
+                  
+                  {/* Placeholder for future FAQs */}
+                  <div className="text-center py-4">
+                    <p className="text-neutral-500 italic">
+                      More frequently asked questions will be added here based on customer feedback.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         

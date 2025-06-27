@@ -61,11 +61,9 @@ const OptionsPricingPage = () => {
           <div className={`text-center transition-all duration-1000 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h1 className="text-white font-display font-bold text-4xl sm:text-5xl md:text-6xl mb-6">
               <span className="relative inline-block">
-                Support Options
+                Fully refundable and personalized.
                 <span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-gold/70"></span>
               </span>
-              {" "}
-              <span className="text-accent-gold">& Pricing</span>
             </h1>
             <p className="text-white/90 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
               Choose the support level that works best for your business. No contracts required.
