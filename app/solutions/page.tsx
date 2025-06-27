@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import BusinessTypeSwitcher from '../components/BusinessTypeSwitcher';
+import HarborWheel from '../components/HarborWheel';
 import { useEffect, useState } from 'react';
 
 const SolutionsPage = () => {
@@ -83,120 +84,20 @@ const SolutionsPage = () => {
         }}></div>
       </section>
 
-      {/* How We Work Section */}
-      <section id="work-section" className="py-16 sm:py-20 md:py-24 bg-white">
+      {/* Harbor Wheel Section */}
+      <section id="work-section" className="py-16 sm:py-20 md:py-24 pb-20 bg-white overflow-hidden">
         <div className="container mx-auto px-4">
           <div className={`text-center mb-12 transition-all duration-1000 ${workSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-6">
               Here's how we work
             </h2>
+            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+              Navigate our 5-step Harbor Wheel to explore our streamlined process—<span className="font-semibold text-primary-navy bg-accent-gold/20 px-2 py-1 rounded">click, drag, or use your keyboard to interact</span>.
+            </p>
           </div>
           
-          {/* Flowchart */}
-          <div className="max-w-6xl mx-auto">
-            <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 md:gap-8 transition-all duration-1000 delay-300 ${workSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              
-              {/* Step 1: We talk */}
-              <div className="relative">
-                <div className="bg-neutral-mist rounded-lg p-6 h-full border-2 border-transparent hover:border-accent-gold transition-colors">
-                  <div className="flex items-center justify-center w-12 h-12 bg-white rounded-full mb-4 mx-auto shadow-md border-2 border-nautical-navy">
-                    <span className="text-nautical-navy font-bold text-lg">1</span>
-                  </div>
-                  <h3 className="text-xl font-display font-bold text-center mb-3 text-nautical-navy">
-                    Let's Talk Shop
-                  </h3>
-                  <p className="text-neutral-600 text-center text-sm leading-relaxed">
-                    Over coffee at Johan's or right on your sales floor…
-                  </p>
-                </div>
-                {/* Arrow for larger screens */}
-                <div className="hidden xl:block absolute top-1/2 -right-4 transform -translate-y-1/2">
-                  <svg className="w-8 h-8 text-accent-gold" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </div>
-              </div>
-
-              {/* Step 2: The Tech Audit */}
-              <div className="relative">
-                <div className="bg-neutral-mist rounded-lg p-6 h-full border-2 border-transparent hover:border-accent-gold transition-colors">
-                  <div className="flex items-center justify-center w-12 h-12 bg-white rounded-full mb-4 mx-auto shadow-md border-2 border-nautical-navy">
-                    <span className="text-nautical-navy font-bold text-lg">2</span>
-                  </div>
-                  <h3 className="text-xl font-display font-bold text-center mb-3 text-nautical-navy">
-                    Shop Walk-through
-                  </h3>
-                  <p className="text-neutral-600 text-center text-sm leading-relaxed">
-                    We swing by in person and cover eight key areas—POS, inventory, customer data, and more…
-                  </p>
-                </div>
-                {/* Arrow for larger screens */}
-                <div className="hidden xl:block absolute top-1/2 -right-4 transform -translate-y-1/2">
-                  <svg className="w-8 h-8 text-accent-gold" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </div>
-              </div>
-
-              {/* Step 3: Post Audit Proposal */}
-              <div className="relative">
-                <div className="bg-neutral-mist rounded-lg p-6 h-full border-2 border-transparent hover:border-accent-gold transition-colors">
-                  <div className="flex items-center justify-center w-12 h-12 bg-white rounded-full mb-4 mx-auto shadow-md border-2 border-nautical-navy">
-                    <span className="text-nautical-navy font-bold text-lg">3</span>
-                  </div>
-                  <h3 className="text-xl font-display font-bold text-center mb-3 text-nautical-navy">
-                    Your Harbor Plan
-                  </h3>
-                  <p className="text-neutral-600 text-center text-sm leading-relaxed">
-                    You get a clear one-pager: what we heard, the upgrades and workflows we recommend…
-                  </p>
-                </div>
-                {/* Arrow for larger screens */}
-                <div className="hidden xl:block absolute top-1/2 -right-4 transform -translate-y-1/2">
-                  <svg className="w-8 h-8 text-accent-gold" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </div>
-              </div>
-
-              {/* Step 4: We install at your convenience */}
-              <div className="relative">
-                <div className="bg-neutral-mist rounded-lg p-6 h-full border-2 border-transparent hover:border-accent-gold transition-colors">
-                  <div className="flex items-center justify-center w-12 h-12 bg-white rounded-full mb-4 mx-auto shadow-md border-2 border-nautical-navy">
-                    <span className="text-nautical-navy font-bold text-lg">4</span>
-                  </div>
-                  <h3 className="text-xl font-display font-bold text-center mb-3 text-nautical-navy">
-                    Install & Training
-                  </h3>
-                  <p className="text-neutral-600 text-center text-sm leading-relaxed">
-                    We work around your hours—before open, after close, whenever. Keep your systems running while we train your crew and get your upgrade fully implemented.
-                  </p>
-                </div>
-                {/* Arrow for larger screens */}
-                <div className="hidden xl:block absolute top-1/2 -right-4 transform -translate-y-1/2">
-                  <svg className="w-8 h-8 text-accent-gold" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </div>
-              </div>
-
-              {/* Step 5: Payment */}
-              <div className="relative">
-                <div className="bg-neutral-mist rounded-lg p-6 h-full border-2 border-transparent hover:border-accent-gold transition-colors">
-                  <div className="flex items-center justify-center w-12 h-12 bg-white rounded-full mb-4 mx-auto shadow-md border-2 border-nautical-navy">
-                    <span className="text-nautical-navy font-bold text-lg">5</span>
-                  </div>
-                  <h3 className="text-xl font-display font-bold text-center mb-3 text-nautical-navy">
-                    Payment
-                  </h3>
-                  <p className="text-neutral-600 text-center text-sm leading-relaxed">
-                    Pay all at once or spread it over 24 months; either way, the number we quote is the number you pay. No surprise add-ons, ever.
-                  </p>
-                </div>
-              </div>
-
-            </div>
-          </div>
+          {/* Harbor Wheel Component */}
+          <HarborWheel isVisible={workSectionVisible} />
         </div>
       </section>
 
