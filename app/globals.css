@@ -2,33 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Prevent horizontal overflow on all elements */
-*, *::before, *::after {
-  max-width: 100vw;
-  box-sizing: border-box;
-}
-
-html, body {
-  overflow-x: hidden;
-}
-
-/* Ensure container elements don't cause overflow */
-.container, section, main, div {
-  max-width: 100%;
-}
-
-/* Additional safeguards for mobile */
-@media (max-width: 768px) {
-  * {
-    max-width: 100vw !important;
-  }
-  
-  /* Prevent absolutely positioned elements from causing overflow */
-  *[style*="width"] {
-    max-width: 100vw !important;
-  }
-}
-
 @layer base {
   :root {
     /* Updated friendly color scheme */
@@ -181,26 +154,10 @@ html {
     z-index: 1;
   }
   
-    .btn-glimmer:hover::before {
+  .btn-glimmer:hover::before {
     left: 100%;
   }
-
-  /* Fade in animation for Harbor Wheel */
-  .animate-fadeIn {
-    animation: fadeIn 0.5s ease-in-out;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
+  
   .btn-glimmer > * {
     position: relative;
     z-index: 2;

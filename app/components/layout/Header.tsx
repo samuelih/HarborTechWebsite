@@ -95,7 +95,7 @@ const Header = () => {
   };
 
   // Check if we're on a page with dark background
-  const isDarkPage = ['/solutions', '/support', '/about', '/contact'].some(path => 
+  const isDarkPage = ['/', '/solutions', '/support', '/about', '/contact'].some(path => 
     pathname === path || pathname.startsWith(path + '/')
   );
 

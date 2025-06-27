@@ -10,26 +10,12 @@ const Hero = () => {
   
   // Placeholder data for drone shots (photos and videos)
   const droneMedia = [
-    { type: 'image', src: '/images/drone-shots/placeholder-1.jpg', alt: 'Aerial view of Harbor Springs marina' },
-    { type: 'image', src: '/images/drone-shots/placeholder-2.jpg', alt: 'Downtown Harbor Springs from above' },
-    { type: 'image', src: '/images/drone-shots/placeholder-3.jpg', alt: 'Harbor Springs waterfront businesses' },
-    { type: 'image', src: '/images/drone-shots/placeholder-4.jpg', alt: 'Main Street Harbor Springs aerial' },
-    { type: 'image', src: '/images/drone-shots/placeholder-5.jpg', alt: 'Harbor Springs bay overview' },
-    { type: 'image', src: '/images/drone-shots/placeholder-6.jpg', alt: 'Seasonal Harbor Springs shops' },
-    { type: 'image', src: '/images/drone-shots/placeholder-7.jpg', alt: 'Harbor Springs lighthouse aerial' },
-    { type: 'image', src: '/images/drone-shots/placeholder-8.jpg', alt: 'Harbor Springs pier from above' },
-    { type: 'image', src: '/images/drone-shots/placeholder-9.jpg', alt: 'Harbor Springs retail district' },
-    { type: 'image', src: '/images/drone-shots/placeholder-10.jpg', alt: 'Harbor Springs waterfront panorama' },
-    { type: 'image', src: '/images/drone-shots/placeholder-11.jpg', alt: 'Harbor Springs boat harbor aerial' },
-    { type: 'image', src: '/images/drone-shots/placeholder-12.jpg', alt: 'Harbor Springs beach from above' },
-    { type: 'image', src: '/images/drone-shots/placeholder-13.jpg', alt: 'Harbor Springs commercial district' },
-    { type: 'image', src: '/images/drone-shots/placeholder-14.jpg', alt: 'Harbor Springs sunset aerial' },
-    { type: 'image', src: '/images/drone-shots/placeholder-15.jpg', alt: 'Harbor Springs full town aerial' },
-    { type: 'video', src: '/images/drone-shots/placeholder-video-1.mp4', alt: 'Harbor Springs aerial flyover' },
-    { type: 'video', src: '/images/drone-shots/placeholder-video-2.mp4', alt: 'Harbor Springs marina approach' },
-    { type: 'video', src: '/images/drone-shots/placeholder-video-3.mp4', alt: 'Harbor Springs Main Street flyby' },
-    { type: 'video', src: '/images/drone-shots/placeholder-video-4.mp4', alt: 'Harbor Springs waterfront sweep' },
-    { type: 'video', src: '/images/drone-shots/placeholder-video-5.mp4', alt: 'Harbor Springs business district overview' },
+    { type: 'image', src: '/images/drone-shots/drone1.JPG', alt: 'Aerial view of Harbor Springs marina' },
+    { type: 'image', src: '/images/drone-shots/drone2.JPG', alt: 'Downtown Harbor Springs from above' },
+    { type: 'image', src: '/images/drone-shots/drone3.JPG', alt: 'Harbor Springs waterfront businesses' },
+    { type: 'image', src: '/images/drone-shots/drone4.JPG', alt: 'Main Street Harbor Springs aerial' },
+    { type: 'image', src: '/images/drone-shots/drone5.JPG', alt: 'Harbor Springs bay overview' },
+    { type: 'image', src: '/images/drone-shots/drone6.JPG', alt: 'Harbor Springs bay overview' },
   ];
   
   useEffect(() => {
@@ -80,19 +66,28 @@ const Hero = () => {
       </div>
 
       {/* Content Container */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full relative z-10 pt-32">
-        <div className="max-w-4xl">
+      <div className="w-full relative z-10 pt-32">
+        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           {/* Updated Headlines */}
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <h1 className="text-h1 font-display font-bold text-white mb-6 leading-tight">
-              We are <span className="text-accent-gold">Harbor Technology Consulting.</span>
-            </h1>
-            <div className="space-y-4 text-xl text-white/90 mb-8 leading-relaxed">
-              <p>No-bullshit, affordable, and approachable technology upgrades.</p>
-              <p>Modernize your point-of-sale, inventory, and back-office tools with transparent pricing and hometown support.</p>
-              <p>No surprise add-ons, just solutions that save you time and money.</p>
+                          <div className="bg-black/25 backdrop-blur-sm rounded-xl p-6 mx-auto max-w-4xl mb-6">
+                <h1 className="text-h1 font-display font-bold text-accent-gold leading-tight text-center">
+                  We are <span className="text-white relative inline-block font-bold">
+                    Harbor Technology Consulting
+                    <span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-gold/70"></span>
+                  </span>
+                </h1>
+              </div>
+            <div className="mx-auto mb-8">
+              <div className="bg-black/30 backdrop-blur-sm rounded-lg p-8 mx-auto max-w-3xl">
+                                  <div className="text-center space-y-4">
+                    <p className="text-xl text-white leading-relaxed"><span className="font-bold relative inline-block">No-bullshit, affordable, and approachable<span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-gold/70"></span></span> technology upgrades.</p>
+                    <p className="text-xl text-white leading-relaxed">Modernize your point-of-sale, inventory, and back-office tools with <span className="font-bold relative inline-block">transparent pricing and hometown support.<span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-gold/70"></span></span></p>
+                    <p className="text-xl text-white leading-relaxed"><span className="font-bold relative inline-block">No surprise add-ons<span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-gold/70"></span></span>, just solutions that <span className="font-bold text-accent-gold">save you time and money.</span></p>
+                  </div>
+              </div>
             </div>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 href="/contact" 
                 className="btn-primary btn-large inline-flex items-center justify-center"
