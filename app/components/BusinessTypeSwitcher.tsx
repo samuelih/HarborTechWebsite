@@ -171,7 +171,7 @@ const BusinessTypeSwitcher = () => {
             }}
             className={`group relative overflow-hidden rounded-2xl p-6 text-center btn-glimmer transition-all duration-300 transform hover:scale-[1.02] hover:-translate-y-2 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
               activeType === key 
-                ? `bg-gradient-to-br ${business.activeGradient} ${key === 'retail' || key === 'service' ? 'text-white' : `text-${business.accentColor}`} border-2 border-${business.accentColor}/50 shadow-2xl focus:ring-${business.accentColor}` 
+                ? `bg-gradient-to-br ${business.activeGradient} text-white border-2 border-${business.accentColor}/50 shadow-2xl focus:ring-${business.accentColor}` 
                 : 'bg-white/90 backdrop-blur-sm text-nautical-navy hover:bg-white border-2 border-white/50 hover:border-neutral-gull/50 shadow-lg hover:shadow-2xl focus:ring-nautical-navy'
             }`}
             style={{
@@ -203,8 +203,12 @@ const BusinessTypeSwitcher = () => {
             <div className="relative z-10 mb-4">
               <div className={`w-12 h-12 mx-auto rounded-full flex items-center justify-center transition-all duration-300 ${
                 activeType === key 
-                  ? 'bg-accent-gold/20' 
-                  : 'bg-accent-gold/10 group-hover:bg-accent-gold/20'
+                  ? 'bg-white' 
+                  : `${
+                    business.accentColor === 'accent-gold' ? 'bg-accent-gold group-hover:bg-accent-gold/80' :
+                    business.accentColor === 'accent-sea' ? 'bg-accent-sea group-hover:bg-accent-sea/80' :
+                    'bg-primary-blue group-hover:bg-primary-blue/80'
+                  }`
               }`}>
                 <Image
                   src={business.icon}
@@ -213,8 +217,12 @@ const BusinessTypeSwitcher = () => {
                   height={24}
                   className={`transition-all duration-300 ${
                     activeType === key 
-                      ? `filter ${business.accentColor === 'accent-gold' ? 'brightness-0 saturate-100' : business.accentColor === 'accent-sea' ? 'hue-rotate-180 saturate-150' : 'hue-rotate-180 brightness-75'} contrast-125` 
-                      : 'group-hover:scale-110'
+                      ? `${
+                        business.accentColor === 'accent-gold' ? 'brightness-0 saturate-100' :
+                        business.accentColor === 'accent-sea' ? 'hue-rotate-180 saturate-150' :
+                        'hue-rotate-180 brightness-75'
+                      }` 
+                      : 'brightness-0 invert group-hover:scale-110'
                   }`}
                 />
               </div>

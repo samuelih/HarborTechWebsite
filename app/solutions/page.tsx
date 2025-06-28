@@ -49,10 +49,10 @@ const SolutionsPage = () => {
 
     // Observe sections
     const workSection = document.getElementById('work-section');
-    const solutionsSection = document.getElementById('solutions');
+    const businessTypesSection = document.getElementById('business-types');
 
     if (workSection) workObserver.observe(workSection);
-    if (solutionsSection) solutionsObserver.observe(solutionsSection);
+    if (businessTypesSection) solutionsObserver.observe(businessTypesSection);
 
     return () => {
       workObserver.disconnect();
@@ -64,7 +64,7 @@ const SolutionsPage = () => {
     {
       number: 1,
       title: "Let's Talk Shop",
-      description: "Over coffee at Johan's or right on your sales floor…",
+      description: " Over coffee at Johan’s or right on your sales floor, we learn how your store operates and pinpoint your daily headaches.",
       icon: "💬",
       accentColor: "accent-gold",
       delay: 0
@@ -72,7 +72,7 @@ const SolutionsPage = () => {
     {
       number: 2,
       title: "Shop Walk-through",
-      description: "We swing by in person and cover eight key areas—POS, inventory, customer data, and more…",
+      description: " We swing by in person and cover eight key areas—POS, inventory, customer data, and more. We use what we learn to craft personalized, time-saving fixes and lay out the simplest path forward.",
       icon: "🔍",
       accentColor: "primary-blue",
       delay: 400
@@ -80,7 +80,7 @@ const SolutionsPage = () => {
     {
       number: 3,
       title: "Your Harbor Plan",
-      description: "You get a clear one-pager: what we heard, the upgrades and workflows we recommend…",
+      description: "You get a clear one-pager: what we heard, the upgrades and workflows we recommend, and a timeline that works around your schedule.",
       icon: "📋",
       accentColor: "seafoam",
       delay: 800
@@ -141,23 +141,10 @@ const SolutionsPage = () => {
           <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-seafoam/30 rounded-full blur-2xl"></div>
         </div>
 
-        {/* Floating nautical elements */}
-        <div className="absolute top-32 right-16 opacity-20 animate-gentle-float">
-          <Image src="/images/icons/nautical/anchor.svg" alt="" width={24} height={24} className="text-nautical-navy" />
-        </div>
-        <div className="absolute bottom-32 left-16 opacity-20 animate-gentle-float" style={{ animationDelay: '2s' }}>
-          <Image src="/images/icons/nautical/helm.svg" alt="" width={28} height={28} className="text-nautical-navy" />
-        </div>
-
         <div className="container mx-auto px-4 relative z-10">
           <div className={`text-center mb-16 transition-all duration-1000 ${workSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-6">
-              <span className="relative inline-block">
-                Here's how 
-                <span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-gold/70"></span>
-              </span>
-              {" "}
-              <span className="text-primary-blue">we work</span>
+              Here's how we work
             </h2>
             <p className="text-xl text-nautical-navy/80 max-w-2xl mx-auto mb-6">
               Five simple steps to modernize your business technology
@@ -331,8 +318,8 @@ const SolutionsPage = () => {
         </div>
       </section>
 
-      {/* Business Type Switcher */}
-      <section id="solutions" className="relative py-16 sm:py-20 md:py-24 bg-gradient-to-br from-neutral-mist via-white to-neutral-mist overflow-hidden">
+      {/* Business Type Switcher Section */}
+      <section id="business-types" className="relative py-16 sm:py-20 md:py-24 bg-gradient-to-br from-neutral-mist via-white to-neutral-mist min-h-[600px] flex flex-col">
         {/* Background decorative elements */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-32 h-32 bg-accent-gold rounded-full blur-3xl"></div>
@@ -346,17 +333,44 @@ const SolutionsPage = () => {
           backgroundSize: '80px 8px'
         }}></div>
         
-        <div className="container mx-auto px-4 relative z-10">
-          <div className={`transition-all duration-1000 ${solutionsSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className="container mx-auto px-4 relative z-10 flex-1">
+          <div className={`transition-all duration-1000 ${solutionsSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} h-full`}>
             <BusinessTypeSwitcher />
           </div>
-          
-          {/* FAQ Section */}
-          <div className={`transition-all duration-1000 delay-300 ${solutionsSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <div className="max-w-4xl mx-auto mt-16">
-              <h3 className="text-2xl sm:text-3xl font-display font-bold text-center mb-8 text-nautical-navy">
-                Frequently Asked Questions
-              </h3>
+        </div>
+        
+        {/* Bottom nautical rope pattern */}
+        <div className="absolute bottom-0 left-0 w-full h-2 bg-repeat-x opacity-30" style={{ 
+          backgroundImage: 'url("data:image/svg+xml,%3Csvg width="80" height="8" viewBox="0 0 80 8" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M0 4C10 4 10 8 20 8C30 8 30 0 40 0C50 0 50 8 60 8C70 8 70 4 80 4" stroke="%23EBBC60" stroke-width="2"/%3E%3C/svg%3E")',
+          backgroundSize: '80px 8px'
+        }}></div>
+      </section>
+
+      {/* Section Divider */}
+      <div className="border-t border-neutral-gull/60"></div>
+
+      {/* FAQ Section */}
+      <section id="faq" className="relative py-16 sm:py-20 md:py-24 bg-white">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-16 right-16 w-24 h-24 bg-primary-blue rounded-full blur-2xl"></div>
+          <div className="absolute bottom-16 left-16 w-32 h-32 bg-accent-gold rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className={`transition-all duration-1000 ${solutionsSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-6 text-nautical-navy">
+                  <span className="relative inline-block">
+                    Frequently Asked Questions
+                    <span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-gold/70"></span>
+                  </span>
+                </h2>
+                <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
+                  Get answers to common questions about our services and process.
+                </p>
+              </div>
               
               <div className="bg-white rounded-2xl shadow-lg p-8 border border-neutral-gull/30">
                 <div className="space-y-6">
@@ -381,12 +395,6 @@ const SolutionsPage = () => {
             </div>
           </div>
         </div>
-        
-        {/* Bottom nautical rope pattern */}
-        <div className="absolute bottom-0 left-0 w-full h-2 bg-repeat-x opacity-30" style={{ 
-          backgroundImage: 'url("data:image/svg+xml,%3Csvg width="80" height="8" viewBox="0 0 80 8" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M0 4C10 4 10 8 20 8C30 8 30 0 40 0C50 0 50 8 60 8C70 8 70 4 80 4" stroke="%23EBBC60" stroke-width="2"/%3E%3C/svg%3E")',
-          backgroundSize: '80px 8px'
-        }}></div>
       </section>
 
 

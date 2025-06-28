@@ -61,8 +61,17 @@ const WhyChooseUsSection = () => {
     <section id="comparison-section" className="comparison-section py-20 px-4 md:px-0">
       {/* Enhanced Section Header */}
       <div className="section-header">
-        <h2 className="section-title">Why Harbor Springs shops choose us</h2>
-        <p className="section-promise">Compare at a glance—decide in 30 seconds</p>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-6 text-primary-navy text-center relative">
+          Why Harbor Springs shops choose us
+          {/* Wave underline */}
+          <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-96 h-1 bg-repeat-x opacity-80" style={{
+            backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'20\' height=\'4\' viewBox=\'0 0 20 4\'%3E%3Cpath d=\'M0,2 Q5,0 10,2 T20,2\' stroke=\'%23205d96\' stroke-width=\'2\' fill=\'none\'/%3E%3C/svg%3E")',
+            backgroundSize: '20px 4px'
+          }}></div>
+        </h2>
+        <p className="text-xl font-cinzel text-primary-navy max-w-2xl mx-auto leading-relaxed mb-2 text-center opacity-90">
+          Compare at a glance—decide in 30 seconds
+        </p>
       </div>
 
       {/* Comparison Table with Enhanced Styling */}

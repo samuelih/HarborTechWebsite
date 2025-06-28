@@ -82,7 +82,7 @@ const Hero = () => {
               <div className="bg-black/30 backdrop-blur-sm rounded-lg p-8 mx-auto max-w-3xl">
                                   <div className="text-center space-y-4">
                     <p className="text-xl text-white leading-relaxed"><span className="font-bold relative inline-block">No-bullshit, affordable, and approachable<span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-gold/70"></span></span> technology upgrades.</p>
-                    <p className="text-xl text-white leading-relaxed">Modernize your point-of-sale, inventory, and back-office tools with <span className="font-bold relative inline-block">transparent pricing and hometown support.<span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-gold/70"></span></span></p>
+                    <p className="text-xl text-white leading-relaxed">Modernize your point-of-sale, inventory, and back-office tools with <span className="font-bold relative inline-block">transparent pricing and hometown support.</span></p>
                     <p className="text-xl text-white leading-relaxed"><span className="font-bold relative inline-block">No surprise add-ons<span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-gold/70"></span></span>, just solutions that <span className="font-bold text-accent-gold">save you time and money.</span></p>
                   </div>
               </div>

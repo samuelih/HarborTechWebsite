@@ -12,7 +12,6 @@ const AboutSection = () => {
   const [isBeamActive, setIsBeamActive] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [isButtonHovered, setIsButtonHovered] = useState(false);
-  const fogRef = useRef<HTMLDivElement>(null);
   
   // Create stars data
   const stars = Array.from({ length: 50 }, () => ({
@@ -41,18 +40,12 @@ const AboutSection = () => {
     };
   }, []);
 
-  const handleFogMouseEnter = () => {
-    setIsBeamActive(true);
-  };
-
-  const handleFogMouseLeave = () => {
-    setIsBeamActive(false);
-  };
+  // Removed problematic mouse handlers that interfered with scrolling
 
   return (
     <section 
       id="about" 
-      className="relative overflow-x-hidden overflow-y-visible py-16 flex flex-col md:flex-row items-center justify-center min-h-[600px]"
+      className="relative py-16 flex flex-col md:flex-row items-center justify-center min-h-[600px]"
       style={{
         background: '#0A2035',
       }}
@@ -99,7 +92,7 @@ const AboutSection = () => {
               "Make modern tech affordable and instantly valuable."
             </p>
             <p className="mt-4 leading-relaxed text-white/90 opacity-0 transition-opacity duration-700" style={{ opacity: isBeamActive ? 1 : 0, transitionDelay: '200ms' }}>
-            Existing Consultancies charge insanely high prices that keep small businesses stuck in the past. Harbor Springs deserves better. We’re hometown pros committed to helping our neighbors gracefully transition into modern tools so you can save time, make more money, and spend those extra hours out on the water.
+            Existing Consultancies charge insanely high prices that keep small businesses stuck in the past. Harbor Springs deserves better. We're hometown pros committed to helping our neighbors gracefully transition into modern tools so you can save time, make more money, and spend those extra hours out on the water.
             </p>
             <div className={`transition-opacity duration-700 ${isBeamActive ? 'opacity-100' : 'opacity-0'}`} style={{ transitionDelay: '300ms' }}>
               <div
@@ -455,11 +448,8 @@ const AboutSection = () => {
         ))}
       </div>
 
-      {/* Night fog overlay */}
+      {/* Night fog overlay - simplified without scroll-interfering mouse handlers */}
       <div 
-        ref={fogRef}
-        onMouseEnter={handleFogMouseEnter}
-        onMouseLeave={handleFogMouseLeave}
         className="absolute inset-0 transition-opacity duration-1000 z-20 pointer-events-none"
         style={{
           backdropFilter: 'blur(2px)',
