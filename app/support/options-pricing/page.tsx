@@ -241,57 +241,22 @@ const OptionsPricingPage = () => {
             
             {/* Main content card with enhanced design */}
             <div className={`bg-white/95 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-2xl mb-12 border border-white/20 transition-all duration-1000 delay-300 ${harborAIVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                {/* Enhanced Content */}
+              <div className="text-center max-w-4xl mx-auto">
+                {/* Simplified Content */}
                 <div>
                   <div className="mb-8">
-                    <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 bg-accent-gold rounded-full flex items-center justify-center mr-4">
-                        <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M9,11H15L13,9L15,7H9V9H11L9,11M7,9V7L9,5V7H15V5L17,7V9L15,11V13H17V15L15,17V15H9V17L7,15V13L9,11V9H7Z" />
-                        </svg>
-                      </div>
-                      <h3 className="text-3xl font-display font-bold text-primary-navy">No Hidden Costs, Maximum Value</h3>
-                    </div>
+                    <h3 className="text-3xl font-display font-bold text-primary-navy mb-6">No Hidden Costs, Maximum Value</h3>
                   </div>
                   
                   <div className="space-y-6">
-                    <p className="text-lg text-neutral-700 leading-relaxed">
+                    <p className="text-lg text-neutral-700 leading-relaxed text-center">
                       Unlike other Technology Consulting Companies, we set you up with training, cheatsheets, and a custom made chatbot trained on over <strong className="text-primary-navy">3000 pages of IT support, POS manuals, and the top 150 most asked support questions</strong>...
                     </p>
                     
-                    <div className="bg-gradient-to-r from-accent-gold/10 to-accent-gold/5 rounded-xl p-6 border-l-4 border-accent-gold">
-                      <p className="text-xl font-bold text-accent-gold mb-2">ALL FOR NO ADDITIONAL COST!</p>
-                      <p className="text-neutral-700">While others charge extra for training and support materials, we include everything upfront.</p>
+                    <div className="bg-gradient-to-r from-accent-gold/10 to-accent-gold/5 rounded-xl p-6 border-l-4 border-accent-gold max-w-2xl mx-auto">
+                      <p className="text-xl font-bold text-accent-gold mb-2 text-center">ALL FOR NO ADDITIONAL COST!</p>
+                      <p className="text-neutral-700 text-center">While others charge extra for training and support materials, we include everything upfront.</p>
                     </div>
-                    
-                    <div className="bg-red-50 rounded-xl p-6 border-l-4 border-red-400">
-                      <div className="flex items-start">
-                                                 <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-red-500 mr-3 mt-1 flex-shrink-0" viewBox="0 0 24 24">
-                           <path fill="currentColor" fill-rule="evenodd" d="M7.25 6a4.75 4.75 0 1 1 9.5 0a4.75 4.75 0 0 1-9.5 0M12 2.75a3.25 3.25 0 1 0 0 6.5a3.25 3.25 0 0 0 0-6.5m2.775 9.763A14.5 14.5 0 0 0 12 12.25c-2.313 0-4.445.526-6.024 1.414C4.42 14.54 3.25 15.866 3.25 17.5v.102c-.001 1.162-.002 2.62 1.277 3.662c.629.512 1.51.877 2.7 1.117c1.192.242 2.747.369 4.773.369c2.868 0 4.81-.254 6.12-.741c1.179-.44 1.877-1.082 2.25-1.892a4.748 4.748 0 0 0 .989-7.476A4.74 4.74 0 0 0 18 11.25c-1.245 0-2.378.48-3.225 1.263M6.71 14.972c-1.34.753-1.96 1.677-1.96 2.528c0 1.308.04 2.044.723 2.6c.37.302.99.597 2.05.811c1.057.214 2.502.339 4.476.339c2.578 0 4.24-.213 5.311-.55a4.74 4.74 0 0 1-2.67-1.341A4.74 4.74 0 0 1 13.251 16c0-.768.181-1.493.505-2.135A13 13 0 0 0 12 13.75c-2.105 0-3.973.482-5.289 1.222M14.751 16a3.25 3.25 0 0 1 4.955-2.767l-4.473 4.473A3.23 3.23 0 0 1 14.75 16m1.543 2.767l4.473-4.473a3.25 3.25 0 0 1-4.473 4.473" clip-rule="evenodd"/>
-                         </svg>
-                        <div>
-                          <p className="text-neutral-700 font-medium">
-                            <strong>Warning:</strong> Companies like <strong>Common Angle</strong> poorly set up your technology systems to intentionally make you waste time and potentially thousands of dollars on "emergency" support calls.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Enhanced Visual Element */}
-                <div className="flex justify-center">
-                  <div className="relative">
-                    <div className="w-80 h-80 bg-gradient-to-br from-accent-gold/20 via-primary-blue/10 to-accent-seafoam/20 rounded-3xl flex items-center justify-center shadow-2xl">
-                      <div className="w-64 h-64 bg-gradient-to-br from-primary-navy/10 to-accent-gold/10 rounded-2xl flex items-center justify-center">
-                        <svg className="w-32 h-32 text-primary-navy" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z" />
-                        </svg>
-                      </div>
-                    </div>
-                    {/* Floating elements */}
-                    
                   </div>
                 </div>
               </div>
