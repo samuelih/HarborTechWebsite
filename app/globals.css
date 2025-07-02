@@ -59,78 +59,96 @@
 /* Add smooth scrolling */
 html {
   scroll-behavior: smooth;
+  /* Improve text rendering on mobile */
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @layer base {
   * {
     @apply border-border;
   }
+  
   body {
     @apply bg-[#F6F9FC] text-[#0D2545];
     font-feature-settings: "rlig" 1, "calt" 1;
     letter-spacing: -0.011em;
     line-height: 1.6;
-    font-size: 18px; /* Base font size */
   }
+  
+  /* Improved mobile-first typography */
   h1 {
-    @apply font-display font-bold tracking-wide text-primary-navy text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
-    letter-spacing: -0.02em;
+    @apply font-display font-bold tracking-wide text-primary-navy;
+    font-size: 1.875rem; /* 30px */
     line-height: 1.2;
+    letter-spacing: -0.02em;
   }
+  
   h2 {
-    @apply font-display font-bold tracking-wide text-primary-navy text-2xl sm:text-3xl md:text-4xl;
-    letter-spacing: -0.02em;
+    @apply font-display font-bold tracking-wide text-primary-navy;
+    font-size: 1.5rem; /* 24px */
     line-height: 1.3;
-  }
-  h3 {
-    @apply font-display font-bold tracking-wide text-primary-navy text-xl sm:text-2xl md:text-3xl;
     letter-spacing: -0.02em;
-    line-height: 1.4;
   }
+  
+  h3 {
+    @apply font-display font-bold tracking-wide text-primary-navy;
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+  }
+  
   p {
-    @apply font-sans text-[#0D2545] text-base sm:text-lg;
+    @apply font-sans text-[#0D2545];
+    font-size: 1rem; /* 16px */
     line-height: 1.6;
     max-width: 68ch; /* Limit paragraph width for readability */
+  }
+  
+  /* Enhanced mobile breakpoints */
+  @media (min-width: 640px) {
+    h1 {
+      font-size: 2.25rem; /* 36px */
+    }
+    h2 {
+      font-size: 1.875rem; /* 30px */
+    }
+    h3 {
+      font-size: 1.5rem; /* 24px */
+    }
+    p {
+      font-size: 1.125rem; /* 18px */
+    }
+  }
+  
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 3rem; /* 48px */
+    }
+    h2 {
+      font-size: 2.25rem; /* 36px */
+    }
+    h3 {
+      font-size: 1.875rem; /* 30px */
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    h1 {
+      font-size: 3.75rem; /* 60px */
+    }
+    h2 {
+      font-size: 3rem; /* 48px */
+    }
+    h3 {
+      font-size: 2.25rem; /* 36px */
+    }
   }
   
   /* Improved focus styles for accessibility */
   a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
     @apply outline-none ring-2 ring-[#205d96] ring-offset-2;
-  }
-  
-  /* Responsive text sizes */
-  @media (max-width: 640px) {
-    .text-sm {
-      font-size: 0.875rem;
-      line-height: 1.25rem;
-    }
-    .text-base {
-      font-size: 1rem;
-      line-height: 1.5rem;
-    }
-    .text-lg {
-      font-size: 1.125rem;
-      line-height: 1.75rem;
-    }
-    .text-xl {
-      font-size: 1.25rem;
-      line-height: 1.75rem;
-    }
-  }
-  
-  @media (min-width: 641px) {
-    .text-sm {
-      @apply text-base;
-    }
-    .text-base {
-      @apply text-lg;
-    }
-    .text-lg {
-      @apply text-xl;
-    }
-    .text-xl {
-      @apply text-2xl;
-    }
   }
 }
 
@@ -163,13 +181,13 @@ html {
     z-index: 2;
   }
 
-  /* PRIMARY BLUE BUTTONS - Consistent across all pages */
+  /* PRIMARY BLUE BUTTONS - Enhanced mobile styling */
   .btn-primary {
     @apply bg-gradient-to-r from-[#0D2545] to-[#205d96] text-white font-semibold 
-           py-3 px-6 rounded-lg 
+           py-2.5 px-4 sm:py-3 sm:px-6 rounded-lg 
            hover:translate-y-[-2px] hover:shadow-lg transition-all duration-300
            focus:outline-none focus:ring-2 focus:ring-[#205d96] focus:ring-offset-2
-           text-base btn-glimmer;
+           text-sm sm:text-base btn-glimmer;
     box-shadow: 0 4px 12px rgba(13, 37, 69, 0.2);
   }
   
@@ -178,13 +196,13 @@ html {
     transform: translateY(-2px) scale(1.02);
   }
 
-  /* ACCENT GOLD BUTTONS - Consistent orange/gold styling */
+  /* ACCENT GOLD BUTTONS - Enhanced mobile styling */
   .btn-accent {
     @apply bg-gradient-to-r from-[#F0B254] to-[#D97706] text-[#0D2545] font-semibold 
-           py-3 px-6 rounded-lg 
+           py-2.5 px-4 sm:py-3 sm:px-6 rounded-lg 
            hover:translate-y-[-2px] hover:shadow-lg transition-all duration-300
            focus:outline-none focus:ring-2 focus:ring-[#F0B254] focus:ring-offset-2
-           text-base btn-glimmer;
+           text-sm sm:text-base btn-glimmer;
     box-shadow: 0 4px 12px rgba(240, 178, 84, 0.3);
   }
   
@@ -193,14 +211,14 @@ html {
     transform: translateY(-2px) scale(1.02);
   }
 
-  /* SECONDARY OUTLINE BUTTONS */
+  /* SECONDARY OUTLINE BUTTONS - Enhanced mobile styling */
   .btn-secondary {
     @apply border-2 border-[#F0B254] text-[#F0B254] bg-transparent font-semibold 
-           py-3 px-6 rounded-lg
+           py-2.5 px-4 sm:py-3 sm:px-6 rounded-lg
            hover:bg-[#F0B254] hover:text-[#0D2545] hover:translate-y-[-2px] 
            transition-all duration-300
            focus:outline-none focus:ring-2 focus:ring-[#F0B254] focus:ring-offset-2
-           text-base btn-glimmer;
+           text-sm sm:text-base btn-glimmer;
     box-shadow: 0 2px 8px rgba(240, 178, 84, 0.2);
   }
   
@@ -209,14 +227,14 @@ html {
     transform: translateY(-2px) scale(1.02);
   }
 
-  /* WHITE BUTTONS (for dark backgrounds) */
+  /* WHITE BUTTONS (for dark backgrounds) - Enhanced mobile styling */
   .btn-white {
     @apply bg-white text-[#0D2545] font-semibold 
-           py-3 px-6 rounded-lg 
+           py-2.5 px-4 sm:py-3 sm:px-6 rounded-lg 
            hover:bg-[#F6E9CF] hover:translate-y-[-2px] hover:shadow-lg 
            transition-all duration-300
            focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2
-           text-base btn-glimmer;
+           text-sm sm:text-base btn-glimmer;
     box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
   }
   
@@ -225,14 +243,13 @@ html {
     transform: translateY(-2px) scale(1.02);
   }
 
-  /* LARGE BUTTON VARIANT */
+  /* BUTTON SIZE VARIANTS - Mobile-first approach */
   .btn-large {
-    @apply py-4 px-8 text-lg;
+    @apply py-3 px-6 sm:py-4 sm:px-8 text-base sm:text-lg;
   }
 
-  /* SMALL BUTTON VARIANT */
   .btn-small {
-    @apply py-2 px-4 text-sm;
+    @apply py-2 px-3 sm:py-2 sm:px-4 text-xs sm:text-sm;
   }
 
   /* FULL WIDTH BUTTON VARIANT */
@@ -240,13 +257,14 @@ html {
     @apply w-full justify-center;
   }
 
+  /* Enhanced card styling for mobile */
   .card {
-    @apply bg-neutral-mist rounded-2xl p-4 sm:p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-300 
-           hover:translate-y-[-4px] border border-neutral-gull;
+    @apply bg-neutral-mist rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-300 
+           hover:translate-y-[-2px] sm:hover:translate-y-[-4px] border border-neutral-gull;
   }
 
   .section-heading {
-    @apply uppercase tracking-wider font-bold text-primary-navy flex items-center text-lg sm:text-xl;
+    @apply uppercase tracking-wider font-bold text-primary-navy flex items-center text-base sm:text-lg md:text-xl;
   }
 
   .glass-nav {
@@ -257,148 +275,87 @@ html {
     @apply backdrop-blur-xl bg-neutral-mist/90 backdrop-filter border-b border-neutral-gull/60 shadow-sm;
   }
   
-  /* Trust indicators */
-  .trust-badge {
-    @apply inline-flex items-center px-2 py-1 sm:px-3 sm:py-1 rounded-full text-sm sm:text-base font-medium
-           bg-neutral-mist text-primary-navy border border-primary-blue;
-  }
-  
-  .trust-badge svg {
-    @apply w-4 h-4 sm:w-5 sm:h-5 mr-1.5;
-  }
-  
-  /* Enhanced ocean wave animation for the homepage */
-  .ocean {
-    @apply h-32 sm:h-56 w-full absolute overflow-hidden;
-    transform: translateZ(0);
-    will-change: transform;
-    backface-visibility: hidden;
-  }
-  
-  /* Wave container and animation */
-  .wave-container {
-    display: flex;
-    width: 200%;
-    position: relative;
-    left: 0;
-    animation: wave-slide 15s linear infinite;
-  }
-  
-  .wave-speed-2 {
-    animation-duration: 20s;
-  }
-  
-  .wave-speed-3 {
-    animation-duration: 25s;
-  }
-  
-  .wave-reverse {
-    animation-name: wave-slide-reverse;
-  }
-  
-  .wave-svg {
-    width: 50%;
-    height: auto;
-    flex-shrink: 0;
-  }
-  
-  .wave {
-    @apply bg-center bg-repeat-x absolute w-[200%] h-32 sm:h-56;
-    background-image: url('/images/backgrounds/wave-divider.svg');
-    background-size: 50% 100%;
-    bottom: 0;
-    left: 0;
-    will-change: transform;
-    transform: translateZ(0);
-    animation: var(--wave-animation-duration) wave var(--wave-animation-easing) infinite;
-  }
-  
-  /* Different wave classes for more varied appearance */
-  .wave-primary {
-    opacity: 0.95;
-    height: 36px;
-    @apply h-[36px] sm:h-[56px];
-    animation-duration: calc(var(--wave-animation-duration) * 0.7);
-    filter: drop-shadow(0 -1px 2px rgba(255, 255, 255, 0.1));
-  }
-  
-  .wave-secondary {
-    @apply h-[32px] sm:h-[48px];
-    animation-duration: calc(var(--wave-animation-duration) * 1.1);
-    transform: scaleX(1.1);
-    filter: drop-shadow(0 -1px 2px rgba(255, 255, 255, 0.08));
-  }
-  
-  .wave-tertiary {
-    @apply h-[28px] sm:h-[42px];
-    animation-duration: calc(var(--wave-animation-duration) * 0.9);
-    transform: scaleX(0.9);
-    filter: drop-shadow(0 -1px 2px rgba(255, 255, 255, 0.06));
-  }
-  
-  .wave-quaternary {
-    @apply h-[24px] sm:h-[36px];
-    animation-duration: calc(var(--wave-animation-duration) * 1.3);
-    transform: scaleX(1.2);
-    filter: drop-shadow(0 -1px 2px rgba(255, 255, 255, 0.04));
-  }
-  
-  /* Enhanced shimmer effect */
-  .shimmer-overlay {
-    animation: shimmer 8s ease-in-out infinite;
-    background: linear-gradient(
-      to top,
-      rgba(255, 255, 255, 0.15),
-      rgba(255, 255, 255, 0.08),
-      rgba(255, 255, 255, 0.02),
-      transparent
-    );
-  }
-  
-  /* Container padding for consistent mobile spacing */
+  /* Enhanced mobile spacing utilities */
   .container-padding {
-    @apply px-4 sm:px-6 md:px-8;
+    @apply px-4 sm:px-6 md:px-8 lg:px-12;
   }
   
-  /* Section padding for consistent mobile spacing */
   .section-padding {
-    @apply py-12 sm:py-16 md:py-20 lg:py-24;
+    @apply py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24;
   }
   
-  /* Consistent spacing for mobile */
   .mobile-y-spacing {
-    @apply my-6 sm:my-8 md:my-10 lg:my-12;
+    @apply my-4 sm:my-6 md:my-8 lg:my-10 xl:my-12;
   }
   
   .mobile-y-spacing-sm {
-    @apply my-3 sm:my-4 md:my-5 lg:my-6;
+    @apply my-2 sm:my-3 md:my-4 lg:my-5 xl:my-6;
   }
 
-  /* Text contrast utilities */
+  /* Enhanced text utilities for mobile */
   .text-on-dark {
     @apply text-white font-medium;
     text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.7);
   }
   
   .text-backdrop {
-    @apply bg-black/40 backdrop-blur-sm py-3 px-4 rounded-lg;
+    @apply bg-black/40 backdrop-blur-sm py-2 px-3 sm:py-3 sm:px-4 rounded-lg;
   }
 
   .mission-statement {
-    @apply bg-black/50 backdrop-blur-sm rounded-lg p-4 sm:p-6 text-white shadow-lg;
+    @apply bg-black/50 backdrop-blur-sm rounded-lg p-3 sm:p-4 md:p-6 text-white shadow-lg;
   }
   
   .mission-quote {
-    @apply bg-primary-navy/90 backdrop-blur-sm rounded-lg p-4 sm:p-6 shadow-md;
+    @apply bg-primary-navy/90 backdrop-blur-sm rounded-lg p-3 sm:p-4 md:p-6 shadow-md;
   }
 
-  /* Additional responsive utilities */
+  /* Mobile-first responsive utilities */
   .mobile-center {
     @apply text-center sm:text-left;
   }
 
   .mobile-full-width {
     @apply w-full sm:w-auto;
+  }
+  
+  .mobile-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8;
+  }
+  
+  .mobile-flex {
+    @apply flex flex-col sm:flex-row gap-3 sm:gap-4 items-center sm:items-start;
+  }
+}
+
+/* Enhanced animations for mobile */
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.5s ease-out forwards;
+  }
+  
+  /* Mobile-optimized animations */
+  @media (prefers-reduced-motion: no-preference) {
+    .animate-fade-up {
+      animation: fadeUp 0.5s ease-out forwards;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-up {
+      animation: none;
+    }
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 
@@ -448,18 +405,6 @@ html {
     animation: gull-float 8s ease-in-out infinite;
   }
 
-  @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Star twinkling animation */
   @keyframes twinkle {
     0%, 100% {
       opacity: 0.3;
@@ -1101,5 +1046,127 @@ html {
   
   .btn-glimmer:hover::before {
     left: -100%;
+  }
+}
+
+/* Enhanced Mobile Comparison Table Styles */
+@media (max-width: 640px) {
+  .comparison-section {
+    @apply py-8 px-4;
+  }
+  
+  .comparison-table-wrapper {
+    @apply mx-0;
+  }
+  
+  .comparison-table {
+    @apply text-xs gap-2;
+    min-width: 100%;
+  }
+  
+  .header-row {
+    @apply gap-2 mb-4;
+  }
+  
+  .header-cell {
+    @apply p-3 rounded-lg;
+  }
+  
+  .data-row {
+    @apply gap-2 mb-3;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  .data-cell {
+    @apply p-3 rounded-lg;
+    min-height: auto;
+  }
+  
+  .cell-content {
+    @apply gap-2;
+  }
+  
+  .cell-icon {
+    @apply w-4 h-4 flex-shrink-0;
+  }
+  
+  .cell-text {
+    @apply text-xs leading-tight;
+  }
+  
+  .feature-highlight {
+    @apply block mb-1 font-semibold text-xs;
+  }
+  
+  .feature-detail {
+    @apply text-xs leading-relaxed;
+  }
+  
+  .htc-cell {
+    @apply mb-1;
+  }
+  
+  .rival-cell {
+    @apply mt-0;
+  }
+  
+  .tooltip {
+    @apply text-xs p-2 max-w-none;
+    position: static;
+    background: rgba(13, 37, 69, 0.1);
+    color: #0D2545;
+    border-radius: 8px;
+    margin-top: 8px;
+    opacity: 1;
+    transform: none;
+    box-shadow: none;
+  }
+  
+  .better-ribbon {
+    @apply text-xs px-2 py-1 rounded;
+  }
+}
+
+/* Enhanced tablet styles */
+@media (min-width: 641px) and (max-width: 768px) {
+  .comparison-table {
+    @apply text-sm;
+  }
+  
+  .cell-text {
+    @apply text-sm;
+  }
+  
+  .feature-highlight {
+    @apply text-sm font-semibold;
+  }
+  
+  .feature-detail {
+    @apply text-sm;
+  }
+}
+
+/* Ensure proper mobile touch targets */
+@media (max-width: 640px) {
+  .data-row {
+    min-height: 44px; /* Minimum touch target size */
+  }
+  
+  .btn-primary,
+  .btn-secondary,
+  .btn-accent {
+    min-height: 44px; /* Minimum touch target size */
+    @apply px-4 py-3;
+  }
+  
+  /* Improve button text wrapping on mobile */
+  .btn-primary,
+  .btn-secondary,
+  .btn-accent {
+    white-space: normal;
+    text-align: center;
+    word-wrap: break-word;
+    hyphens: auto;
   }
 } 

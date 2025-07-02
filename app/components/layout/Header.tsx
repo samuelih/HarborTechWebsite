@@ -139,28 +139,29 @@ const Header = () => {
           : 'bg-transparent backdrop-blur-sm'
       }`}
     >
-      <div className="max-w-7xl mx-auto flex justify-between items-center h-32 px-6 lg:px-8">
-        {/* Logo - 4x larger, transparent, no text */}
+      <div className="max-w-7xl mx-auto flex justify-between items-center h-20 sm:h-24 md:h-32 px-4 sm:px-6 lg:px-8">
+        {/* Logo - Responsive sizing */}
         <Link href="/" className="flex items-center group" aria-label="Harbor Technology Consulting - Home">
           <div className="relative overflow-hidden transition-transform duration-300 group-hover:scale-110">
             <Image 
               src="/images/logos/logo_transparent.svg" 
               alt="Harbor Technology Consulting Logo" 
-              width={240} 
-              height={240}
-              className={`transition-transform duration-300 ${getLogoFilter()}`}
+              width={120} 
+              height={120}
+              className={`transition-transform duration-300 ${getLogoFilter()} sm:w-[160px] sm:h-[160px] md:w-[200px] md:h-[200px] lg:w-[240px] lg:h-[240px]`}
               priority
               quality={100}
               loading="eager"
+              sizes="(max-width: 640px) 120px, (max-width: 768px) 160px, (max-width: 1024px) 200px, 240px"
             />
           </div>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav role="navigation" aria-label="Main navigation" className="hidden md:flex space-x-8 items-center">
+        <nav role="navigation" aria-label="Main navigation" className="hidden md:flex space-x-6 lg:space-x-8 items-center">
           <Link 
             href="/solutions" 
-            className={`text-2xl transition-colors duration-300 font-cinzel ${
+            className={`text-xl lg:text-2xl transition-colors duration-300 font-cinzel ${
               isActive('/solutions') ? getActiveTextColor() : getTextColor()
             }`}
           >
@@ -171,7 +172,7 @@ const Header = () => {
           <div className="relative" ref={supportDropdownRef}>
             <button
               onClick={toggleSupportDropdown}
-              className={`text-2xl transition-colors duration-300 font-cinzel flex items-center gap-1 ${
+              className={`text-xl lg:text-2xl transition-colors duration-300 font-cinzel flex items-center gap-1 ${
                 isActive('/support') ? getActiveTextColor() : getTextColor()
               }`}
               aria-expanded={isSupportDropdownOpen}
@@ -236,7 +237,7 @@ const Header = () => {
           
           <Link 
             href="/about" 
-            className={`text-2xl transition-colors duration-300 font-cinzel ${
+            className={`text-xl lg:text-2xl transition-colors duration-300 font-cinzel ${
               isActive('/about') ? getActiveTextColor() : getTextColor()
             }`}
           >
@@ -244,12 +245,12 @@ const Header = () => {
           </Link>
           <Link 
             href="/contact" 
-            className="btn-primary text-2xl font-cinzel flex items-center"
+            className="btn-primary text-lg lg:text-2xl font-cinzel flex items-center px-4 lg:px-6 py-2 lg:py-3"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
             <svg 
-              className="w-5 h-5 mr-2 transition-all duration-500" 
+              className="w-4 h-4 lg:w-5 lg:h-5 mr-2 transition-all duration-500" 
               viewBox="0 0 24 24" 
               fill="currentColor"
               style={{ 
@@ -279,18 +280,21 @@ const Header = () => {
         </button>
       </div>
 
-      {/* Mobile menu - adjusted top position */}
+      {/* Mobile menu - improved positioning */}
       <div 
         id="mobile-menu"
         role="region"
         aria-label="Mobile navigation"
-        className={`md:hidden bg-white absolute top-32 inset-x-0 shadow-lg z-20 transition-all duration-300 ${isMenuOpen ? 'opacity-100 max-h-[600px]' : 'opacity-0 max-h-0 pointer-events-none'}`}
-        style={{ overflow: isMenuOpen ? 'visible' : 'hidden' }}
+        className={`md:hidden bg-white absolute inset-x-0 shadow-lg z-20 transition-all duration-300 ${isMenuOpen ? 'opacity-100 max-h-[80vh] overflow-y-auto' : 'opacity-0 max-h-0 pointer-events-none overflow-hidden'}`}
+        style={{ 
+          top: '100%',
+          maxHeight: isMenuOpen ? '80vh' : '0'
+        }}
       >
-        <div className="flex flex-col py-4 px-6 space-y-2">
+        <div className="flex flex-col py-4 px-4 sm:px-6 space-y-2">
           <Link 
             href="/solutions" 
-            className={`text-primary-navy hover:text-primary-blue transition-colors p-3 rounded-lg ${isActive('/solutions') ? 'bg-neutral-gull text-primary-blue' : 'hover:bg-neutral-gull/50'}`}
+            className={`text-primary-navy hover:text-primary-blue transition-colors p-3 rounded-lg text-lg ${isActive('/solutions') ? 'bg-neutral-gull text-primary-blue' : 'hover:bg-neutral-gull/50'}`}
             onClick={() => setIsMenuOpen(false)}
           >
             Solutions
@@ -300,7 +304,7 @@ const Header = () => {
           <div className="space-y-1">
             <button
               onClick={toggleSupportDropdown}
-              className={`w-full text-left flex items-center justify-between text-primary-navy hover:text-primary-blue transition-colors p-3 rounded-lg ${isActive('/support') ? 'bg-neutral-gull text-primary-blue' : 'hover:bg-neutral-gull/50'}`}
+              className={`w-full text-left flex items-center justify-between text-primary-navy hover:text-primary-blue transition-colors p-3 rounded-lg text-lg ${isActive('/support') ? 'bg-neutral-gull text-primary-blue' : 'hover:bg-neutral-gull/50'}`}
             >
               Support
               <ChevronDown 
@@ -316,7 +320,7 @@ const Header = () => {
             }`}>
               <Link
                 href="/support/options-pricing"
-                className="flex items-center gap-3 px-3 py-2 text-sm text-primary-navy hover:text-primary-blue hover:bg-neutral-gull/30 rounded-lg transition-colors"
+                className="flex items-center gap-3 px-3 py-2 text-base text-primary-navy hover:text-primary-blue hover:bg-neutral-gull/30 rounded-lg transition-colors"
                 onClick={() => {
                   setIsMenuOpen(false);
                   setIsSupportDropdownOpen(false);
@@ -327,7 +331,7 @@ const Header = () => {
               </Link>
               <Link
                 href="/support/knowledge-base"
-                className="flex items-center gap-3 px-3 py-2 text-sm text-primary-navy hover:text-primary-blue hover:bg-neutral-gull/30 rounded-lg transition-colors"
+                className="flex items-center gap-3 px-3 py-2 text-base text-primary-navy hover:text-primary-blue hover:bg-neutral-gull/30 rounded-lg transition-colors"
                 onClick={() => {
                   setIsMenuOpen(false);
                   setIsSupportDropdownOpen(false);
@@ -337,10 +341,10 @@ const Header = () => {
                 Knowledge Base
               </Link>
               <a
-                href="https://harborai.example.com"
+                href="https://harbor-ai-website.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 px-3 py-2 text-sm text-primary-navy hover:text-primary-blue hover:bg-neutral-gull/30 rounded-lg transition-colors"
+                className="flex items-center gap-3 px-3 py-2 text-base text-primary-navy hover:text-primary-blue hover:bg-neutral-gull/30 rounded-lg transition-colors"
                 onClick={() => {
                   setIsMenuOpen(false);
                   setIsSupportDropdownOpen(false);
@@ -352,7 +356,7 @@ const Header = () => {
               </a>
               <Link
                 href="/support/emergency"
-                className="flex items-center gap-3 px-3 py-2 text-sm text-red-600 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors font-semibold"
+                className="flex items-center gap-3 px-3 py-2 text-base text-red-600 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors font-semibold"
                 onClick={() => {
                   setIsMenuOpen(false);
                   setIsSupportDropdownOpen(false);
@@ -366,20 +370,20 @@ const Header = () => {
           
           <Link 
             href="/about" 
-            className={`text-primary-navy hover:text-primary-blue transition-colors p-3 rounded-lg ${isActive('/about') ? 'bg-neutral-gull text-primary-blue' : 'hover:bg-neutral-gull/50'}`}
+            className={`text-primary-navy hover:text-primary-blue transition-colors p-3 rounded-lg text-lg ${isActive('/about') ? 'bg-neutral-gull text-primary-blue' : 'hover:bg-neutral-gull/50'}`}
             onClick={() => setIsMenuOpen(false)}
           >
             About
           </Link>
           <Link 
             href="/contact" 
-            className="btn-primary btn-full text-2xl font-cinzel flex items-center"
+            className="btn-primary btn-full text-lg font-cinzel flex items-center justify-center mt-4"
             onClick={() => setIsMenuOpen(false)}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
             <svg 
-              className="w-5 h-5 mr-2 transition-all duration-500" 
+              className="w-4 h-4 mr-2 transition-all duration-500" 
               viewBox="0 0 24 24" 
               fill="currentColor"
               style={{ 

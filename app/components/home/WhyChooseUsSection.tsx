@@ -58,23 +58,23 @@ const WhyChooseUsSection = () => {
   ];
 
   return (
-    <section id="comparison-section" className="comparison-section py-20 px-4 md:px-0">
+    <section id="comparison-section" className="comparison-section section-padding container-padding">
       {/* Enhanced Section Header */}
-      <div className="section-header">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-6 text-primary-navy text-center relative">
+      <div className="section-header text-center mb-8 sm:mb-12 md:mb-16">
+        <h2 className="mb-4 sm:mb-6 relative">
           Why Harbor Springs shops choose us
           {/* Wave underline */}
-          <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-96 h-1 bg-repeat-x opacity-80" style={{
+          <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-48 sm:w-64 md:w-96 h-1 bg-repeat-x opacity-80" style={{
             backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'20\' height=\'4\' viewBox=\'0 0 20 4\'%3E%3Cpath d=\'M0,2 Q5,0 10,2 T20,2\' stroke=\'%23205d96\' stroke-width=\'2\' fill=\'none\'/%3E%3C/svg%3E")',
             backgroundSize: '20px 4px'
           }}></div>
         </h2>
-        <p className="text-xl font-cinzel text-primary-navy max-w-2xl mx-auto leading-relaxed mb-2 text-center opacity-90">
+        <p className="text-lg sm:text-xl font-cinzel text-primary-navy max-w-3xl mx-auto leading-relaxed mb-2 opacity-90">
           Compare at a glance—decide in 30 seconds
         </p>
       </div>
 
-      {/* Comparison Table with Enhanced Styling */}
+      {/* Comparison Table with Enhanced Mobile Styling */}
       <div className={`comparison-table-wrapper ${isVisible ? 'animate-fade-in' : ''}`}>
         <div className="comparison-table" role="table" aria-label="Harbor Technology Consulting advantages">
           
@@ -82,12 +82,12 @@ const WhyChooseUsSection = () => {
           <div className="header-row" role="row">
             <div className="header-cell htc-header" role="columnheader">
               <div className="header-content">
-                <span>Harbor Technology Consulting</span>
+                <span className="text-sm sm:text-base md:text-lg font-bold">Harbor Technology Consulting</span>
               </div>
             </div>
             <div className="header-cell rival-header" role="columnheader">
               <div className="header-content">
-                <span>"Common" Competitors</span>
+                <span className="text-sm sm:text-base md:text-lg font-bold">"Common" Competitors</span>
               </div>
             </div>
           </div>
@@ -97,20 +97,20 @@ const WhyChooseUsSection = () => {
             <div key={index} className="data-row group" role="row">
               <div className="data-cell htc-cell" role="cell">
                 <div className="cell-content">
-                  <Check className="cell-icon htc-icon" size={20} aria-hidden="true" />
+                  <Check className="cell-icon htc-icon" size={16} aria-hidden="true" />
                   <div className="cell-text">
-                    <span className="feature-highlight">{item.feature}:</span>
-                    <span className="feature-detail"> {item.htc}</span>
+                    <span className="feature-highlight text-xs sm:text-sm font-semibold">{item.feature}:</span>
+                    <span className="feature-detail text-xs sm:text-sm"> {item.htc}</span>
                   </div>
                 </div>
                 {/* Tooltip */}
-                <div className="tooltip">{item.tooltip}</div>
+                <div className="tooltip text-xs sm:text-sm">{item.tooltip}</div>
               </div>
               <div className="data-cell rival-cell" role="cell">
                 <div className="cell-content">
-                  <X className="cell-icon rival-icon" size={20} aria-hidden="true" />
+                  <X className="cell-icon rival-icon" size={16} aria-hidden="true" />
                   <div className="cell-text">
-                    <span className="feature-detail">{item.rival}</span>
+                    <span className="feature-detail text-xs sm:text-sm">{item.rival}</span>
                   </div>
                 </div>
               </div>

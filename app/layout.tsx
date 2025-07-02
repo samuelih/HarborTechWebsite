@@ -63,8 +63,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfairDisplay.variable} ${cinzel.variable} ${cinzelDecorative.variable}`} style={{ fontSize: '18px' }}>
+    <html lang="en" className={`${inter.variable} ${playfairDisplay.variable} ${cinzel.variable} ${cinzelDecorative.variable}`}>
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
         {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLACEHOLDER"></script>
         <script
