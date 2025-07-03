@@ -32,11 +32,11 @@ const cinzelDecorative = Cinzel_Decorative({
 export const metadata = {
   title: 'Harbor Technology Consulting | Local Tech Partner for Harbor Springs Retailers',
   description: 'Your local tech partner for Harbor Springs shops. Smart POS, online stores, secure Wi-Fi—simple solutions from neighbors who understand your business.',
-  metadataBase: new URL('https://harbortechconsulting.com'),
+  metadataBase: new URL('https://harbortech.org'),
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://harbortechconsulting.com',
+    url: 'https://harbortech.org',
     title: 'Harbor Technology Consulting | Local Tech Partner for Harbor Springs',
     description: 'Your local tech partner for Harbor Springs shops. Smart POS, online stores, secure Wi-Fi—simple solutions from neighbors who understand your business.',
     siteName: 'Harbor Technology Consulting',

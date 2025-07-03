@@ -43,18 +43,24 @@ const Footer = () => {
               {/* Contact Info */}
               <div>
                 <h3 className="font-semibold text-primary-navy mb-3 sm:mb-4 text-lg">Contact</h3>
-                <div className="space-y-2 sm:space-y-3">
+                <div className="space-y-3 sm:space-y-4">
                   <div>
-                    <p className="text-primary-sky text-sm">Phone</p>
-                    <a href="tel:+1234567890" className="text-primary-navy hover:text-primary-blue transition-colors font-medium text-sm sm:text-base">
+                    <p className="text-primary-sky text-sm mb-1">Sam Harrell</p>
+                    <a href="tel:+17348348005" className="text-primary-navy hover:text-primary-blue transition-colors font-medium text-sm sm:text-base block">
                       (734) 834-8005
+                    </a>
+                    <a href="mailto:sam@harbortech.org" className="text-primary-navy hover:text-primary-blue transition-colors font-medium text-sm sm:text-base break-all">
+                      sam@harbortech.org
                     </a>
                   </div>
                   <div>
-                    <p className="text-primary-sky text-sm">Email</p>
-                                  <a href="mailto:sam@harbortech.org" className="text-primary-navy hover:text-primary-blue transition-colors font-medium text-sm sm:text-base break-all">
-                sam@harbortech.org
-              </a>
+                    <p className="text-primary-sky text-sm mb-1">Max Bassett</p>
+                    <a href="tel:+12313303682" className="text-primary-navy hover:text-primary-blue transition-colors font-medium text-sm sm:text-base block">
+                      (231) 330-3682
+                    </a>
+                    <a href="mailto:max@harbortech.org" className="text-primary-navy hover:text-primary-blue transition-colors font-medium text-sm sm:text-base break-all">
+                      max@harbortech.org
+                    </a>
                   </div>
                   <div>
                     <p className="text-primary-sky text-sm">Location</p>

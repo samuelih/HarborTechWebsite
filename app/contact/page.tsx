@@ -24,11 +24,28 @@ const ContactPage = () => {
     }));
   };
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the data to your backend
-    console.log(formData);
-    setIsSubmitted(true);
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      if (response.ok) {
+        setIsSubmitted(true);
+      } else {
+        console.error('Failed to send message');
+        // You might want to show an error message to the user
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      // You might want to show an error message to the user
+    }
   };
 
   return (
@@ -161,7 +178,7 @@ const ContactPage = () => {
                         {/* Service Interest */}
                         <div>
                           <label htmlFor="service" className="block text-sm font-medium text-primary-navy mb-1">
-                            Which Voyage Are You Interested In?*
+                            What can we help you with?
                           </label>
                           <select
                             id="service"
@@ -172,10 +189,10 @@ const ContactPage = () => {
                             className="w-full px-4 py-3 rounded-lg border border-neutral-gull focus:ring-2 focus:ring-primary-sky focus:border-transparent"
                           >
                             <option value="harbor-check">Free Harbor Check Consultation</option>
-                            <option value="skiff">Starter "Skiff" Package</option>
-                            <option value="cutter">Voyager "Cutter" Package</option>
-                            <option value="clipper">Flagship "Clipper" Package</option>
-                            <option value="custom">Custom Solution</option>
+                            <option value="general">General Question</option>
+                            <option value="harbor-check">Support Inquiry</option>
+                            <option value="custom">Custom Solutions</option>
+                            <option value="other">Other</option>
                           </select>
                         </div>
                         
@@ -216,32 +233,42 @@ const ContactPage = () => {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {/* Contact Method 1 */}
+            {/* Contact Method 1 - Sam */}
             <div className="bg-white/70 backdrop-blur-lg border-l-4 border-accent-gold rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow">
               <div className="inline-block bg-accent-gold/10 rounded-full p-3 mb-4">
                 <svg className="w-6 h-6 text-accent-gold" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" />
+                  <path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" />
                 </svg>
               </div>
-              <h3 className="font-display font-bold text-xl mb-2">Email</h3>
-              <p className="text-primary-navy mb-4">For non-urgent inquiries</p>
-              <a href="mailto:sam@harbortech.org" className="text-primary-sky font-medium hover:underline">
-                sam@harbortech.org
-              </a>
+              <h3 className="font-display font-bold text-xl mb-2">Sam Harrell</h3>
+              <p className="text-primary-navy mb-4">Co-Founder & Technology Specialist</p>
+              <div className="space-y-2">
+                <a href="tel:7348348005" className="text-primary-sky font-medium hover:underline block">
+                  (734) 834-8005
+                </a>
+                <a href="mailto:sam@harbortech.org" className="text-primary-sky font-medium hover:underline block">
+                  sam@harbortech.org
+                </a>
+              </div>
             </div>
             
-            {/* Contact Method 2 */}
+            {/* Contact Method 2 - Max */}
             <div className="bg-white/70 backdrop-blur-lg border-l-4 border-accent-gold rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow">
               <div className="inline-block bg-accent-gold/10 rounded-full p-3 mb-4">
                 <svg className="w-6 h-6 text-accent-gold" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z" />
+                  <path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" />
                 </svg>
               </div>
-              <h3 className="font-display font-bold text-xl mb-2">Phone</h3>
-              <p className="text-primary-navy mb-4">Mon-Fri, 9am-5pm ET</p>
-              <a href="tel:7348348005" className="text-primary-sky font-medium hover:underline">
-                (734) 834-8005
-              </a>
+              <h3 className="font-display font-bold text-xl mb-2">Max Bassett</h3>
+              <p className="text-primary-navy mb-4">Co-Founder & Data Analytics Specialist</p>
+              <div className="space-y-2">
+                <a href="tel:2313303682" className="text-primary-sky font-medium hover:underline block">
+                  (231) 330-3682
+                </a>
+                <a href="mailto:max@harbortech.org" className="text-primary-sky font-medium hover:underline block">
+                  max@harbortech.org
+                </a>
+              </div>
             </div>
             
             {/* Contact Method 3 */}
@@ -251,10 +278,9 @@ const ContactPage = () => {
                   <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" />
                 </svg>
               </div>
-              <h3 className="font-display font-bold text-xl mb-2">Visit Our Dock</h3>
-              <p className="text-primary-navy mb-4">Our Harbor Springs outpost</p>
+              <h3 className="font-display font-bold text-xl mb-2">Location</h3>
+              <p className="text-primary-navy mb-4">Harbor Springs Based</p>
               <address className="not-italic text-primary-sky font-medium">
-                123 Main Street<br />
                 Harbor Springs, MI 49740
               </address>
             </div>
