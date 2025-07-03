@@ -203,25 +203,6 @@ const Header = () => {
                   <LifeBuoy className="w-5 h-5" />
                   Options and Pricing
                 </Link>
-                <Link
-                  href="/support/knowledge-base"
-                  className="flex items-center gap-3 px-4 py-3 text-primary-navy hover:bg-neutral-mist hover:text-primary-blue transition-colors"
-                  onClick={() => setIsSupportDropdownOpen(false)}
-                >
-                  <BookOpen className="w-5 h-5" />
-                  Knowledge Base
-                </Link>
-                <a
-                  href="https://harbor-ai-website.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 px-4 py-3 text-primary-navy hover:bg-neutral-mist hover:text-primary-blue transition-colors"
-                  onClick={() => setIsSupportDropdownOpen(false)}
-                >
-                  <Globe className="w-5 h-5" />
-                  HarborAI
-                  <ExternalLink className="w-4 h-4 ml-auto" />
-                </a>
                 <div className="border-t border-gray-200 my-2"></div>
                 <Link
                   href="/support/emergency"
@@ -329,31 +310,6 @@ const Header = () => {
                 <LifeBuoy className="w-4 h-4" />
                 Options and Pricing
               </Link>
-              <Link
-                href="/support/knowledge-base"
-                className="flex items-center gap-3 px-3 py-2 text-base text-primary-navy hover:text-primary-blue hover:bg-neutral-gull/30 rounded-lg transition-colors"
-                onClick={() => {
-                  setIsMenuOpen(false);
-                  setIsSupportDropdownOpen(false);
-                }}
-              >
-                <BookOpen className="w-4 h-4" />
-                Knowledge Base
-              </Link>
-              <a
-                href="https://harbor-ai-website.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 px-3 py-2 text-base text-primary-navy hover:text-primary-blue hover:bg-neutral-gull/30 rounded-lg transition-colors"
-                onClick={() => {
-                  setIsMenuOpen(false);
-                  setIsSupportDropdownOpen(false);
-                }}
-              >
-                <Globe className="w-4 h-4" />
-                HarborAI
-                <ExternalLink className="w-3 h-3 ml-auto" />
-              </a>
               <Link
                 href="/support/emergency"
                 className="flex items-center gap-3 px-3 py-2 text-base text-red-600 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors font-semibold"
