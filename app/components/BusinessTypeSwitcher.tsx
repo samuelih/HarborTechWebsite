@@ -19,10 +19,19 @@ const businessTypes = {
     },
     description: 'From boutique stores to specialty shops, we create custom solutions for your unique retail needs.',
     highlights: [
-      'Custom point-of-sale systems',
-      'Inventory management that fits your workflow',
-      'Customer engagement tools',
-      'Sales analytics and reporting'
+      'POS Tune Up',
+      'POS Install',
+      'Inventory Clean Up + auto Reorder Sheet',
+      '"Click and Collect" Online Store',
+      'Google Business Profile and SEO Optimization',
+      'Website Refresh',
+      'Loyalty + email starter pack',
+      'FAQ (customer and staff) AI Chatbot',
+      'Sales and Stock Dashboard',
+      'Cyber-Basics and Backup',
+      'Payroll friendly Time Clock',
+      'In-Store Speaker / Display Systems',
+      'Staff Training + Cheat Sheets'
     ]
   },
   restaurants: {
@@ -38,10 +47,17 @@ const businessTypes = {
     },
     description: 'Every restaurant is different. We design technology solutions that match your service style.',
     highlights: [
-      'Kitchen workflow optimization',
-      'Custom ordering systems',
-      'Table management solutions',
-      'Staff coordination tools'
+      'POS Tune Up',
+      'Table-side QR Ordering',
+      'Online Ordering + Curb-side',
+      'Google Business Profile and SEO Optimization',
+      'Reservations Sync',
+      'Kitchen Display System (KDS) Install',
+      'Menu and Allergen Manager',
+      'Payroll friendly Time Clock',
+      'Website Refresh',
+      'Loyalty + email starter pack',
+      'FAQ (customer and staff) AI Chatbot'
     ]
   },
   service: {
@@ -57,10 +73,14 @@ const businessTypes = {
     },
     description: 'Whether you\'re a salon, repair shop, or professional service, we build what works for you.',
     highlights: [
-      'Appointment scheduling systems',
-      'Client management tools',
-      'Project tracking solutions',
-      'Custom billing workflows'
+      'Online Booking and Smart Calendar',
+      'Website Refresh',
+      'POS Install',
+      'Inventory Clean Up + auto Reorder Sheet',
+      'Job-Site Photo Uploader',
+      'Quick-Quote Template Pack',
+      'Loyalty + email starter pack',
+      'FAQ (customer and staff) AI Chatbot'
     ]
   }
 };

@@ -65,7 +65,7 @@ const SolutionsPage = () => {
       number: 1,
       title: "Let's Talk Shop",
       description: " Over coffee at Johan’s or right on your sales floor, we learn how your store operates and pinpoint your daily headaches.",
-      icon: "💬",
+      icon: <Image src="/images/icons/general/talk.svg" alt="Talk" width={28} height={28} />,
       accentColor: "accent-gold",
       delay: 0
     },
@@ -73,7 +73,7 @@ const SolutionsPage = () => {
       number: 2,
       title: "Shop Walk-through",
       description: " We swing by in person and cover eight key areas—POS, inventory, customer data, and more. We use what we learn to craft personalized, time-saving fixes and lay out the simplest path forward.",
-      icon: "🔍",
+      icon: <Image src="/images/icons/general/discovery.svg" alt="Discovery" width={28} height={28} />,
       accentColor: "primary-blue",
       delay: 400
     },
@@ -81,7 +81,7 @@ const SolutionsPage = () => {
       number: 3,
       title: "Your Harbor Plan",
       description: "You get a clear transparent plan: what we heard, the upgrades and workflows we recommend, an estimated cost,and a timeline that works around your schedule.",
-      icon: "📋",
+      icon: <Image src="/images/icons/general/clipboard.svg" alt="Clipboard" width={28} height={28} />,
       accentColor: "seafoam",
       delay: 800
     },
@@ -89,7 +89,7 @@ const SolutionsPage = () => {
       number: 4,
       title: "Install & Training",
       description: "We work around your hours—before open, after close, whenever. Keep your systems running while we train your crew and get your upgrade fully implemented.",
-      icon: "⚙️",
+      icon: <Image src="/images/icons/general/wrench.svg" alt="Wrench" width={28} height={28} />,
       accentColor: "accent-gold",
       delay: 1200
     },
@@ -97,7 +97,7 @@ const SolutionsPage = () => {
       number: 5,
       title: "Payment",
       description: "Pay all at once or spread it over 24 months; either way, the number we quote is the number you pay. No surprise add-ons, ever. Fully refundable for up to 14 days.",
-      icon: "💳",
+      icon: <Image src="/images/icons/general/money.svg" alt="Money" width={28} height={28} />,
       accentColor: "primary-blue",
       delay: 1600
     }
@@ -365,7 +365,7 @@ const SolutionsPage = () => {
               <div className="text-center mb-12">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-6 text-nautical-navy">
                   <span className="relative inline-block">
-                    Frequently Asked Questions
+                    Frequently Asked Questions:
                     <span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-gold/70"></span>
                   </span>
                 </h2>
