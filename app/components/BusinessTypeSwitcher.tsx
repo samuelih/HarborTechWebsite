@@ -77,7 +77,7 @@ const BusinessTypeSwitcher = () => {
             key={key}
             onClick={() => setActiveType(activeType === key ? null : key as BusinessType)}
             className={`group relative p-6 rounded-xl border-2 transition-all duration-300 text-left ${
-              activeType === key
+              activeType === key 
                 ? `border-${business.accentColor} bg-${business.accentColor}/5`
                 : 'border-neutral-200 hover:border-neutral-300 bg-white hover:bg-neutral-50'
             }`}
@@ -120,12 +120,12 @@ const BusinessTypeSwitcher = () => {
 
       {/* Business Type Details */}
       <AnimatePresence mode="wait">
-        {activeType && (
+      {activeType && (
           <motion.div
-            key={activeType}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
+              key={activeType}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
             className="max-w-4xl mx-auto"
           >
@@ -145,8 +145,8 @@ const BusinessTypeSwitcher = () => {
                 </h3>
                 <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
                   {businessTypes[activeType].description}
-                </p>
-              </div>
+                    </p>
+                  </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                 <div>
@@ -159,7 +159,7 @@ const BusinessTypeSwitcher = () => {
                       </li>
                     ))}
                   </ul>
-                </div>
+                                </div>
                 <div className="bg-neutral-50 rounded-xl p-6">
                   <h4 className="font-bold text-nautical-navy mb-4">Our Approach:</h4>
                   <div className="space-y-3 text-sm text-neutral-600">
@@ -167,25 +167,25 @@ const BusinessTypeSwitcher = () => {
                     <p>✓ We recommend only what you actually need</p>
                     <p>✓ We build solutions that grow with your business</p>
                     <p>✓ We train your team to use everything confidently</p>
-                  </div>
-                </div>
-              </div>
+                                </div>
+                              </div>
+                            </div>
 
               <div className="text-center">
-                <Link 
-                  href="/contact" 
-                  className="btn-primary btn-large inline-flex items-center gap-2"
-                >
+                  <Link 
+                    href="/contact" 
+                    className="btn-primary btn-large inline-flex items-center gap-2"
+                  >
                   Get Your Custom Quote
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </Link>
+                </div>
               </div>
-            </div>
           </motion.div>
         )}
-      </AnimatePresence>
+          </AnimatePresence>
 
       {/* Bottom CTA */}
       <div className="text-center mt-12 pt-8 border-t border-neutral-200">
@@ -204,7 +204,7 @@ const BusinessTypeSwitcher = () => {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
           </svg>
         </Link>
-      </div>
+        </div>
     </div>
   );
 };
