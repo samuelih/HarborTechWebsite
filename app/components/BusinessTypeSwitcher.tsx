@@ -101,27 +101,16 @@ const BusinessTypeSwitcher = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 mb-6">
-          <div>
-            <h4 className="font-bold text-nautical-navy mb-3">What We Customize For You:</h4>
-            <ul className="space-y-2">
-              {businessTypes[type].highlights.map((highlight, index) => (
-                <li key={index} className="flex items-start">
-                  <div className={`w-2 h-2 ${businessTypes[type].accentColorClasses.bulletColor} rounded-full mt-2 mr-3 flex-shrink-0`}></div>
-                  <span className="text-neutral-700 text-sm">{highlight}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="bg-neutral-50 rounded-lg p-4">
-            <h4 className="font-bold text-nautical-navy mb-3">Our Approach:</h4>
-            <div className="space-y-2 text-sm text-neutral-600">
-              <p>✓ We start by understanding your specific workflow</p>
-              <p>✓ We recommend only what you actually need</p>
-              <p>✓ We build solutions that grow with your business</p>
-              <p>✓ We train your team to use everything confidently</p>
-            </div>
-          </div>
+        <div className="mb-6">
+          <h4 className="font-bold text-nautical-navy mb-3">What We Customize For You:</h4>
+          <ul className="space-y-2">
+            {businessTypes[type].highlights.map((highlight, index) => (
+              <li key={index} className="flex items-start">
+                <div className={`w-2 h-2 ${businessTypes[type].accentColorClasses.bulletColor} rounded-full mt-2 mr-3 flex-shrink-0`}></div>
+                <span className="text-neutral-700 text-sm">{highlight}</span>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className="text-center">
@@ -155,7 +144,7 @@ const BusinessTypeSwitcher = () => {
         </p>
         <div className="bg-gradient-to-r from-accent-gold/10 to-primary-blue/10 rounded-xl p-6 border-l-4 border-accent-gold max-w-2xl mx-auto">
           <p className="text-lg font-semibold text-nautical-navy">
-            Every solution is tailored to your specific needs, budget, and goals.
+            Every solution is personalized to your business's specific needs, budget, and goals.
           </p>
         </div>
       </div>
@@ -301,27 +290,16 @@ const BusinessTypeSwitcher = () => {
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                  <div>
-                    <h4 className="font-bold text-nautical-navy mb-4">What We Customize For You:</h4>
-                    <ul className="space-y-3">
-                      {businessTypes[activeType].highlights.map((highlight, index) => (
-                        <li key={index} className="flex items-start">
-                          <div className={`w-2 h-2 ${businessTypes[activeType].accentColorClasses.bulletColor} rounded-full mt-2 mr-3 flex-shrink-0`}></div>
-                          <span className="text-neutral-700">{highlight}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="bg-neutral-50 rounded-xl p-6">
-                    <h4 className="font-bold text-nautical-navy mb-4">Our Approach:</h4>
-                    <div className="space-y-3 text-sm text-neutral-600">
-                      <p>✓ We start by understanding your specific workflow</p>
-                      <p>✓ We recommend only what you actually need</p>
-                      <p>✓ We build solutions that grow with your business</p>
-                      <p>✓ We train your team to use everything confidently</p>
-                    </div>
-                  </div>
+                <div className="mb-8">
+                  <h4 className="font-bold text-nautical-navy mb-4">What We Customize For You:</h4>
+                  <ul className="space-y-3">
+                    {businessTypes[activeType].highlights.map((highlight, index) => (
+                      <li key={index} className="flex items-start">
+                        <div className={`w-2 h-2 ${businessTypes[activeType].accentColorClasses.bulletColor} rounded-full mt-2 mr-3 flex-shrink-0`}></div>
+                        <span className="text-neutral-700">{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
 
                 <div className="text-center">
