@@ -123,14 +123,14 @@ const BusinessTypeSwitcher = () => {
 
         <div className="mb-6">
           <h4 className="font-bold text-nautical-navy mb-3">What We Customize For You:</h4>
-          <ul className="space-y-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2">
             {businessTypes[type].highlights.map((highlight, index) => (
-              <li key={index} className="flex items-start">
+              <div key={index} className="flex items-start">
                 <div className={`w-2 h-2 ${businessTypes[type].accentColorClasses.bulletColor} rounded-full mt-2 mr-3 flex-shrink-0`}></div>
                 <span className="text-neutral-700 text-sm">{highlight}</span>
-              </li>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
 
         <div className="text-center">
@@ -312,14 +312,14 @@ const BusinessTypeSwitcher = () => {
 
                 <div className="mb-8">
                   <h4 className="font-bold text-nautical-navy mb-4">What We Customize For You:</h4>
-                  <ul className="space-y-3">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3">
                     {businessTypes[activeType].highlights.map((highlight, index) => (
-                      <li key={index} className="flex items-start">
+                      <div key={index} className="flex items-start">
                         <div className={`w-2 h-2 ${businessTypes[activeType].accentColorClasses.bulletColor} rounded-full mt-2 mr-3 flex-shrink-0`}></div>
                         <span className="text-neutral-700">{highlight}</span>
-                      </li>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
 
                 <div className="text-center">
