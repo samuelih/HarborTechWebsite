@@ -108,7 +108,7 @@ const Hero = () => {
               </div>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center max-w-2xl mx-auto">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center max-w-2xl mx-auto mb-16 sm:mb-20">
               <Link 
                 href="/contact" 
                 className="btn-primary btn-large w-full sm:w-auto inline-flex items-center justify-center text-base sm:text-lg whitespace-nowrap"
