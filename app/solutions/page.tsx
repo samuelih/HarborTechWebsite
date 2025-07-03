@@ -122,7 +122,7 @@ const SolutionsPage = () => {
               <span className="text-accent-gold">solutions.</span>
             </h1>
             <p className="text-white/90 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
-              Choose only what you need—easy, local, done right.
+              Any tech upgrade you need—easy, local, done right.
             </p>
           </div>
         </div>

@@ -82,7 +82,7 @@ const AboutPage = () => {
               <span className="text-accent-gold">with trusted guides</span>
             </h1>
             <p className="text-white/90 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
-              Dedicated to helping Harbor Springs businesses thrive through technology. Local expertise, global solutions.
+              Dedicated to helping Harbor Springs businesses bridge the gap between technology and their business. Made by neighbors, for neighbors.
             </p>
           </div>
         </div>
