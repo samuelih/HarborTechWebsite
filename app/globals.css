@@ -103,7 +103,6 @@ html {
     @apply font-sans text-[#0D2545];
     font-size: 1rem; /* 16px */
     line-height: 1.6;
-    max-width: 68ch; /* Limit paragraph width for readability */
   }
   
   /* Enhanced mobile breakpoints */
@@ -325,6 +324,14 @@ html {
   
   .mobile-flex {
     @apply flex flex-col sm:flex-row gap-3 sm:gap-4 items-center sm:items-start;
+  }
+  
+  /* Hero text centering override */
+  .hero-text {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: none !important;
   }
 }
 

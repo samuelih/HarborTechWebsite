@@ -83,20 +83,20 @@ const Hero = () => {
             <div className="mx-auto mb-8">
               <div className="bg-black/30 backdrop-blur-sm rounded-lg p-4 sm:p-6 md:p-8 mx-auto max-w-4xl">
                 <div className="text-center space-y-3 sm:space-y-4">
-                  <p className="text-base sm:text-lg md:text-xl text-white leading-relaxed text-center">
+                  <p className="text-base sm:text-lg md:text-xl text-white leading-relaxed hero-text">
                     <span className="font-bold relative inline-block">
                       No-bullshit, affordable, and approachable
                       <span className="absolute -bottom-1 left-0 w-full h-0.5 sm:h-1 bg-accent-gold/70"></span>
                     </span>{" "}
                     technology upgrades.
                   </p>
-                  <p className="text-base sm:text-lg md:text-xl text-white leading-relaxed text-center">
+                  <p className="text-base sm:text-lg md:text-xl text-white leading-relaxed hero-text">
                     Modernize your point-of-sale, inventory, and back-office tools with{" "}
                     <span className="font-bold relative inline-block text-accent-gold">
                       transparent pricing and hometown support.
                     </span>
                   </p>
-                  <p className="text-base sm:text-lg md:text-xl text-white leading-relaxed text-center">
+                  <p className="text-base sm:text-lg md:text-xl text-white leading-relaxed hero-text">
                     <span className="font-bold relative inline-block">
                       No surprise add-ons
                       <span className="absolute -bottom-1 left-0 w-full h-0.5 sm:h-1 bg-accent-gold/70"></span>
