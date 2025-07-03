@@ -209,12 +209,12 @@ const SolutionsPage = () => {
                         </div>
 
                         {/* Icon */}
-                        <div className="text-center mb-4">
-                          <span className={`text-3xl transition-all duration-500 ${
+                        <div className="flex justify-center items-center mb-4">
+                          <div className={`transition-all duration-500 ${
                             hoveredStep === index ? 'scale-125 filter drop-shadow-lg' : 'group-hover:scale-110'
                           }`}>
                             {step.icon}
-                          </span>
+                          </div>
                         </div>
                         
                         <h3 className={`text-xl font-display font-bold text-center mb-4 transition-colors duration-300 ${
@@ -280,7 +280,9 @@ const SolutionsPage = () => {
                     {/* Content */}
                     <div className="flex-1 bg-white rounded-xl p-6 shadow-lg border border-neutral-gull/30">
                       <div className="flex items-center space-x-3 mb-3">
-                        <span className="text-2xl">{step.icon}</span>
+                        <div className="flex items-center justify-center">
+                          {step.icon}
+                        </div>
                         <h3 className="text-lg font-display font-bold text-nautical-navy">
                           {step.title}
                         </h3>
