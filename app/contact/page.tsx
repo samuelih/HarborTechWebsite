@@ -190,7 +190,7 @@ const ContactPage = () => {
                           >
                             <option value="harbor-check">Free Harbor Check Consultation</option>
                             <option value="general">General Question</option>
-                            <option value="harbor-check">Support Inquiry</option>
+                            <option value="support">Support Inquiry</option>
                             <option value="custom">Custom Solutions</option>
                             <option value="other">Other</option>
                           </select>
