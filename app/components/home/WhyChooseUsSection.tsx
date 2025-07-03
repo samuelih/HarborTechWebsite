@@ -28,7 +28,7 @@ const WhyChooseUsSection = () => {
   const comparisonData = [
     {
       feature: "Flat-Rate Pricing",
-      icon: "💰",
+      icon: "/images/icons/general/money.svg",
       htc: "One flat project price.",
       rival: "Hourly meter ($150–$200/hr) plus \"miscellaneous\" add‑ons that stack up fast.",
       tooltip: "Transparent billing with no surprises or scope creep—you know exactly what you'll pay before we start",
@@ -36,7 +36,7 @@ const WhyChooseUsSection = () => {
     },
     {
       feature: "Local Insight", 
-      icon: "🏠",
+      icon: "/images/icons/general/home.svg",
       htc: "Harbor‑Springs born & raised.",
       rival: "Fly‑in technicians who treat Main Street like any strip mall—zero seasonal nuance.",
       tooltip: "We design around tourist swings and the neighbor‑helping‑neighbor mindset",
@@ -44,7 +44,7 @@ const WhyChooseUsSection = () => {
     },
     {
       feature: "Timeline",
-      icon: "⚡",
+      icon: "/images/icons/general/clock.svg",
       htc: "2–4 weeks from kickoff to go‑live.", 
       rival: "6–12+ weeks.",
       tooltip: "We will work with you to know when is best to implement",
@@ -52,7 +52,7 @@ const WhyChooseUsSection = () => {
     },
     {
       feature: "Included Support",
-      icon: "🤝",
+      icon: "/images/icons/general/bouy.svg",
       htc: "For NO ADDITIONAL COST, we offer training resources, cheatsheets, 1 hour of phone calls per month, chatbots trained on manuals, and more.",
       rival: "Has entire concerts with their hold‑music, crummy remote call centers, and travel surcharges for on‑site help.", 
       tooltip: "The paid support package includes remote support, 24/7 response, and unlimited phone calls.",
@@ -60,7 +60,7 @@ const WhyChooseUsSection = () => {
     },
     {
       feature: "Community Involvement", 
-      icon: "❤️",
+      icon: "/images/icons/general/community.svg",
       htc: "Plans to sponsor Harbor Springs Robotics, Youth Sailing, and Street Musique.",
       rival: "No local investment—your dollars leave town the moment you pay.",
       tooltip: "Profits stay on the bay",
@@ -99,7 +99,15 @@ const WhyChooseUsSection = () => {
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-4">
-                  <div className="text-2xl">{item.icon}</div>
+                  <div className="w-8 h-8 flex items-center justify-center">
+                    <Image
+                      src={item.icon}
+                      alt={`${item.feature} icon`}
+                      width={24}
+                      height={24}
+                      className="text-accent-gold"
+                    />
+                  </div>
                   <div>
                     <h3 className="font-display font-bold text-lg text-nautical-navy">
                       {item.feature}
