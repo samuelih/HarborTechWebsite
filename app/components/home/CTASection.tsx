@@ -199,7 +199,7 @@ const CTASection = () => {
 
       <Container className="relative z-10">
         <div 
-          className="text-center"
+          className="text-center pointer-events-none"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
@@ -220,7 +220,7 @@ const CTASection = () => {
           </p>
           
           <div
-            className="relative mx-auto max-w-xs"
+            className="relative mx-auto max-w-xs pointer-events-auto"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >

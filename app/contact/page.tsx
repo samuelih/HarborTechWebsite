@@ -225,8 +225,8 @@ const ContactPage = () => {
               </div>
               <h3 className="font-display font-bold text-xl mb-2">Email</h3>
               <p className="text-primary-navy mb-4">For non-urgent inquiries</p>
-              <a href="mailto:hello@harbortechconsulting.com" className="text-primary-sky font-medium hover:underline">
-                hello@harbortechconsulting.com
+              <a href="mailto:sam@harbortech.org" className="text-primary-sky font-medium hover:underline">
+                sam@harbortech.org
               </a>
             </div>
             
@@ -239,8 +239,8 @@ const ContactPage = () => {
               </div>
               <h3 className="font-display font-bold text-xl mb-2">Phone</h3>
               <p className="text-primary-navy mb-4">Mon-Fri, 9am-5pm ET</p>
-              <a href="tel:2315559876" className="text-primary-sky font-medium hover:underline">
-                (231) 555-9876
+              <a href="tel:7348348005" className="text-primary-sky font-medium hover:underline">
+                (734) 834-8005
               </a>
             </div>
             

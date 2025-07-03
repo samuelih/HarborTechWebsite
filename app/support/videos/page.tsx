@@ -21,9 +21,13 @@ export default function VideosPage() {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center">
-            <h1 className="text-white font-display mb-6">
-              <span className="block text-lg font-medium mb-2 text-accent-seafoam">VISUAL LEARNING</span>
-              Video Tutorials
+            <h1 className="text-white font-display font-bold text-4xl sm:text-5xl md:text-6xl mb-6">
+              <span className="relative inline-block">
+                Video
+                <span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-gold/70"></span>
+              </span>
+              {" "}
+              <span className="text-accent-gold">Tutorials</span>
             </h1>
             <p className="text-white/90 max-w-3xl mx-auto mb-10 text-lg">
               Watch step-by-step video guides to help you master your Harbor Tech solutions.

@@ -80,7 +80,7 @@ const SolutionsPage = () => {
     {
       number: 3,
       title: "Your Harbor Plan",
-      description: "You get a clear one-pager: what we heard, the upgrades and workflows we recommend, and a timeline that works around your schedule.",
+      description: "You get a clear transparent plan: what we heard, the upgrades and workflows we recommend, an estimated cost,and a timeline that works around your schedule.",
       icon: "📋",
       accentColor: "seafoam",
       delay: 800
@@ -96,7 +96,7 @@ const SolutionsPage = () => {
     {
       number: 5,
       title: "Payment",
-      description: "Pay all at once or spread it over 24 months; either way, the number we quote is the number you pay. No surprise add-ons, ever.",
+      description: "Pay all at once or spread it over 24 months; either way, the number we quote is the number you pay. No surprise add-ons, ever. Fully refundable for up to 14 days.",
       icon: "💳",
       accentColor: "primary-blue",
       delay: 1600
@@ -115,9 +115,11 @@ const SolutionsPage = () => {
           <div className={`text-center transition-all duration-1000 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h1 className="text-white font-display font-bold text-4xl sm:text-5xl md:text-6xl mb-6">
               <span className="relative inline-block">
-                Refundable and personalized solutions.
+                Refundable and personalized
                 <span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-gold/70"></span>
               </span>
+              {" "}
+              <span className="text-accent-gold">solutions.</span>
             </h1>
             <p className="text-white/90 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
               Choose only what you need—easy, local, done right.

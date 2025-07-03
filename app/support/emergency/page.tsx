@@ -68,10 +68,10 @@ const EmergencySupportPage = () => {
             <h1 className="text-white font-display font-bold text-4xl sm:text-5xl md:text-6xl mb-6">
               <span className="relative inline-block">
                 EMERGENCY
-                <span className="absolute -bottom-1 left-0 w-full h-1 bg-white/70"></span>
+                <span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-gold/70"></span>
               </span>
               {" "}
-              <span className="text-red-200">SUPPORT</span>
+              <span className="text-accent-gold">SUPPORT</span>
             </h1>
             <p className="text-white/90 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
               System down? Critical issue? We're here to get you back up and running immediately.
@@ -83,8 +83,8 @@ const EmergencySupportPage = () => {
                 <Phone className="w-8 h-8 text-white mr-3" />
                 <span className="text-2xl font-bold text-white">24/7 Emergency Line</span>
               </div>
-              <a href="tel:+15551234567" className="text-3xl font-bold text-white hover:text-red-200 transition-colors">
-                (555) 123-4567
+              <a href="tel:+17348348005" className="text-3xl font-bold text-white hover:text-red-200 transition-colors">
+                (734) 834-8005
               </a>
             </div>
           </div>
@@ -253,8 +253,8 @@ const EmergencySupportPage = () => {
                 <div className="bg-white/10 rounded-lg p-6 text-center">
                   <Phone className="w-12 h-12 mx-auto mb-4" />
                   <h4 className="text-xl font-bold mb-2">Call Now</h4>
-                  <a href="tel:+15551234567" className="text-xl font-bold hover:text-red-200 transition-colors">
-                    (555) 123-4567
+                  <a href="tel:+17348348005" className="text-xl font-bold hover:text-red-200 transition-colors">
+                    (734) 834-8005
                   </a>
                   <p className="text-red-100 text-sm mt-2">24/7 Emergency Hotline</p>
                 </div>
@@ -265,8 +265,8 @@ const EmergencySupportPage = () => {
                     <path d="M20,2H4A2,2 0 0,0 2,4V22L6,18H20A2,2 0 0,0 22,16V4A2,2 0 0,0 20,2M6,9V7H18V9H6M14,11V13H6V11H14M16,15V17H6V15H16Z" />
                   </svg>
                   <h4 className="text-xl font-bold mb-2">Text Emergency</h4>
-                  <a href="sms:+15551234567" className="text-xl font-bold hover:text-red-200 transition-colors">
-                    (555) 123-4567
+                  <a href="sms:+17348348005" className="text-xl font-bold hover:text-red-200 transition-colors">
+                    (734) 834-8005
                   </a>
                   <p className="text-red-100 text-sm mt-2">Quick problem description</p>
                 </div>
@@ -277,8 +277,8 @@ const EmergencySupportPage = () => {
                     <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" />
                   </svg>
                   <h4 className="text-xl font-bold mb-2">Emergency Email</h4>
-                  <a href="mailto:emergency@harbortechconsulting.com" className="text-lg font-bold hover:text-red-200 transition-colors">
-                    emergency@harbortechconsulting.com
+                  <a href="mailto:sam@harbortech.org" className="text-lg font-bold hover:text-red-200 transition-colors">
+                    sam@harbortech.org
                   </a>
                   <p className="text-red-100 text-sm mt-2">Monitored continuously</p>
                 </div>
@@ -342,13 +342,13 @@ const EmergencySupportPage = () => {
             <p className="text-xl text-red-100 mb-8 max-w-2xl mx-auto">
               Every minute counts when your business is down. Get immediate help from our emergency response team.
             </p>
-            <a 
-              href="tel:+15551234567" 
-              className="inline-flex items-center gap-3 bg-white text-red-700 px-8 py-4 rounded-lg text-2xl font-bold hover:bg-red-50 transition-colors"
-            >
-              <Phone className="w-8 h-8" />
-              (555) 123-4567
-            </a>
+                          <a 
+                href="tel:+17348348005" 
+                className="inline-flex items-center gap-3 bg-white text-red-700 px-8 py-4 rounded-lg text-2xl font-bold hover:bg-red-50 transition-colors"
+              >
+                <Phone className="w-8 h-8" />
+                (734) 834-8005
+              </a>
             <p className="text-red-200 text-sm mt-4">Available 24/7/365 - No Exceptions</p>
           </div>
         </div>

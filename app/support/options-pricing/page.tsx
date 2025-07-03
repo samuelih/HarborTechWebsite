@@ -61,9 +61,11 @@ const OptionsPricingPage = () => {
           <div className={`text-center transition-all duration-1000 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h1 className="text-white font-display font-bold text-4xl sm:text-5xl md:text-6xl mb-6">
               <span className="relative inline-block">
-                Personalable and affordable tech support.
+                Personalable and affordable
                 <span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-gold/70"></span>
               </span>
+              {" "}
+              <span className="text-accent-gold">tech support.</span>
             </h1>
             <p className="text-white/90 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
               Tech-savvy or not, we've got you covered. Pick a plan, get support, and get back to business.
@@ -231,9 +233,11 @@ const OptionsPricingPage = () => {
                 </svg>
                 What Makes Us Different
               </div>
-              <h2 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold mb-8 text-primary-navy">
-                The Harbor Tech <span className="text-accent-gold">Advantage</span>
-              </h2>
+              <div className="inline-block bg-white/90 backdrop-blur-sm rounded-3xl px-8 py-6 shadow-lg border border-white/20 mb-8">
+                <h2 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-primary-navy">
+                  The Harbor Tech <span className="text-accent-gold">Advantage</span>
+                </h2>
+              </div>
               <p className="text-xl text-primary-navy/80 max-w-3xl mx-auto">
                 Unlike other consulting companies, we believe in empowering your team with knowledge and tools, not creating dependency.
               </p>
@@ -245,7 +249,12 @@ const OptionsPricingPage = () => {
                 {/* Simplified Content */}
                 <div>
                   <div className="mb-8">
-                    <h3 className="text-3xl font-display font-bold text-primary-navy mb-6">No Hidden Costs, Maximum Value</h3>
+                    <h3 className="text-3xl font-display font-bold text-primary-navy mb-6">
+                      <span className="relative inline-block">
+                        No Hidden Costs, Maximum Value
+                        <span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-gold/70"></span>
+                      </span>
+                    </h3>
                   </div>
                   
                   <div className="space-y-6">

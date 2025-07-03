@@ -47,14 +47,14 @@ const Footer = () => {
                   <div>
                     <p className="text-primary-sky text-sm">Phone</p>
                     <a href="tel:+1234567890" className="text-primary-navy hover:text-primary-blue transition-colors font-medium text-sm sm:text-base">
-                      (555) 123-4567
+                      (734) 834-8005
                     </a>
                   </div>
                   <div>
                     <p className="text-primary-sky text-sm">Email</p>
-                    <a href="mailto:hello@harbortechconsulting.com" className="text-primary-navy hover:text-primary-blue transition-colors font-medium text-sm sm:text-base break-all">
-                      hello@harbortechconsulting.com
-                    </a>
+                                  <a href="mailto:sam@harbortech.org" className="text-primary-navy hover:text-primary-blue transition-colors font-medium text-sm sm:text-base break-all">
+                sam@harbortech.org
+              </a>
                   </div>
                   <div>
                     <p className="text-primary-sky text-sm">Location</p>
