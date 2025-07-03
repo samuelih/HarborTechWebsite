@@ -41,7 +41,6 @@ module.exports = {
           sand:   '#F8EFD4', // call-out backgrounds
           gold:   '#F0B254', // highlights / badges
           sea:    '#3CAEA3', // success states
-          seafoam: '#B8E2DC', // light seafoam green for accents
         },
         // System colors
         border: "hsl(var(--border))",

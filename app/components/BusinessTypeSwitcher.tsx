@@ -28,13 +28,13 @@ const businessTypes = {
   restaurants: {
     label: 'Restaurants & Cafes',
     icon: '/images/icons/general/chef-hat.svg',
-    accentColor: 'accent-seafoam',
+    accentColor: 'accent-sea',
     accentColorClasses: {
-      bg: 'bg-accent-seafoam',
-      text: 'text-accent-seafoam',
-      border: 'border-accent-seafoam',
-      bgWithOpacity: 'bg-accent-seafoam/5',
-      bulletColor: 'bg-accent-seafoam'
+      bg: 'bg-accent-sea',
+      text: 'text-accent-sea',
+      border: 'border-accent-sea',
+      bgWithOpacity: 'bg-accent-sea/5',
+      bulletColor: 'bg-accent-sea'
     },
     description: 'Every restaurant is different. We design technology solutions that match your service style.',
     highlights: [
