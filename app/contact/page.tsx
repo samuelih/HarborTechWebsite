@@ -232,7 +232,7 @@ const ContactPage = () => {
       {/* Contact Info */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* Contact Method 1 - Sam */}
             <div className="bg-white/70 backdrop-blur-lg border-l-4 border-accent-gold rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow">
               <div className="inline-block bg-accent-gold/10 rounded-full p-3 mb-4">
@@ -269,20 +269,6 @@ const ContactPage = () => {
                   max@harbortech.org
                 </a>
               </div>
-            </div>
-            
-            {/* Contact Method 3 */}
-            <div className="bg-white/70 backdrop-blur-lg border-l-4 border-accent-gold rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow">
-              <div className="inline-block bg-accent-gold/10 rounded-full p-3 mb-4">
-                <svg className="w-6 h-6 text-accent-gold" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" />
-                </svg>
-              </div>
-              <h3 className="font-display font-bold text-xl mb-2">Location</h3>
-              <p className="text-primary-navy mb-4">Harbor Springs Based</p>
-              <address className="not-italic text-primary-sky font-medium">
-                Harbor Springs, MI 49740
-              </address>
             </div>
           </div>
         </div>

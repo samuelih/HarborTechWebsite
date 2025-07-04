@@ -114,11 +114,7 @@ const SolutionsPage = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className={`text-center transition-all duration-1000 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h1 className="text-white font-display font-bold text-4xl sm:text-5xl md:text-6xl mb-6">
-              <span className="relative inline-block">
-                Personalized tech
-                <span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-gold/70"></span>
-              </span>
-              {" "}
+              Personalized tech{" "}
               <span className="text-accent-gold">solutions.</span>
             </h1>
             <p className="text-white/90 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
@@ -146,10 +142,7 @@ const SolutionsPage = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className={`text-center mb-16 transition-all duration-1000 ${workSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-6">
-              <span className="relative inline-block">
-                Here's how we work:
-                <span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-gold/70"></span>
-              </span>
+              Here's how we work:
             </h2>
             <p className="text-xl text-nautical-navy/80 max-w-2xl mx-auto mb-6">
               Five simple steps to modernize your business technology
@@ -223,10 +216,7 @@ const SolutionsPage = () => {
                         <h3 className={`text-xl font-display font-bold text-center mb-4 transition-colors duration-300 ${
                           hoveredStep === index ? 'text-primary-blue' : 'text-nautical-navy group-hover:text-primary-blue'
                         }`}>
-                          <span className="relative inline-block">
-                            {step.title}
-                            <span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-gold/70"></span>
-                          </span>
+                          {step.title}
                         </h3>
                         
                         <p className="text-neutral-600 text-center text-sm leading-relaxed relative z-10" dangerouslySetInnerHTML={{ __html: step.description }}></p>
@@ -288,10 +278,7 @@ const SolutionsPage = () => {
                           {step.icon}
                         </div>
                         <h3 className="text-lg font-display font-bold text-nautical-navy">
-                          <span className="relative inline-block">
-                            {step.title}
-                            <span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-gold/70"></span>
-                          </span>
+                          {step.title}
                         </h3>
                       </div>
                       <p className="text-neutral-600 text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: step.description }}></p>

@@ -83,7 +83,7 @@ const Hero = () => {
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold leading-tight text-center">
                 <span className="text-white">We are</span>{" "}
                 <span className="text-accent-gold font-bold whitespace-nowrap">
-                  Harbor Technology Consulting
+                  Harbor Tech Consulting
                 </span>
               </h1>
             </div>

@@ -75,21 +75,18 @@ const Footer = () => {
           <div className="flex flex-col justify-center items-center lg:items-end text-center lg:text-right">
             <div className="mb-4 sm:mb-6">
               <Image 
-                src="/images/logos/logo_baw.svg" 
+                src="/images/logos/logo_transparent.svg" 
                 alt="Harbor Technology Consulting Logo" 
-                width={60} 
-                height={60}
-                className="mx-auto lg:ml-auto lg:mr-0 sm:w-[70px] sm:h-[70px] md:w-[80px] md:h-[80px]"
-                sizes="(max-width: 640px) 60px, (max-width: 768px) 70px, 80px"
+                width={100} 
+                height={100}
+                className="mx-auto lg:ml-auto lg:mr-0 sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px]"
+                sizes="(max-width: 640px) 100px, (max-width: 768px) 120px, 140px"
               />
             </div>
             <div className="max-w-xs">
               <h4 className="font-display font-bold text-primary-navy mb-2 text-base sm:text-lg">
                 Harbor Technology Consulting
               </h4>
-              <p className="text-primary-sky text-xs sm:text-sm leading-relaxed">
-                Your trusted local partner for simple, effective technology solutions in Harbor Springs.
-              </p>
             </div>
           </div>
         </div>
