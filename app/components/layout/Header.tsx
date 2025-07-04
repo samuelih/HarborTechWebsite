@@ -139,7 +139,7 @@ const Header = () => {
           : 'bg-transparent backdrop-blur-sm'
       }`}
     >
-      <div className="max-w-7xl mx-auto flex justify-between items-center h-20 sm:h-24 md:h-32 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto flex justify-between items-center h-23 sm:h-24 md:h-32 px-4 sm:px-6 lg:px-8">
         {/* Logo - Responsive sizing */}
         <Link href="/" className="flex items-center group" aria-label="Harbor Technology Consulting - Home">
           <div className="relative overflow-hidden transition-transform duration-300 group-hover:scale-110">

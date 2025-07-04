@@ -29,6 +29,15 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, [droneMedia.length]);
 
+  // Preload next image for smooth transitions
+  useEffect(() => {
+    const nextIndex = (currentSlide + 1) % droneMedia.length;
+    if (droneMedia[nextIndex] && droneMedia[nextIndex].type === 'image') {
+      const img = new globalThis.Image();
+      img.src = droneMedia[nextIndex].src;
+    }
+  }, [currentSlide, droneMedia]);
+
   return (
     <section className="relative min-h-[100vh] flex items-center overflow-hidden">
       {/* Drone Shot Carousel Background */}
@@ -36,7 +45,7 @@ const Hero = () => {
         {droneMedia.map((media, index) => (
           <div
             key={index}
-            className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${
+            className={`absolute inset-0 w-full h-full transition-opacity duration-1000 will-change-transform ${
               index === currentSlide ? 'opacity-100' : 'opacity-0'
             }`}
           >
@@ -83,26 +92,21 @@ const Hero = () => {
             <div className="mx-auto mb-8">
               <div className="bg-black/30 backdrop-blur-sm rounded-lg p-4 sm:p-6 md:p-8 mx-auto max-w-4xl">
                 <div className="text-center space-y-3 sm:space-y-4">
-                  <p className="text-base sm:text-lg md:text-xl text-white leading-relaxed hero-text">
+                  <p className="text-lg sm:text-xl md:text-2xl text-white leading-relaxed hero-text">
                     <span className="font-bold relative inline-block">
                       No-bullshit, affordable, and approachable
                       <span className="absolute -bottom-1 left-0 w-full h-0.5 sm:h-1 bg-accent-gold/70"></span>
                     </span>{" "}
-                    technology upgrades.
+                    technology upgrades for{" "}
+                    <span className="font-bold text-accent-gold">small, local businesses.</span>
                   </p>
-                  <p className="text-base sm:text-lg md:text-xl text-white leading-relaxed hero-text">
-                    Modernize your point-of-sale, inventory, and back-office tools with{" "}
-                    <span className="font-bold relative inline-block text-accent-gold">
-                      transparent pricing and hometown support.
-                    </span>
-                  </p>
-                  <p className="text-base sm:text-lg md:text-xl text-white leading-relaxed hero-text">
+                  <p className="text-lg sm:text-xl md:text-2xl text-white leading-relaxed hero-text">
                     <span className="font-bold relative inline-block">
                       No surprise add-ons
                       <span className="absolute -bottom-1 left-0 w-full h-0.5 sm:h-1 bg-accent-gold/70"></span>
                     </span>
-                    , just solutions that{" "}
-                    <span className="font-bold text-accent-gold">save you time and money.</span>
+                    , just{" "}
+                    <span className="font-bold text-accent-gold">custom solutions that save you time and money.</span>
                   </p>
                 </div>
               </div>

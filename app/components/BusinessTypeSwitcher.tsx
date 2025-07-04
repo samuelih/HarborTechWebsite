@@ -17,7 +17,7 @@ const businessTypes = {
       bgWithOpacity: 'bg-accent-gold/5',
       bulletColor: 'bg-accent-gold'
     },
-    description: 'From boutique stores to specialty shops, we create custom solutions for your unique retail needs.',
+    description: 'Custom POS, inventory, and sales solutions for retail stores.',
     highlights: [
       'POS Tune Up',
       'POS Install',
@@ -45,7 +45,7 @@ const businessTypes = {
       bgWithOpacity: 'bg-accent-sea/5',
       bulletColor: 'bg-accent-sea'
     },
-    description: 'Every restaurant is different. We design technology solutions that match your service style.',
+    description: 'Complete restaurant tech solutions tailored to your service style.',
     highlights: [
       'POS Tune Up',
       'Table-side QR Ordering',
@@ -71,7 +71,7 @@ const businessTypes = {
       bgWithOpacity: 'bg-primary-blue/5',
       bulletColor: 'bg-primary-blue'
     },
-    description: 'Whether you\'re a salon, repair shop, or professional service, we build what works for you.',
+    description: 'Streamlined booking, payment, and management systems for service businesses.',
     highlights: [
       'Online Booking and Smart Calendar',
       'Website Refresh',
@@ -99,8 +99,8 @@ const BusinessTypeSwitcher = () => {
       initial={{ opacity: 0, height: 0 }}
       animate={{ opacity: 1, height: 'auto' }}
       exit={{ opacity: 0, height: 0 }}
-      transition={{ duration: 0.3 }}
-      className="overflow-hidden"
+      transition={{ duration: 0.15, ease: "easeOut" }}
+      className="overflow-hidden will-change-transform"
     >
       <div className="bg-white rounded-xl p-6 mt-4 border-2 border-neutral-100 shadow-lg">
         <div className="text-center mb-6">
@@ -180,10 +180,10 @@ const BusinessTypeSwitcher = () => {
             <button
               key={key}
               onClick={() => toggleBusinessType(key as BusinessType)}
-              className={`group relative p-6 rounded-xl border-2 transition-all duration-300 text-left ${
+              className={`group relative p-6 rounded-xl border-2 transition-all duration-200 text-left active:scale-[0.98] ${
                 activeType === key 
                   ? `${business.accentColorClasses.border} ${business.accentColorClasses.bgWithOpacity}`
-                  : 'border-neutral-200 hover:border-neutral-300 bg-white hover:bg-neutral-50'
+                  : 'border-neutral-200 hover:border-neutral-300 bg-white hover:bg-neutral-50 active:bg-neutral-100'
               }`}
             >
               <div className="flex items-center mb-4">
@@ -228,10 +228,10 @@ const BusinessTypeSwitcher = () => {
             <div key={key} className="border border-neutral-200 rounded-xl overflow-hidden">
               <button
                 onClick={() => toggleBusinessType(key as BusinessType)}
-                className={`w-full p-6 text-left transition-all duration-300 ${
+                className={`w-full p-6 text-left transition-all duration-150 active:scale-[0.98] ${
                   activeType === key 
                     ? `${business.accentColorClasses.bgWithOpacity} ${business.accentColorClasses.border} border-2`
-                    : 'bg-white hover:bg-neutral-50 border-0'
+                    : 'bg-white hover:bg-neutral-50 active:bg-neutral-100 border-0'
                 }`}
               >
                 <div className="flex items-center justify-between">
@@ -262,7 +262,7 @@ const BusinessTypeSwitcher = () => {
                       </p>
                     </div>
                   </div>
-                  <div className={`transition-transform duration-300 ${
+                  <div className={`transition-transform duration-150 ease-out ${
                     activeType === key ? 'rotate-180' : ''
                   }`}>
                     <svg className="w-5 h-5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -291,7 +291,7 @@ const BusinessTypeSwitcher = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
               className="max-w-4xl mx-auto"
             >
               <div className="bg-white rounded-2xl p-8 border-2 border-neutral-100 shadow-lg">

@@ -29,16 +29,16 @@ const WhyChooseUsSection = () => {
     {
       feature: "Flat-Rate Pricing",
       icon: "/images/icons/general/money.svg",
-      htc: "One flat project price.",
+      htc: "One flat project price. Know exactly what you'll pay before we start",
       rival: "Hourly meter ($150–$200/hr) plus \"miscellaneous\" add‑ons that stack up fast.",
-      tooltip: "Transparent billing with no surprises or scope creep—you know exactly what you'll pay before we start",
+      tooltip: "No suprises or scope creep. 100% transparent billing.",
       highlight: "No surprise costs"
     },
     {
       feature: "Local Insight", 
       icon: "/images/icons/general/home.svg",
       htc: "Harbor‑Springs born & raised.",
-      rival: "Fly‑in technicians who treat Main Street like any strip mall—zero seasonal nuance.",
+      rival: "Made for large companies. Zero seasonal nuance. Lacks interpersonal communication skills.",
       tooltip: "We design around tourist swings and the neighbor‑helping‑neighbor mindset",
       highlight: "Hometown advantage"
     },
@@ -47,7 +47,7 @@ const WhyChooseUsSection = () => {
       icon: "/images/icons/general/clock.svg",
       htc: "2–4 weeks from kickoff to go‑live.", 
       rival: "6–12+ weeks.",
-      tooltip: "We will work with you to know when is best to implement",
+      tooltip: "Time is money.",
       highlight: "Fast implementation"
     },
     {
@@ -55,7 +55,7 @@ const WhyChooseUsSection = () => {
       icon: "/images/icons/general/bouy.svg",
       htc: "For NO ADDITIONAL COST, we offer training resources, cheatsheets, 1 hour of phone calls per month, chatbots trained on manuals, and more.",
       rival: "Has entire concerts with their hold‑music, crummy remote call centers, and travel surcharges for on‑site help.", 
-      tooltip: "The paid support package includes remote support, 24/7 response, and unlimited phone calls.",
+      tooltip: "Only pay for the support you need.",
       highlight: "Free training & support"
     },
     {
@@ -131,7 +131,7 @@ const WhyChooseUsSection = () => {
               <div className="px-6 pb-6 space-y-4 border-t border-neutral-100">
                 <div className="bg-green-50 border-l-4 border-accent-gold p-4 rounded-r-lg">
                   <div className="flex items-start space-x-3">
-                    <Check className="w-5 h-5 text-accent-gold mt-0.5 flex-shrink-0" />
+                    <Check className="w-5 h-5 text-green-600 md:text-accent-gold mt-0.5 flex-shrink-0" />
                     <div>
                       <h4 className="font-semibold text-nautical-navy text-sm mb-1">
                         Harbor Technology Consulting

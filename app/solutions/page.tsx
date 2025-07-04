@@ -188,7 +188,7 @@ const SolutionsPage = () => {
                       onMouseLeave={() => setHoveredStep(null)}
                     >
                       {/* Step Card */}
-                      <div className={`bg-white rounded-2xl p-6 h-full border-2 transition-all duration-500 relative overflow-hidden group cursor-pointer ${
+                      <div className={`bg-white rounded-2xl p-6 h-full border-2 transition-all duration-300 relative overflow-hidden group cursor-pointer will-change-transform ${
                         hoveredStep === index 
                           ? 'border-accent-gold shadow-2xl transform scale-105 -translate-y-2' 
                           : 'border-neutral-gull/30 shadow-lg hover:shadow-xl hover:border-accent-gold/50'
