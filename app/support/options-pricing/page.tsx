@@ -144,11 +144,7 @@ const OptionsPricingPage = () => {
                     <span className="text-neutral-700"><strong>Training & cheat sheets</strong> for your team</span>
                   </li>
                 </ul>
-                <div className="text-center">
-                  <Link href="/contact" className="bg-primary-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-navy transition-colors inline-block">
-                    Get Started
-                  </Link>
-                </div>
+
               </div>
 
               {/* Premium Package */}
@@ -201,11 +197,7 @@ const OptionsPricingPage = () => {
                     <span className="text-neutral-700"><strong>Unlimited support</strong> phone calls</span>
                   </li>
                 </ul>
-                <div className="text-center">
-                  <Link href="/contact" className="bg-accent-gold text-white px-6 py-3 rounded-lg font-semibold hover:bg-accent-gold/90 transition-colors inline-block">
-                    Upgrade to Premium
-                  </Link>
-                </div>
+
               </div>
             </div>
           </div>
@@ -275,8 +267,9 @@ const OptionsPricingPage = () => {
             <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 transition-all duration-1000 delay-600 ${harborAIVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <div className="bg-white/90 backdrop-blur-sm rounded-xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-white/20">
                 <div className="w-16 h-16 bg-gradient-to-br from-primary-blue to-primary-navy rounded-full flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.63,7 15.07,7.79 16,9C15.07,10.21 13.63,11 12,11C10.37,11 8.93,10.21 8,9C8.93,7.79 10.37,7 12,7Z" />
+                  <svg className="w-8 h-8 text-white" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3">
+                    <path d="M1.984 14c0-5.523 4.478-10 10-10h.57a3 3 0 0 1 2.785 1.886l2.466 6.165a4 4 0 0 1-.886 4.314l-3.076 3.077c-.493.493-.701 1.21-.499 1.878a20.05 20.05 0 0 0 13.32 13.32c.668.203 1.385-.005 1.879-.498l3.076-3.077a4 4 0 0 1 4.314-.885l6.166 2.466a3 3 0 0 1 1.885 2.785V36c0 5.523-4.477 10-10 10h-.5C16.374 46 2.45 32.358 1.996 15.358a.02.02 0 0 0-.006-.013a.02.02 0 0 1-.006-.013zM43.5 11h-7.273a.727.727 0 0 1-.547-1.206l6.614-7.56a.688.688 0 0 1 1.206.454zm0 0h2m-2 0v3"/>
+                    <path d="M31.5 14h-8v-1.705a3 3 0 0 1 1.797-2.748l4.452-1.948A2.922 2.922 0 0 0 28.578 2H26.5a3 3 0 0 0-2.83 2"/>
                   </svg>
                 </div>
                                  <h4 className="text-xl font-bold text-primary-navy mb-3">24/7 Support</h4>
@@ -285,8 +278,8 @@ const OptionsPricingPage = () => {
               
               <div className="bg-white/90 backdrop-blur-sm rounded-xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-white/20">
                 <div className="w-16 h-16 bg-gradient-to-br from-accent-gold to-orange-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M19,19H5V5H19V19Z" />
+                  <svg className="w-8 h-8 text-white" viewBox="0 0 512 512" fill="currentColor" fillRule="evenodd">
+                    <path d="M384 319.997V85.331H149.333c-11.782 0-21.333 9.551-21.333 21.333v216.975a63.9 63.9 0 0 1 21.333-3.642zM85.333 106.664v298.667c0 35.346 28.654 64 64 64h277.334v-85.334h-21.334v42.667h-256c-11.782 0-21.333-9.551-21.333-21.333v-21.334c0-11.782 9.551-21.333 21.333-21.333h277.334v-320H149.333c-35.346 0-64 28.654-64 64m149.334 170.667v-85.334h42.666v85.334zM256 170.664c11.782 0 21.333-9.551 21.333-21.333s-9.551-21.334-21.333-21.334s-21.333 9.552-21.333 21.334s9.551 21.333 21.333 21.333M149.333 383.997H384v21.334H149.333z" clipRule="evenodd"/>
                   </svg>
                 </div>
                 <h4 className="text-xl font-bold text-primary-navy mb-3">Visual Step-by-Step Guides</h4>
@@ -295,8 +288,8 @@ const OptionsPricingPage = () => {
               
               <div className="bg-white/90 backdrop-blur-sm rounded-xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-white/20">
                 <div className="w-16 h-16 bg-gradient-to-br from-accent-seafoam to-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M16,4C18.11,4 19.85,5.74 19.85,7.85C19.85,9.96 18.11,11.7 16,11.7C13.89,11.7 12.15,9.96 12.15,7.85C12.15,5.74 13.89,4 16,4M16,13.7C18.67,13.7 24,15.04 24,17.7V20H8V17.7C8,15.04 13.33,13.7 16,13.7Z" />
+                  <svg className="w-8 h-8 text-white" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M10.386 9.836a2.5 2.5 0 1 1 3.611.667C15.212 11.173 16 12.46 16 14v1.5a.5.5 0 1 1-1 0V14c0-1.724-1.276-3-3-3c-.91 0-1.298-.02-1.805-.122c-1.25-.254-2.333-1-3.585-2.566a.5.5 0 1 1 .78-.624c.9 1.124 1.653 1.74 2.434 2.043c.155.052.345.083.562.105m1.785.128q.125.015.251.034L12.5 10a1.5 1.5 0 1 0-.33-.036M9.78 11.97a.5.5 0 0 1 .5.5a1 1 0 0 1-.05.231c-.179.38-.23.774-.23 1.302v1.5a.5.5 0 1 1-1 0v-1.5c0-.657.072-1.186.307-1.696a.5.5 0 0 1 .473-.337M5.958 5.772a.5.5 0 0 1-.78.625L3.11 3.812a.5.5 0 1 1 .78-.624zM1 11h5.5a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5V.5A.5.5 0 0 1 .5 0h12a.5.5 0 0 1 .5.5v3a.5.5 0 1 1-1 0V1H1z"/>
                   </svg>
                 </div>
                 <h4 className="text-xl font-bold text-primary-navy mb-3">Complete Team Training</h4>

@@ -114,7 +114,10 @@ const BusinessTypeSwitcher = () => {
             />
           </div>
           <h3 className="text-xl font-display font-bold text-nautical-navy mb-2">
-            {businessTypes[type].label}
+            <span className="relative inline-block">
+              {businessTypes[type].label}
+              <span className={`absolute -bottom-1 left-0 w-full h-1 ${businessTypes[type].accentColorClasses.bg}/70`}></span>
+            </span>
           </h3>
           <p className="text-base text-neutral-600">
             {businessTypes[type].description}
@@ -157,14 +160,14 @@ const BusinessTypeSwitcher = () => {
             Custom Solutions
             <span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-gold/70"></span>
           </span>
-          {" "}for Every Business
+          {" "}for <span className="text-accent-gold">Every Business</span>
         </h2>
         <p className="text-xl text-neutral-600 max-w-3xl mx-auto mb-8">
           No cookie-cutter packages. No unnecessary features. Just technology that works the way <em>your</em> business works.
         </p>
         <div className="bg-gradient-to-r from-accent-gold/10 to-primary-blue/10 rounded-xl p-6 border-l-4 border-accent-gold max-w-2xl mx-auto">
           <p className="text-lg font-semibold text-nautical-navy">
-            Every solution is personalized to your business's specific needs, budget, and goals.
+            Every solution is <span className="text-accent-gold">personalized</span> to your business's specific needs, budget, and goals.
           </p>
         </div>
       </div>
@@ -303,7 +306,10 @@ const BusinessTypeSwitcher = () => {
                     />
                   </div>
                   <h3 className="text-2xl font-display font-bold text-nautical-navy mb-3">
-                    {businessTypes[activeType].label}
+                    <span className="relative inline-block">
+                      {businessTypes[activeType].label}
+                      <span className={`absolute -bottom-1 left-0 w-full h-1 ${businessTypes[activeType].accentColorClasses.bg}/70`}></span>
+                    </span>
                   </h3>
                   <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
                     {businessTypes[activeType].description}

@@ -72,7 +72,7 @@ const SolutionsPage = () => {
     {
       number: 2,
       title: "Shop Walk-through",
-      description: " We swing by in person and cover eight key areas—POS, inventory, customer data, and more. We use what we learn to craft personalized, time-saving fixes and lay out the simplest path forward.",
+      description: " We swing by in person and cover eight key areas—POS, inventory, customer data, and more. We use what we learn to craft <span className='text-accent-gold font-semibold'>personalized, time-saving fixes</span> and lay out the simplest path forward.",
       icon: <Image src="/images/icons/general/discovery.svg" alt="Discovery" width={28} height={28} />,
       accentColor: "primary-blue",
       delay: 400
@@ -80,7 +80,7 @@ const SolutionsPage = () => {
     {
       number: 3,
       title: "Your Harbor Plan",
-      description: "You get a clear transparent plan: what we heard, the upgrades and workflows we recommend, an estimated cost,and a timeline that works around your schedule.",
+      description: "You get a clear <span className='text-accent-gold font-semibold'>transparent</span> plan: what we heard, the upgrades and workflows we recommend, an estimated cost, and a timeline that works around your schedule.",
       icon: <Image src="/images/icons/general/clipboard.svg" alt="Clipboard" width={28} height={28} />,
       accentColor: "seafoam",
       delay: 800
@@ -88,7 +88,7 @@ const SolutionsPage = () => {
     {
       number: 4,
       title: "Install & Training",
-      description: "We work around your hours—before open, after close, whenever. Keep your systems running while we train your crew and get your upgrade fully implemented.",
+      description: "<span className='text-accent-gold font-semibold'>We work around your hours</span>—before open, after close, whenever. Keep your systems running while we train your crew and get your upgrade fully implemented.",
       icon: <Image src="/images/icons/general/wrench.svg" alt="Wrench" width={28} height={28} />,
       accentColor: "accent-gold",
       delay: 1200
@@ -96,7 +96,7 @@ const SolutionsPage = () => {
     {
       number: 5,
       title: "Payment",
-      description: "Pay all at once or spread it over 24 months; either way, the number we quote is the number you pay. No surprise add-ons, ever. Fully refundable for up to 14 days.",
+      description: "Pay all at once or spread it over 24 months; either way, the number we quote is the number you pay. No surprise add-ons, ever. <span className='text-accent-gold font-semibold'>Fully refundable for up to 14 days.</span>",
       icon: <Image src="/images/icons/general/money.svg" alt="Money" width={28} height={28} />,
       accentColor: "primary-blue",
       delay: 1600
@@ -146,7 +146,10 @@ const SolutionsPage = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className={`text-center mb-16 transition-all duration-1000 ${workSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-6">
-              Here's how we work
+              <span className="relative inline-block">
+                Here's how we work:
+                <span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-gold/70"></span>
+              </span>
             </h2>
             <p className="text-xl text-nautical-navy/80 max-w-2xl mx-auto mb-6">
               Five simple steps to modernize your business technology
@@ -220,12 +223,13 @@ const SolutionsPage = () => {
                         <h3 className={`text-xl font-display font-bold text-center mb-4 transition-colors duration-300 ${
                           hoveredStep === index ? 'text-primary-blue' : 'text-nautical-navy group-hover:text-primary-blue'
                         }`}>
-                          {step.title}
+                          <span className="relative inline-block">
+                            {step.title}
+                            <span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-gold/70"></span>
+                          </span>
                         </h3>
                         
-                        <p className="text-neutral-600 text-center text-sm leading-relaxed relative z-10">
-                          {step.description}
-                        </p>
+                        <p className="text-neutral-600 text-center text-sm leading-relaxed relative z-10" dangerouslySetInnerHTML={{ __html: step.description }}></p>
 
                         {/* Floating accent elements */}
                         <div className={`absolute top-4 right-4 w-2 h-2 rounded-full bg-accent-gold/40 opacity-0 group-hover:opacity-100 transition-all duration-700 ${
@@ -284,12 +288,13 @@ const SolutionsPage = () => {
                           {step.icon}
                         </div>
                         <h3 className="text-lg font-display font-bold text-nautical-navy">
-                          {step.title}
+                          <span className="relative inline-block">
+                            {step.title}
+                            <span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-gold/70"></span>
+                          </span>
                         </h3>
                       </div>
-                      <p className="text-neutral-600 text-sm leading-relaxed">
-                        {step.description}
-                      </p>
+                      <p className="text-neutral-600 text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: step.description }}></p>
                     </div>
                   </div>
                 </div>
