@@ -182,16 +182,13 @@ const AboutPage = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
                   <div className="p-4 text-white">
-                    <h3 className="font-display font-bold text-xl">Sam Harrell</h3>
+                    <h3 className="font-display font-bold text-xl text-white">Sam Harrell</h3>
                     <p className="text-white/90">Co-Founder & Technology Specialist</p>
                   </div>
                 </div>
               </div>
               <div className="p-4 sm:p-6 flex-grow">
                 <p className="text-primary-navy mb-4">University of Michigan student studying robotics and computer science, bringing technical expertise, innovative solutions, and interpersonal communication to Harbor Springs businesses.</p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="bg-nautical-azure/20 text-nautical-deepBlue text-sm py-1 px-3 rounded-full">Computer Science</span>
-                </div>
               </div>
             </div>
             
@@ -207,16 +204,13 @@ const AboutPage = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
                   <div className="p-4 text-white">
-                    <h3 className="font-display font-bold text-xl">Max Bassett</h3>
+                    <h3 className="font-display font-bold text-xl text-white">Max Bassett</h3>
                     <p className="text-white/90">Co-Founder & Data Analytics Specialist</p>
                   </div>
                 </div>
               </div>
               <div className="p-4 sm:p-6 flex-grow">
                 <p className="mb-4">University of Michigan student studying data analytics, policy, and business, translating data into actionable business insights for local retailers.</p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="bg-nautical-azure/20 text-nautical-deepBlue text-sm py-1 px-3 rounded-full">Business</span>
-                </div>
               </div>
             </div>
           </div>

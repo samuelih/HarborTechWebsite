@@ -219,26 +219,7 @@ const WhyChooseUsSection = () => {
         </div>
       </div>
 
-      {/* Bottom CTA */}
-      <div className="text-center mt-12 pt-8 border-t border-neutral-200">
-        <div className="bg-gradient-to-r from-green-100 to-primary-blue/10 rounded-xl p-6 border-l-4 border-green-500 max-w-2xl mx-auto">
-          <h3 className="text-xl font-display font-bold text-nautical-navy mb-2">
-            Ready to experience the difference?
-          </h3>
-          <p className="text-neutral-600 mb-4">
-            Let's discuss how we can modernize your business with transparent pricing and local expertise.
-          </p>
-          <a 
-            href="/contact" 
-            className="btn-primary btn-large inline-flex items-center gap-2"
-          >
-            Get Your Free Consultation
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
-        </div>
-      </div>
+
     </section>
   );
 };

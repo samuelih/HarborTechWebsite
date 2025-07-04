@@ -246,11 +246,11 @@ const Header = () => {
         </nav>
 
         {/* Mobile navigation - flex container for let's talk button and hamburger */}
-        <div className="md:hidden flex items-center space-x-3">
+        <div className="md:hidden flex items-center justify-center space-x-3 h-full">
           {/* Let's Talk button - visible on mobile */}
           <Link 
             href="/contact" 
-            className="btn-primary text-sm font-cinzel flex items-center px-3 py-2"
+            className="btn-primary text-sm font-cinzel flex items-center justify-center px-3 py-2 h-10"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
@@ -270,13 +270,13 @@ const Header = () => {
           
           {/* Mobile menu button */}
           <button 
-            className="relative flex items-center p-2 focus:outline-none group"
+            className="relative flex items-center justify-center p-2 focus:outline-none group h-10 w-10"
             onClick={toggleMenu}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
           >
-            <div className="relative w-6 h-6">
+            <div className="relative w-6 h-6 flex items-center justify-center">
               <span className={`absolute w-6 h-0.5 ${getHamburgerColor()} transform transition-transform duration-300 ${isMenuOpen ? 'rotate-45 translate-y-0' : '-translate-y-2'}`}></span>
               <span className={`absolute w-6 h-0.5 ${getHamburgerColor()} transform transition-opacity duration-300 ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
               <span className={`absolute w-6 h-0.5 ${getHamburgerColor()} transform transition-transform duration-300 ${isMenuOpen ? '-rotate-45 translate-y-0' : 'translate-y-2'}`}></span>

@@ -60,7 +60,7 @@ const ContactPage = () => {
                 <span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-gold/70"></span>
               </span>
               {" "}
-              <span className="text-accent-gold">and connect</span>
+              <span className="text-accent-gold">and connect.</span>
             </h1>
             <p className="text-white/90 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
               Ready to navigate to smoother technological waters? Let us know how we can help chart your course to retail success.
