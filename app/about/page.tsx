@@ -121,10 +121,10 @@ const AboutPage = () => {
               <div className="inline-block bg-accent-sand px-4 py-2 rounded-lg text-primary-navy font-medium mb-6">Our Story</div>
               <h2 className="font-display text-2xl sm:text-3xl font-bold mb-6">From Harbor Springs to Harbor Tech</h2>
               <p className="text-lg mb-6">
-                Every summer job and after-school shift scooping ice cream on Main Street, caddying at the club, delivering groceries from the IGA, showed us how much local businesses mean to this town and how quickly technology can make or break them. When we heard that an outside tech firm was upselling complicated systems and locking neighbors into contracts designed to fail, we decided Harbor Springs deserved better.
+                Every summer job and after-school shift scooping ice cream on Main Street, caddying at the club, delivering groceries from the IGA, showed us how much local businesses mean to this town. When we heard that an outside tech firm was upselling complicated systems and locking neighbors into contracts designed to fail, we decided Harbor Springs deserved better.
               </p>
               <p className="text-lg mb-6">
-                That frustration became Harbor Tech Consulting. Our goal is simple: make modern technology as approachable as a friendly deckhand. We translate tech jargon into plain English, recommend only what a shop truly needs, and stand behind transparent, no-surprise pricing.
+                Thus Harbor Tech Consulting was born with a simple goal: make modern technology approachable, affordable, and easy. We recommend only what a shop truly needs and stand behind transparent, no-surprise pricing.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                 <div className="flex items-start">
@@ -135,7 +135,7 @@ const AboutPage = () => {
                   </div>
                   <div>
                     <h4 className="font-bold mb-1">Technical Depth</h4>
-                    <p className="text-neutral-700">Studying robotics, business, data analytics, and policy at Michigan</p>
+                    <p className="text-neutral-700">Studying robotics, computer science, business, data analytics, and policy at the University of Michigan</p>
                   </div>
                 </div>
                 <div className="flex items-start mb-6">
@@ -153,7 +153,7 @@ const AboutPage = () => {
               
               <div className="mission-quote">
                 <p className="text-lg font-medium text-on-dark">
-                  Because we're studying robotics, business, data analytics, and policy at Michigan, we have the technical depth to install rock-solid networks, secure point-of-sale systems, and future-proof cloud backups. Because we're Harbor Springs natives, we have the local insight to tailor those tools to a clothing store on East Main just as readily as to a Restaurant on State street.
+                  Because we're studying robotics, computer science, business, data analytics, and policy at the University of Michigan, we have the technical depth to install rock-solid networks, secure point-of-sale systems, and future-proof cloud backups. Supplementary to high education, we have deep local insight to tailor those tools to a clothing store on East Main just as readily as to a Restaurant on State street.
                 </p>
               </div>
             </div>
@@ -188,11 +188,9 @@ const AboutPage = () => {
                 </div>
               </div>
               <div className="p-4 sm:p-6 flex-grow">
-                <p className="text-primary-navy mb-4">University of Michigan student studying robotics, bringing technical expertise and innovative solutions to Harbor Springs businesses.</p>
+                <p className="text-primary-navy mb-4">University of Michigan student studying robotics and computer science, bringing technical expertise, innovative solutions, and interpersonal communication to Harbor Springs businesses.</p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="bg-nautical-azure/20 text-nautical-deepBlue text-sm py-1 px-3 rounded-full">Robotics</span>
-                  <span className="bg-nautical-azure/20 text-nautical-deepBlue text-sm py-1 px-3 rounded-full">Business</span>
-                  <span className="bg-nautical-azure/20 text-nautical-deepBlue text-sm py-1 px-3 rounded-full">Network Security</span>
+                  <span className="bg-nautical-azure/20 text-nautical-deepBlue text-sm py-1 px-3 rounded-full">Computer Science</span>
                 </div>
               </div>
             </div>
@@ -215,11 +213,9 @@ const AboutPage = () => {
                 </div>
               </div>
               <div className="p-4 sm:p-6 flex-grow">
-                <p className="mb-4">University of Michigan student focusing on data analytics and policy, translating complex data into actionable business insights for local retailers.</p>
+                <p className="mb-4">University of Michigan student studying data analytics, policy, and business, translating data into actionable business insights for local retailers.</p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="bg-nautical-azure/20 text-nautical-deepBlue text-sm py-1 px-3 rounded-full">Data Analytics</span>
-                  <span className="bg-nautical-azure/20 text-nautical-deepBlue text-sm py-1 px-3 rounded-full">Policy</span>
-                  <span className="bg-nautical-azure/20 text-nautical-deepBlue text-sm py-1 px-3 rounded-full">Cloud Solutions</span>
+                  <span className="bg-nautical-azure/20 text-nautical-deepBlue text-sm py-1 px-3 rounded-full">Business</span>
                 </div>
               </div>
             </div>
@@ -246,7 +242,7 @@ const AboutPage = () => {
             <div className="bg-accent-sand p-4 sm:p-6 rounded-xl h-full">
               <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-4 shadow-sm">
                 <svg className="w-6 h-6 text-primary-navy" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12,2L1,21H23M12,6L19.53,19H4.47M11,10V14H13V10M11,16V18H13V16" />
+                  <path d="m13 16.923l3.039-3.154q.217-.217.331-.506q.114-.288.114-.636q0-.639-.453-1.114q-.454-.475-1.096-.475q-.489 0-.964.256T13 12.2q-.52-.661-.982-.911t-.953-.25q-.642 0-1.096.475q-.453.475-.453 1.113q0 .348.114.637q.114.288.331.505zm7.516-2.77l-6.362 6.363q-.245.242-.551.363t-.61.121t-.605-.121t-.546-.363L3.48 12.17q-.237-.217-.358-.518q-.121-.3-.121-.632V4.634q0-.674.472-1.154T4.635 3h6.386q.324 0 .629.131t.527.354l8.339 8.344q.25.245.364.551t.114.617t-.114.61t-.364.547m-7.075 5.654l6.361-6.362q.192-.192.192-.452t-.192-.452L11.266 4.02H4.635q-.27 0-.452.173Q4 4.366 4 4.635v6.38q0 .116.039.231q.038.116.134.212l8.364 8.35q.192.192.451.192q.26 0 .453-.192M6.55 7.558q.421 0 .714-.292t.294-.708q0-.425-.292-.722t-.708-.298q-.425 0-.722.295t-.297.717t.295.714t.716.294m5.489 4.48" />
                 </svg>
               </div>
               <h3 className="font-display font-bold text-xl mb-2">Hometown Loyalty</h3>
@@ -257,7 +253,7 @@ const AboutPage = () => {
             <div className="bg-accent-sand p-4 sm:p-6 rounded-xl h-full">
               <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-4 shadow-sm">
                 <svg className="w-6 h-6 text-primary-navy" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M18,8H6V6H18M18,18H6V16H18M18,13H6V11H18M20,4H4V20H20" />
+                  <path d="m10.2 13.2l-1.05-1.05q.2-.275.275-.562T9.5 11t-.075-.587t-.275-.538L10.2 8.8q.4.475.6 1.05T11 11t-.2 1.138t-.6 1.062m2.125 2.15l-1.075-1.075q.625-.7.938-1.55T12.5 11t-.312-1.712t-.938-1.538l1.075-1.075q.85.925 1.263 2.038T14 11t-.413 2.3t-1.262 2.05M5 12q-.825 0-1.412-.587T3 10t.588-1.412T5 8t1.413.588T7 10t-.587 1.413T5 12m-4 4v-.575q0-.6.325-1.1t.9-.75q.65-.275 1.338-.425T5 13t1.438.15t1.337.425q.575.25.9.75t.325 1.1V16zm18-4q-.825 0-1.412-.587T17 10t.588-1.412T19 8t1.413.588T21 10t-.587 1.413T19 12m-4 4v-.575q0-.6.325-1.1t.9-.75q.65-.275 1.337-.425T19 13t1.437.15t1.338.425q.575.25.9.75t.325 1.1V16z" />
                 </svg>
               </div>
               <h3 className="font-display font-bold text-xl mb-2">Clear Communication</h3>
@@ -268,7 +264,7 @@ const AboutPage = () => {
             <div className="bg-accent-sand p-4 sm:p-6 rounded-xl h-full">
               <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-4 shadow-sm">
                 <svg className="w-6 h-6 text-primary-navy" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M21,11C21,16.55 17.16,21.74 12,23C6.84,21.74 3,16.55 3,11V5L12,1L21,5V11M12,21C15.75,20 19,15.54 19,11.22V6.3L12,3.18L5,6.3V11.22C5,15.54 8.25,20 12,21M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9" />
+                  <path d="M20 17q.86 0 1.45.6t.58 1.4L14 22l-7-2v-9h1.95l7.27 2.69q.78.31.78 1.12q0 .47-.34.82t-.86.37H13l-1.75-.67l-.33.94L13 17zM16 3.23Q17.06 2 18.7 2q1.36 0 2.3 1t1 2.3q0 1.03-1 2.46t-1.97 2.39T16 13q-2.08-1.89-3.06-2.85t-1.97-2.39T10 5.3q0-1.36.97-2.3t2.34-1q1.6 0 2.69 1.23M.984 11H5v11H.984z" />
                 </svg>
               </div>
               <h3 className="font-display font-bold text-xl mb-2">Iron-Clad Ethics</h3>

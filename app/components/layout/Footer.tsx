@@ -23,7 +23,7 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/support" className="text-primary-sky hover:text-primary-blue transition-colors text-sm sm:text-base">
+                    <Link href="/support/options-pricing" className="text-primary-sky hover:text-primary-blue transition-colors text-sm sm:text-base">
                       Support
                     </Link>
                   </li>

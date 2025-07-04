@@ -80,11 +80,10 @@ const Hero = () => {
           {/* Updated Headlines */}
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <div className="bg-black/25 backdrop-blur-sm rounded-xl p-4 sm:p-6 mx-auto max-w-4xl mb-6">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold text-accent-gold leading-tight text-center">
-                We are{" "}
-                <span className="text-white relative inline-block font-bold">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold leading-tight text-center">
+                <span className="text-white">We are</span>{" "}
+                <span className="text-accent-gold font-bold">
                   Harbor Technology Consulting
-                  <span className="absolute -bottom-1 left-0 w-full h-0.5 sm:h-1 bg-accent-gold/70"></span>
                 </span>
               </h1>
             </div>

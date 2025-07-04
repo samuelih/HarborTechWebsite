@@ -129,9 +129,9 @@ const WhyChooseUsSection = () => {
             
             {expandedCard === index && (
               <div className="px-6 pb-6 space-y-4 border-t border-neutral-100">
-                <div className="bg-green-50 border-l-4 border-accent-gold p-4 rounded-r-lg">
+                <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg">
                   <div className="flex items-start space-x-3">
-                    <Check className="w-5 h-5 text-green-600 md:text-accent-gold mt-0.5 flex-shrink-0" />
+                    <Check className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
                     <div>
                       <h4 className="font-semibold text-nautical-navy text-sm mb-1">
                         Harbor Technology Consulting
@@ -221,7 +221,7 @@ const WhyChooseUsSection = () => {
 
       {/* Bottom CTA */}
       <div className="text-center mt-12 pt-8 border-t border-neutral-200">
-        <div className="bg-gradient-to-r from-accent-gold/10 to-primary-blue/10 rounded-xl p-6 border-l-4 border-accent-gold max-w-2xl mx-auto">
+        <div className="bg-gradient-to-r from-green-100 to-primary-blue/10 rounded-xl p-6 border-l-4 border-green-500 max-w-2xl mx-auto">
           <h3 className="text-xl font-display font-bold text-nautical-navy mb-2">
             Ready to experience the difference?
           </h3>

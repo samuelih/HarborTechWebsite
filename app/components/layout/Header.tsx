@@ -245,20 +245,44 @@ const Header = () => {
           </Link>
         </nav>
 
-        {/* Mobile menu button */}
-        <button 
-          className="md:hidden relative flex items-center p-2 focus:outline-none group"
-          onClick={toggleMenu}
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          aria-expanded={isMenuOpen}
-          aria-controls="mobile-menu"
-        >
-          <div className="relative w-6 h-6">
-            <span className={`absolute w-6 h-0.5 ${getHamburgerColor()} transform transition-transform duration-300 ${isMenuOpen ? 'rotate-45 translate-y-0' : '-translate-y-2'}`}></span>
-            <span className={`absolute w-6 h-0.5 ${getHamburgerColor()} transform transition-opacity duration-300 ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
-            <span className={`absolute w-6 h-0.5 ${getHamburgerColor()} transform transition-transform duration-300 ${isMenuOpen ? '-rotate-45 translate-y-0' : 'translate-y-2'}`}></span>
-          </div>
-        </button>
+        {/* Mobile navigation - flex container for let's talk button and hamburger */}
+        <div className="md:hidden flex items-center space-x-3">
+          {/* Let's Talk button - visible on mobile */}
+          <Link 
+            href="/contact" 
+            className="btn-primary text-sm font-cinzel flex items-center px-3 py-2"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            <svg 
+              className="w-4 h-4 mr-1 transition-all duration-500" 
+              viewBox="0 0 24 24" 
+              fill="currentColor"
+              style={{ 
+                transform: isHovered ? 'rotate(180deg)' : 'rotate(0deg)',
+                opacity: 0.9
+              }}
+            >
+              <path d="M12,2L4.5,20.29l0.71,0.71L12,18l6.79,3 0.71-0.71L12,2z" />
+            </svg>
+            Let's Talk
+          </Link>
+          
+          {/* Mobile menu button */}
+          <button 
+            className="relative flex items-center p-2 focus:outline-none group"
+            onClick={toggleMenu}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
+          >
+            <div className="relative w-6 h-6">
+              <span className={`absolute w-6 h-0.5 ${getHamburgerColor()} transform transition-transform duration-300 ${isMenuOpen ? 'rotate-45 translate-y-0' : '-translate-y-2'}`}></span>
+              <span className={`absolute w-6 h-0.5 ${getHamburgerColor()} transform transition-opacity duration-300 ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+              <span className={`absolute w-6 h-0.5 ${getHamburgerColor()} transform transition-transform duration-300 ${isMenuOpen ? '-rotate-45 translate-y-0' : 'translate-y-2'}`}></span>
+            </div>
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu - improved positioning */}
@@ -272,22 +296,27 @@ const Header = () => {
           maxHeight: isMenuOpen ? '80vh' : '0'
         }}
       >
-        <div className="flex flex-col py-4 px-4 sm:px-6 space-y-2">
+        <div className="flex flex-col py-6 px-6 space-y-3 bg-gradient-to-b from-white to-neutral-50">
+          {/* Enhanced Solutions Link */}
           <Link 
             href="/solutions" 
-            className={`text-primary-navy hover:text-primary-blue transition-colors p-3 rounded-lg text-lg ${isActive('/solutions') ? 'bg-neutral-gull text-primary-blue' : 'hover:bg-neutral-gull/50'}`}
+            className={`group flex items-center text-primary-navy hover:text-primary-blue transition-all duration-300 p-4 rounded-xl text-lg font-cinzel border-2 border-transparent hover:border-primary-blue/20 hover:bg-gradient-to-r hover:from-primary-blue/5 hover:to-transparent ${isActive('/solutions') ? 'bg-gradient-to-r from-primary-blue/10 to-transparent border-primary-blue/30 text-primary-blue' : ''}`}
             onClick={() => setIsMenuOpen(false)}
           >
-            Solutions
+            <Ship className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform duration-300" />
+            <span className="font-semibold">Solutions</span>
           </Link>
           
-          {/* Mobile Support Section */}
-          <div className="space-y-1">
+          {/* Enhanced Mobile Support Section */}
+          <div className="space-y-2">
             <button
               onClick={toggleSupportDropdown}
-              className={`w-full text-left flex items-center justify-between text-primary-navy hover:text-primary-blue transition-colors p-3 rounded-lg text-lg ${isActive('/support') ? 'bg-neutral-gull text-primary-blue' : 'hover:bg-neutral-gull/50'}`}
+              className={`group w-full text-left flex items-center justify-between text-primary-navy hover:text-primary-blue transition-all duration-300 p-4 rounded-xl text-lg font-cinzel border-2 border-transparent hover:border-primary-blue/20 hover:bg-gradient-to-r hover:from-primary-blue/5 hover:to-transparent ${isActive('/support') ? 'bg-gradient-to-r from-primary-blue/10 to-transparent border-primary-blue/30 text-primary-blue' : ''}`}
             >
-              Support
+              <div className="flex items-center">
+                <LifeBuoy className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform duration-300" />
+                <span className="font-semibold">Support</span>
+              </div>
               <ChevronDown 
                 className={`w-4 h-4 transition-transform duration-200 ${
                   isSupportDropdownOpen ? 'rotate-180' : ''
@@ -295,61 +324,43 @@ const Header = () => {
               />
             </button>
             
-            {/* Mobile Support Submenu */}
-            <div className={`pl-4 space-y-1 transition-all duration-200 ${
+            {/* Enhanced Mobile Support Submenu */}
+            <div className={`pl-6 space-y-2 transition-all duration-300 ${
               isSupportDropdownOpen ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
             }`}>
               <Link
                 href="/support/options-pricing"
-                className="flex items-center gap-3 px-3 py-2 text-base text-primary-navy hover:text-primary-blue hover:bg-neutral-gull/30 rounded-lg transition-colors"
+                className="flex items-center gap-3 px-4 py-3 text-base text-primary-navy hover:text-primary-blue hover:bg-gradient-to-r hover:from-primary-blue/5 hover:to-transparent rounded-lg transition-all duration-300 border border-transparent hover:border-primary-blue/20"
                 onClick={() => {
                   setIsMenuOpen(false);
                   setIsSupportDropdownOpen(false);
                 }}
               >
-                <LifeBuoy className="w-4 h-4" />
-                Options and Pricing
+                <Compass className="w-4 h-4" />
+                <span className="font-medium">Options and Pricing</span>
               </Link>
               <Link
                 href="/support/emergency"
-                className="flex items-center gap-3 px-3 py-2 text-base text-red-600 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors font-semibold"
+                className="flex items-center gap-3 px-4 py-3 text-base text-red-600 hover:text-red-700 hover:bg-gradient-to-r hover:from-red-50 hover:to-transparent rounded-lg transition-all duration-300 border border-transparent hover:border-red-200 font-semibold"
                 onClick={() => {
                   setIsMenuOpen(false);
                   setIsSupportDropdownOpen(false);
                 }}
               >
                 <AlertTriangle className="w-4 h-4" />
-                EMERGENCY SUPPORT
+                <span>EMERGENCY SUPPORT</span>
               </Link>
             </div>
           </div>
           
+          {/* Enhanced About Link */}
           <Link 
             href="/about" 
-            className={`text-primary-navy hover:text-primary-blue transition-colors p-3 rounded-lg text-lg ${isActive('/about') ? 'bg-neutral-gull text-primary-blue' : 'hover:bg-neutral-gull/50'}`}
+            className={`group flex items-center text-primary-navy hover:text-primary-blue transition-all duration-300 p-4 rounded-xl text-lg font-cinzel border-2 border-transparent hover:border-primary-blue/20 hover:bg-gradient-to-r hover:from-primary-blue/5 hover:to-transparent ${isActive('/about') ? 'bg-gradient-to-r from-primary-blue/10 to-transparent border-primary-blue/30 text-primary-blue' : ''}`}
             onClick={() => setIsMenuOpen(false)}
           >
-            About
-          </Link>
-          <Link 
-            href="/contact" 
-            className="btn-primary btn-full text-lg font-cinzel flex items-center justify-center mt-4"
-            onClick={() => setIsMenuOpen(false)}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
-            <svg 
-              className="w-4 h-4 mr-2 transition-all duration-500" 
-              viewBox="0 0 24 24" 
-              fill="currentColor"
-              style={{ 
-                transform: isHovered ? 'rotate(180deg)' : 'rotate(0deg)',
-                opacity: 0.9
-              }}
-            >
-              <path d="M12,2L4.5,20.29l0.71,0.71L12,18l6.79,3 0.71-0.71L12,2z" />
-            </svg>
-            Let's Talk
+            <Anchor className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform duration-300" />
+            <span className="font-semibold">About</span>
           </Link>
         </div>
       </div>

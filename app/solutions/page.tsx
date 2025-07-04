@@ -302,28 +302,7 @@ const SolutionsPage = () => {
             </div>
           </div>
 
-          {/* Call to Action */}
-          <div className={`text-center mt-16 transition-all duration-1000 delay-500 ${
-            workSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}>
-            <div className="bg-gradient-to-r from-primary-blue/5 to-accent-gold/5 rounded-2xl p-8 border border-accent-gold/20 max-w-2xl mx-auto">
-              <h3 className="text-2xl font-display font-bold text-nautical-navy mb-4">
-                Ready to start your journey?
-              </h3>
-              <p className="text-neutral-600 mb-6">
-                Let's discuss how we can modernize your business technology with our proven process.
-              </p>
-              <Link 
-                href="/contact" 
-                className="btn-accent btn-large inline-flex items-center justify-center"
-              >
-                Get Your Free Consultation
-                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
-            </div>
-          </div>
+
         </div>
       </section>
 
@@ -355,56 +334,7 @@ const SolutionsPage = () => {
         }}></div>
       </section>
 
-      {/* Section Divider */}
-      <div className="border-t border-neutral-gull/60"></div>
 
-      {/* FAQ Section */}
-      <section id="faq" className="relative py-16 sm:py-20 md:py-24 bg-white">
-        {/* Background decorative elements */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-16 right-16 w-24 h-24 bg-primary-blue rounded-full blur-2xl"></div>
-          <div className="absolute bottom-16 left-16 w-32 h-32 bg-accent-gold rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className={`transition-all duration-1000 ${solutionsSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-6 text-nautical-navy">
-                  <span className="relative inline-block">
-                    Frequently Asked Questions:
-                    <span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-gold/70"></span>
-                  </span>
-                </h2>
-                <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
-                  Get answers to common questions about our services and process.
-                </p>
-              </div>
-              
-              <div className="bg-white rounded-2xl shadow-lg p-8 border border-neutral-gull/30">
-                <div className="space-y-6">
-                  {/* First FAQ */}
-                  <div className="border-b border-neutral-gull/30 pb-6">
-                    <h4 className="text-lg font-bold text-nautical-navy mb-3">
-                      What's the refund policy?
-                    </h4>
-                    <p className="text-neutral-600 leading-relaxed">
-                      Every project is 100% refundable until installation begins—no risk, no fine print.
-                    </p>
-                  </div>
-                  
-                  {/* Placeholder for future FAQs */}
-                  <div className="text-center py-4">
-                    <p className="text-neutral-500 italic">
-                      More frequently asked questions will be added here based on customer feedback.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
 
     </div>
