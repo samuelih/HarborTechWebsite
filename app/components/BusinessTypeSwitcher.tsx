@@ -116,7 +116,7 @@ const BusinessTypeSwitcher = () => {
           <h3 className="text-xl font-display font-bold text-nautical-navy mb-2">
             <span className="relative inline-block">
               {businessTypes[type].label}
-              <span className={`absolute -bottom-1 left-0 w-full h-1 ${businessTypes[type].accentColorClasses.bg}/70`}></span>
+              <span className={`absolute -bottom-1 left-0 w-full h-1 ${businessTypes[type].accentColorClasses.bg}`}></span>
             </span>
           </h3>
           <p className="text-base text-neutral-600">
@@ -158,7 +158,7 @@ const BusinessTypeSwitcher = () => {
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-6 text-nautical-navy">
           <span className="relative inline-block">
             Custom Solutions
-            <span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-gold/70"></span>
+            <span className="absolute -bottom-1 left-0 w-full h-1 bg-accent-gold"></span>
           </span>
           {" "}for <span className="text-accent-gold">Every Business</span>
         </h2>
@@ -308,7 +308,7 @@ const BusinessTypeSwitcher = () => {
                   <h3 className="text-2xl font-display font-bold text-nautical-navy mb-3">
                     <span className="relative inline-block">
                       {businessTypes[activeType].label}
-                      <span className={`absolute -bottom-1 left-0 w-full h-1 ${businessTypes[activeType].accentColorClasses.bg}/70`}></span>
+                      <span className={`absolute -bottom-1 left-0 w-full h-1 ${businessTypes[activeType].accentColorClasses.bg}`}></span>
                     </span>
                   </h3>
                   <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
