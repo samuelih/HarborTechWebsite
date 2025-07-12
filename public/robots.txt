@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://harbortech.org/sitemap.xml
+
+# Disallow search result pages if any
+Disallow: /search
+
+# Allow all important pages
+Allow: /about
+Allow: /contact
+Allow: /solutions
+Allow: /support/ 

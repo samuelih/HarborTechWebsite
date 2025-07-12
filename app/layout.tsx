@@ -30,16 +30,29 @@ const cinzelDecorative = Cinzel_Decorative({
 })
 
 export const metadata = {
-  title: 'Harbor Technology Consulting | Local Tech Partner for Harbor Springs Retailers',
+  title: 'Harbor Tech | Local IT Partner for Harbor Springs',
   description: 'Your local tech partner for Harbor Springs shops. Smart POS, online stores, secure Wi-Fi—simple solutions from neighbors who understand your business.',
   metadataBase: new URL('https://harbortech.org'),
+  alternates: {
+    canonical: '/',
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: '32x32', type: 'image/x-icon' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
+  manifest: '/manifest.json',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://harbortech.org',
-    title: 'Harbor Technology Consulting | Local Tech Partner for Harbor Springs',
+    title: 'Harbor Tech | Local IT Partner for Harbor Springs',
     description: 'Your local tech partner for Harbor Springs shops. Smart POS, online stores, secure Wi-Fi—simple solutions from neighbors who understand your business.',
-    siteName: 'Harbor Technology Consulting',
+    siteName: 'Harbor Tech',
     images: [
       {
         url: '/images/harbor-tech-og.jpg',
@@ -51,7 +64,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Harbor Technology Consulting | Local Tech Partner for Harbor Springs',
+    title: 'Harbor Tech | Local IT Partner for Harbor Springs',
     description: 'Your local tech partner for Harbor Springs shops. Smart POS, online stores, secure Wi-Fi—simple solutions from neighbors who understand your business.',
     images: ['/images/harbor-tech-og.jpg']
   }
@@ -65,7 +78,35 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${playfairDisplay.variable} ${cinzel.variable} ${cinzelDecorative.variable}`}>
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Harbor Tech",
+              "description": "Your local tech partner for Harbor Springs shops. Smart POS, online stores, secure Wi-Fi—simple solutions from neighbors who understand your business.",
+              "url": "https://harbortech.org",
+              "telephone": "+1-231-XXX-XXXX",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Harbor Springs",
+                "addressRegion": "MI",
+                "addressCountry": "US"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 45.4308,
+                "longitude": -84.9958
+              },
+              "openingHours": "Mo-Fr 09:00-17:00",
+              "sameAs": [
+                "https://harbortech.org"
+              ]
+            })
+          }}
+        />
         {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLACEHOLDER"></script>
         <script
