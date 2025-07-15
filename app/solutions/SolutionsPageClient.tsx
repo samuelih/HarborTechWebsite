@@ -63,22 +63,14 @@ const SolutionsPageClient = () => {
   const steps = [
     {
       number: 1,
-      title: "Let's Talk Shop",
-      description: " Over coffee at Johan's or right on your sales floor, we learn how your store operates and pinpoint your daily headaches.",
+      title: "The Harbor Tech Check",
+      description: " Over coffee at Johan's or right on your sales floor, we ask 15 questions to learn how your store operates and pinpoint your daily headaches.",
       icon: <Image src="/images/icons/general/talk.svg" alt="Talk" width={28} height={28} />,
       accentColor: "accent-gold",
       delay: 0
     },
     {
       number: 2,
-      title: "Shop Walk-through",
-      description: " We swing by in person and cover eight key areas—POS, inventory, customer data, and more. We use what we learn to craft <span className='text-accent-gold font-semibold'>personalized, time-saving fixes</span> and lay out the simplest path forward.",
-      icon: <Image src="/images/icons/general/discovery.svg" alt="Discovery" width={28} height={28} />,
-      accentColor: "primary-blue",
-      delay: 400
-    },
-    {
-      number: 3,
       title: "Your Harbor Plan",
       description: "You get a clear <span className='text-accent-gold font-semibold'>transparent</span> plan: what we heard, the upgrades and workflows we recommend, an estimated cost, and a timeline that works around your schedule.",
       icon: <Image src="/images/icons/general/clipboard.svg" alt="Clipboard" width={28} height={28} />,
@@ -86,7 +78,7 @@ const SolutionsPageClient = () => {
       delay: 800
     },
     {
-      number: 4,
+      number: 3,
       title: "Install & Training",
       description: "<span className='text-accent-gold font-semibold'>We work around your hours</span>—before open, after close, whenever. Keep your systems running while we train your crew and get your upgrade fully implemented.",
       icon: <Image src="/images/icons/general/wrench.svg" alt="Wrench" width={28} height={28} />,
@@ -94,7 +86,7 @@ const SolutionsPageClient = () => {
       delay: 1200
     },
     {
-      number: 5,
+      number: 4,
       title: "Payment",
       description: "Pay all at once or spread it over 24 months; either way, the number we quote is the number you pay. No surprise add-ons, ever. <span className='text-accent-gold font-semibold'>Fully refundable for up to 14 days.</span>",
       icon: <Image src="/images/icons/general/money.svg" alt="Money" width={28} height={28} />,
@@ -166,12 +158,12 @@ const SolutionsPageClient = () => {
                 <div 
                   className="absolute top-20 left-0 h-1 bg-gradient-to-r from-accent-gold via-primary-blue to-seafoam rounded-full transition-all duration-2000 ease-out mx-24"
                   style={{ 
-                    width: workSectionVisible ? `${((activeStep + 1) / 5) * 100}%` : '0%',
+                    width: workSectionVisible ? `${((activeStep + 1) / 4) * 100}%` : '0%',
                     maxWidth: 'calc(100% - 12rem)'
                   }}
                 ></div>
 
-                <div className="grid grid-cols-5 gap-4 lg:gap-8">
+                <div className="grid grid-cols-4 gap-6 lg:gap-12">
                   {steps.map((step, index) => (
                     <div 
                       key={index}
