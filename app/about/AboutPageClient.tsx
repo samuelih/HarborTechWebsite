@@ -215,11 +215,7 @@ const AboutPageClient = () => {
             </div>
           </div>
           
-          <div className={`text-center mt-8 sm:mt-12 transition-all duration-1000 delay-500 ${crewVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <Link href="/contact" className="btn-primary inline-block">
-              Join Our Journey
-            </Link>
-          </div>
+
         </div>
       </section>
 

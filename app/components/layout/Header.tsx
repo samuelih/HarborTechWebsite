@@ -13,23 +13,34 @@ import {
   ChevronDown, 
   LifeBuoy,
   ExternalLink,
-  AlertTriangle
+  AlertTriangle,
+  Instagram,
+  DollarSign,
+  Folder
 } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSupportDropdownOpen, setIsSupportDropdownOpen] = useState(false);
+  const [isPricingDropdownOpen, setIsPricingDropdownOpen] = useState(false);
+  const [isResourcesDropdownOpen, setIsResourcesDropdownOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-  const supportDropdownRef = useRef<HTMLDivElement>(null);
+  const pricingDropdownRef = useRef<HTMLDivElement>(null);
+  const resourcesDropdownRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const toggleSupportDropdown = () => {
-    setIsSupportDropdownOpen(!isSupportDropdownOpen);
+  const togglePricingDropdown = () => {
+    setIsPricingDropdownOpen(!isPricingDropdownOpen);
+    setIsResourcesDropdownOpen(false); // Close other dropdown
+  };
+
+  const toggleResourcesDropdown = () => {
+    setIsResourcesDropdownOpen(!isResourcesDropdownOpen);
+    setIsPricingDropdownOpen(false); // Close other dropdown
   };
   
   // Add scroll effect to header
@@ -45,7 +56,8 @@ const Header = () => {
   // Close mobile menu when route changes
   useEffect(() => {
     setIsMenuOpen(false);
-    setIsSupportDropdownOpen(false);
+    setIsPricingDropdownOpen(false);
+    setIsResourcesDropdownOpen(false);
   }, [pathname]);
 
   // Close mobile menu when window is resized to desktop view
@@ -53,7 +65,8 @@ const Header = () => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
         setIsMenuOpen(false);
-        setIsSupportDropdownOpen(false);
+        setIsPricingDropdownOpen(false);
+        setIsResourcesDropdownOpen(false);
       }
     };
     
@@ -65,8 +78,10 @@ const Header = () => {
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
-        if (isSupportDropdownOpen) {
-          setIsSupportDropdownOpen(false);
+        if (isPricingDropdownOpen) {
+          setIsPricingDropdownOpen(false);
+        } else if (isResourcesDropdownOpen) {
+          setIsResourcesDropdownOpen(false);
         } else if (isMenuOpen) {
           setIsMenuOpen(false);
         }
@@ -75,13 +90,16 @@ const Header = () => {
     
     document.addEventListener('keydown', handleEscape);
     return () => document.removeEventListener('keydown', handleEscape);
-  }, [isMenuOpen, isSupportDropdownOpen]);
+  }, [isMenuOpen, isPricingDropdownOpen, isResourcesDropdownOpen]);
 
-  // Close dropdown when clicking outside
+  // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (supportDropdownRef.current && !supportDropdownRef.current.contains(event.target as Node)) {
-        setIsSupportDropdownOpen(false);
+      if (pricingDropdownRef.current && !pricingDropdownRef.current.contains(event.target as Node)) {
+        setIsPricingDropdownOpen(false);
+      }
+      if (resourcesDropdownRef.current && !resourcesDropdownRef.current.contains(event.target as Node)) {
+        setIsResourcesDropdownOpen(false);
       }
     };
 
@@ -94,10 +112,22 @@ const Header = () => {
     return pathname === path || pathname.startsWith(path + '/');
   };
 
+  // Check if pricing section is active (either /solutions, /pricing, or /support/options-pricing)
+  const isPricingSectionActive = () => {
+    return isActive('/solutions') || isActive('/pricing') || isActive('/support/options-pricing');
+  };
+
+  // Check if resources section is active
+  const isResourcesSectionActive = () => {
+    return isActive('/resources') || isActive('/knowledge-base');
+  };
+
   // Check if we're on a page with dark background
-  const isDarkPage = ['/', '/solutions', '/support', '/about', '/contact'].some(path => 
+  const isDarkPage = ['/', '/solutions', '/support', '/resources', '/about', '/contact', '/pricing'].some(path => 
     pathname === path || pathname.startsWith(path + '/')
   );
+
+
 
   // Determine text color based on page and scroll state
   const getTextColor = () => {
@@ -159,58 +189,95 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav role="navigation" aria-label="Main navigation" className="hidden md:flex space-x-6 lg:space-x-8 items-center">
-          <Link 
-            href="/solutions" 
-            className={`text-xl lg:text-2xl transition-colors duration-300 font-cinzel ${
-              isActive('/solutions') ? getActiveTextColor() : getTextColor()
-            }`}
-          >
-            Solutions
-          </Link>
-          
-          {/* Support Dropdown */}
-          <div className="relative" ref={supportDropdownRef}>
+          {/* Pricing Dropdown */}
+          <div className="relative" ref={pricingDropdownRef}>
             <button
-              onClick={toggleSupportDropdown}
+              onClick={togglePricingDropdown}
               className={`text-xl lg:text-2xl transition-colors duration-300 font-cinzel flex items-center gap-1 ${
-                isActive('/support') ? getActiveTextColor() : getTextColor()
+                isPricingSectionActive() ? getActiveTextColor() : getTextColor()
               }`}
-              aria-expanded={isSupportDropdownOpen}
+              aria-expanded={isPricingDropdownOpen}
               aria-haspopup="true"
             >
-              Support
+              Pricing
               <ChevronDown 
                 className={`w-4 h-4 transition-transform duration-200 ${
-                  isSupportDropdownOpen ? 'rotate-180' : ''
+                  isPricingDropdownOpen ? 'rotate-180' : ''
                 }`}
               />
             </button>
             
-            {/* Desktop Dropdown Menu */}
+            {/* Desktop Pricing Dropdown Menu */}
             <div 
               className={`absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-200 transition-all duration-200 ${
-                isSupportDropdownOpen 
+                isPricingDropdownOpen 
                   ? 'opacity-100 visible transform translate-y-0' 
                   : 'opacity-0 invisible transform -translate-y-2'
               }`}
             >
               <div className="py-2">
                 <Link
+                  href="/pricing/business-upgrades"
+                  className="flex items-center gap-3 px-4 py-3 text-primary-navy hover:bg-neutral-mist hover:text-primary-blue transition-colors"
+                  onClick={() => setIsPricingDropdownOpen(false)}
+                >
+                  <Ship className="w-5 h-5" />
+                  Business Upgrades
+                </Link>
+                <Link
                   href="/support/options-pricing"
                   className="flex items-center gap-3 px-4 py-3 text-primary-navy hover:bg-neutral-mist hover:text-primary-blue transition-colors"
-                  onClick={() => setIsSupportDropdownOpen(false)}
+                  onClick={() => setIsPricingDropdownOpen(false)}
                 >
                   <LifeBuoy className="w-5 h-5" />
-                  Options and Pricing
+                  Support Plans
                 </Link>
-                <div className="border-t border-gray-200 my-2"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Resources Dropdown */}
+          <div className="relative" ref={resourcesDropdownRef}>
+            <button
+              onClick={toggleResourcesDropdown}
+              className={`text-xl lg:text-2xl transition-colors duration-300 font-cinzel flex items-center gap-1 ${
+                isResourcesSectionActive() ? getActiveTextColor() : getTextColor()
+              }`}
+              aria-expanded={isResourcesDropdownOpen}
+              aria-haspopup="true"
+            >
+              Resources
+              <ChevronDown 
+                className={`w-4 h-4 transition-transform duration-200 ${
+                  isResourcesDropdownOpen ? 'rotate-180' : ''
+                }`}
+              />
+            </button>
+            
+            {/* Desktop Resources Dropdown Menu */}
+            <div 
+              className={`absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-200 transition-all duration-200 ${
+                isResourcesDropdownOpen 
+                  ? 'opacity-100 visible transform translate-y-0' 
+                  : 'opacity-0 invisible transform -translate-y-2'
+              }`}
+            >
+              <div className="py-2">
                 <Link
-                  href="/support/emergency"
-                  className="flex items-center gap-3 px-4 py-3 text-red-600 hover:bg-red-50 hover:text-red-700 transition-colors font-semibold"
-                  onClick={() => setIsSupportDropdownOpen(false)}
+                  href="/knowledge-base"
+                  className="flex items-center gap-3 px-4 py-3 text-primary-navy hover:bg-neutral-mist hover:text-primary-blue transition-colors"
+                  onClick={() => setIsResourcesDropdownOpen(false)}
                 >
-                  <AlertTriangle className="w-5 h-5" />
-                  EMERGENCY SUPPORT
+                  <BookOpen className="w-5 h-5" />
+                  Knowledge Base
+                </Link>
+                <Link
+                  href="/resources/instagram"
+                  className="flex items-center gap-3 px-4 py-3 text-primary-navy hover:bg-neutral-mist hover:text-primary-blue transition-colors"
+                  onClick={() => setIsResourcesDropdownOpen(false)}
+                >
+                  <Instagram className="w-5 h-5" />
+                  Social Media
                 </Link>
               </div>
             </div>
@@ -297,58 +364,98 @@ const Header = () => {
         }}
       >
         <div className="flex flex-col py-6 px-6 space-y-3 bg-gradient-to-b from-white to-neutral-50">
-          {/* Enhanced Solutions Link */}
-          <Link 
-            href="/solutions" 
-            className={`group flex items-center text-primary-navy hover:text-primary-blue transition-all duration-300 p-4 rounded-xl text-lg font-cinzel border-2 border-transparent hover:border-primary-blue/20 hover:bg-gradient-to-r hover:from-primary-blue/5 hover:to-transparent ${isActive('/solutions') ? 'bg-gradient-to-r from-primary-blue/10 to-transparent border-primary-blue/30 text-primary-blue' : ''}`}
-            onClick={() => setIsMenuOpen(false)}
-          >
-            <Ship className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform duration-300" />
-            <span className="font-semibold">Solutions</span>
-          </Link>
-          
-          {/* Enhanced Mobile Support Section */}
+          {/* Enhanced Mobile Pricing Section */}
           <div className="space-y-2">
             <button
-              onClick={toggleSupportDropdown}
-              className={`group w-full text-left flex items-center justify-between text-primary-navy hover:text-primary-blue transition-all duration-300 p-4 rounded-xl text-lg font-cinzel border-2 border-transparent hover:border-primary-blue/20 hover:bg-gradient-to-r hover:from-primary-blue/5 hover:to-transparent ${isActive('/support') ? 'bg-gradient-to-r from-primary-blue/10 to-transparent border-primary-blue/30 text-primary-blue' : ''}`}
+              onClick={togglePricingDropdown}
+              className={`group w-full text-left flex items-center justify-between text-primary-navy hover:text-primary-blue transition-all duration-300 p-4 rounded-xl text-lg font-cinzel border-2 border-transparent hover:border-primary-blue/20 hover:bg-gradient-to-r hover:from-primary-blue/5 hover:to-transparent ${isPricingSectionActive() ? 'bg-gradient-to-r from-primary-blue/10 to-transparent border-primary-blue/30 text-primary-blue' : ''}`}
+              aria-expanded={isPricingDropdownOpen}
+              aria-haspopup="true"
             >
               <div className="flex items-center">
-                <LifeBuoy className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform duration-300" />
-                <span className="font-semibold">Support</span>
+                <DollarSign className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform duration-300" />
+                <span className="font-semibold">Pricing</span>
               </div>
               <ChevronDown 
                 className={`w-4 h-4 transition-transform duration-200 ${
-                  isSupportDropdownOpen ? 'rotate-180' : ''
+                  isPricingDropdownOpen ? 'rotate-180' : ''
                 }`}
               />
             </button>
             
-            {/* Enhanced Mobile Support Submenu */}
+            {/* Enhanced Mobile Pricing Submenu */}
             <div className={`pl-6 space-y-2 transition-all duration-300 ${
-              isSupportDropdownOpen ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
+              isPricingDropdownOpen ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
             }`}>
               <Link
-                href="/support/options-pricing"
+                href="/pricing/business-upgrades"
                 className="flex items-center gap-3 px-4 py-3 text-base text-primary-navy hover:text-primary-blue hover:bg-gradient-to-r hover:from-primary-blue/5 hover:to-transparent rounded-lg transition-all duration-300 border border-transparent hover:border-primary-blue/20"
                 onClick={() => {
                   setIsMenuOpen(false);
-                  setIsSupportDropdownOpen(false);
+                  setIsPricingDropdownOpen(false);
                 }}
               >
-                <Compass className="w-4 h-4" />
-                <span className="font-medium">Options and Pricing</span>
+                <Ship className="w-4 h-4" />
+                <span className="font-medium">Business Upgrades</span>
               </Link>
+                             <Link
+                 href="/support/options-pricing"
+                 className="flex items-center gap-3 px-4 py-3 text-base text-primary-navy hover:text-primary-blue hover:bg-gradient-to-r hover:from-primary-blue/5 hover:to-transparent rounded-lg transition-all duration-300 border border-transparent hover:border-primary-blue/20"
+                 onClick={() => {
+                   setIsMenuOpen(false);
+                   setIsPricingDropdownOpen(false);
+                 }}
+               >
+                 <LifeBuoy className="w-4 h-4" />
+                 <span className="font-medium">Support Plans</span>
+               </Link>
+            </div>
+          </div>
+
+          {/* Enhanced Mobile Resources Section */}
+          <div className="space-y-2">
+            <button
+              onClick={toggleResourcesDropdown}
+              className={`group w-full text-left flex items-center justify-between text-primary-navy hover:text-primary-blue transition-all duration-300 p-4 rounded-xl text-lg font-cinzel border-2 border-transparent hover:border-primary-blue/20 hover:bg-gradient-to-r hover:from-primary-blue/5 hover:to-transparent ${isResourcesSectionActive() ? 'bg-gradient-to-r from-primary-blue/10 to-transparent border-primary-blue/30 text-primary-blue' : ''}`}
+              aria-expanded={isResourcesDropdownOpen}
+              aria-haspopup="true"
+            >
+              <div className="flex items-center">
+                <Folder className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform duration-300" />
+                <span className="font-semibold">Resources</span>
+              </div>
+              <ChevronDown 
+                className={`w-4 h-4 transition-transform duration-200 ${
+                  isResourcesDropdownOpen ? 'rotate-180' : ''
+                }`}
+              />
+            </button>
+            
+            {/* Enhanced Mobile Resources Submenu */}
+            <div className={`pl-6 space-y-2 transition-all duration-300 ${
+              isResourcesDropdownOpen ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
+            }`}>
               <Link
-                href="/support/emergency"
-                className="flex items-center gap-3 px-4 py-3 text-base text-red-600 hover:text-red-700 hover:bg-gradient-to-r hover:from-red-50 hover:to-transparent rounded-lg transition-all duration-300 border border-transparent hover:border-red-200 font-semibold"
+                href="/knowledge-base"
+                className="flex items-center gap-3 px-4 py-3 text-base text-primary-navy hover:text-primary-blue hover:bg-gradient-to-r hover:from-primary-blue/5 hover:to-transparent rounded-lg transition-all duration-300 border border-transparent hover:border-primary-blue/20"
                 onClick={() => {
                   setIsMenuOpen(false);
-                  setIsSupportDropdownOpen(false);
+                  setIsResourcesDropdownOpen(false);
                 }}
               >
-                <AlertTriangle className="w-4 h-4" />
-                <span>EMERGENCY SUPPORT</span>
+                <BookOpen className="w-4 h-4" />
+                <span className="font-medium">Knowledge Base</span>
+              </Link>
+              <Link
+                href="/resources/instagram"
+                className="flex items-center gap-3 px-4 py-3 text-base text-primary-navy hover:text-primary-blue hover:bg-gradient-to-r hover:from-primary-blue/5 hover:to-transparent rounded-lg transition-all duration-300 border border-transparent hover:border-primary-blue/20"
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  setIsResourcesDropdownOpen(false);
+                }}
+              >
+                <Instagram className="w-4 h-4" />
+                <span className="font-medium">Social Media</span>
               </Link>
             </div>
           </div>

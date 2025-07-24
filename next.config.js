@@ -1,7 +1,26 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Ensure images from external sources work
+  images: {
+    domains: ['localhost'],
+    unoptimized: false
+  },
+  
+  // Security headers and redirects
   async redirects() {
     return [
+      // Redirect old solutions page to new pricing structure
+      {
+        source: '/solutions',
+        destination: '/pricing/business-upgrades',
+        permanent: true,
+      },
+      // Handle solutions with hash fragments
+      {
+        source: '/solutions/:path*',
+        destination: '/pricing/business-upgrades',
+        permanent: true,
+      },
       // Redirect www to non-www
       {
         source: '/:path*',
@@ -14,25 +33,13 @@ const nextConfig = {
         destination: 'https://harbortech.org/:path*',
         permanent: true,
       },
-      // Redirect HTTP to HTTPS
-      {
-        source: '/:path*',
-        has: [
-          {
-            type: 'header',
-            key: 'x-forwarded-proto',
-            value: 'http',
-          },
-        ],
-        destination: 'https://harbortech.org/:path*',
-        permanent: true,
-      },
-    ]
+    ];
   },
+
   async headers() {
     return [
       {
-        source: '/:path*',
+        source: '/(.*)',
         headers: [
           {
             key: 'X-Frame-Options',
@@ -44,12 +51,16 @@ const nextConfig = {
           },
           {
             key: 'Referrer-Policy',
-            value: 'strict-origin-when-cross-origin',
+            value: 'origin-when-cross-origin',
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=()',
           },
         ],
       },
-    ]
+    ];
   },
-}
+};
 
-module.exports = nextConfig 
+module.exports = nextConfig; 

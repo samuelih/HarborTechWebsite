@@ -35,8 +35,8 @@ const CTASection = () => {
 
   useEffect(() => {
     let animationId: number;
-    let targetRotation = rotation;
-    let currentRotation = rotation;
+    let targetRotation = 0;
+    let currentRotation = 0;
     
     const animate = () => {
       // Smoothly interpolate towards target rotation
@@ -62,14 +62,14 @@ const CTASection = () => {
       animationId = requestAnimationFrame(animate);
     };
 
-    // Start animation loop
-    animationId = requestAnimationFrame(animate);
-
     // When mouse moves over the section, make compass point to mouse
     const handleMouseMove = (e: MouseEvent) => {
-      if (!compassRef.current || !sectionRef.current) return;
+      const sectionElement = sectionRef.current;
+      const compassElement = compassRef.current;
       
-      const rect = sectionRef.current.getBoundingClientRect();
+      if (!compassElement || !sectionElement) return;
+      
+      const rect = sectionElement.getBoundingClientRect();
       const centerX = rect.left + rect.width / 2;
       const centerY = rect.top + rect.height / 2;
       
@@ -82,14 +82,28 @@ const CTASection = () => {
       targetRotation = angle < 0 ? angle + 360 : angle;
     };
 
+    // When mouse leaves the section, reset compass to point north
+    const handleMouseLeave = () => {
+      targetRotation = 0; // Point north (0 degrees)
+    };
+
+    // Start animation loop
+    animationId = requestAnimationFrame(animate);
+
+    // Store the current element reference
+    const sectionElement = sectionRef.current;
+    
     // Add event listeners
-    if (sectionRef.current) {
-      sectionRef.current.addEventListener('mousemove', handleMouseMove);
+    if (sectionElement) {
+      sectionElement.addEventListener('mousemove', handleMouseMove);
+      sectionElement.addEventListener('mouseleave', handleMouseLeave);
     }
 
     return () => {
-      if (sectionRef.current) {
-        sectionRef.current.removeEventListener('mousemove', handleMouseMove);
+      // Clean up using the stored reference
+      if (sectionElement) {
+        sectionElement.removeEventListener('mousemove', handleMouseMove);
+        sectionElement.removeEventListener('mouseleave', handleMouseLeave);
       }
       cancelAnimationFrame(animationId);
     };

@@ -1,10 +1,16 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import CalendlySection from '../components/home/CalendlySection';
 
 const ContactPageClient = () => {
+  const [heroVisible, setHeroVisible] = useState(false);
+  const [calendlyVisible, setCalendlyVisible] = useState(false);
+  const [formVisible, setFormVisible] = useState(false);
+  const [contactInfoVisible, setContactInfoVisible] = useState(false);
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -15,6 +21,18 @@ const ContactPageClient = () => {
   });
   
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  useEffect(() => {
+    // Trigger animations in sequence
+    const timers = [
+      setTimeout(() => setHeroVisible(true), 100),
+      setTimeout(() => setCalendlyVisible(true), 800),
+      setTimeout(() => setFormVisible(true), 1600),
+      setTimeout(() => setContactInfoVisible(true), 2400),
+    ];
+
+    return () => timers.forEach(timer => clearTimeout(timer));
+  }, []);
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -53,7 +71,7 @@ const ContactPageClient = () => {
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center bg-nautical-gradient overflow-hidden pt-32">
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center">
+          <div className={`text-center transition-all duration-1000 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h1 className="text-white font-display font-bold text-4xl sm:text-5xl md:text-6xl mb-6">
               <span className="relative inline-block">
                 Drop anchor
@@ -75,8 +93,13 @@ const ContactPageClient = () => {
         }}></div>
       </section>
 
+      {/* Schedule a Call Section */}
+      <div className={`transition-all duration-1000 ${calendlyVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <CalendlySection />
+      </div>
+
       {/* Contact Form */}
-      <section className="py-24 bg-[url('/images/backgrounds/compass-pattern.svg')] bg-no-repeat bg-center bg-cover relative overflow-hidden">
+      <section className={`py-24 bg-[url('/images/backgrounds/compass-pattern.svg')] bg-no-repeat bg-center bg-cover relative overflow-hidden transition-all duration-1000 ${formVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         {/* Animated compass background */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
           <svg className="w-96 h-96 opacity-10 animate-spin-slow" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -230,7 +253,7 @@ const ContactPageClient = () => {
       </section>
 
       {/* Contact Info */}
-      <section className="py-16 bg-white">
+      <section className={`py-16 bg-white transition-all duration-1000 ${contactInfoVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* Contact Method 1 - Sam */}

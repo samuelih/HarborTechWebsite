@@ -6,35 +6,45 @@ import { ReactNode } from 'react';
 interface ButtonProps {
   children: ReactNode;
   href?: string;
-  variant?: 'primary' | 'secondary' | 'outline';
+  variant?: 'primary' | 'secondary' | 'accent' | 'white';
+  size?: 'small' | 'normal' | 'large';
   className?: string;
   onClick?: () => void;
   type?: 'button' | 'submit' | 'reset';
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
+  disabled?: boolean;
 }
 
 const Button = ({ 
   children, 
   href, 
-  variant = 'primary', 
+  variant = 'primary',
+  size = 'normal',
   className = '',
   onClick,
   type = 'button',
   onMouseEnter,
-  onMouseLeave
+  onMouseLeave,
+  disabled = false
 }: ButtonProps) => {
-  const baseStyles = 'inline-flex items-center justify-center rounded-lg font-semibold py-3 px-6 transition-all';
-  
+  // Use the standardized button classes from global.css
   const variantStyles = {
-    primary: 'bg-primary-blue text-white hover:bg-primary-sky hover:translate-y-[-2px] hover:shadow-md',
-    secondary: 'bg-neutral-mist text-primary-navy border-2 border-primary-blue hover:bg-neutral-gull',
-    outline: 'bg-transparent border-2 border-white text-white hover:bg-white/10'
+    primary: 'btn-primary',
+    secondary: 'btn-secondary', 
+    accent: 'btn-accent',
+    white: 'btn-white'
+  };
+
+  const sizeStyles = {
+    small: 'btn-small',
+    normal: '',
+    large: 'btn-large'
   };
   
-  const buttonClasses = `${baseStyles} ${variantStyles[variant]} ${className}`;
+  const buttonClasses = `${variantStyles[variant]} ${sizeStyles[size]} ${className} ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`.trim();
   
-  if (href) {
+  if (href && !disabled) {
     return (
       <Link 
         href={href} 
@@ -51,9 +61,10 @@ const Button = ({
     <button 
       type={type} 
       className={buttonClasses}
-      onClick={onClick}
+      onClick={disabled ? undefined : onClick}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
+      disabled={disabled}
     >
       {children}
     </button>
